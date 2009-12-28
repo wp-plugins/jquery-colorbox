@@ -193,9 +193,7 @@ class jQueryColorbox {
     }// validateSettings()
     
 }// class jQueryColorbox()
-?>
-
-<?php
+?><?php
 /**
  * initialize plugin
  */
