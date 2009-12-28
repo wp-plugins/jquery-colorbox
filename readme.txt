@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/index.php/donate/
 Tags: jquery, colorbox, lightbox, images, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.8.6
-Stable tag: 1.0
+Stable tag: 1.1
 
 Automatically adds Colorbox/Lightbox functionality to all images on the blog. Images are grouped by post.
 
@@ -48,6 +48,9 @@ Go to the settings page and choose one of the five themes bundled with the plugi
 When rendering content, a special colorbox-class is added to linked images. The class is then passed to colorbox.
 
 == Changelog ==
+
+= 1.1 =
+* fixes critical bug which would break rendering the blog. Sorry, was not aware that the plugin would be listed before I tagged the files as 1.0 in subversion...
 
 = 1.0 =
 * Initial release.
