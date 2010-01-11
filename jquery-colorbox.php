@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 1.1
+ * Version: 1.2
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de
  */
@@ -54,7 +54,10 @@ class jQueryColorbox {
         $colorboxDefaultTheme = key( $this->colorboxThemes );
         $this->colorboxDefaultSettings = array(
             'colorboxTheme' => $colorboxDefaultTheme,
-            'isAutoColorBox' => False
+            'maxWidth' => 'false',
+            'maxHeight' => 'false',
+            'height' => 'false',
+            'width' => 'false'
         );
 
         // Create the settings array by merging the user's settings and the defaults
@@ -115,14 +118,17 @@ class jQueryColorbox {
                 //gets all "a" elements that have a nested "img"
                 $("a:has(img)").each(function(index, obj){
                     //in this context, the first child is always an image if fundamental Wordpress functions are used
-                    $nestedElement = $(obj).children(0);
-                    $groupId = $nestedElement.attr("class").match('colorbox-[0-9]+').toString();
+                    var $nestedElement = $(obj).children(0);
                     if($nestedElement.is("img")){
-                        //and calls colorbox function on each img.
-                        //elements with the same groupId in the class attribute are grouped
-                        //the title of the img is used as the title for the colorbox.
-                        $(obj).colorbox({rel:$groupId, maxWidth:"95%", maxHeight:"95%", title:$nestedElement.attr("title")});
-                    };
+                        var $groupId = $nestedElement.attr("class").match('colorbox-[0-9]+');
+                        //only call colorbox if there is a groupId for the image.
+                        if($groupId){
+                            //and calls colorbox function on each img.
+                            //elements with the same groupId in the class attribute are grouped
+                            //the title of the img is used as the title for the colorbox.
+                            $(obj).colorbox({rel:$groupId.toString(), <?php echo('maxWidth:' . '"' . $this->colorboxSettings['maxWidth'] . '"' . ','); echo('maxHeight:' . '"' . $this->colorboxSettings['maxHeight'] . '"' . ','); echo('height:' . '"' . $this->colorboxSettings['height'] . '"' . ','); echo('width:' . '"' . $this->colorboxSettings['width'] . '"' . ',') ?> title:$nestedElement.attr("title")});
+                        }
+                    }
                 });
             });
         // ]]>
@@ -163,6 +169,54 @@ class jQueryColorbox {
                         }
 ?>
                     </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jquery-colorbox-maxWidth"><?php _e('maxWidth', 'jquery-colorbox'); ?>:</label></td>
+                <td><input type="text" name="jquery-colorbox_settings[maxWidth]" id="jquery-colorbox-maxWidth" value="<?php echo $this->colorboxSettings['maxWidth'] ?>" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <span class="setting-description">
+					<?php _e('Set the maximum width of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either "false" (no maximum width for the picture, picture is as wide as the Colorbox) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jquery-colorbox-maxHeight"><?php _e('maxHeight', 'jquery-colorbox'); ?>:</label></td>
+                <td><input type="text" name="jquery-colorbox_settings[maxHeight]" id="jquery-colorbox-maxHeight" value="<?php echo $this->colorboxSettings['maxHeight'] ?>" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <span class="setting-description">
+					<?php _e('Set the maximum height of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either "false" (no maximum height for the picture, picture is as high as the Colorbox) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jquery-colorbox-width"><?php _e('width', 'jquery-colorbox'); ?>:</label></td>
+                <td><input type="text" name="jquery-colorbox_settings[width]" id="jquery-colorbox-width" value="<?php echo $this->colorboxSettings['width'] ?>" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <span class="setting-description">
+					<?php _e('Set the maximum width of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either "false" (no maximum width for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="jquery-colorbox-height"><?php _e('height', 'jquery-colorbox'); ?>:</label></td>
+                <td><input type="text" name="jquery-colorbox_settings[height]" id="jquery-colorbox-height" value="<?php echo $this->colorboxSettings['height'] ?>" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <span class="setting-description">
+					<?php _e('Set the maximum height of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either "false" (no maximum height for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
+                    </span>
                 </td>
             </tr>
         </table>
