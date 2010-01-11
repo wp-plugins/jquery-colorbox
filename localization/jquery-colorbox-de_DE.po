@@ -75,18 +75,16 @@ msgid "width"
 msgstr ""
 
 #: jquery-colorbox.php:206
-#, fuzzy
 msgid "Set the maximum width of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either \"false\" (no maximum width for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. \"95%\""
-msgstr "Hier l&auml;sst sich die maximale Breite der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" oder auf einen Prozentwert setzen, z.B. \"95%\""
+msgstr "Hier l&auml;sst sich die maximale Breite der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" (keine maximale Breite f&uuml;r die Colorbox, die Colorbox wird so gross wie das Bild) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
 #: jquery-colorbox.php:211
 msgid "height"
 msgstr ""
 
 #: jquery-colorbox.php:218
-#, fuzzy
 msgid "Set the maximum height of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either \"false\" (no maximum height for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. \"95%\""
-msgstr "Hier l&auml;sst sich die maximale H&ouml;he der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" oder auf einen Prozentwert setzen, z.B. \"95%\""
+msgstr "Hier l&auml;sst sich die maximale H&ouml;he der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" (keine maximale H&ouml;he f&uuml;r die Colorbox, die Colorbox wird so gross wie das Bild) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
 #: jquery-colorbox.php:224
 #, php-format
