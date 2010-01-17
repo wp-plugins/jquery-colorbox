@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 1.3
+ * Version: 1.3.1
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -40,13 +40,13 @@ class jQueryColorbox {
         add_action( 'admin_init',      array(&$this, 'registerSettings') );
 
         if ( !is_admin() ) {
-            wp_enqueue_script( 'colorbox', plugins_url( 'js/jquery.colorbox-min.js', __FILE__ ), array( 'jquery' ), '1.3.5' );
+            wp_enqueue_script( 'colorbox', plugins_url( 'js/jquery.colorbox-min.js', __FILE__ ), array( 'jquery' ), '1.3.6' );
 
-            wp_register_style( 'colorbox-theme1', plugins_url( 'themes/theme1/colorbox.css', __FILE__ ), array(), '1.3.5', 'screen' );
-            wp_register_style( 'colorbox-theme2', plugins_url( 'themes/theme2/colorbox.css', __FILE__ ), array(), '1.3.5', 'screen' );
-            wp_register_style( 'colorbox-theme3', plugins_url( 'themes/theme3/colorbox.css', __FILE__ ), array(), '1.3.5', 'screen' );
-            wp_register_style( 'colorbox-theme4', plugins_url( 'themes/theme4/colorbox.css', __FILE__ ), array(), '1.3.5', 'screen' );
-            wp_register_style( 'colorbox-theme5', plugins_url( 'themes/theme5/colorbox.css', __FILE__ ), array(), '1.3.5', 'screen' );
+            wp_register_style( 'colorbox-theme1', plugins_url( 'themes/theme1/colorbox.css', __FILE__ ), array(), '1.3.6', 'screen' );
+            wp_register_style( 'colorbox-theme2', plugins_url( 'themes/theme2/colorbox.css', __FILE__ ), array(), '1.3.6', 'screen' );
+            wp_register_style( 'colorbox-theme3', plugins_url( 'themes/theme3/colorbox.css', __FILE__ ), array(), '1.3.6', 'screen' );
+            wp_register_style( 'colorbox-theme4', plugins_url( 'themes/theme4/colorbox.css', __FILE__ ), array(), '1.3.6', 'screen' );
+            wp_register_style( 'colorbox-theme5', plugins_url( 'themes/theme5/colorbox.css', __FILE__ ), array(), '1.3.6', 'screen' );
         }
 
             // Create list of themes and their human readable names
@@ -185,7 +185,7 @@ class jQueryColorbox {
                                     <label for="jquery-colorbox-theme"><?php _e('Theme', 'jquery-colorbox'); ?></label>
                                 </th>
                                 <td>
-                                    <select name="jquery-colorbox_settings[colorboxTheme]" id="jquery-colorbox-theme" class="postform" style="margin:0px">
+                                    <select name="jquery-colorbox_settings[colorboxTheme]" id="jquery-colorbox-theme" class="postform" style="margin:0">
 <?php
                                         foreach ( $this->colorboxThemes as $theme => $name ) {
                                             echo '<option value="' . esc_attr($theme) . '"';
@@ -251,7 +251,7 @@ class jQueryColorbox {
                             <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                                 <input type="hidden" name="cmd" value="_s-xclick">
                                 <input type="hidden" name="hosted_button_id" value="11235030">
-                                <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+                                <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" name="submit" alt="PayPal - The safer, easier way to pay online.">
                                 <img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
                             </form>
                         </span>
@@ -314,6 +314,7 @@ add_action( 'init', 'jQueryColorbox', 7 );
 //TODO: get rid of this...
 function addColorboxGroupIdToImages ($content) {
     global $post;
+    $changedTheContent = false;
         // create XML representation of the_content
     $domDocumentTheContent = new DomDocument();
     $domDocumentTheContent->loadHTML($content);
@@ -324,9 +325,12 @@ function addColorboxGroupIdToImages ($content) {
             // add colorbox CSS class for every img that does not have the "colorbox-off" class
         if(!preg_match("/colorbox-off/",$classAttributeValue)){
             $domNode->setAttribute('class', $classAttributeValue . ' colorbox-'.$post->ID);
+            $changedTheContent = true;
         }
     }
-    $content = $domDocumentTheContent->saveHTML();
+    if($changedTheContent){
+        $content = $domDocumentTheContent->saveHTML();
+    }
     return $content;
 }
 
