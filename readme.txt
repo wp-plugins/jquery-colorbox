@@ -58,11 +58,23 @@ This CSS class is then passed to the colorbox JavaScript.
 * How do I exclude an image?
 
 Add the CSS class "colorbox-off" to the image you want to exclude.
-jQuery Colorbox does not add the colorbox CSS class to images that already contain the CSS class "colorbox-off".
+jQuery Colorbox does not add the colorbox effect to images that have the CSS class "colorbox-off".
 
 * How does jQuery Colorbox group images?
 
 For all images in a post or page, the same CSS class is added. All images with the same CSS class are grouped.
+
+* I have Flash (e.g. Youtube videos) embedded on my website. Why do they show up over the layer when I click on an image?
+
+This is a Flash issue, but relatively easy to solve. Adobe described on these sites what the problem is and how to fix it:
+<a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Knowledgebase 1</a>
+<a href="http://kb2.adobe.com/cps/142/tn_14201.html">Adobe Knowledgebase 2</a>
+In short:
+1. Add the following parameter to the OBJECT tag:
+<param name="wmode" value="transparent">
+
+2. Add the following parameter to the EMBED tag:
+wmode="transparent"
 
 == Changelog ==
 
