@@ -26,7 +26,7 @@ Localization
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
 
 Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.6 jQuery plugin from Jack Moore. Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
-jQuery Colorbox uses the jQuery library bundled with Wordpress.
+jQuery Colorbox uses the jQuery library 1.3.2 bundled with Wordpress.
 
 == Demo ==
 
@@ -76,12 +76,21 @@ In short:
 2. Add the following parameter to the EMBED tag:
 wmode="transparent"
 
+* I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
+
+Tricky. I have seen problems with other plugins that include older, incompatible versions of the jQuery library my plugin uses.
+Since I include the jQuery library in a non-conflicting way, the other jQuery library is usually loaded.
+
 == Changelog ==
 
-= 1.3.2 =
+= 1.3.3 = (2010-01-21)
+* fixed settings page, options can be saved now
+* added settings deletion on uninstall and "delete settings from database" functionality to settings page
+
+= 1.3.2 = (2010-01-19)
 * moved back to regexp replacement and implemented a workaround in the JavaScript to still allow images to be excluded by adding the class "colorbox-off"
 
-= 1.3.1 =
+= 1.3.1 = (2010-01-18)
 * changed include calls for Colorbox JavaScript and CSS to version 1.3.6
 * optimized modification of the_content
 

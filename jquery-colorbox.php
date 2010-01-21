@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 1.3.2
+ * Version: 1.3.3
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -27,6 +27,10 @@ class jQueryColorbox {
 
     /**
      * Plugin initialization
+     *
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
      */
     function jQueryColorbox() {
         if ( !function_exists('plugins_url') )
@@ -36,8 +40,15 @@ class jQueryColorbox {
         load_plugin_textdomain( 'jquery-colorbox', false, '/jquery-colorbox/localization/' );
 
         add_action( 'wp_head',         array(&$this, 'buildWordpressHeader') );
-        add_action( 'admin_menu',      array(&$this, 'registerSettingsPage') );
         add_action( 'admin_init',      array(&$this, 'registerSettings') );
+        add_action('admin_post_jQueryDeleteSettings', array(&$this, 'jQueryDeleteSettings') );
+        add_action('admin_post_jQueryUpdateSettings', array(&$this, 'jQueryUpdateSettings') );
+            // add options page
+        add_action( 'admin_menu', array(&$this, 'registerAdminMenu') );
+        //register plugin for uninstall
+        if ( function_exists('register_uninstall_hook') ){
+            register_uninstall_hook(__FILE__, 'uninstallJqueryColorbox');
+        }
 
         if ( !is_admin() ) {
             wp_enqueue_script( 'colorbox', plugins_url( 'js/jquery.colorbox-min.js', __FILE__ ), array( 'jquery' ), '1.3.6' );
@@ -50,18 +61,17 @@ class jQueryColorbox {
         }
 
             // Create list of themes and their human readable names
-        $this->colorboxThemes = (array) apply_filters( 'jquery-colorbox_themes', array(
+        $this->colorboxThemes = array(
             'theme1' => __( 'Theme #1', 'jquery-colorbox' ),
             'theme2' => __( 'Theme #2', 'jquery-colorbox' ),
             'theme3' => __( 'Theme #3', 'jquery-colorbox' ),
             'theme4' => __( 'Theme #4', 'jquery-colorbox' ),
             'theme5' => __( 'Theme #5', 'jquery-colorbox' ),
-        ) );
+        );
 
-            // Create array of default settings (you can use the filter to modify these)
-        $colorboxDefaultTheme = key( $this->colorboxThemes );
+            // Create array of default settings
         $this->colorboxDefaultSettings = array(
-            'colorboxTheme' => $colorboxDefaultTheme,
+            'colorboxTheme' => 'theme1',
             'maxWidth' => 'false',
             'maxHeight' => 'false',
             'height' => 'false',
@@ -82,6 +92,10 @@ class jQueryColorbox {
 
     /**
      * Register the settings page in wordpress
+     *
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
      */
     function registerSettingsPage() {
         static $plugin_basename;
@@ -96,6 +110,10 @@ class jQueryColorbox {
 
     /**
      * Add settings link to plugin management page
+     *
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
      *
      * @param  original action_links
      * @return action_links with link to settings page
@@ -113,6 +131,10 @@ class jQueryColorbox {
 
     /**
      * Register the plugins settings
+     *
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
      */
     function registerSettings() {
         register_setting( 'jquery-colorbox_settings', 'jquery-colorbox_settings', array(&$this, 'validateSettings') );
@@ -122,6 +144,9 @@ class jQueryColorbox {
 
     /**
      * Insert JavaScript for Colorbox into WP Header
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
      *
      * @return rewritten content or excerpt
      */
@@ -154,23 +179,47 @@ class jQueryColorbox {
         </script>
 <?php
         //write "colorbox-postID" to "img"-tags class attribute.
-        add_filter('the_content', 'addColorboxGroupIdToImages');
-        add_filter('the_excerpt', 'addColorboxGroupIdToImages');
+            //Priority = 100, hopefully the preg_replace is then executed after other plugins messed with the_content
+        add_filter('the_content', 'addColorboxGroupIdToImages', 100);
+        add_filter('the_excerpt', 'addColorboxGroupIdToImages', 100);
     }
 
     //buildWordpressHeader()
 
     /**
      * Render Settings page
+     *
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
      */
     function renderSettingsPage() {
+        if ( isset($_POST['action']) && 'jQueryDeleteSettings' == $_POST['action'] ) {
+            check_admin_referer('jquery-delete_settings-form');
+            if ( current_user_can('manage_options') && isset($_POST['delete_settings-true']) ) {
+                $this->jQueryDeleteSettings();
+                ?>
+                    <div id="message" class="updated fade"><p><?php _e('Successfully deleted jQuery Colorbox settings.', 'jquery-colorbox'); ?></p></div>
+				<?php
+            } else {
+                ?>
+                    <div id="message" class="error"><p><?php _e('Did not delete jQuery Colorbox settings. Either you dont have the nececssary ', 'jquery-colorbox'); ?></p></div>
+                <?php
+            }
+        }
+
+//            if ( isset($_POST['jquery-colorbox-submit']) ) {
+//				if (!current_user_can('manage_options')) die(__('You cannot edit jQuery Colorbox settings.'));
+//				check_admin_referer('jquery-colorbox-settings-form');
+//                $this->colorboxSettings = $_POST['jquery-colorbox_settings'];
+//				update_option('jquery-colorbox_settings', $this->colorboxSettings);
+//			}
+
         ?>
         <div class="wrap">
         <?php screen_icon(); ?>
         <h2><?php _e( 'jQuery Colorbox Settings', 'jquery-colorbox' ); ?></h2>
         <br class="clear" />
-
-
 
         <?php settings_fields('jquery-colorbox_settings'); ?>
 
@@ -178,7 +227,8 @@ class jQueryColorbox {
             <div id="jquery-colorbox-settings" class="postbox">
                 <h3 id="settings"><?php _e( 'Settings', 'jquery-colorbox' ); ?></h3>
                 <div class="inside">
-                    <form method="post" action="options.php">
+                    <form name="jquery-colorbox-settings-update" method="post" action="admin-post.php">
+                    <?php if (function_exists('wp_nonce_field') === true) wp_nonce_field('jquery-colorbox-settings-form'); ?>
                         <table class="form-table">
                             <tr valign="top">
                                 <th scope="row">
@@ -188,12 +238,12 @@ class jQueryColorbox {
                                     <select name="jquery-colorbox_settings[colorboxTheme]" id="jquery-colorbox-theme" class="postform" style="margin:0">
 <?php
                                         foreach ( $this->colorboxThemes as $theme => $name ) {
-                                            echo '<option value="' . esc_attr($theme) . '"';
-                                            selected( $this->colorboxSettings['colorboxTheme'], $theme );
-                                            echo '>' . htmlspecialchars($name) . "</option>\n";
-                                        }
-?>
-                                    </select>
+            echo '<option value="' . esc_attr($theme) . '"';
+            selected( $this->colorboxSettings['colorboxTheme'], $theme );
+            echo '>' . htmlspecialchars($name) . "</option>\n";
+        }
+        ?>
+                                            </select>
                                     <br/><?php _e( 'Select the theme you want to use on your blog.', 'jquery-colorbox' ); ?>
                                 </td>
                             </tr>
@@ -235,7 +285,25 @@ class jQueryColorbox {
                             </tr>
                         </table>
                         <p class="submit">
+                            <input type="hidden" name="action" value="jQueryUpdateSettings" />
                             <input type="submit" name="jquery-colorbox-submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="poststuff" class="ui-sortable meta-box-sortables">
+            <div id="jquery-colorbox-delete_settings" class="postbox" >
+                <h3 id="delete_options"><?php _e('Delete Settings','jquery-colorbox') ?></h3>
+                <div class="inside">
+                    <p><?php _e('Click this button to delete settings of this plugin. Also deactivates jQuery Colorbox.','jquery-colorbox'); ?></p>
+                    <form name="delete_settings" method="post" action="admin-post.php">
+                        <?php if (function_exists('wp_nonce_field') === true) wp_nonce_field('jquery-delete_settings-form'); ?>
+                        <p id="submitbutton">
+                            <input type="hidden" name="action" value="jQueryDeleteSettings" />
+                            <input type="submit" value="<?php _e('Delete Settings','jquery-colorbox'); ?> &raquo;" class="button-secondary" />
+                            <input type="checkbox" name="delete_settings-true" />
                         </p>
                     </form>
                 </div>
@@ -271,8 +339,39 @@ class jQueryColorbox {
 
     //renderSettingsPage()
 
+    function registerAdminMenu() {
+        	if ( function_exists('add_management_page') && current_user_can('manage_options') ) {
+
+				if ( !isset($_GET['update']) )
+					$_GET['update'] = 'false';
+
+				if ( !isset($_GET['uninstall']) )
+					$_GET['uninstall'] = 'false';
+
+				// update, uninstall message
+				if ( strpos($_SERVER['REQUEST_URI'], 'jquery-colorbox.php') && $_GET['update'] == 'true' ) {
+					$return_message = __('Updated options.', 'jquery-colorbox');
+				} elseif ( $_GET['uninstall'] == 'true' ) {
+					$return_message = __('jQuery Colorbox settings were successfully deleted. Please deactivate the plugin now.', 'jquery-colorbox');
+				} else {
+					$return_message = '';
+				}
+				$message = '<div class="updated fade"><p>' . $return_message . '</p></div>';
+
+                if ( $return_message !== '' ) {
+						add_action('admin_notices', create_function( '', "echo '$message';" ) );
+                }
+
+				$this->registerSettingsPage();
+			}
+    }
+
     /**
      * Validate the settings sent from the settings page
+     *
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
      *
      * @param  $colorboxSettings settings to be validated
      * @return valid settings
@@ -285,15 +384,75 @@ class jQueryColorbox {
     }
 
     // validateSettings()
+
+    /**
+     * unpdate options
+     *
+     * @package Secure WordPress
+     */
+    function updateSettings() {
+        $this->colorboxSettings = $_POST['jquery-colorbox_settings'];
+        update_option('jquery-colorbox_settings', $this->colorboxSettings);
+    }
+
+    /**
+     * Delete options from database
+     *
+     * @since 1.0
+     * @access public
+     * @author Arne Franken
+     */
+    function deleteSettings() {
+        delete_option('jquery-colorbox_settings');
+    }
+
+    /**
+     * update settings
+     */
+    function jQueryUpdateSettings() {
+
+        if ( !current_user_can('manage_options') )
+            wp_die( __('Did not update options, you do not have the necessary rights.', 'jquery-colorbox') );
+
+            //cross check the given referer
+        check_admin_referer('jquery-colorbox-settings-form');
+
+        $this->updateSettings();
+
+        $referer = str_replace('&update=true&update=true', '', $_POST['_wp_http_referer'] );
+        wp_redirect($referer . '&update=true' );
+    }
+
+    /**
+     * uninstall options
+     */
+    function jQueryDeleteSettings() {
+
+        if ( current_user_can('manage_options') && isset($_POST['delete_settings-true']) ){
+            //cross check the given referer
+            check_admin_referer('jquery-delete_settings-form');
+            $this->deleteSettings();
+        } else {
+            wp_die( __('Did not delete jQuery Colorbox settings. Either you dont have the nececssary rights or you didnt check the checkbox.', 'jquery-colorbox') );
+        }
+        wp_redirect( 'plugins.php' );
+    }
+
+    // jQueryDeleteSettings()
 }
 
 // class jQueryColorbox()
 ?><?php
 /**
  * initialize plugin
+ *
+ * @since 1.0
+ * @access public
+ * @author Arne Franken
  */
 function jQueryColorbox() {
-    global $jQueryColorbox;
+    global
+    $jQueryColorbox;
     $jQueryColorbox = new jQueryColorbox();
 }
 
@@ -308,12 +467,16 @@ add_action( 'init', 'jQueryColorbox', 7 );
  * unfortunately, Wordpress does not offer a convenient way to get certain elements from the_content,
  * so I had to do this by regexp replacement...
  *
+ * @since 1.0
+ * @access public
+ * @author Arne Franken
+ *
  * @param  the_content or the_excerpt
  * @return replaced content or excerpt
  */
-//TODO: get rid of this...
 function addColorboxGroupIdToImages ($content) {
-    global $post;
+    global
+    $post;
     $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
     $replacement = '<img$1class=$2$3 colorbox-'.$post->ID.'$4$5>';
     $content = preg_replace($pattern, $replacement, $content);
