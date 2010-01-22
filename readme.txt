@@ -70,11 +70,8 @@ This is a Flash issue, but relatively easy to solve. Adobe described on these si
 <a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Knowledgebase 1</a>
 <a href="http://kb2.adobe.com/cps/142/tn_14201.html">Adobe Knowledgebase 2</a>
 In short:
-1. Add the following parameter to the OBJECT tag:
-<param name="wmode" value="transparent">
-
-2. Add the following parameter to the EMBED tag:
-wmode="transparent"
+1. Add the following parameter to the OBJECT tag: &lt;param name="wmode" value="transparent"&gt;
+2. Add the following parameter to the EMBED tag: wmode="transparent"
 
 * I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
 
@@ -86,16 +83,16 @@ Maybe the images you want jQuery Colorbox to work on are added by a plugin and t
 
 == Changelog ==
 
-= 1.3.3 = (2010-01-21)
+= 1.3.3 (2010-01-21) =
 * CHANGE: fixed settings page, options can be saved now
 * NEW: added settings deletion on uninstall and "delete settings from database" functionality to settings page
 * CHANGE: moved adding of CSS class priority lower, hopefully now the CSS class is added to pictures after other plugins update the HTML
 * CHANGE: updated the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>
 
-= 1.3.2 = (2010-01-19)
+= 1.3.2 (2010-01-19) =
 * CHANGE: moved back to regexp replacement and implemented a workaround in the JavaScript to still allow images to be excluded by adding the class "colorbox-off"
 
-= 1.3.1 = (2010-01-18)
+= 1.3.1 (2010-01-18) =
 * CHANGE: changed include calls for Colorbox JavaScript and CSS to version 1.3.6
 * CHANGE: optimized modification of the_content
 
