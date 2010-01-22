@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-17 13:47+0100\n"
+"POT-Creation-Date: 2010-01-22 18:04+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: Arne Franken <blog@techotronic.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,90 +14,121 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:48
+#: jquery-colorbox.php:83
 msgid "Theme #1"
 msgstr ""
 
-#: jquery-colorbox.php:49
+#: jquery-colorbox.php:84
 msgid "Theme #2"
 msgstr ""
 
-#: jquery-colorbox.php:50
+#: jquery-colorbox.php:85
 msgid "Theme #3"
 msgstr ""
 
-#: jquery-colorbox.php:51
+#: jquery-colorbox.php:86
 msgid "Theme #4"
 msgstr ""
 
-#: jquery-colorbox.php:52
+#: jquery-colorbox.php:87
 msgid "Theme #5"
 msgstr ""
 
-#: jquery-colorbox.php:85
+#: jquery-colorbox.php:123
 msgid "jQuery Colorbox"
 msgstr ""
 
-#: jquery-colorbox.php:100
-#: jquery-colorbox.php:175
+#: jquery-colorbox.php:142
+#: jquery-colorbox.php:228
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: jquery-colorbox.php:166
+#: jquery-colorbox.php:221
 msgid "jQuery Colorbox Settings"
 msgstr "jQuery Colorbox Einstellungen"
 
-#: jquery-colorbox.php:181
+#: jquery-colorbox.php:237
 msgid "Theme"
 msgstr ""
 
-#: jquery-colorbox.php:193
+#: jquery-colorbox.php:249
 msgid "Select the theme you want to use on your blog."
 msgstr "W&auml;hle das Theme aus, das Du auf Deinem Blog benutzen m&ouml;chtest."
 
-#: jquery-colorbox.php:198
+#: jquery-colorbox.php:254
 msgid "Maximum width of an image"
 msgstr "Maximale Breite eines Bildes"
 
-#: jquery-colorbox.php:202
+#: jquery-colorbox.php:258
 msgid "Set the maximum width of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either \"false\" (no maximum width for the picture, picture is as wide as the Colorbox) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale Breite des Bildes in der colorbox in relation zum Browserfenster festlegen. Das Bild wird verkleinert falls n&ouml;tig. Entweder auf \"false\" (keine maximale Breite des Bildes, das Bild ist so breit wie die Colorbox) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:207
+#: jquery-colorbox.php:263
 msgid "Maximum height of an image"
 msgstr "Maximale H&ouml;he eines Bildes"
 
-#: jquery-colorbox.php:211
+#: jquery-colorbox.php:267
 msgid "Set the maximum height of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either \"false\" (no maximum height for the picture, picture is as high as the Colorbox) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale H&ouml;he des Bildes in der colorbox in relation zum Browserfenster festlegen. Das Bild wird verkleinert falls n&ouml;tig. Entweder auf \"false\" (keine maximale H&oumlhe des Bildes, das Bild ist so hoch wie die Colorbox) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:216
+#: jquery-colorbox.php:272
 msgid "Maximum width of the Colorbox"
 msgstr "Maximale Breite der Colorbox"
 
-#: jquery-colorbox.php:220
+#: jquery-colorbox.php:276
 msgid "Set the maximum width of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either \"false\" (no maximum width for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale Breite der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" (keine maximale Breite f&uuml;r die Colorbox, die Colorbox wird so gross wie das Bild) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:225
+#: jquery-colorbox.php:281
 msgid "Maximum height of the Colorbox"
 msgstr "Maximale H&ouml;he der Colorbox"
 
-#: jquery-colorbox.php:229
+#: jquery-colorbox.php:285
 msgid "Set the maximum height of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either \"false\" (no maximum height for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale H&ouml;he der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" (keine maximale H&ouml;he f&uuml;r die Colorbox, die Colorbox wird so gross wie das Bild) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:234
+#: jquery-colorbox.php:291
 msgid "Save Changes"
 msgstr "&Auml;nderungen speichern"
 
-#: jquery-colorbox.php:243
+#: jquery-colorbox.php:300
+#: jquery-colorbox.php:309
+#, fuzzy
+msgid "Delete Settings"
+msgstr "Einstellungen"
+
+#: jquery-colorbox.php:303
+#, fuzzy
+msgid "Check the box and click this button to delete settings of jQuery Colorbox from the database."
+msgstr "Mache einen Haken in die Box und klicke auf den Button um die Einstellungen von jQuery Colorbox aus der Datenbank zu l&ouml;schen."
+
+#: jquery-colorbox.php:319
 msgid "Donate"
 msgstr "Spenden"
 
-#: jquery-colorbox.php:256
+#: jquery-colorbox.php:333
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
 msgstr "Wenn Du eine kleine (oder grosse) Spende f&uuml;r die Weiterentwicklung abgeben m&ouml;chtest, kannst Du das per PayPal tun."
+
+#: jquery-colorbox.php:363
+#, fuzzy
+msgid "Sucessfully updated jQuery Colorbox Settings."
+msgstr "jQuery Colorbox Einstellungen"
+
+#: jquery-colorbox.php:365
+#: jquery-colorbox.php:367
+#, fuzzy
+msgid "jQuery Colorbox settings were successfully deleted."
+msgstr "Die Einstellungen von jQuery Colorbox wurden erfolgreich aus der Datenbank entfernt."
+
+#: jquery-colorbox.php:415
+#, fuzzy
+msgid "Did not update settings, you do not have the necessary rights."
+msgstr "Die Einstellungen wurden nicht aktualisiert, weil Du nicht die n&ouml;tigen Rechte hast."
+
+#: jquery-colorbox.php:460
+msgid "Did not delete jQuery Colorbox settings. Either you dont have the nececssary rights or you didnt check the checkbox."
+msgstr "Die jQuery Colorbox Einstellungen wurden nicht gel&ouml;scht. Entweder hast Du nicht die n&ouml;tigen Rechte oder Du hast keinen Haken in die Checkbox gesetzt."
 
 #~ msgid "maxWidth"
 #~ msgstr "Maximale Breite des Bildes"
