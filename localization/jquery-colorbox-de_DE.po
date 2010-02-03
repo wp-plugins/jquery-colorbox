@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-22 18:04+0100\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2010-02-02 23:22+0100\n"
+"PO-Revision-Date: 2010-02-02 23:22+0100\n"
 "Last-Translator: Arne Franken <blog@techotronic.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,121 +14,140 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:83
+#: jquery-colorbox.php:65
 msgid "Theme #1"
 msgstr ""
 
-#: jquery-colorbox.php:84
+#: jquery-colorbox.php:66
 msgid "Theme #2"
 msgstr ""
 
-#: jquery-colorbox.php:85
+#: jquery-colorbox.php:67
 msgid "Theme #3"
 msgstr ""
 
-#: jquery-colorbox.php:86
+#: jquery-colorbox.php:68
 msgid "Theme #4"
 msgstr ""
 
-#: jquery-colorbox.php:87
+#: jquery-colorbox.php:69
 msgid "Theme #5"
 msgstr ""
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:154
 msgid "jQuery Colorbox"
-msgstr ""
+msgstr "jQuery ColorBox"
 
-#: jquery-colorbox.php:142
-#: jquery-colorbox.php:228
+#: jquery-colorbox.php:173
+#: jquery-colorbox.php:270
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: jquery-colorbox.php:221
+#: jquery-colorbox.php:230
+msgid "close"
+msgstr "Schließen"
+
+#: jquery-colorbox.php:231
+msgid "next"
+msgstr "Vor"
+
+#: jquery-colorbox.php:232
+msgid "previous"
+msgstr "Zurück"
+
+#: jquery-colorbox.php:233
+msgid "start slideshow"
+msgstr "Slideshow starten"
+
+#: jquery-colorbox.php:234
+msgid "stop slideshow"
+msgstr "Slideshow beenden"
+
+#: jquery-colorbox.php:235
+msgid "{current} of {total} images"
+msgstr "{current} von {total} Bildern"
+
+#: jquery-colorbox.php:263
 msgid "jQuery Colorbox Settings"
 msgstr "jQuery Colorbox Einstellungen"
 
-#: jquery-colorbox.php:237
+#: jquery-colorbox.php:279
 msgid "Theme"
 msgstr ""
 
-#: jquery-colorbox.php:249
+#: jquery-colorbox.php:291
 msgid "Select the theme you want to use on your blog."
 msgstr "W&auml;hle das Theme aus, das Du auf Deinem Blog benutzen m&ouml;chtest."
 
-#: jquery-colorbox.php:254
+#: jquery-colorbox.php:296
 msgid "Maximum width of an image"
 msgstr "Maximale Breite eines Bildes"
 
-#: jquery-colorbox.php:258
+#: jquery-colorbox.php:300
 msgid "Set the maximum width of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either \"false\" (no maximum width for the picture, picture is as wide as the Colorbox) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale Breite des Bildes in der colorbox in relation zum Browserfenster festlegen. Das Bild wird verkleinert falls n&ouml;tig. Entweder auf \"false\" (keine maximale Breite des Bildes, das Bild ist so breit wie die Colorbox) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:263
+#: jquery-colorbox.php:305
 msgid "Maximum height of an image"
 msgstr "Maximale H&ouml;he eines Bildes"
 
-#: jquery-colorbox.php:267
+#: jquery-colorbox.php:309
 msgid "Set the maximum height of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either \"false\" (no maximum height for the picture, picture is as high as the Colorbox) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale H&ouml;he des Bildes in der colorbox in relation zum Browserfenster festlegen. Das Bild wird verkleinert falls n&ouml;tig. Entweder auf \"false\" (keine maximale H&oumlhe des Bildes, das Bild ist so hoch wie die Colorbox) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:272
+#: jquery-colorbox.php:314
 msgid "Maximum width of the Colorbox"
 msgstr "Maximale Breite der Colorbox"
 
-#: jquery-colorbox.php:276
+#: jquery-colorbox.php:318
 msgid "Set the maximum width of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either \"false\" (no maximum width for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale Breite der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" (keine maximale Breite f&uuml;r die Colorbox, die Colorbox wird so gross wie das Bild) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:281
+#: jquery-colorbox.php:323
 msgid "Maximum height of the Colorbox"
 msgstr "Maximale H&ouml;he der Colorbox"
 
-#: jquery-colorbox.php:285
+#: jquery-colorbox.php:327
 msgid "Set the maximum height of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either \"false\" (no maximum height for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. \"95%\""
 msgstr "Hier l&auml;sst sich die maximale H&ouml;he der Colorbox in relation zum Browserfenster festlegen. Das Bild wird NICHT verkleinert. Wenn das Bild gr&ouml;sser als die Colorbox ist, werden Scrollbalken dargestellt. Entweder auf \"false\" (keine maximale H&ouml;he f&uuml;r die Colorbox, die Colorbox wird so gross wie das Bild) oder auf einen Prozentwert setzen, z.B. \"95%\""
 
-#: jquery-colorbox.php:291
+#: jquery-colorbox.php:333
 msgid "Save Changes"
 msgstr "&Auml;nderungen speichern"
 
-#: jquery-colorbox.php:300
-#: jquery-colorbox.php:309
-#, fuzzy
+#: jquery-colorbox.php:342
+#: jquery-colorbox.php:351
 msgid "Delete Settings"
-msgstr "Einstellungen"
+msgstr "Einstellungen löschen"
 
-#: jquery-colorbox.php:303
-#, fuzzy
-msgid "Check the box and click this button to delete settings of jQuery Colorbox from the database."
-msgstr "Mache einen Haken in die Box und klicke auf den Button um die Einstellungen von jQuery Colorbox aus der Datenbank zu l&ouml;schen."
+#: jquery-colorbox.php:345
+msgid "Check the box and click this button to delete settings of this plugin."
+msgstr "Aktivieren Sie die Checkbox und klicken Sie anschließend die folgende Schaltfläche, um die Einstellungen dieses Plugins zu entfernen."
 
-#: jquery-colorbox.php:319
+#: jquery-colorbox.php:361
 msgid "Donate"
 msgstr "Spenden"
 
-#: jquery-colorbox.php:333
+#: jquery-colorbox.php:375
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
 msgstr "Wenn Du eine kleine (oder grosse) Spende f&uuml;r die Weiterentwicklung abgeben m&ouml;chtest, kannst Du das per PayPal tun."
 
-#: jquery-colorbox.php:363
-#, fuzzy
-msgid "Sucessfully updated jQuery Colorbox Settings."
-msgstr "jQuery Colorbox Einstellungen"
+#: jquery-colorbox.php:406
+msgid "Successfully updated jQuery Colorbox settings."
+msgstr "&Auml;nderungen der jQuery Colorbox Einstellungen erfolgreich gespeichert"
 
-#: jquery-colorbox.php:365
-#: jquery-colorbox.php:367
-#, fuzzy
+#: jquery-colorbox.php:408
+#: jquery-colorbox.php:410
 msgid "jQuery Colorbox settings were successfully deleted."
-msgstr "Die Einstellungen von jQuery Colorbox wurden erfolgreich aus der Datenbank entfernt."
+msgstr "Die Einstellungen von jQuery Colorbox wurden erfolgreich entfernt."
 
-#: jquery-colorbox.php:415
-#, fuzzy
+#: jquery-colorbox.php:458
 msgid "Did not update settings, you do not have the necessary rights."
-msgstr "Die Einstellungen wurden nicht aktualisiert, weil Du nicht die n&ouml;tigen Rechte hast."
+msgstr "Einstellungen nicht aktualisiert, da Sie nicht die hierfür erforderlichen Rechte besitzen."
 
-#: jquery-colorbox.php:460
+#: jquery-colorbox.php:503
 msgid "Did not delete jQuery Colorbox settings. Either you dont have the nececssary rights or you didnt check the checkbox."
-msgstr "Die jQuery Colorbox Einstellungen wurden nicht gel&ouml;scht. Entweder hast Du nicht die n&ouml;tigen Rechte oder Du hast keinen Haken in die Checkbox gesetzt."
+msgstr "Konnte die Einstellungen nicht entfernen. Entweder besitzen Sie nicht die notwendigen Rechte hierzu oder Sie haben vergessen, die Checkbox [x] zu aktivieren."
 
 #~ msgid "maxWidth"
 #~ msgstr "Maximale Breite des Bildes"

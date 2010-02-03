@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/index.php/donate/
 Tags: jquery, colorbox, lightbox, images, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.9.1
-Stable tag: 1.3.3
+Stable tag: 1.4
 
 Automatically adds Colorbox/Lightbox functionality to all images on the blog. Images are grouped by post.
 
@@ -16,6 +16,8 @@ When adding an image to a post or page, usually a thumbnail is inserted and link
 All images in posts and pages are displayed in a layer when the tumbnail is clicked. 
 Images are grouped as galleries when linked in the same blog post or page.
 
+jQuery Colorbox can add 
+
 Images can be excluded by giving them a special CSS class.
 
 For more information visit the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>.
@@ -24,13 +26,14 @@ Localization
 
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
+* Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 
 Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.6 jQuery plugin from Jack Moore. Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
-jQuery Colorbox uses the jQuery library version 1.3.2 bundled with Wordpress.
+jQuery Colorbox uses the jQuery library version 1.3.2 bundled with Wordpress. Should work with jQuery 1.4 too.
 
 == Demo ==
 
-Click on any image on [My Blog](http://www.techotronic.de/) to see jQuery Colorbox in action.
+Click on any image on <a href="http://www.techotronic.de/">My Blog</a> to see jQuery Colorbox in action.
 
 == Installation ==
 
@@ -46,16 +49,22 @@ Extract all files from the ZIP file, making sure to keep the file structure inta
 
 Go to the settings page and choose one of the five themes bundled with the plugin.
 
-**See Also:** ["Installing Plugins" article on the WP Codex](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
+**See Also:** <a href="http://codex.wordpress.org/Managing_Plugins#Installing_Plugins">"Installing Plugins" article on the WP Codex</a>
 
 == Frequently Asked Questions ==
+* I have installed and activated (or updated) jQuery Colorbox, but it doesn't show up when I click on a thumbnail in my blog. Is the plugin broken?
+
+Since version 1.4, jQuery Colorbox' automatic behaviour can be switched on and off in the settings. That way, you can apply the Colorbox functionality manually to single images.
+
+The default ist OFF.
+
 * How does jQuery Colorbox work?
 
 When inserting a picture, the field "Link URL" needs to contain the link to the full-sized image. (press the button "Link to Image" below the field)
 When rendering the blog, a special CSS class ("colorbox-postId", e.g. "colorbox-123") is added to linked images.
 This CSS class is then passed to the colorbox JavaScript.
 
-* How do I exclude an image?
+* How do I exclude an image from Colorbox in a page or post?
 
 Add the CSS class "colorbox-off" to the image you want to exclude.
 jQuery Colorbox does not add the colorbox effect to images that have the CSS class "colorbox-off".
@@ -73,15 +82,36 @@ In short:
 1. Add the following parameter to the OBJECT tag: &lt;param name="wmode" value="transparent"&gt;
 2. Add the following parameter to the EMBED tag: wmode="transparent"
 
+* When I use theme1 or theme4, the Colorbox does not render correctly in Internet Explorer, but there are no problems when using other browsers. Why is that?
+
+One of the many shortcomings of the Internet Explorer is it's incompatibility with transparent pgns. A workaround for that is calling Microsofts AlphaImageLoader.
+This workaround only works with URIs relative to your Domain (e.g. "/wp-content/plugins/jquery-colorbox/themes/theme4/images/internet_explorer/borderTopLeft.png")
+or absolute URLs (e.g. "http://www.mydomain.com/wp-content/plugins/jquery-colorbox/themes/theme4/images/internet_explorer/borderTopLeft.png").
+
+Now, if your WordPress installation is not located directly below your domain, but, say in the directory "wordpress", the links would have to be "/wordpress/wp-content/plugins/jquery-colorbox/themes/theme4/images/internet_explorer/borderTopLeft.png" in order to work.
+Unfortunately there is no way to automate this, and you will have to edit the colorbox.css files of theme1 and theme4 manually.
+
 * I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
 
 Tricky.
+
 I have seen problems where other plugins include older, incompatible versions of the jQuery library my plugin uses.
 Since I include the jQuery library in a non-conflicting way, the other jQuery library is usually loaded.
 
 Maybe the images you want jQuery Colorbox to work on are added by a plugin and the images are added after jQuery Colorbox manipulates the HTML when rendering your blog.
 
+Sometimes I have seen Images without the "class" attribute. If there is no "class" attribute present in the IMG-Tag, jQuery Colorbox can't add the necessary CSS class and won't work on that image.
 == Changelog ==
+
+= 1.4 (2010-02-07) =
+* NEW: switch adding of "colorbox-postId" classes to images in posts and pages on and off through setting. Default: off.
+* NEW: now works for images outside of posts (e.g. sidebar or header) if CSS class "colorbox-manual" is added manually
+* NEW: jQuery Colorbox now working for WordPress attachment pages
+* CHANGE: fixed relative paths for theme1 and theme4 Internet Explorer workaround. If those themes are still not working for you (no borders around the images) then take a look at the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>. Thx to <a href="http://www.deepport.net/">Andrew Radke</a> for the bug report!
+* CHANGE: jQuery Colorbox is now only working on Image links (of type jpeg, jpg, gif, png)
+* CHANGE: Improved translation (thx to Fabian Wolf for that)
+* NEW: translation for the Bosnian language (bs_BA). Thx to <a href="http://www.vjucon.com/">Vedran Jurincic</a> for that!
+* CHANGE: updated the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>
 
 = 1.3.3 (2010-01-21) =
 * CHANGE: fixed settings page, options can be saved now
