@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/index.php/donate/
 Tags: jquery, colorbox, lightbox, images, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.9.1
-Stable tag: 1.4
+Stable tag: 1.3.3
 
 Automatically adds Colorbox/Lightbox functionality to all images on the blog. Images are grouped by post.
 
