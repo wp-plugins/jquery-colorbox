@@ -82,15 +82,6 @@ In short:
 1. Add the following parameter to the OBJECT tag: &lt;param name="wmode" value="transparent"&gt;
 2. Add the following parameter to the EMBED tag: wmode="transparent"
 
-* When I use theme1 or theme4, the Colorbox does not render correctly in Internet Explorer, but there are no problems when using other browsers. Why is that?
-
-One of the many shortcomings of the Internet Explorer is it's incompatibility with transparent pgns. A workaround for that is calling Microsofts AlphaImageLoader.
-This workaround only works with URIs relative to your Domain (e.g. "/wp-content/plugins/jquery-colorbox/themes/theme4/images/internet_explorer/borderTopLeft.png")
-or absolute URLs (e.g. "http://www.mydomain.com/wp-content/plugins/jquery-colorbox/themes/theme4/images/internet_explorer/borderTopLeft.png").
-
-Now, if your WordPress installation is not located directly below your domain, but, say in the directory "wordpress", the links would have to be "/wordpress/wp-content/plugins/jquery-colorbox/themes/theme4/images/internet_explorer/borderTopLeft.png" in order to work.
-Unfortunately there is no way to automate this, and you will have to edit the colorbox.css files of theme1 and theme4 manually.
-
 * I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
 
 Tricky.
@@ -103,7 +94,14 @@ Maybe the images you want jQuery Colorbox to work on are added by a plugin and t
 Sometimes I have seen Images without the "class" attribute. If there is no "class" attribute present in the IMG-Tag, jQuery Colorbox can't add the necessary CSS class and won't work on that image.
 == Changelog ==
 
-= 1.4 (2010-02-07) =
+= 1.4-RC2 (2010-02-05) =
+* NEW: !!!!ATTENTION!!!! after activating this plugin version, you have to manually delete the settings on the settings page and set the settings again. Sry about that, changed too much of the settings page.
+* NEW: Added switch that adds slideshow functionality to all Colorbox groups. (no way to add slideshows individually yet)
+* NEW: Added switch that adds automatic start to slideshows (no way to add slideshows individually yet)
+* CHANGE: fixed relative paths for theme1 and theme4 by adding the CSS for the Internet Explorer workaround directly into the page.
+* CHANGE: updated translation
+
+= 1.4-RC1 (2010-02-04) =
 * NEW: switch adding of "colorbox-postId" classes to images in posts and pages on and off through setting. Default: off.
 * NEW: now works for images outside of posts (e.g. sidebar or header) if CSS class "colorbox-manual" is added manually
 * NEW: jQuery Colorbox now working for WordPress attachment pages

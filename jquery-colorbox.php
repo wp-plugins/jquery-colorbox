@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 1.4
+ * Version: 1.4-RC2
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -18,6 +18,31 @@
  */
 ?>
 <?php
+
+/**
+ * define vital constants
+ */
+define( 'JQUERYCOLORBOX_VERSION', '1.4-RC2' );
+
+if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_BASENAME' ) ) {
+    define( 'JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+}
+if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_NAME' ) ) {
+    define( 'JQUERYCOLORBOX_PLUGIN_NAME', trim( dirname( JQUERYCOLORBOX_PLUGIN_BASENAME ), '/' ) );
+}
+if ( ! defined( 'JQUERYCOLORBOX_WP_PLUGIN_DIR' ) ) {
+    define( 'JQUERYCOLORBOX_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME );
+}
+if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_DIR' ) ) {
+    define( 'JQUERYCOLORBOX_PLUGIN_DIR', ABSPATH . '/' . PLUGINDIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME );
+}
+if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_URL' ) ) {
+    define( 'JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME );
+}
+if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_MODULES_DIR' ) ){
+    define( 'JQUERYCOLORBOX_PLUGIN_MODULES_DIR', JQUERYCOLORBOX_PLUGIN_DIR . '/modules' );
+}
+
 class jQueryColorbox {
     var $colorboxThemes = array();
 
@@ -35,7 +60,6 @@ class jQueryColorbox {
     function jQueryColorbox() {
         if ( !function_exists('plugins_url') )
             return;
-
             // it seems that there is no way to find the plugin dir relative to the WP_PLUGIN_DIR through the Wordpress API...
         load_plugin_textdomain('jquery-colorbox', false, '/jquery-colorbox/localization/' );
 
@@ -74,10 +98,16 @@ class jQueryColorbox {
         $this->colorboxDefaultSettings = array(
             'colorboxTheme' => 'theme1',
             'maxWidth' => 'false',
+            'maxWidthValue' => '',
             'maxHeight' => 'false',
+            'maxHeightValue' => '',
             'height' => 'false',
+            'heightValue' => '',
             'width' => 'false',
-            'autoColorbox' => false
+            'widthValue' => '',
+            'autoColorbox' => false,
+            'slideshow' => false,
+            'slideshowAuto' => false
         );
 
             // Create the settings array by merging the user's settings and the defaults
@@ -155,11 +185,9 @@ class jQueryColorbox {
      * @author Arne Franken
      */
     function registerSettingsPage() {
-        static $plugin_basename;
         if ( current_user_can('manage_options') ) {
-            $plugin_basename = plugin_basename(__FILE__);
-            add_filter( 'plugin_action_links_' . $plugin_basename, array(&$this, 'addPluginActionLinks') );
-            add_options_page( __('jQuery Colorbox', 'jquery-colorbox'), __('jQuery Colorbox', 'jquery-colorbox'), 'manage_options', $plugin_basename, array(&$this, 'renderSettingsPage') );
+            add_filter( 'plugin_action_links_' . JQUERYCOLORBOX_PLUGIN_BASENAME, array(&$this, 'addPluginActionLinks') );
+            add_options_page( __('jQuery Colorbox', 'jquery-colorbox'), __('jQuery Colorbox', 'jquery-colorbox'), 'manage_options', JQUERYCOLORBOX_PLUGIN_BASENAME, array(&$this, 'renderSettingsPage') );
         }
     }
 
@@ -176,9 +204,7 @@ class jQueryColorbox {
      * @return action_links with link to settings page
      */
     function addPluginActionLinks($action_links) {
-        static $plugin_basename;
-        if ( !$plugin_basename ) $plugin_basename = plugin_basename(__FILE__);
-        $settings_link = '<a href="options-general.php?page='.$plugin_basename.'">' . __('Settings', 'jquery-colorbox') . '</a>';
+        $settings_link = '<a href="options-general.php?page='.JQUERYCOLORBOX_PLUGIN_BASENAME.'">' . __('Settings', 'jquery-colorbox') . '</a>';
         array_unshift( $action_links, $settings_link );
 
         return $action_links;
@@ -211,7 +237,63 @@ class jQueryColorbox {
      */
     function buildWordpressHeader() {
         ?>
-                <!-- jQuery Colorbox 1.4 | by Arne Franken, http://www.techotronic.de/ -->
+                <!-- jQuery Colorbox <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
+        <?php
+            if($this->colorboxSettings['colorboxTheme']=='theme1'){
+            ?>
+            <!--[if IE]>
+            <style type="text/css">
+                /*
+                    The following fixes png-transparency for IE6.
+                    It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
+
+                    Since this method does not support CSS background-positioning, it is incompatible with CSS sprites.
+                    Colorbox preloads navigation hover classes to account for this.
+
+                    !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
+                    while regular CSS background images are relative to the CSS document.
+                */
+                .cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
+                .cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
+                .cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderTopRight.png, sizingMethod='scale');}
+                .cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderBottomLeft.png, sizingMethod='scale');}
+                .cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderBottomCenter.png, sizingMethod='scale');}
+                .cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderBottomRight.png, sizingMethod='scale');}
+                .cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
+                .cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
+            </style>
+            <![endif]-->
+            <?php
+
+        } elseif ($this->colorboxSettings['colorboxTheme']=='theme4'){
+            ?>
+            <!--[if IE]>
+            <style type="text/css">
+                /*
+                    The following fixes png-transparency for IE6.
+                    It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
+
+                    Since this method does not support CSS background-positioning, it is incompatible with CSS sprites.
+                    Colorbox preloads navigation hover classes to account for this.
+
+                    !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
+                    while regular CSS background images are relative to the CSS document.
+                */
+                .cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
+                .cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
+                .cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderTopRight.png, sizingMethod='scale');}
+                .cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderBottomLeft.png, sizingMethod='scale');}
+                .cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderBottomCenter.png, sizingMethod='scale');}
+                .cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderBottomRight.png, sizingMethod='scale');}
+                .cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderMiddleLeft.png, sizingMethod='scale');}
+                .cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderMiddleRight.png, sizingMethod='scale');}
+             </style>
+             <![endif]-->
+            <?php
+
+        }
+        ?>
+
         <script type="text/javascript">
             // <![CDATA[
             jQuery(document).ready(function($) {
@@ -236,12 +318,14 @@ class jQueryColorbox {
                                 //call Colorbox function on each img. elements with the same groupId in the class attribute are grouped
                                 //the title of the img is used as the title for the Colorbox.
                                 $(obj).colorbox({
-                                    rel:$groupId, <?php
-		echo('maxWidth:' . '"' . $this->colorboxSettings['maxWidth'] . '"' . ',');
-		echo('maxHeight:' . '"' . $this->colorboxSettings['maxHeight'] . '"' . ',');
-		echo('height:' . '"' . $this->colorboxSettings['height'] . '"' . ',');
-		echo('width:' . '"' . $this->colorboxSettings['width'] . '"' . ',') ?>
-                                title:$nestedElement.attr("title"),
+                                    rel:$groupId,
+                                    title:$nestedElement.attr("title"),
+                                    maxWidth:<?php echo $this->colorboxSettings['maxWidth']=="false"?'false':'"'.$this->colorboxSettings['maxWidthValue'].'%"'; ?>,
+                                    maxHeight:<?php echo $this->colorboxSettings['maxHeight']=="false"?'false':'"'.$this->colorboxSettings['maxHeightValue'].'%"'; ?>,
+                                    height:<?php echo $this->colorboxSettings['height']=="false"?'false':'"'.$this->colorboxSettings['heightValue'].'%"'; ?>,
+                                    width:<?php echo $this->colorboxSettings['width']=="false"?'false':'"'.$this->colorboxSettings['widthValue'].'%"'; ?>,
+                                    slideshow:<?php echo $this->colorboxSettings['slideshow']?'true':'false' ?>,
+                                    slideshowAuto:<?php echo $this->colorboxSettings['slideshowAuto']?'true':'false' ?>,
                                     close:"<?php _e( 'close', 'jquery-colorbox' ); ?>",
                                     next:"<?php _e( 'next', 'jquery-colorbox' ); ?>",
                                     previous:"<?php _e( 'previous', 'jquery-colorbox' ); ?>",
@@ -256,7 +340,7 @@ class jQueryColorbox {
             });
             // ]]>
         </script>
-        <!-- jQuery Colorbox 1.4 | by Arne Franken, http://www.techotronic.de/ -->
+        <!-- jQuery Colorbox <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
 
     }
@@ -272,11 +356,47 @@ class jQueryColorbox {
      */
     function renderSettingsPage() {
         ?>
+        <script type="text/javascript">
+        //<![CDATA[
+            jQuery(document).ready(function($){
+                $("input[name='jquery-colorbox_settings[maxWidth]']").click(function(){
+                    if ( "jquery-colorbox-maxWidth-custom-radio" != $(this).attr("id") )
+                        $("input[name='jquery-colorbox_settings[maxWidthValue]']").val( "" );
+                });
+                $("input[name='jquery-colorbox_settings[maxWidthValue]']").focus(function(){
+                    $("#jquery-colorbox-maxWidth-custom-radio").attr("checked", "checked");
+                });
 
+                $("input[name='jquery-colorbox_settings[maxHeight]']").click(function(){
+                    if ( "jquery-colorbox-maxHeight-custom-radio" != $(this).attr("id") )
+                        $("input[name='jquery-colorbox_settings[maxHeightValue]']").val( "" );
+                });
+                $("input[name='jquery-colorbox_settings[maxHeightValue]']").focus(function(){
+                    $("#jquery-colorbox-maxHeight-custom-radio").attr("checked", "checked");
+                });
+
+                $("input[name='jquery-colorbox_settings[width]']").click(function(){
+                    if ( "jquery-colorbox-width-custom-radio" != $(this).attr("id") )
+                        $("input[name='jquery-colorbox_settings[widthValue]']").val( "" );
+                });
+                $("input[name='jquery-colorbox_settings[widthValue]']").focus(function(){
+                    $("#jquery-colorbox-width-custom-radio").attr("checked", "checked");
+                });
+
+                $("input[name='jquery-colorbox_settings[height]']").click(function(){
+                    if ( "jquery-colorbox-height-custom-radio" != $(this).attr("id") )
+                        $("input[name='jquery-colorbox_settings[heightValue]']").val( "" );
+                });
+                $("input[name='jquery-colorbox_settings[heightValue]']").focus(function(){
+                    $("#jquery-colorbox-height-custom-radio").attr("checked", "checked");
+                });
+            });
+        //]]>
+        </script>
         <div class="wrap">
         <?php screen_icon(); ?>
         <h2><?php _e( 'jQuery Colorbox Settings', 'jquery-colorbox' ); ?></h2>
-            <br class="clear"/>
+        <br class="clear"/>
 
         <?php settings_fields('jquery-colorbox_settings'); ?>
 
@@ -317,39 +437,77 @@ class jQueryColorbox {
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <label for="jquery-colorbox-maxWidth"><?php _e('Maximum width of an image', 'jquery-colorbox'); ?>:</label>
+                                        <label for="jquery-colorbox-slideshow"><?php _e('Add Slideshow to groups', 'jquery-colorbox'); ?>:</label>
                                     </th>
                                     <td>
-                                        <input type="text" name="jquery-colorbox_settings[maxWidth]" id="jquery-colorbox-maxWidth" value="<?php echo $this->colorboxSettings['maxWidth'] ?>"/>
-                                        <br/><?php _e('Set the maximum width of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either "false" (no maximum width for the picture, picture is as wide as the Colorbox) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
-                                </td>
+                                        <input type="checkbox" name="jquery-colorbox_settings[slideshow]" id="jquery-colorbox-slideshow" value="true" <?php echo ($this->colorboxSettings['slideshow'])?'checked="checked"':'';?>/>
+                                        <br/><?php _e('Add Slideshow functionality for jQuery Colorbox Groups', 'jquery-colorbox'); ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <label for="jquery-colorbox-maxHeight"><?php _e('Maximum height of an image', 'jquery-colorbox'); ?>:</label>
+                                        <label for="jquery-colorbox-slideshowAuto"><?php _e('Start Slideshow automatically', 'jquery-colorbox'); ?>:</label>
                                     </th>
                                     <td>
-                                        <input type="text" name="jquery-colorbox_settings[maxHeight]" id="jquery-colorbox-maxHeight" value="<?php echo $this->colorboxSettings['maxHeight'] ?>"/>
-                                        <br/><?php _e('Set the maximum height of the picture in the Colorbox in relation to the browser window. The picture is resized to the appropriate size. Set to either "false" (no maximum height for the picture, picture is as high as the Colorbox) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
-                                </td>
+                                        <input type="checkbox" name="jquery-colorbox_settings[slideshowAuto]" id="jquery-colorbox-slideshowAuto" value="true" <?php echo ($this->colorboxSettings['slideshowAuto'])?'checked="checked"':'';?>/>
+                                        <br/><?php _e('Start Slideshow automatically if slideshow functionality is added to jQuery Colorbox Groups', 'jquery-colorbox'); ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <label for="jquery-colorbox-width"><?php _e('Maximum width of the Colorbox', 'jquery-colorbox'); ?>:</label>
+                                        <label for="jquery-colorbox-maxWidthValue"><?php _e('Maximum width of an image', 'jquery-colorbox'); ?>:</label>
                                     </th>
                                     <td>
-                                        <input type="text" name="jquery-colorbox_settings[width]" id="jquery-colorbox-width" value="<?php echo $this->colorboxSettings['width'] ?>"/>
-                                        <br/><?php _e('Set the maximum width of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either "false" (no maximum width for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
-                                </td>
+                                        <input type="radio" name="jquery-colorbox_settings[maxWidth]" id="jquery-colorbox-maxWidth-false-radio" value="false" <?php echo ($this->colorboxSettings['maxWidth'])=='false'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-maxWidth-false-radio"><?php _e('Do not set maximum width', 'jquery-colorbox'); ?>.</label>
+                                        <br/>
+                                        <input type="radio" name="jquery-colorbox_settings[maxWidth]" id="jquery-colorbox-maxWidth-custom-radio" value="custom" <?php echo ($this->colorboxSettings['maxWidth'])=='custom'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-maxWidth-custom-radio"><?php _e('Set maximum width of an image', 'jquery-colorbox'); ?>.</label>
+                                        <input type="text" name="jquery-colorbox_settings[maxWidthValue]" id="jquery-colorbox-maxWidthValue" value="<?php echo $this->colorboxSettings['maxWidthValue'] ?>" size="3" maxlength="3"/>%
+                                        <br/><?php _e('Set the maximum width of the image in the Colorbox in relation to the browser window to a value between 1 and 100 percent. The image is resized to the appropriate size. If maximum width is not set, image is as wide as the Colorbox', 'jquery-colorbox'); ?>.
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <label for="jquery-colorbox-height"><?php _e('Maximum height of the Colorbox', 'jquery-colorbox'); ?>:</label>
+                                        <label for="jquery-colorbox-maxHeightValue"><?php _e('Maximum height of an image', 'jquery-colorbox'); ?>:</label>
                                     </th>
                                     <td>
-                                        <input type="text" name="jquery-colorbox_settings[height]" id="jquery-colorbox-height" value="<?php echo $this->colorboxSettings['height'] ?>"/>
-                                        <br/><?php _e('Set the maximum height of the Colorbox itself in relation to the browser window. The picture is NOT resized, if bigger than the colorbox, scrollbars are displayed. Set to either "false" (no maximum height for Colorbox, Colorbox is as big as the picture in it) or a percent value, e.g. "95%"', 'jquery-colorbox'); ?>
-                                </td>
+                                        <input type="radio" name="jquery-colorbox_settings[maxHeight]" id="jquery-colorbox-maxHeight-false-radio" value="false" <?php echo ($this->colorboxSettings['maxHeight'])=='false'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-maxHeight-false-radio"><?php _e('Do not set maximum height', 'jquery-colorbox'); ?>.</label>
+                                        <br/>
+                                        <input type="radio" name="jquery-colorbox_settings[maxHeight]" id="jquery-colorbox-maxHeight-custom-radio" value="custom" <?php echo ($this->colorboxSettings['maxHeight'])=='custom'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-maxHeight-custom-radio"><?php _e('Set maximum height of an image', 'jquery-colorbox'); ?>.</label>
+                                        <input type="text" name="jquery-colorbox_settings[maxHeightValue]" id="jquery-colorbox-maxHeightValue" value="<?php echo $this->colorboxSettings['maxHeightValue'] ?>" size="3" maxlength="3"/>%
+                                        <br/><?php _e('Set the maximum height of the image in the Colorbox in relation to the browser window to a value between 1 and 100 percent. The image is resized to the appropriate size. If maximum height is not set, the image is as high as the Colorbox', 'jquery-colorbox'); ?>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <label for="jquery-colorbox-widthValue"><?php _e('Maximum width of the Colorbox', 'jquery-colorbox'); ?>:</label>
+                                    </th>
+                                    <td>
+                                        <input type="radio" name="jquery-colorbox_settings[width]" id="jquery-colorbox-width-false-radio" value="false" <?php echo ($this->colorboxSettings['width'])=='false'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-width-false-radio"><?php _e('Do not set width', 'jquery-colorbox'); ?>.</label>
+                                        <br/>
+                                        <input type="radio" name="jquery-colorbox_settings[width]" id="jquery-colorbox-width-custom-radio" value="custom" <?php echo ($this->colorboxSettings['width'])=='custom'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-width-custom-radio"><?php _e('Set width of an image', 'jquery-colorbox'); ?>.</label>
+                                        <input type="text" name="jquery-colorbox_settings[widthValue]" id="jquery-colorbox-widthValue" value="<?php echo $this->colorboxSettings['widthValue'] ?>" size="3" maxlength="3"/>%
+                                        <br/><?php _e('Set the maximum width of the Colorbox itself in relation to the browser window to a value between 1 and 100 percent. The image is NOT resized. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it', 'jquery-colorbox'); ?>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">
+                                        <label for="jquery-colorbox-heightValue"><?php _e('Maximum height of the Colorbox', 'jquery-colorbox'); ?>:</label>
+                                    </th>
+                                    <td>
+                                        <input type="radio" name="jquery-colorbox_settings[height]" id="jquery-colorbox-height-false-radio" value="false" <?php echo ($this->colorboxSettings['height'])=='false'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-height-false-radio"><?php _e('Do not set height', 'jquery-colorbox'); ?>.</label>
+                                        <br/>
+                                        <input type="radio" name="jquery-colorbox_settings[height]" id="jquery-colorbox-height-custom-radio" value="custom" <?php echo ($this->colorboxSettings['height'])=='custom'?'checked="checked"':''; ?>"/>
+                                        <label for="jquery-colorbox-height-custom-radio"><?php _e('Set height of an image', 'jquery-colorbox'); ?>.</label>
+                                        <input type="text" name="jquery-colorbox_settings[heightValue]" id="jquery-colorbox-heightValue" value="<?php echo $this->colorboxSettings['heightValue'] ?>" size="3" maxlength="3"/>%
+                                        <br/><?php _e('Set the maximum height of the Colorbox itself in relation to the browser window to a value between 1 and 100 percent. The image is NOT resized. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it', 'jquery-colorbox'); ?>.
+                                    </td>
                                 </tr>
                             </table>
                             <p class="submit">
@@ -419,11 +577,11 @@ class jQueryColorbox {
     function registerAdminMenu() {
         if ( function_exists('add_management_page') && current_user_can('manage_options') ) {
 
-                // update, uninstall message
+            // update, uninstall message
             if ( strpos($_SERVER['REQUEST_URI'], 'jquery-colorbox.php') && isset($_GET['jQueryUpdateSettings'])) {
                 $return_message = __('Successfully updated jQuery Colorbox settings.', 'jquery-colorbox');
-//            } elseif ( $_GET['uninstall'] == 'true' ) {
-//                $return_message = __('jQuery Colorbox settings were successfully deleted.', 'jquery-colorbox');
+                //            } elseif ( $_GET['uninstall'] == 'true' ) {
+                //                $return_message = __('jQuery Colorbox settings were successfully deleted.', 'jquery-colorbox');
             } elseif (strpos($_SERVER['REQUEST_URI'], 'jquery-colorbox.php') && isset($_GET['jQueryDeleteSettings'])) {
                 $return_message = __('jQuery Colorbox settings were successfully deleted.', 'jquery-colorbox');
             } else {
@@ -461,22 +619,22 @@ class jQueryColorbox {
 
     // validateSettings()
 
-//    function registerAdminNotice($notice){
-//
-//        if($notice == 'update'){
-//            $return_message = __('Successfully updated jQuery Colorbox settings.', 'jquery-colorbox');
-//        } elseif ( $notice =='delete-settings' ) {
-//            $return_message = __('jQuery Colorbox settings were successfully deleted.', 'jquery-colorbox');
-//        } else {
-//            $return_message = '';
-//        }
-//
-//        $message = '<div class="updated fade"><p>' . $return_message . '</p></div>';
-//
-//        if ( $return_message !== '' ) {
-//            add_action('admin_notices', create_function( '', "echo '$message';" ) );
-//        }
-//    }
+    //    function registerAdminNotice($notice){
+    //
+    //        if($notice == 'update'){
+    //            $return_message = __('Successfully updated jQuery Colorbox settings.', 'jquery-colorbox');
+    //        } elseif ( $notice =='delete-settings' ) {
+    //            $return_message = __('jQuery Colorbox settings were successfully deleted.', 'jquery-colorbox');
+    //        } else {
+    //            $return_message = '';
+    //        }
+    //
+    //        $message = '<div class="updated fade"><p>' . $return_message . '</p></div>';
+    //
+    //        if ( $return_message !== '' ) {
+    //            add_action('admin_notices', create_function( '', "echo '$message';" ) );
+    //        }
+    //    }
 
     /**
      * Update jQuery Colorbox settings
@@ -512,7 +670,12 @@ class jQueryColorbox {
      * @author Arne Franken
      */
     function updateSettingsInDatabase() {
-        update_option('jquery-colorbox_settings', $this->colorboxSettings);
+//        if(get_option('jquery-colorbox_settings')){
+            update_option('jquery-colorbox_settings', $this->colorboxSettings);
+//        }
+//        else{
+//            add_option('jquery-colorbox_settings', $this->colorboxSettings);
+//        }
     }
 
     //updateSettings()
@@ -536,7 +699,7 @@ class jQueryColorbox {
         } else {
             wp_die( __('Did not delete jQuery Colorbox settings. Either you dont have the nececssary rights or you didnt check the checkbox.', 'jquery-colorbox') );
         }
-        //clean up referrer 
+            //clean up referrer
         $referrer = str_replace(array('&jQueryUpdateSettings','&jQueryDeleteSettings'), '', $_POST['_wp_http_referer'] );
         wp_redirect($referrer . '&jQueryDeleteSettings' );
     }
@@ -558,16 +721,16 @@ class jQueryColorbox {
 
     // deleteSettings()
 
-        /**
-         * execute during activation.
-         *
-         * @since 1.
-         * @access private
-         * @author Arne Franken
-         */
-//        function activateJqueryColorbox() {
-//
-//        }
+    /**
+     * execute during activation.
+     *
+     * @since 1.
+     * @access private
+     * @author Arne Franken
+     */
+    //        function activateJqueryColorbox() {
+    //
+    //        }
 
     // activateJqueryColorbox()
 }
