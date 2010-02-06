@@ -93,26 +93,32 @@ Maybe the images you want jQuery Colorbox to work on are added by a plugin and t
 
 Sometimes I have seen Images without the "class" attribute. If there is no "class" attribute present in the IMG-Tag, jQuery Colorbox can't add the necessary CSS class and won't work on that image.
 == Changelog ==
+= 1.4-RC3 (2010-02-06) =
+* NEW: Added configuration of slideshow speed
+* NEW: Added switch that allows the user to decide whether Colorbox scales images
+* BUGFIX: fixed bug where scaling of images would not work correctly
+* CHANGE: updated descriptions on settings page
+* CHANGE: updated translation
 
 = 1.4-RC2 (2010-02-05) =
-* NEW: !!!!ATTENTION!!!! after activating this plugin version, you have to manually delete the settings on the settings page and set the settings again. Sry about that, changed too much of the settings page.
+* NEW: !!!!ATTENTION!!!! after activating this plugin version, you have to manually delete the settings on the settings page and set the settings again. Sry about that, changed too much on the settings page.
 * NEW: Added switch that adds slideshow functionality to all Colorbox groups. (no way to add slideshows individually yet)
 * NEW: Added switch that adds automatic start to slideshows (no way to add slideshows individually yet)
-* CHANGE: fixed relative paths for theme1 and theme4 by adding the CSS for the Internet Explorer workaround directly into the page.
+* BUGFIX: fixed relative paths for theme1 and theme4 by adding the CSS for the Internet Explorer workaround directly into the page.
 * CHANGE: updated translation
 
 = 1.4-RC1 (2010-02-04) =
 * NEW: switch adding of "colorbox-postId" classes to images in posts and pages on and off through setting. Default: off.
 * NEW: now works for images outside of posts (e.g. sidebar or header) if CSS class "colorbox-manual" is added manually
 * NEW: jQuery Colorbox now working for WordPress attachment pages
-* CHANGE: fixed relative paths for theme1 and theme4 Internet Explorer workaround. If those themes are still not working for you (no borders around the images) then take a look at the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>. Thx to <a href="http://www.deepport.net/">Andrew Radke</a> for the bug report!
+* BUGFIX: fixed relative paths for theme1 and theme4 Internet Explorer workaround. If those themes are still not working for you (no borders around the images) then take a look at the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>. Thx to <a href="http://www.deepport.net/">Andrew Radke</a> for the bug report!
 * CHANGE: jQuery Colorbox is now only working on Image links (of type jpeg, jpg, gif, png)
 * CHANGE: Improved translation (thx to Fabian Wolf for that)
 * NEW: translation for the Bosnian language (bs_BA). Thx to <a href="http://www.vjucon.com/">Vedran Jurincic</a> for that!
 * CHANGE: updated the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>
 
 = 1.3.3 (2010-01-21) =
-* CHANGE: fixed settings page, options can be saved now
+* BUGFIX: fixed settings page, options can be saved now
 * NEW: added settings deletion on uninstall and "delete settings from database" functionality to settings page
 * CHANGE: moved adding of CSS class priority lower, hopefully now the CSS class is added to pictures after other plugins update the HTML
 * CHANGE: updated the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>
@@ -133,11 +139,11 @@ Sometimes I have seen Images without the "class" attribute. If there is no "clas
 * CHANGE: updated the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>
 
 = 1.2 =
-* CHANGE: fixes bug where colorbox was not working if linked images were used (by the theme) outside of blog posts and pages.
+* BUGFIX: fixes bug where colorbox was not working if linked images were used (by the theme) outside of blog posts and pages.
 * NEW: adds configuration for Colorbox and picture resizing
 
 = 1.1 =
-* CHANGE: fixes critical bug which would break rendering the blog. Sorry, was not aware that the plugin would be listed before I tagged the files as 1.0 in subversion...
+* BUGFIX: fixes critical bug which would break rendering the blog. Sorry, was not aware that the plugin would be listed before I tagged the files as 1.0 in subversion...
 
 = 1.0 =
 * NEW: Initial release.
