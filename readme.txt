@@ -104,7 +104,7 @@ Sometimes I have seen Images without the "class" attribute. If there is no "clas
 * NEW: !!!!ATTENTION!!!! after activating this plugin version, you have to manually delete the settings on the settings page and set the settings again. Sry about that, changed too much on the settings page.
 * NEW: Added switch that adds slideshow functionality to all Colorbox groups. (no way to add slideshows individually yet)
 * NEW: Added switch that adds automatic start to slideshows (no way to add slideshows individually yet)
-* BUGFIX: fixed relative paths for theme1 and theme4 by adding the CSS for the Internet Explorer workaround directly into the page.
+* BUGFIX: fixed relative paths for theme1 and theme4 by adding the CSS for the Internet Explorer workaround directly into the page. Thx to <a href="http://www.deepport.net/">Andrew Radke</a> for the suggestion!
 * CHANGE: updated translation
 
 = 1.4-RC1 (2010-02-04) =
