@@ -6,19 +6,19 @@ Requires at least: 2.8.5
 Tested up to: 2.9.1
 Stable tag: 1.3.3
 
-Automatically adds Colorbox/Lightbox functionality to all images on the blog. Images are grouped by post.
+Sdds Colorbox/Lightbox functionality to images on the blog. Images are grouped by post or page. Also works on WordPress galleries.
 
 == Description ==
 
 Yet another Colorbox plugin for Wordpress.
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
-All images in posts and pages are displayed in a layer when the tumbnail is clicked. 
-Images are grouped as galleries when linked in the same blog post or page.
-
-jQuery Colorbox can add 
+All images in posts and pages can be displayed in a layer when the thumbnail is clicked.
+Images are grouped as galleries when linked in the same post or page. Groups can be displayed in an automatic slideshow.
 
 Images can be excluded by giving them a special CSS class.
+
+See the <a href="http://www.techotronic.de/index.php/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
 For more information visit the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>.
 
@@ -30,10 +30,6 @@ Localization
 
 Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.6 jQuery plugin from Jack Moore. Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
 jQuery Colorbox uses the jQuery library version 1.3.2 bundled with Wordpress. Should work with jQuery 1.4 too.
-
-== Demo ==
-
-Click on any image on <a href="http://www.techotronic.de/">My Blog</a> to see jQuery Colorbox in action.
 
 == Installation ==
 
@@ -47,7 +43,7 @@ Extract all files from the ZIP file, making sure to keep the file structure inta
 
 ###Configuring The Plugin###
 
-Go to the settings page and choose one of the five themes bundled with the plugin.
+Go to the settings page and choose one of the five themes bundled with the plugin and other settings.
 
 **See Also:** <a href="http://codex.wordpress.org/Managing_Plugins#Installing_Plugins">"Installing Plugins" article on the WP Codex</a>
 
@@ -93,6 +89,15 @@ Maybe the images you want jQuery Colorbox to work on are added by a plugin and t
 
 Sometimes I have seen Images without the "class" attribute. If there is no "class" attribute present in the IMG-Tag, jQuery Colorbox can't add the necessary CSS class and won't work on that image.
 == Changelog ==
+= 1.4-RC4 (2010-02-10) =
+* NEW: Added demos of the plugin on the <a href="http://www.techotronic.de/index.php/plugins/jquery-colorbox/">plugin page</a>
+* NEW: Added configuration for adding colorbox class only to WordPress galleries
+* NEW: Automatically resets settings if settings of a version prior to 1.4 are found upon activation
+* NEW: width and height can now be configured as percent relative to browser window size or in pixels (default is percent)
+* CHANGE: jQuery Colorbox is now only working on Image links (of type jpeg, jpg, gif, png, bmp)
+* CHANGE: Updated readme.
+* CHANGE: Updated descriptions and translations
+
 = 1.4-RC3 (2010-02-06) =
 * NEW: Added configuration of slideshow speed
 * NEW: Added switch that allows the user to decide whether Colorbox scales images

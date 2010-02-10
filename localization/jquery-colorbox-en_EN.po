@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-06 01:32+0100\n"
-"PO-Revision-Date: 2010-02-06 01:33+0100\n"
+"POT-Creation-Date: 2010-02-10 22:12+0100\n"
+"PO-Revision-Date: 2010-02-10 22:12+0100\n"
 "Last-Translator: Arne Franken <blog@techotronic.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,205 +14,222 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:96
+#: jquery-colorbox.php:101
 msgid "Theme #1"
 msgstr ""
 
-#: jquery-colorbox.php:97
+#: jquery-colorbox.php:102
 msgid "Theme #2"
 msgstr ""
 
-#: jquery-colorbox.php:98
+#: jquery-colorbox.php:103
 msgid "Theme #3"
 msgstr ""
 
-#: jquery-colorbox.php:99
+#: jquery-colorbox.php:104
 msgid "Theme #4"
 msgstr ""
 
-#: jquery-colorbox.php:100
+#: jquery-colorbox.php:105
 msgid "Theme #5"
 msgstr ""
 
-#: jquery-colorbox.php:215
-#: jquery-colorbox.php:416
+#: jquery-colorbox.php:110
+msgid "percent"
+msgstr ""
+
+#: jquery-colorbox.php:111
+msgid "pixels"
+msgstr ""
+
+#: jquery-colorbox.php:235
+#: jquery-colorbox.php:456
 msgid "Settings"
 msgstr ""
 
-#: jquery-colorbox.php:339
+#: jquery-colorbox.php:359
 msgid "close"
 msgstr ""
 
-#: jquery-colorbox.php:340
+#: jquery-colorbox.php:360
 msgid "next"
 msgstr ""
 
-#: jquery-colorbox.php:341
+#: jquery-colorbox.php:361
 msgid "previous"
 msgstr ""
 
-#: jquery-colorbox.php:342
+#: jquery-colorbox.php:362
 msgid "start slideshow"
 msgstr ""
 
-#: jquery-colorbox.php:343
+#: jquery-colorbox.php:363
 msgid "stop slideshow"
 msgstr ""
 
-#: jquery-colorbox.php:344
+#: jquery-colorbox.php:364
 msgid "{current} of {total} images"
 msgstr ""
 
-#: jquery-colorbox.php:409
+#: jquery-colorbox.php:449
 #, php-format
 msgid "%1$s Settings"
 msgstr ""
 
-#: jquery-colorbox.php:425
+#: jquery-colorbox.php:465
 msgid "Theme"
 msgstr ""
 
-#: jquery-colorbox.php:437
+#: jquery-colorbox.php:477
 msgid "Select the theme you want to use on your blog."
 msgstr ""
 
-#: jquery-colorbox.php:442
+#: jquery-colorbox.php:482
 #, php-format
-msgid "Automate %1$s"
+msgid "Automate %1$s for all images"
 msgstr ""
 
-#: jquery-colorbox.php:446
-msgid "Automatically add colorbox-class to images in posts and pages"
+#: jquery-colorbox.php:486
+msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
 msgstr ""
 
-#: jquery-colorbox.php:451
+#: jquery-colorbox.php:491
+#, php-format
+msgid "Automate %1$s for images in WordPress galleries"
+msgstr ""
+
+#: jquery-colorbox.php:495
+msgid "Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically."
+msgstr ""
+
+#: jquery-colorbox.php:500
 msgid "Add Slideshow to groups"
 msgstr ""
 
-#: jquery-colorbox.php:455
+#: jquery-colorbox.php:504
 #, php-format
 msgid "Add Slideshow functionality for %1$s Groups"
 msgstr ""
 
-#: jquery-colorbox.php:460
+#: jquery-colorbox.php:509
 msgid "Start Slideshow automatically"
 msgstr ""
 
-#: jquery-colorbox.php:464
+#: jquery-colorbox.php:513
 #, php-format
 msgid "Start Slideshow automatically if slideshow functionality is added to %1$s Groups"
 msgstr ""
 
-#: jquery-colorbox.php:469
+#: jquery-colorbox.php:518
 msgid "Speed of the slideshow"
 msgstr ""
 
-#: jquery-colorbox.php:473
-msgid "Sets the speed of the slideshow, in milliseconds."
-msgstr ""
-
-#: jquery-colorbox.php:478
-msgid "Maximum width of an image"
-msgstr ""
-
-#: jquery-colorbox.php:482
-#: jquery-colorbox.php:510
-msgid "Do not set width"
-msgstr ""
-
-#: jquery-colorbox.php:485
-msgid "Set maximum width of an image"
-msgstr ""
-
-#: jquery-colorbox.php:487
-msgid "Set the maximum width of the image in the Colorbox in relation to the browser window in percent. If maximum width is not set, image is as wide as the Colorbox"
-msgstr ""
-
-#: jquery-colorbox.php:492
-msgid "Maximum height of an image"
-msgstr ""
-
-#: jquery-colorbox.php:496
-#: jquery-colorbox.php:524
-msgid "Do not set height"
-msgstr ""
-
-#: jquery-colorbox.php:499
-msgid "Set maximum height of an image"
-msgstr ""
-
-#: jquery-colorbox.php:501
-msgid "Set the maximum height of the image in the Colorbox in relation to the browser window to a value in percent. If maximum height is not set, the image is as high as the Colorbox"
-msgstr ""
-
-#: jquery-colorbox.php:506
-msgid "Maximum width of the Colorbox"
-msgstr ""
-
-#: jquery-colorbox.php:513
-msgid "Set width of the Colorbox"
-msgstr ""
-
-#: jquery-colorbox.php:515
-msgid "Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it"
-msgstr ""
-
-#: jquery-colorbox.php:520
-msgid "Maximum height of the Colorbox"
+#: jquery-colorbox.php:522
+msgid "Sets the speed of the slideshow, in milliseconds"
 msgstr ""
 
 #: jquery-colorbox.php:527
-msgid "Set height of the Colorbox"
+msgid "Maximum width of an image"
 msgstr ""
 
-#: jquery-colorbox.php:529
-msgid "Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it"
+#: jquery-colorbox.php:531
+#: jquery-colorbox.php:577
+msgid "Do not set width"
 msgstr ""
 
 #: jquery-colorbox.php:534
+msgid "Set maximum width of an image"
+msgstr ""
+
+#: jquery-colorbox.php:545
+msgid "Set the maximum width of the image in the Colorbox in relation to the browser window in percent or pixels. If maximum width is not set, image is as wide as the Colorbox"
+msgstr ""
+
+#: jquery-colorbox.php:550
+msgid "Maximum height of an image"
+msgstr ""
+
+#: jquery-colorbox.php:554
+#: jquery-colorbox.php:600
+msgid "Do not set height"
+msgstr ""
+
+#: jquery-colorbox.php:557
+msgid "Set maximum height of an image"
+msgstr ""
+
+#: jquery-colorbox.php:568
+msgid "Set the maximum height of the image in the Colorbox in relation to the browser window to a value in percent or pixels. If maximum height is not set, the image is as high as the Colorbox"
+msgstr ""
+
+#: jquery-colorbox.php:573
+msgid "Maximum width of the Colorbox"
+msgstr ""
+
+#: jquery-colorbox.php:580
+msgid "Set width of the Colorbox"
+msgstr ""
+
+#: jquery-colorbox.php:591
+msgid "Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it"
+msgstr ""
+
+#: jquery-colorbox.php:596
+msgid "Maximum height of the Colorbox"
+msgstr ""
+
+#: jquery-colorbox.php:603
+msgid "Set height of the Colorbox"
+msgstr ""
+
+#: jquery-colorbox.php:614
+msgid "Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it"
+msgstr ""
+
+#: jquery-colorbox.php:619
 msgid "Resize images"
 msgstr ""
 
-#: jquery-colorbox.php:538
-msgid "If enabled and if maximum width of images, maximum height of images, width of the Colorbox, or height of the Colorbox have been defined, ColorBox will scale photos to fit within the those values."
+#: jquery-colorbox.php:623
+msgid "If enabled and if maximum width of images, maximum height of images, width of the Colorbox, or height of the Colorbox have been defined, ColorBox will scale photos to fit within the those values"
 msgstr ""
 
-#: jquery-colorbox.php:544
+#: jquery-colorbox.php:629
 msgid "Save Changes"
 msgstr ""
 
-#: jquery-colorbox.php:553
-#: jquery-colorbox.php:562
+#: jquery-colorbox.php:638
+#: jquery-colorbox.php:647
 msgid "Delete Settings"
 msgstr ""
 
-#: jquery-colorbox.php:556
+#: jquery-colorbox.php:641
 msgid "Check the box and click this button to delete settings of this plugin."
 msgstr ""
 
-#: jquery-colorbox.php:572
+#: jquery-colorbox.php:657
 msgid "Donate"
 msgstr ""
 
-#: jquery-colorbox.php:586
+#: jquery-colorbox.php:671
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
 msgstr ""
 
-#: jquery-colorbox.php:611
+#: jquery-colorbox.php:696
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr ""
 
-#: jquery-colorbox.php:613
+#: jquery-colorbox.php:698
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr ""
 
-#: jquery-colorbox.php:678
+#: jquery-colorbox.php:780
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr ""
 
-#: jquery-colorbox.php:727
+#: jquery-colorbox.php:830
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr ""
