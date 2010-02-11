@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 1.4-RC4
+ * Version: 2.0
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -22,7 +22,7 @@
 /**
  * define vital constants
  */
-define( 'JQUERYCOLORBOX_VERSION', '1.4-RC4' );
+define( 'JQUERYCOLORBOX_VERSION', '2.0' );
 
 if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_BASENAME' ) ) {
     define( 'JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -45,8 +45,8 @@ if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_DIR' ) ) {
 if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_URL' ) ) {
     define( 'JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME );
 }
-if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_MODULES_DIR' ) ){
-    define( 'JQUERYCOLORBOX_PLUGIN_MODULES_DIR', JQUERYCOLORBOX_PLUGIN_DIR . '/modules' );
+if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR' ) ){
+    define( 'JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR', JQUERYCOLORBOX_PLUGIN_DIR . '/localization' );
 }
 if ( ! defined( 'JQUERYCOLORBOX_SETTINGSNAME' ) ) {
     define( 'JQUERYCOLORBOX_SETTINGSNAME', 'jquery-colorbox_settings' );
@@ -181,10 +181,11 @@ class jQueryColorbox {
     //addColorboxGroupIdToImages()
 
     /**
+     * Add colorbox-CSS-Class to WP Galleries
      * If wp_get_attachment_image() is called, filters registered for the_content are not applied on the img-tag.
      * So we'll need to manipulate the class attribute separately.
      *
-     * @since 1.4
+     * @since 2.0
      * @access public
      * @author Arne Franken
      *
@@ -196,7 +197,7 @@ class jQueryColorbox {
         if(isset($colorboxSettings['autoColorboxGalleries']) && $colorboxSettings['autoColorboxGalleries']){
             global
             $post;
-            $attr['class'] .= ' colorbox-'.$post->ID;
+            $attr['class'] .= ' colorbox-'.$post->ID.' ';
         }
         return $attr;
     }
@@ -693,28 +694,9 @@ class jQueryColorbox {
     // registerAdminMenu()
 
     /**
-     * Validate the settings sent from the settings page
-     *
-     * @since 1.0
-     * @access private
-     * @author Arne Franken
-     *
-     * @param  $colorboxSettings settings to be validated
-     * @return valid settings
-     */
-    function validateSettings( $colorboxSettings ) {
-        if ( empty($colorboxSettings['colorboxTheme']) || empty($this->colorboxThemes[$colorboxSettings['colorboxTheme']]) )
-            $colorboxSettings['colorboxTheme'] = $this->colorboxDefaultSettings['colorboxTheme'];
-
-        return $colorboxSettings;
-    }
-
-    // validateSettings()
-
-    /**
      * Registers Admin Notices
      *
-     * @since 1.4
+     * @since 2.0
      * @access private
      * @author Arne Franken
      */
@@ -727,20 +709,22 @@ class jQueryColorbox {
 
     static function jQueryColorboxDefaultSettings(){
 
-        // Create array of default settings
+        // Create and return array of default settings
         return array(
-            //TODO: don't forget to include version in 1.4 final...
-//            'jQueryColorboxVersion' => JQUERYCOLORBOX_VERSION,
+            'jQueryColorboxVersion' => JQUERYCOLORBOX_VERSION,
             'colorboxTheme' => 'theme1',
             'maxWidth' => 'false',
             'maxWidthValue' => '',
-            'maxWidthType' => '',
+            'maxWidthUnit' => '%',
             'maxHeight' => 'false',
             'maxHeightValue' => '',
+            'maxHeightUnit' => '%',
             'height' => 'false',
             'heightValue' => '',
+            'heightUnit' => '%',
             'width' => 'false',
             'widthValue' => '',
+            'widthUnit' => '%',
             'autoColorbox' => false,
             'autoColorboxGalleries' => false,
             'slideshow' => false,
@@ -833,15 +817,15 @@ class jQueryColorbox {
     /**
      * execute during activation.
      *
-     * @since 1.4
+     * @since 2.0
      * @access private
      * @author Arne Franken
      */
     function activateJqueryColorbox() {
         $jquery_colorbox_settings = get_option(JQUERYCOLORBOX_SETTINGSNAME);
         if($jquery_colorbox_settings){
-            //if jQueryColorboxVersion does not exist, the plugin is a version prior to 1.4
-            //settings are incompatible with 1.4, restore default settings.
+            //if jQueryColorboxVersion does not exist, the plugin is a version prior to 2.0
+            //settings are incompatible with 2.0, restore default settings.
             if(!array_key_exists('jQueryColorboxVersion',$jquery_colorbox_settings)){
                 //in case future versions require resetting the settings
                 //if($jquery_colorbox_settings['jQueryColorboxVersion'] < JQUERYCOLORBOX_VERSION)
