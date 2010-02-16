@@ -104,6 +104,14 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 2.1-beta (2010-02-16 =
+* BUGFIX: Slideshow speed setting works now.
+* NEW: Added switch for preloading of "previous" and "next" images. Default: FALSE
+* NEW: Added switch for closing of Colorbox on click on opacity layer. Default: FALSE
+* NEW: Added setting for transition type. Default: elastic
+* NEW: Added setting for transition speed. Default: 250 milliseconds
+* NEW: Added setting for overlay opacity. Default: 0.85
+
 = 2.0.1 (2010-02-11) =
 * BUGFIX: slideshow does not start automatically any more if the setting is not checked on the settings page.
 

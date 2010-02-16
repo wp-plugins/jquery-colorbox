@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 2.0.1
+ * Version: 2.1-beta
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -22,7 +22,7 @@
 /**
  * define vital constants
  */
-define( 'JQUERYCOLORBOX_VERSION', '2.0' );
+define( 'JQUERYCOLORBOX_VERSION', '2.1-beta' );
 
 if ( ! defined( 'JQUERYCOLORBOX_PLUGIN_BASENAME' ) ) {
     define( 'JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -110,6 +110,13 @@ class jQueryColorbox {
             'px' => __( 'pixels', JQUERYCOLORBOX_TEXTDOMAIN )
         );
 
+            // create list of units
+        $this->colorboxTransitions = array (
+            'elastic' => __( 'elastic', JQUERYCOLORBOX_TEXTDOMAIN ),
+            'fade' => __( 'fade', JQUERYCOLORBOX_TEXTDOMAIN ),
+            'none' => __( 'none', JQUERYCOLORBOX_TEXTDOMAIN )
+        );
+
             // Create array of default settings
         $this->colorboxDefaultSettings = array(
             'jQueryColorboxVersion' => JQUERYCOLORBOX_VERSION,
@@ -131,7 +138,12 @@ class jQueryColorbox {
             'slideshow' => false,
             'slideshowAuto' => false,
             'scalePhotos' => false,
-            'slideshowSpeed' => '2500'
+            'slideshowSpeed' => '2500',
+            'opacity' => '0.85',
+            'preloading' => false,
+            'transition' => 'elastic',
+            'speed' => '350',
+            'overlayClose' => false
         );
 
             // Create the settings array by merging the user's settings and the defaults
@@ -340,8 +352,13 @@ class jQueryColorbox {
                                     echo $this->colorboxSettings['width']=="false"?'':'width:"'.$this->colorboxSettings['widthValue'].$this->colorboxSettings['widthUnit'].'",';
                                     echo !$this->colorboxSettings['slideshow']?'':'slideshow:true,';
                                     echo $this->colorboxSettings['slideshowAuto']?'':'slideshowAuto:false,';
-                                    echo $this->colorboxSettings['scalePhotos']?'':'scalePhotos:false,'; ?>
-                                    slideshowSpeed:"<?php echo $this->colorboxSettings['slideshowSpeed']; ?>",
+                                    echo $this->colorboxSettings['scalePhotos']?'':'scalePhotos:false,';
+                                    echo $this->colorboxSettings['preloading']?'':'preloading:false,';
+                                    echo $this->colorboxSettings['overlayClose']?'':'overlayClose:false,';?>
+                                    opacity:"<?php echo $this->colorboxSettings['opacity']; ?>",
+                                    transition:"<?php echo $this->colorboxSettings['transition']; ?>",
+                                    speed:<?php echo $this->colorboxSettings['speed']; ?>,
+                                    slideshowSpeed:<?php echo $this->colorboxSettings['slideshowSpeed']; ?>,
                                     close:"<?php _e( 'close', JQUERYCOLORBOX_TEXTDOMAIN ); ?>",
                                     next:"<?php _e( 'next', JQUERYCOLORBOX_TEXTDOMAIN ); ?>",
                                     previous:"<?php _e( 'previous', JQUERYCOLORBOX_TEXTDOMAIN ); ?>",
@@ -609,6 +626,59 @@ class jQueryColorbox {
                                     <br/><?php _e('If enabled and if maximum width of images, maximum height of images, width of the Colorbox, or height of the Colorbox have been defined, ColorBox will scale photos to fit within the those values', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                                 </td>
                             </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="jquery-colorbox-overlayClose"><?php _e('Close Colorbox on overlay click', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                                </th>
+                                <td>
+                                    <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[overlayClose]" id="jquery-colorbox-overlayClose" value="true" <?php echo ($this->colorboxSettings['overlayClose'])?'checked="checked"':'';?>/>
+                                    <br/><?php _e('If checked, enables closing ColorBox by clicking on the background overlay', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="jquery-colorbox-preloading"><?php _e('Preload images', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                                </th>
+                                <td>
+                                    <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[preloading]" id="jquery-colorbox-preloading" value="true" <?php echo ($this->colorboxSettings['preloading'])?'checked="checked"':'';?>/>
+                                    <br/><?php _e('Allows for preloading of "next" and "previous" content in a group, after the current content has finished loading. Uncheck box to disable.', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="jquery-colorbox-transition"><?php _e('Transition type', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                                </th>
+                                <td>
+                                    <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[transition]" id="jquery-colorbox-transition" class="postform" style="margin:0">
+                                    <?php
+                                        foreach ( $this->colorboxTransitions as $unit => $name ) {
+                                            echo '<option value="' . esc_attr($unit) . '"';
+                                            selected( $this->colorboxSettings['transition'], $unit );
+                                            echo '>' . htmlspecialchars($name) . "</option>\n";
+                                        }
+?>
+                                    </select>
+                                    <br/><?php _e('The transition type of the Colorbox. Can be set to "elastic", "fade", or "none"', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="jquery-colorbox-speed"><?php _e('Transition speed', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                                </th>
+                                <td>
+                                    <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[speed]" id="jquery-colorbox-speed" value="<?php echo $this->colorboxSettings['speed'] ?>" size="5" maxlength="5"/>ms
+                                    <br/><?php _e('Sets the speed of the "fade" and "elastic" transitions, in milliseconds', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <label for="jquery-colorbox-opacity"><?php _e('Opacity', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                                </th>
+                                <td>
+                                    <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[opacity]" id="jquery-colorbox-opacity" value="<?php echo $this->colorboxSettings['opacity'] ?>" size="4" maxlength="4"/>
+                                    <br/><?php _e('The overlay opacity level. Range: 0 to 1', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                                </td>
+                            </tr>
                         </table>
                         <p class="submit">
                             <input type="hidden" name="action" value="jQueryColorboxUpdateSettings"/>
@@ -707,6 +777,13 @@ class jQueryColorbox {
         }
     }
 
+    /**
+     * Default array of jQuery Colorbox settings
+     *
+     * @since 2.0
+     * @access private
+     * @author Arne Franken
+     */
     static function jQueryColorboxDefaultSettings(){
 
         // Create and return array of default settings
@@ -730,7 +807,12 @@ class jQueryColorbox {
             'slideshow' => false,
             'slideshowAuto' => false,
             'scalePhotos' => false,
-            'slideshowSpeed' => '2500'
+            'slideshowSpeed' => '2500',
+            'opacity' => '0.85',
+            'preloading' => false,
+            'transition' => 'elastic',
+            'speed' => '350',
+            'overlayClose' => false
         );
     }
 
