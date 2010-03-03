@@ -27,6 +27,8 @@ Localization
 
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
+* Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
+* Portuguese (pt_BR) by <a href="">Gervásio Antônio</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -104,13 +106,18 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 2.1-beta (2010-02-16 =
+= 2.5 (2010-03-20) =
 * BUGFIX: Slideshow speed setting works now.
+* BUGFIX: Settings are not overridden any more every time the plugin gets activated.
+* BUGFIX: jQuery Colorbox now works again for links with uppercase suffixes (IMG,JPG etc) thx to Jason Stapels (jstapels@gmail.com) for the bug report and fix!
+* NEW: Added warning if the plugin is activated but not set to work for all images on the blog. Warning can be turned off on the settings page.
 * NEW: Added switch for preloading of "previous" and "next" images. Default: FALSE
 * NEW: Added switch for closing of Colorbox on click on opacity layer. Default: FALSE
 * NEW: Added setting for transition type. Default: elastic
 * NEW: Added setting for transition speed. Default: 250 milliseconds
 * NEW: Added setting for overlay opacity. Default: 0.85
+* NEW: Turkish translation by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
+* NEW: Portuguese translation by <a href="">Gervásio Antônio</a>
 
 = 2.0.1 (2010-02-11) =
 * BUGFIX: slideshow does not start automatically any more if the setting is not checked on the settings page.
