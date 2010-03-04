@@ -118,6 +118,7 @@ class jQueryColorbox {
             'theme3' => __('Theme #3', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme4' => __('Theme #4', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme5' => __('Theme #5', JQUERYCOLORBOX_TEXTDOMAIN),
+            'theme6' => __('Theme #6', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
         // create list of units
@@ -275,7 +276,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      * @author Fabian Wolf (http://usability-idealist.de/)
-     * @author Jason Stapels (jstapels@gmail.com)
+     * @author Jason Stapels (jstapels@realmprojects.com)
      *
      * @return rewritten content or excerpt
      */
@@ -287,7 +288,7 @@ class jQueryColorbox {
             ?>
             <!--[if IE]>
             <style type="text/css">
-                /*
+                <?php /*
                     The following fixes png-transparency for IE6.
                     It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
 
@@ -297,6 +298,7 @@ class jQueryColorbox {
                     !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
                     while regular CSS background images are relative to the CSS document.
                 */
+            ?>
                 .cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
                 .cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
                 .cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme1/images/internet_explorer/borderTopRight.png, sizingMethod='scale');}
@@ -313,7 +315,7 @@ class jQueryColorbox {
             ?>
             <!--[if IE]>
             <style type="text/css">
-                /*
+                <?php /*
                     The following fixes png-transparency for IE6.
                     It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
 
@@ -323,6 +325,7 @@ class jQueryColorbox {
                     !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
                     while regular CSS background images are relative to the CSS document.
                 */
+            ?>
                 .cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderTopLeft.png, sizingMethod='scale');}
                 .cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderTopCenter.png, sizingMethod='scale');}
                 .cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?php echo JQUERYCOLORBOX_PLUGIN_URL ?>/themes/theme4/images/internet_explorer/borderTopRight.png, sizingMethod='scale');}
@@ -341,26 +344,26 @@ class jQueryColorbox {
         <script type="text/javascript">
             // <![CDATA[
             jQuery(document).ready(function($) {
-                //gets all "a" elements that have a nested "img"
+            <?php //gets all "a" elements that have a nested "img" ?>
                 $("a:has(img)").each(function(index, obj) {
-                    //only go on if link points to an image
+                <?php //only go on if link points to an image ?>
                     if ($(obj).attr("href").match(/\.(?:jpe?g|gif|png|bmp)/i)) {
-                        //in this context, the first child is always an image if fundamental Wordpress functions are used
+                    <?php //in this context, the first child is always an image if fundamental Wordpress functions are used ?>
                         var $nestedElement = $(obj).children(0);
                         if ($nestedElement.is("img")) {
                             var $nestedElementClassAttribute = $nestedElement.attr("class");
-                            //either the groupId has to be the automatically created colorbox-123 or the manually added colorbox-manual
+                        <?php //either the groupId has to be the automatically created colorbox-123 or the manually added colorbox-manual ?>
                             var $groupId = $nestedElementClassAttribute.match('colorbox-[0-9]+') || $nestedElementClassAttribute.match('colorbox-manual');
-                            //only call Colorbox if there is a groupId for the image and the image is not excluded
+                        <?php //only call Colorbox if there is a groupId for the image and the image is not excluded ?>
                             if ($groupId && !$nestedElementClassAttribute.match('colorbox-off')) {
-                                //convert groupId to string for easier use
+                            <?php //convert groupId to string for easier use ?>
                                 $groupId = $groupId.toString();
-                                //if groudId is colorbox-manual, set groupId to false so that images with that class are not grouped
+                            <?php  //if groudId is colorbox-manual, set groupId to false so that images with that class are not grouped ?>
                                 if ($groupId == "colorbox-manual") {
                                     $groupId = false;
                                 }
-                                //call Colorbox function on each img. elements with the same groupId in the class attribute are grouped
-                                //the title of the img is used as the title for the Colorbox.
+                            <?php  //call Colorbox function on each img. elements with the same groupId in the class attribute are grouped
+                            //the title of the img is used as the title for the Colorbox. ?>
                                 $(obj).colorbox({
                                     rel:$groupId,
                                     title:$nestedElement.attr("title"),
@@ -826,15 +829,14 @@ class jQueryColorbox {
      * @author Arne Franken
      */
     function registerAdminWarning() {
-        if (true == $this->colorboxSettings['colorboxWarningOff']) {
+        if (true == $this->colorboxSettings['colorboxWarningOff'] || true == $this->colorboxSettings['autoColorbox']) {
             return;
         }
-        //echo "<div class='updated' style='background-color:#f66;'><p><a href='options-general.php?page=" . JQUERYCOLORBOX_PLUGIN_BASENAME . ">" . JQUERYCOLORBOX_NAME . "</a>" . _e(' needs attention: please enter an API key or disable the plugin.') . "</p></div>";
         ?>
 
         <div class="updated" style="background-color:#f66;">
             <p>
-                <a href="options-general.php?page=<?php echo JQUERYCOLORBOX_PLUGIN_BASENAME ?>"><?php echo JQUERYCOLORBOX_NAME ?></a><?php _e(' needs attention: the plugin is not activated to work for all images.')?>
+                <a href="options-general.php?page=<?php echo JQUERYCOLORBOX_PLUGIN_BASENAME ?>"><?php echo JQUERYCOLORBOX_NAME ?></a> <?php _e('needs attention: the plugin is not activated to work for all images.', JQUERYCOLORBOX_TEXTDOMAIN)?>
             </p>
         </div>
         <?php

@@ -28,7 +28,7 @@ Localization
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
-* Portuguese (pt_BR) by <a href="">Gervásio Antônio</a>
+* Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -109,7 +109,8 @@ I'll include new FAQs in every new version. Promise.
 = 2.5 (2010-03-20) =
 * BUGFIX: Slideshow speed setting works now.
 * BUGFIX: Settings are not overridden any more every time the plugin gets activated.
-* BUGFIX: jQuery Colorbox now works again for links with uppercase suffixes (IMG,JPG etc) thx to Jason Stapels (jstapels@gmail.com) for the bug report and fix!
+* BUGFIX: jQuery Colorbox now works again for links with uppercase suffixes (IMG,JPG etc) thx to Jason Stapels (jstapels@realmprojects.com) for the bug report and fix!
+* NEW: Added theme#6, a modified version of theme#1. (not compatible with IE6 at the moment) thx to <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a> for all the hard work!
 * NEW: Added warning if the plugin is activated but not set to work for all images on the blog. Warning can be turned off on the settings page.
 * NEW: Added switch for preloading of "previous" and "next" images. Default: FALSE
 * NEW: Added switch for closing of Colorbox on click on opacity layer. Default: FALSE
@@ -117,7 +118,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Added setting for transition speed. Default: 250 milliseconds
 * NEW: Added setting for overlay opacity. Default: 0.85
 * NEW: Turkish translation by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
-* NEW: Portuguese translation by <a href="">Gervásio Antônio</a>
+* NEW: Portuguese translation by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 
 = 2.0.1 (2010-02-11) =
 * BUGFIX: slideshow does not start automatically any more if the setting is not checked on the settings page.
