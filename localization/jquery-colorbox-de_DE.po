@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-04 11:46+0100\n"
-"PO-Revision-Date: 2010-03-04 11:46+0100\n"
+"PO-Revision-Date: 2010-03-04 12:32+0100\n"
 "Last-Translator: Arne Franken <blog@techotronic.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,27 +16,27 @@ msgstr ""
 
 #: jquery-colorbox.php:116
 msgid "Theme #1"
-msgstr ""
+msgstr "Thema #1"
 
 #: jquery-colorbox.php:117
 msgid "Theme #2"
-msgstr ""
+msgstr "Thema #2"
 
 #: jquery-colorbox.php:118
 msgid "Theme #3"
-msgstr ""
+msgstr "Thema #3"
 
 #: jquery-colorbox.php:119
 msgid "Theme #4"
-msgstr ""
+msgstr "Thema #4"
 
 #: jquery-colorbox.php:120
 msgid "Theme #5"
-msgstr ""
+msgstr "Thema #5"
 
 #: jquery-colorbox.php:121
 msgid "Theme #6"
-msgstr ""
+msgstr "Thema #6"
 
 #: jquery-colorbox.php:126
 msgid "percent"
@@ -48,15 +48,15 @@ msgstr "Pixel"
 
 #: jquery-colorbox.php:132
 msgid "elastic"
-msgstr ""
+msgstr "Elastisch"
 
 #: jquery-colorbox.php:133
 msgid "fade"
-msgstr ""
+msgstr "Verblassen"
 
 #: jquery-colorbox.php:134
 msgid "none"
-msgstr ""
+msgstr "Kein Effekt"
 
 #: jquery-colorbox.php:264
 #: jquery-colorbox.php:494
@@ -94,7 +94,7 @@ msgstr "%1$s Einstellungen"
 
 #: jquery-colorbox.php:503
 msgid "Theme"
-msgstr ""
+msgstr "Thema"
 
 #: jquery-colorbox.php:515
 msgid "Select the theme you want to use on your blog."
@@ -212,31 +212,31 @@ msgstr "Wenn diese Option aktiviert ist und die maximale Breite von Bildern, die
 
 #: jquery-colorbox.php:666
 msgid "Close Colorbox on overlay click"
-msgstr ""
+msgstr "Colorbox schliessen wenn auf das Overlay geklickt wird"
 
 #: jquery-colorbox.php:670
 msgid "If checked, enables closing ColorBox by clicking on the background overlay"
-msgstr ""
+msgstr "Erlaubt das Schliessen der Colorbox wenn man auf das Overlay klickt"
 
 #: jquery-colorbox.php:675
 msgid "Preload images"
-msgstr ""
+msgstr "Bilder vorladen"
 
 #: jquery-colorbox.php:679
 msgid "Allows for preloading of \"next\" and \"previous\" content in a group, after the current content has finished loading. Uncheck box to disable."
-msgstr ""
+msgstr "Erlaubt das vorladen der \"Vor\" und \"Zur&uuml;ck\" Bilder innerhalb einer Gruppe nachdem der aktuell angezeigte Inhalt geladen wurde. Haken aus der Box entfernen um dieses Feature zu deaktivieren."
 
 #: jquery-colorbox.php:684
 msgid "Transition type"
-msgstr ""
+msgstr "&Uuml;bergangstyp"
 
 #: jquery-colorbox.php:696
 msgid "The transition type of the Colorbox. Can be set to \"elastic\", \"fade\", or \"none\""
-msgstr ""
+msgstr "Der &Uuml;bergangstyp der Colorbox. Kann auf \"Elastisch\", \"Verblassen\" oder \"kein Effekt\" gesetzt werden"
 
 #: jquery-colorbox.php:701
 msgid "Transition speed"
-msgstr ""
+msgstr "Geschwindigkeit des &Uuml;bergangs"
 
 #: jquery-colorbox.php:705
 msgid "Sets the speed of the \"fade\" and \"elastic\" transitions, in milliseconds"
@@ -244,19 +244,19 @@ msgstr "Die Geschwindigkeit der &Uuml;berg&auml;nge \"fade\" und \"elastic\", in
 
 #: jquery-colorbox.php:710
 msgid "Opacity"
-msgstr ""
+msgstr "Deckkraft"
 
 #: jquery-colorbox.php:714
 msgid "The overlay opacity level. Range: 0 to 1"
-msgstr ""
+msgstr "Die Deckkraft des Overlays. Werte von 0 bis 1 sind zugelassen"
 
 #: jquery-colorbox.php:719
 msgid "Disable warning"
-msgstr ""
+msgstr "Warnung deaktivieren"
 
 #: jquery-colorbox.php:723
 msgid "Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off."
-msgstr ""
+msgstr "Deaktiviert die Warnung, die angezeigt wird, wenn das Plugin aktiviert ist, aber das auto-colorbox Feature f&uuml;r alle Bilder nicht."
 
 #: jquery-colorbox.php:729
 msgid "Save Changes"
@@ -291,7 +291,7 @@ msgstr "Die Einstellungen von %1$s wurden erfolgreich entfernt."
 
 #: jquery-colorbox.php:839
 msgid "needs attention: the plugin is not activated to work for all images."
-msgstr ""
+msgstr "ben&ouml;tigt Aufmerksamkeit: das Plugin ist nicht f&uuml;r alle Bilder aktiviert."
 
 #: jquery-colorbox.php:898
 msgid "Did not update settings, you do not have the necessary rights."
