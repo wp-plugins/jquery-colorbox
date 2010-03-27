@@ -47,9 +47,19 @@ Extract all files from the ZIP file, making sure to keep the file structure inta
 
 ###Configuring The Plugin###
 
-Go to the settings page and choose one of the five themes bundled with the plugin and other settings.
+Go to the settings page and choose one of the six themes bundled with the plugin and other settings.
+Do not forget to activate auto Colorbox if you want Colorbox to work for all images.
 
 **See Also:** <a href="http://codex.wordpress.org/Managing_Plugins#Installing_Plugins">"Installing Plugins" article on the WP Codex</a>
+
+== Screenshots ==
+
+1. Theme #1
+2. Theme #2
+3. Theme #3
+4. Theme #4
+5. Theme #5
+6. Theme #6
 
 == Frequently Asked Questions ==
 * I have installed and activated (or updated) jQuery Colorbox, but it doesn't show up when I click on a thumbnail in my blog. Is the plugin broken?
@@ -111,6 +121,7 @@ I'll include new FAQs in every new version. Promise.
 * BUGFIX: Settings are not overridden any more every time the plugin gets activated.
 * BUGFIX: jQuery Colorbox now works again for links with uppercase suffixes (IMG,JPG etc) thx to Jason Stapels (jstapels@realmprojects.com) for the bug report and fix!
 * NEW: Added theme#6, a modified version of theme#1. (not compatible with IE6 at the moment) thx to <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a> for all the hard work!
+* NEW: Added screenshots of all themes, screenshot of selected theme is shown in admin menu
 * NEW: Added warning if the plugin is activated but not set to work for all images on the blog. Warning can be turned off on the settings page.
 * NEW: Added switch for preloading of "previous" and "next" images. Default: FALSE
 * NEW: Added switch for closing of Colorbox on click on opacity layer. Default: FALSE

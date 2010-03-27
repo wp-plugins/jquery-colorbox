@@ -479,6 +479,14 @@ class jQueryColorbox {
                         $("#jquery-colorbox-colorboxWarningOff").attr("checked", false);
                     }
                 });
+
+                //change screenshot if new theme is selected
+                $("#jquery-colorbox-theme").change(function() {
+                    var src = $("option:selected", this).val().match(/\d$/i);
+                    if ( src != "" ){
+                        $("#jquery-colorbox-theme_screenshot_image").children(0).replaceWith("<img src=\"" + "<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; ?>" + src  + ".png\" />");
+                    }
+                });
             });
             //]]>
         </script>
@@ -505,15 +513,25 @@ class jQueryColorbox {
             <td>
                 <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[colorboxTheme]" id="jquery-colorbox-theme" class="postform" style="margin:0">
                 <?php
-                                                                                            foreach ($this->colorboxThemes as $theme => $name) {
-                    echo '<option value="' . esc_attr($theme) . '"';
-                    selected($this->colorboxSettings['colorboxTheme'], $theme);
-                    echo '>' . htmlspecialchars($name) . "</option>\n";
-                }
+                    foreach ($this->colorboxThemes as $theme => $name) {
+                        echo '<option value="' . esc_attr($theme) . '"';
+                        selected($this->colorboxSettings['colorboxTheme'], $theme);
+                        echo '>' . htmlspecialchars($name) . "</option>\n";
+                    }
                 ?>
-                                                            </select>
+                </select>
                 <br/><?php _e('Select the theme you want to use on your blog.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                                </td>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <label for="jquery-colorbox-theme_screenshot_image"><?php _e('Theme screenshot', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+            </th>
+            <td height="345px">
+                <div id="jquery-colorbox-theme_screenshot_image">
+                    <img src="<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; preg_match('/\d$/i',$this->colorboxSettings['colorboxTheme'],$matches); echo $matches[0] ?>.png"/>
+                </div>
+            </td>
         </tr>
         <tr>
             <th scope="row">
@@ -522,7 +540,7 @@ class jQueryColorbox {
             <td>
                 <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]" id="jquery-colorbox-autoColorbox" value="true" <?php echo ($this->colorboxSettings['autoColorbox']) ? 'checked="checked"' : '';?>/>
                 <br/><?php _e('Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                                    </td>
+            </td>
         </tr>
         <tr>
             <th scope="row">
@@ -531,7 +549,7 @@ class jQueryColorbox {
             <td>
                 <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxGalleries]" id="jquery-colorbox-autoColorboxGalleries" value="true" <?php echo ($this->colorboxSettings['autoColorboxGalleries']) ? 'checked="checked"' : '';?>/>
                 <br/><?php _e('Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                                    </td>
+            </td>
         </tr>
         <tr>
             <th scope="row">
@@ -540,7 +558,7 @@ class jQueryColorbox {
             <td>
                 <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[slideshow]" id="jquery-colorbox-slideshow" value="true" <?php echo ($this->colorboxSettings['slideshow']) ? 'checked="checked"' : '';?>/>
                 <br/><?php printf(__('Add Slideshow functionality for %1$s Groups', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>
-                                    </td>
+            </td>
         </tr>
         <tr>
             <th scope="row">
@@ -549,7 +567,7 @@ class jQueryColorbox {
             <td>
                 <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[slideshowAuto]" id="jquery-colorbox-slideshowAuto" value="true" <?php echo ($this->colorboxSettings['slideshowAuto']) ? 'checked="checked"' : '';?>/>
                 <br/><?php printf(__('Start Slideshow automatically if slideshow functionality is added to %1$s Groups', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>
-                                    </td>
+            </td>
         </tr>
         <tr>
             <th scope="row">
@@ -573,13 +591,13 @@ class jQueryColorbox {
                 <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[maxWidthValue]" id="jquery-colorbox-maxWidthValue" value="<?php echo $this->colorboxSettings['maxWidthValue'] ?>" size="3" maxlength="3"/>
                 <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[maxWidthUnit]" id="jquery-colorbox-maxWidth-unit" class="postform" style="margin:0">
                 <?php
-                                                        foreach ($this->colorboxUnits as $unit => $name) {
+                foreach ($this->colorboxUnits as $unit => $name) {
                     echo '<option value="' . esc_attr($unit) . '"';
                     selected($this->colorboxSettings['maxWidthUnit'], $unit);
                     echo '>' . htmlspecialchars($name) . "</option>\n";
                 }
                 ?>
-                                                    </select>
+                </select>
                 <br/><?php _e('Set the maximum width of the image in the Colorbox in relation to the browser window in percent or pixels. If maximum width is not set, image is as wide as the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
             </td>
         </tr>
@@ -596,13 +614,13 @@ class jQueryColorbox {
                 <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[maxHeightValue]" id="jquery-colorbox-maxHeightValue" value="<?php echo $this->colorboxSettings['maxHeightValue'] ?>" size="3" maxlength="3"/>
                 <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[maxHeightUnit]" id="jquery-colorbox-maxHeight-unit" class="postform" style="margin:0">
                 <?php
-                                                        foreach ($this->colorboxUnits as $unit => $name) {
+                foreach ($this->colorboxUnits as $unit => $name) {
                     echo '<option value="' . esc_attr($unit) . '"';
                     selected($this->colorboxSettings['maxHeightUnit'], $unit);
                     echo '>' . htmlspecialchars($name) . "</option>\n";
                 }
                 ?>
-                                                    </select>
+                </select>
                 <br/><?php _e('Set the maximum height of the image in the Colorbox in relation to the browser window to a value in percent or pixels. If maximum height is not set, the image is as high as the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
             </td>
         </tr>
@@ -619,13 +637,13 @@ class jQueryColorbox {
                 <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[widthValue]" id="jquery-colorbox-widthValue" value="<?php echo $this->colorboxSettings['widthValue'] ?>" size="3" maxlength="3"/>
                 <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[widthUnit]" id="jquery-colorbox-width-unit" class="postform" style="margin:0">
                 <?php
-                                                        foreach ($this->colorboxUnits as $unit => $name) {
+                foreach ($this->colorboxUnits as $unit => $name) {
                     echo '<option value="' . esc_attr($unit) . '"';
                     selected($this->colorboxSettings['widthUnit'], $unit);
                     echo '>' . htmlspecialchars($name) . "</option>\n";
                 }
                 ?>
-                                                    </select>
+                </select>
                 <br/><?php _e('Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
             </td>
         </tr>
@@ -642,13 +660,13 @@ class jQueryColorbox {
                 <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[heightValue]" id="jquery-colorbox-heightValue" value="<?php echo $this->colorboxSettings['heightValue'] ?>" size="3" maxlength="3"/>
                 <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[heightUnit]" id="jquery-colorbox-height-unit" class="postform" style="margin:0">
                 <?php
-                                                        foreach ($this->colorboxUnits as $unit => $name) {
+                foreach ($this->colorboxUnits as $unit => $name) {
                     echo '<option value="' . esc_attr($unit) . '"';
                     selected($this->colorboxSettings['heightUnit'], $unit);
                     echo '>' . htmlspecialchars($name) . "</option>\n";
                 }
                 ?>
-                                                    </select>
+                </select>
                 <br/><?php _e('Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
             </td>
         </tr>
@@ -686,13 +704,13 @@ class jQueryColorbox {
             <td>
                 <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[transition]" id="jquery-colorbox-transition" class="postform" style="margin:0">
                 <?php
-                                                        foreach ($this->colorboxTransitions as $unit => $name) {
+                foreach ($this->colorboxTransitions as $unit => $name) {
                     echo '<option value="' . esc_attr($unit) . '"';
                     selected($this->colorboxSettings['transition'], $unit);
                     echo '>' . htmlspecialchars($name) . "</option>\n";
                 }
                 ?>
-                                                    </select>
+                </select>
                 <br/><?php _e('The transition type of the Colorbox. Can be set to "elastic", "fade", or "none"', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
             </td>
         </tr>
@@ -721,7 +739,7 @@ class jQueryColorbox {
             <td>
                 <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[colorboxWarningOff]" id="jquery-colorbox-colorboxWarningOff" value="true" <?php echo ($this->colorboxSettings['colorboxWarningOff']) ? 'checked="checked"' : '';?>/>
                 <br/><?php _e('Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                                </td>
+            </td>
         </tr>
         </table>
         <p class="submit">
