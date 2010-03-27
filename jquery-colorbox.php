@@ -161,6 +161,7 @@ class jQueryColorbox {
             'transition' => 'elastic',
             'speed' => '350',
             'overlayClose' => false,
+            'autoHideFlash' => false,
             'colorboxWarningOff' => false
         );
 
@@ -391,6 +392,15 @@ class jQueryColorbox {
                         }
                     }
                 });
+                <?php if ($this->colorboxSettings['autoHideFlash'] == true) {
+                    //hide embedded flash objects automatically under Colorbox layer ?>
+                    $("object").each(function(index,obj) {
+                      $(obj).append('<param name="wmode" value="transparent" />');
+                    });
+                    $("embed").each(function(index,obj) {
+                      $(obj).attr('wmode','transparent');
+                    });
+                <?php } ?>
             });
             // ]]>
         </script>
@@ -734,6 +744,15 @@ class jQueryColorbox {
         </tr>
         <tr>
             <th scope="row">
+                <label for="jquery-colorbox-autoHideFlash"><?php printf(__('Automate hiding of flash objects', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+            </th>
+            <td>
+                <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoHideFlash]" id="jquery-colorbox-autoHideFlash" value="true" <?php echo ($this->colorboxSettings['autoHideFlash']) ? 'checked="checked"' : '';?>/>
+                <br/><?php _e('Automatically hide embeded flash objects behind the Colorbox layer.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
                 <label for="jquery-colorbox-colorboxWarningOff"><?php printf(__('Disable warning', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
             </th>
             <td>
@@ -897,6 +916,7 @@ class jQueryColorbox {
             'transition' => 'elastic',
             'speed' => '350',
             'overlayClose' => false,
+            'autoHideFlash' => false,
             'colorboxWarningOff' => false
         );
     }

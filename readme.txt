@@ -123,11 +123,12 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Added theme#6, a modified version of theme#1. (not compatible with IE6 at the moment) thx to <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a> for all the hard work!
 * NEW: Added screenshots of all themes, screenshot of selected theme is shown in admin menu
 * NEW: Added warning if the plugin is activated but not set to work for all images on the blog. Warning can be turned off on the settings page.
-* NEW: Added switch for preloading of "previous" and "next" images. Default: FALSE
-* NEW: Added switch for closing of Colorbox on click on opacity layer. Default: FALSE
+* NEW: Added switch for preloading of "previous" and "next" images. Default: false
+* NEW: Added switch for closing of Colorbox on click on opacity layer. Default: false
 * NEW: Added setting for transition type. Default: elastic
 * NEW: Added setting for transition speed. Default: 250 milliseconds
 * NEW: Added setting for overlay opacity. Default: 0.85
+* NEW: Added setting for automatic hiding of embedded flash objects under Colorbox layer. Default: false
 * NEW: Turkish translation by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * NEW: Portuguese translation by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 
