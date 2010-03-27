@@ -85,12 +85,11 @@ For all images in a post or page, the same CSS class is added. All images with t
 
 * I have Flash (e.g. Youtube videos) embedded on my website. Why do they show up over the layer when I click on an image?
 
-This is a Flash issue, but relatively easy to solve. Adobe described on these sites what the problem is and how to fix it:
+This is a Flash issue, but relatively easy to solve. Just activate the automatic hiding of embedded flash objects on the settings page.
+
+Adobe described on these sites what the problem is and how to fix it:
 <a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Knowledgebase 1</a>
 <a href="http://kb2.adobe.com/cps/142/tn_14201.html">Adobe Knowledgebase 2</a>
-In short:
-1. Add the following parameter to the OBJECT tag: &lt;param name="wmode" value="transparent"&gt;
-2. Add the following parameter to the EMBED tag: wmode="transparent"
 
 * I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
 
