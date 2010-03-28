@@ -118,7 +118,9 @@ class jQueryColorbox {
             'theme3' => __('Theme #3', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme4' => __('Theme #4', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme5' => __('Theme #5', JQUERYCOLORBOX_TEXTDOMAIN),
-            'theme6' => __('Theme #6', JQUERYCOLORBOX_TEXTDOMAIN)
+            'theme6' => __('Theme #6', JQUERYCOLORBOX_TEXTDOMAIN),
+            'theme7' => __('Theme #7', JQUERYCOLORBOX_TEXTDOMAIN),
+            'theme8' => __('Theme #8', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
         // create list of units
@@ -537,7 +539,7 @@ class jQueryColorbox {
             <th scope="row">
                 <label for="jquery-colorbox-theme_screenshot_image"><?php _e('Theme screenshot', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
             </th>
-            <td height="345px">
+            <td height="310px">
                 <div id="jquery-colorbox-theme_screenshot_image">
                     <img src="<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; preg_match('/\d$/i',$this->colorboxSettings['colorboxTheme'],$matches); echo $matches[0] ?>.png"/>
                 </div>
