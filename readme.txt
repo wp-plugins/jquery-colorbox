@@ -132,6 +132,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Added setting for transition type. Default: elastic
 * NEW: Added setting for transition speed. Default: 250 milliseconds
 * NEW: Added setting for overlay opacity. Default: 0.85
+* CHANGE: Fixed fonts in Colorbox to Arial 12px
 * NEW: Turkish translation by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * NEW: Portuguese translation by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * NEW: Plugin should be WPMU compatible now. Haven't tested myself, though. Would appreciate any feedback.
