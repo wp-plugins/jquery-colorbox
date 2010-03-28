@@ -496,7 +496,7 @@ class jQueryColorbox {
                 $("#jquery-colorbox-theme").change(function() {
                     var src = $("option:selected", this).val().match(/\d$/i);
                     if ( src != "" ){
-                        $("#jquery-colorbox-theme_screenshot_image").children(0).replaceWith("<img src=\"" + "<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; ?>" + src  + ".png\" />");
+                        $("#jquery-colorbox-theme_screenshot_image").children(0).replaceWith("<img src=\"" + "<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; ?>" + src  + ".jpg\" />");
                     }
                 });
             });
@@ -541,7 +541,7 @@ class jQueryColorbox {
             </th>
             <td height="310px">
                 <div id="jquery-colorbox-theme_screenshot_image">
-                    <img src="<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; preg_match('/\d$/i',$this->colorboxSettings['colorboxTheme'],$matches); echo $matches[0] ?>.png"/>
+                    <img src="<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; preg_match('/\d$/i',$this->colorboxSettings['colorboxTheme'],$matches); echo $matches[0] ?>.jpg"/>
                 </div>
             </td>
         </tr>
