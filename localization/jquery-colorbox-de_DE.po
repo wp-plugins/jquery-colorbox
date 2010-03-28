@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-27 02:08+0100\n"
-"PO-Revision-Date: 2010-03-27 02:08+0100\n"
+"POT-Creation-Date: 2010-03-28 15:06+0100\n"
+"PO-Revision-Date: 2010-03-28 15:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -244,7 +244,7 @@ msgstr "Geschwindigkeit des &Uuml;bergangs"
 
 #: jquery-colorbox.php:733
 msgid "Sets the speed of the \"fade\" and \"elastic\" transitions, in milliseconds"
-msgstr "Die Geschwindigkeit der &Uuml;berg&auml;nge \"fade\" und \"elastic\", in Millisekunden"
+msgstr "Die Geschwindigkeit der &Uuml;berg&auml;nge \"Elastisch\" und \"Verblassen\", in Millisekunden"
 
 #: jquery-colorbox.php:738
 msgid "Opacity"
@@ -259,8 +259,8 @@ msgid "Automate hiding of flash objects"
 msgstr "Verstecken von Flash Objekten"
 
 #: jquery-colorbox.php:751
-msgid "Automatically hide embeded flash objects behind the Colorbox layer."
-msgstr "Flash Objekte automatisch unter dem Colorbox Overlay verstecken."
+msgid "Automatically hide embeded flash objects behind the Colorbox layer. Done by setting the wmode to transparent."
+msgstr "Flash Objekte automatisch unter dem Colorbox Overlay verstecken. Daf&uuml;r wird der \"wmode\" auf \"transparent\" gesetzt."
 
 #: jquery-colorbox.php:756
 msgid "Disable warning"
@@ -294,7 +294,7 @@ msgstr "Wenn Du eine kleine (oder grosse) Spende f&uuml;r die Weiterentwicklung 
 #: jquery-colorbox.php:833
 #, php-format
 msgid "Successfully updated %1$s settings."
-msgstr "&Auml;nderungen der %1$s Einstellungen wurden erfolgreich gespeichert"
+msgstr "&Auml;nderungen der %1$s Einstellungen wurden erfolgreich gespeichert."
 
 #: jquery-colorbox.php:835
 #, php-format
@@ -312,7 +312,7 @@ msgstr "Einstellungen nicht aktualisiert, da Sie nicht die hierfür erforderlich
 #: jquery-colorbox.php:983
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
-msgstr "Konnte die Einstellungen von %1$s nicht entfernen. Entweder besitzen Sie nicht die notwendigen Rechte hierzu oder Sie haben vergessen, die Checkbox [x] zu aktivieren."
+msgstr "Konnte die Einstellungen von %1$s nicht entfernen. Entweder besitzen Sie nicht die notwendigen Rechte, oder Sie haben vergessen, die Checkbox [x] zu aktivieren."
 
 #~ msgid "jQuery Colorbox"
 #~ msgstr "jQuery ColorBox"

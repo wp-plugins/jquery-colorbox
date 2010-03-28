@@ -748,7 +748,7 @@ class jQueryColorbox {
             </th>
             <td>
                 <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoHideFlash]" id="jquery-colorbox-autoHideFlash" value="true" <?php echo ($this->colorboxSettings['autoHideFlash']) ? 'checked="checked"' : '';?>/>
-                <br/><?php _e('Automatically hide embeded flash objects behind the Colorbox layer.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                <br/><?php _e('Automatically hide embeded flash objects behind the Colorbox layer. Done by setting the wmode to transparent.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
             </td>
         </tr>
         <tr>

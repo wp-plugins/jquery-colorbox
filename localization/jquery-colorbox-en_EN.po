@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-27 02:07+0100\n"
-"PO-Revision-Date: 2010-03-27 02:07+0100\n"
+"POT-Creation-Date: 2010-03-28 15:06+0100\n"
+"PO-Revision-Date: 2010-03-28 15:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -259,7 +259,7 @@ msgid "Automate hiding of flash objects"
 msgstr ""
 
 #: jquery-colorbox.php:751
-msgid "Automatically hide embeded flash objects behind the Colorbox layer."
+msgid "Automatically hide embeded flash objects behind the Colorbox layer. Done by setting the wmode to transparent."
 msgstr ""
 
 #: jquery-colorbox.php:756
