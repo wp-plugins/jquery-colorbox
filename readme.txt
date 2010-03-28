@@ -1,22 +1,24 @@
 === Plugin Name ===
 Contributors: techotronic
 Donate link: http://www.techotronic.de/index.php/donate/
-Tags: jquery, colorbox, lightbox, images, gallery, javascript, overlay
+Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.9.1
 Stable tag: 2.0.1
 
-Adds Colorbox/Lightbox functionality to images on the blog. Images are grouped by post or page. Also works on WordPress galleries.
+Adds Colorbox/Lightbox functionality to images on the blog. Images are grouped by post or page. Also works for WordPress galleries.
 
 == Description ==
 
-Yet another Colorbox plugin for Wordpress.
+Yet another Colorbox/Lightbox plugin for Wordpress.
+
+jQuery Colorbox features 8 themes from which you can choose.
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
 All images in posts and pages can be displayed in a layer when the thumbnail is clicked.
 Images are grouped as galleries when linked in the same post or page. Groups can be displayed in an automatic slideshow.
 
-Images can be excluded by giving them a special CSS class.
+Individual images can be excluded by adding a special CSS class.
 
 See the <a href="http://www.techotronic.de/index.php/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
@@ -29,11 +31,12 @@ Localization
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
+* Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
 Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.6 jQuery plugin from Jack Moore. Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
-jQuery Colorbox uses the jQuery library version 1.3.2 bundled with Wordpress. Should work with jQuery 1.4 too.
+jQuery Colorbox uses the jQuery library version 1.3.2 bundled with Wordpress. Works with jQuery 1.4.2 too.
 
 == Installation ==
 
@@ -69,6 +72,8 @@ Do not forget to activate auto Colorbox if you want Colorbox to work for all ima
 Since version 2.0, jQuery Colorbox' automatic behaviour can be switched on and off in the settings. That way, you can apply the Colorbox functionality manually to single images.
 
 The default ist OFF.
+
+New in 3.0: If the plugin is activated, but the auto Colorbox feature is turned off, a warning is displayed.
 
 * How does jQuery Colorbox work?
 
@@ -118,10 +123,11 @@ I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
 = 3.0 (2010-03-20) =
+* NEW: Decided to move from 2.0.1 to 3.0 because I implemented many new features
 * BUGFIX: Slideshow speed setting works now.
 * BUGFIX: Settings are not overridden any more every time the plugin gets activated.
 * BUGFIX: jQuery Colorbox now works again for links with uppercase suffixes (IMG,JPG etc) thx to Jason Stapels (jstapels@realmprojects.com) for the bug report and fix!
-* NEW: Added theme#6, a modified version of theme#1. (not compatible with IE6 at the moment) thx to <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a> for all the hard work!
+* NEW: Added theme#6, a modified version of theme#1. (not compatible with IE6) thx to <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a> for all the hard work!
 * NEW: Added theme#7, a modified version of theme#1. thx to <a href="http://www.vjucon.com/">Vedran Jurincic</a> for the feature request!
 * NEW: Added theme#8, a modified version of theme#6.
 * NEW: Added screenshots of all themes, screenshot of selected theme is shown in admin menu
@@ -135,7 +141,9 @@ I'll include new FAQs in every new version. Promise.
 * CHANGE: Fixed fonts in Colorbox to Arial 12px
 * NEW: Turkish translation by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * NEW: Portuguese translation by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
+* NEW: Bosnian translation by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 * NEW: Plugin should be WPMU compatible now. Haven't tested myself, though. Would appreciate any feedback.
+* NEW: Successfully tested jQuery Colorbox with jQuery 1.4.2
 
 = 2.0.1 (2010-02-11) =
 * BUGFIX: slideshow does not start automatically any more if the setting is not checked on the settings page.
