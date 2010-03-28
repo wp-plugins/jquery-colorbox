@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 2.5-BETA
+ * Version: 3.0
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -20,9 +20,9 @@
 <?php
 
 /**
- * define vital constants
+ * define constants
  */
-define('JQUERYCOLORBOX_VERSION', '2.5-BETA');
+define('JQUERYCOLORBOX_VERSION', '3.0');
 
 if (! defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -810,6 +810,16 @@ class jQueryColorbox {
                     <?php _e('If you would like to make a small (or large) contribution towards future development please consider making a donation.', JQUERYCOLORBOX_TEXTDOMAIN) ?>
                         <br/>&copy; Copyright 2009 - <?php echo date("Y"); ?> <a href="http://www.techotronic.de">Arne Franken</a>
                     </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="poststuff" class="ui-sortable meta-box-sortables">
+            <div id="jquery-colorbox-translation" class="postbox">
+                <h3 id="translation"><?php _e('Translation', JQUERYCOLORBOX_TEXTDOMAIN) ?></h3>
+
+                <div class="inside">
+                    <p><?php _e('The english translation was done by <a href="http://www.techotronic.de">Arne Franken</a>.', JQUERYCOLORBOX_TEXTDOMAIN); ?></p>
                 </div>
             </div>
         </div>

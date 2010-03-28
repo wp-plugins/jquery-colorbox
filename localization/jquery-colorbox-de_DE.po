@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-28 16:11+0100\n"
-"PO-Revision-Date: 2010-03-28 16:12+0100\n"
+"POT-Creation-Date: 2010-03-28 21:48+0100\n"
+"PO-Revision-Date: 2010-03-28 21:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -299,25 +299,33 @@ msgstr "Spenden"
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
 msgstr "Wenn Du eine kleine (oder grosse) Spende f&uuml;r die Weiterentwicklung abgeben m&ouml;chtest, kannst Du das per PayPal tun."
 
-#: jquery-colorbox.php:835
+#: jquery-colorbox.php:819
+msgid "Translation"
+msgstr "&Uuml;bersetzung"
+
+#: jquery-colorbox.php:822
+msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
+msgstr "Die &Uuml;bersetzung ins Deutsche wurde von <a href=\"http://www.techotronic.de\">Arne Franken</a> durchgef&uuml;hrt."
+
+#: jquery-colorbox.php:845
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "&Auml;nderungen der %1$s Einstellungen wurden erfolgreich gespeichert."
 
-#: jquery-colorbox.php:837
+#: jquery-colorbox.php:847
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "Die Einstellungen von %1$s wurden erfolgreich entfernt."
 
-#: jquery-colorbox.php:878
+#: jquery-colorbox.php:888
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "ben&ouml;tigt Aufmerksamkeit: das Plugin ist nicht f&uuml;r alle Bilder aktiviert."
 
-#: jquery-colorbox.php:938
+#: jquery-colorbox.php:948
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "Einstellungen nicht aktualisiert, da Sie nicht die hierfür erforderlichen Rechte besitzen."
 
-#: jquery-colorbox.php:985
+#: jquery-colorbox.php:995
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "Konnte die Einstellungen von %1$s nicht entfernen. Entweder besitzen Sie nicht die notwendigen Rechte, oder Sie haben vergessen, die Checkbox [x] zu aktivieren."

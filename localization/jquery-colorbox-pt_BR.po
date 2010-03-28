@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-28 16:12+0100\n"
-"PO-Revision-Date: 2010-03-28 16:12+0100\n"
+"POT-Creation-Date: 2010-03-28 21:50+0100\n"
+"PO-Revision-Date: 2010-03-28 21:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -299,25 +299,33 @@ msgstr "Doar"
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
 msgstr "Se desejar contribuir (pouco ou muito) com o desenvolvimento futuro desse plug-in, você pode fazer uma doação."
 
-#: jquery-colorbox.php:835
+#: jquery-colorbox.php:819
+msgid "Translation"
+msgstr ""
+
+#: jquery-colorbox.php:822
+msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
+msgstr ""
+
+#: jquery-colorbox.php:845
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "As configurações do %1$s foram atualizadas com sucesso."
 
-#: jquery-colorbox.php:837
+#: jquery-colorbox.php:847
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "As configurações do %1$s foram excluídas com sucesso."
 
-#: jquery-colorbox.php:878
+#: jquery-colorbox.php:888
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "requer atenção: o plugin não está configurado para trabalhar com todas as imagens."
 
-#: jquery-colorbox.php:938
+#: jquery-colorbox.php:948
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "As configurações não foram atualizadas. Você não possui as permissões necessárias."
 
-#: jquery-colorbox.php:985
+#: jquery-colorbox.php:995
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "As configurações do %1$s não foram excluídas. Você não possui as permissões necessárias ou não marcou a opção 'Excluir configurações'."

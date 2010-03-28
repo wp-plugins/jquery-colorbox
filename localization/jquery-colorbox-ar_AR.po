@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox 2.0.1 Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-28 20:44+0100\n"
-"PO-Revision-Date: 2010-03-28 20:44+0100\n"
+"POT-Creation-Date: 2010-03-28 21:50+0100\n"
+"PO-Revision-Date: 2010-03-28 21:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: Mickey Mouse® <modarsoos@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -305,25 +305,33 @@ msgstr "تبرع"
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
 msgstr ""
 
-#: jquery-colorbox.php:835
+#: jquery-colorbox.php:819
+msgid "Translation"
+msgstr ""
+
+#: jquery-colorbox.php:822
+msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
+msgstr ""
+
+#: jquery-colorbox.php:845
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "تم تحديث الإعدادات %1$s بنجاح."
 
-#: jquery-colorbox.php:837
+#: jquery-colorbox.php:847
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "%1$s الإعدادات التي تم حذفها بنجاح."
 
-#: jquery-colorbox.php:878
+#: jquery-colorbox.php:888
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr ""
 
-#: jquery-colorbox.php:938
+#: jquery-colorbox.php:948
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "لم يتم تحديث الإعدادات، ليس لديك صلاحيات."
 
-#: jquery-colorbox.php:985
+#: jquery-colorbox.php:995
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr ""

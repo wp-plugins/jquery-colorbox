@@ -27,8 +27,8 @@ Localization
 
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
-* Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat YolaÁan</a>
-* Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gerv·sio AntÙnio</a>
+* Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yola√ßan</a>
+* Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gerv√°sio Ant√¥nio</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -60,6 +60,8 @@ Do not forget to activate auto Colorbox if you want Colorbox to work for all ima
 4. Theme #4
 5. Theme #5
 6. Theme #6
+7. Theme #7
+8. Theme #8
 
 == Frequently Asked Questions ==
 * I have installed and activated (or updated) jQuery Colorbox, but it doesn't show up when I click on a thumbnail in my blog. Is the plugin broken?
@@ -87,13 +89,13 @@ For all images in a post or page, the same CSS class is added. All images with t
 
 This is a Flash issue, but relatively easy to solve. Just activate the automatic hiding of embedded flash objects on the settings page.
 
-Adobe described on these sites what the problem is and how to fix it:
+Adobe described on these sites what the problem is and how to fix it manually:
 <a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Knowledgebase 1</a>
 <a href="http://kb2.adobe.com/cps/142/tn_14201.html">Adobe Knowledgebase 2</a>
 
 * I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
 
-Tricky.
+Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
 
 I have seen problems where other plugins include older, incompatible versions of the jQuery library my plugin uses.
 Since I include the jQuery library in a non-conflicting way, the other jQuery library is usually loaded.
@@ -115,21 +117,24 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 2.5 (2010-03-20) =
+= 3.0 (2010-03-20) =
 * BUGFIX: Slideshow speed setting works now.
 * BUGFIX: Settings are not overridden any more every time the plugin gets activated.
 * BUGFIX: jQuery Colorbox now works again for links with uppercase suffixes (IMG,JPG etc) thx to Jason Stapels (jstapels@realmprojects.com) for the bug report and fix!
-* NEW: Added theme#6, a modified version of theme#1. (not compatible with IE6 at the moment) thx to <a href="http://twitter.com/gervasioantonio">Gerv·sio AntÙnio</a> for all the hard work!
+* NEW: Added theme#6, a modified version of theme#1. (not compatible with IE6 at the moment) thx to <a href="http://twitter.com/gervasioantonio">Gerv√°sio Ant√¥nio</a> for all the hard work!
+* NEW: Added theme#7, a modified version of theme#1. thx to <a href="http://www.vjucon.com/">Vedran Jurincic</a> for the feature request!
+* NEW: Added theme#8, a modified version of theme#6.
 * NEW: Added screenshots of all themes, screenshot of selected theme is shown in admin menu
 * NEW: Added warning if the plugin is activated but not set to work for all images on the blog. Warning can be turned off on the settings page.
+* NEW: Added setting for automatic hiding of embedded flash objects under Colorbox layer. Default: false
 * NEW: Added switch for preloading of "previous" and "next" images. Default: false
 * NEW: Added switch for closing of Colorbox on click on opacity layer. Default: false
 * NEW: Added setting for transition type. Default: elastic
 * NEW: Added setting for transition speed. Default: 250 milliseconds
 * NEW: Added setting for overlay opacity. Default: 0.85
-* NEW: Added setting for automatic hiding of embedded flash objects under Colorbox layer. Default: false
-* NEW: Turkish translation by <a href="http://www.serhatyolacan.com/">Serhat YolaÁan</a>
-* NEW: Portuguese translation by <a href="http://twitter.com/gervasioantonio">Gerv·sio AntÙnio</a>
+* NEW: Turkish translation by <a href="http://www.serhatyolacan.com/">Serhat Yola√ßan</a>
+* NEW: Portuguese translation by <a href="http://twitter.com/gervasioantonio">Gerv√°sio Ant√¥nio</a>
+* NEW: Plugin should be WPMU compatible now. Haven't tested myself, though. Would appreciate any feedback.
 
 = 2.0.1 (2010-02-11) =
 * BUGFIX: slideshow does not start automatically any more if the setting is not checked on the settings page.
