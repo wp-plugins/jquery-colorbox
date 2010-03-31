@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/index.php/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.9.1
-Stable tag: 3.0
+Stable tag: 3.0.1
 
 Adds Colorbox/Lightbox functionality to images on the blog. Images are grouped by post or page. Also works for WordPress galleries.
 
@@ -122,7 +122,10 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 3.0 (2010-03-20) =
+= 3.0.1 (2010-03-31) =
+* BUGFIX: Settings are NOW REALLY not overridden any more every time the plugin gets activated.
+
+= 3.0 (2010-03-31) =
 * NEW: Decided to move from 2.0.1 to 3.0 because I implemented many new features
 * BUGFIX: Slideshow speed setting works now.
 * BUGFIX: Settings are not overridden any more every time the plugin gets activated.
