@@ -144,6 +144,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Bosnian translation by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 * NEW: Plugin should be WPMU compatible now. Haven't tested myself, though. Would appreciate any feedback.
 * NEW: Successfully tested jQuery Colorbox with jQuery 1.4.2
+* CHANGE: Fixed "slideshow" offset from right hand side in the Colorbox of theme#4
 
 = 2.0.1 (2010-02-11) =
 * BUGFIX: slideshow does not start automatically any more if the setting is not checked on the settings page.
