@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/index.php/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.9.1
-Stable tag: 2.0.1
+Stable tag: 3.0
 
 Adds Colorbox/Lightbox functionality to images on the blog. Images are grouped by post or page. Also works for WordPress galleries.
 
@@ -12,7 +12,7 @@ Adds Colorbox/Lightbox functionality to images on the blog. Images are grouped b
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
 
-jQuery Colorbox features 8 themes from which you can choose.
+jQuery Colorbox features 8 themes from which you can choose. See screenshots tab.
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
 All images in posts and pages can be displayed in a layer when the thumbnail is clicked.
@@ -102,8 +102,8 @@ Adobe described on these sites what the problem is and how to fix it manually:
 
 Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
 
-I have seen problems where other plugins include older, incompatible versions of the jQuery library my plugin uses.
-Since I include the jQuery library in a non-conflicting way, the other jQuery library is usually loaded.
+I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
+Chances are that the other jQuery libary is loaded after the one that I load. If that happens, the colorbox features are overwritten.
 
 Maybe the images you want jQuery Colorbox to work on are added by a plugin and the images are added after jQuery Colorbox manipulates the HTML when rendering your blog.
 
