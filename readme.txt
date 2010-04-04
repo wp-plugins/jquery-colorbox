@@ -126,6 +126,7 @@ I'll include new FAQs in every new version. Promise.
 == Changelog ==
 = 3.1 (2010-04-06) =
 * NEW: Added theme#9, a modified version of theme#4.
+* CHANGE: <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> updated the turkish translation.
 
 = 3.0.1 (2010-03-31) =
 * BUGFIX: Settings are NOW REALLY not overridden any more every time the plugin gets activated.
