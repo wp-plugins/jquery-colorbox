@@ -12,7 +12,7 @@ Adds Colorbox/Lightbox functionality to images on the blog. Images are grouped b
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
 
-jQuery Colorbox features 8 themes from which you can choose. See screenshots tab.
+jQuery Colorbox features 9 themes from which you can choose. See screenshots tab.
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
 All images in posts and pages can be displayed in a layer when the thumbnail is clicked.
@@ -51,7 +51,7 @@ Extract all files from the ZIP file, making sure to keep the file structure inta
 
 ###Configuring The Plugin###
 
-Go to the settings page and choose one of the six themes bundled with the plugin and other settings.
+Go to the settings page and choose one of the themes bundled with the plugin and other settings.
 Do not forget to activate auto Colorbox if you want Colorbox to work for all images.
 
 **See Also:** <a href="http://codex.wordpress.org/Managing_Plugins#Installing_Plugins">"Installing Plugins" article on the WP Codex</a>
@@ -66,6 +66,7 @@ Do not forget to activate auto Colorbox if you want Colorbox to work for all ima
 6. Theme #6
 7. Theme #7
 8. Theme #8
+9. Theme #9
 
 == Frequently Asked Questions ==
 * I have installed and activated (or updated) jQuery Colorbox, but it doesn't show up when I click on a thumbnail in my blog. Is the plugin broken?
@@ -123,6 +124,9 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 3.1 (2010-04-06) =
+* NEW: Added theme#9, a modified version of theme#4.
+
 = 3.0.1 (2010-03-31) =
 * BUGFIX: Settings are NOW REALLY not overridden any more every time the plugin gets activated.
 

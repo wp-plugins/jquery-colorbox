@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 3.0.1
+ * Version: 3.1
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -22,7 +22,7 @@
 /**
  * define constants
  */
-define('JQUERYCOLORBOX_VERSION', '3.0.1');
+define('JQUERYCOLORBOX_VERSION', '3.1');
 
 if (! defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -120,7 +120,8 @@ class jQueryColorbox {
             'theme5' => __('Theme #5', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme6' => __('Theme #6', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme7' => __('Theme #7', JQUERYCOLORBOX_TEXTDOMAIN),
-            'theme8' => __('Theme #8', JQUERYCOLORBOX_TEXTDOMAIN)
+            'theme8' => __('Theme #8', JQUERYCOLORBOX_TEXTDOMAIN),
+            'theme9' => __('Theme #9', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
         // create list of units
@@ -273,7 +274,7 @@ class jQueryColorbox {
     //addPluginActionLinks()
 
     /**
-     * Insert JavaScript for Colorbox into WP Header
+     * Insert JavaScript and CSS for Colorbox into WP Header
      *
      * @since 1.0
      * @access private
@@ -281,7 +282,7 @@ class jQueryColorbox {
      * @author Fabian Wolf (http://usability-idealist.de/)
      * @author Jason Stapels (jstapels@realmprojects.com)
      *
-     * @return rewritten content or excerpt
+     * @return wordpress header insert
      */
     function buildWordpressHeader() {
         ?>
@@ -934,7 +935,7 @@ class jQueryColorbox {
     }
 
     /**
-     * Update jQuery Colorbox settings
+     * Update jQuery Colorbox settings wrapper
      *
      * handles checks and redirect
      *
@@ -976,7 +977,7 @@ class jQueryColorbox {
     //updateSettings()
 
     /**
-     * Delete jQuery Colorbox settings
+     * Delete jQuery Colorbox settings wrapper
      *
      * handles checks and redirect
      *
@@ -1017,7 +1018,7 @@ class jQueryColorbox {
     // deleteSettings()
 
     /**
-     * execute during activation.
+     * executed during activation.
      *
      * @since 2.0
      * @access private
