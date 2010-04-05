@@ -125,6 +125,7 @@ I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
 = 3.1 (2010-04-06) =
+* BUGFIX: Automatic hiding of embedded flash objects under Colorbox layer now works in Internet Explorer.
 * NEW: Added theme#9, a modified version of theme#4.
 * CHANGE: <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> updated the turkish translation.
 

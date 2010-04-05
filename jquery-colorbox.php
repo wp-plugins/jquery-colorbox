@@ -395,18 +395,39 @@ class jQueryColorbox {
                         }
                     }
                 });
-                <?php if ($this->colorboxSettings['autoHideFlash'] == true) {
-                    //hide embedded flash objects automatically under Colorbox layer ?>
-                    $("object").each(function(index,obj) {
-                      $(obj).append('<param name="wmode" value="transparent" />');
-                    });
-                    $("embed").each(function(index,obj) {
-                      $(obj).attr('wmode','transparent');
-                    });
-                <?php } ?>
+
             });
             // ]]>
         </script>
+
+        <?php if ($this->colorboxSettings['autoHideFlash'] == true) { ?>
+        <script type="text/javascript">
+            // <![CDATA[
+            jQuery(document).ready(function($) {
+                $(document).bind('cbox_open', function(){
+                    var flashObjects = document.getElementsByTagName("object");
+                    for (i = 0; i < flashObjects.length; i++) {
+                        flashObjects[i].style.visibility = "hidden";
+                    }
+                    var flashEmbeds = document.getElementsByTagName("embed");
+                    for (i = 0; i < flashEmbeds.length; i++) {
+                        flashEmbeds[i].style.visibility = "hidden";
+                    }
+                });
+                $(document).bind('cbox_closed', function(){
+                    var flashObjects = document.getElementsByTagName("object");
+                    for (i = 0; i < flashObjects.length; i++) {
+                        flashObjects[i].style.visibility = "visible";
+                    }
+                    var flashEmbeds = document.getElementsByTagName("embed");
+                    for (i = 0; i < flashEmbeds.length; i++) {
+                        flashEmbeds[i].style.visibility = "visible";
+                    }
+                });
+            });
+            // ]]>
+        </script>
+        <?php } ?>
         <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
 
