@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/index.php/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.9.1
-Stable tag: 3.0.1
+Stable tag: 3.1
 
 Adds Colorbox/Lightbox functionality to images. They are grouped by post or page. Also works for WordPress galleries. Comes with different themes.
 
