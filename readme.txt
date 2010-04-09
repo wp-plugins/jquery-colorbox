@@ -6,7 +6,7 @@ Requires at least: 2.8.5
 Tested up to: 2.9.1
 Stable tag: 3.0.1
 
-Adds Colorbox/Lightbox functionality to images on the blog. Images are grouped by post or page. Also works for WordPress galleries.
+Adds Colorbox/Lightbox functionality to images. They are grouped by post or page. Also works for WordPress galleries. Comes with different themes.
 
 == Description ==
 
@@ -32,6 +32,7 @@ Localization
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
+* French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -63,9 +64,9 @@ Do not forget to activate auto Colorbox if you want Colorbox to work for all ima
 3. Theme #3
 4. Theme #4
 5. Theme #5
-6. Theme #6
+6. Theme #6 (not compatible with IE6)
 7. Theme #7
-8. Theme #8
+8. Theme #8 (not compatible with IE6)
 9. Theme #9
 
 == Frequently Asked Questions ==
@@ -124,9 +125,11 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 3.1 (2010-04-06) =
+= 3.1 (2010-04-10) =
 * BUGFIX: Automatic hiding of embedded flash objects under Colorbox layer now works in Internet Explorer.
 * NEW: Added theme#9, a modified version of theme#4.
+* NEW: French translation by <a href="http://www.tolingo.com/">Tolingo Translations</a>
+* NEW: If auto colorbox is switched on, plugin now adds Colorbox functionality to every image regardless of position
 * CHANGE: <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> updated the turkish translation.
 
 = 3.0.1 (2010-03-31) =
