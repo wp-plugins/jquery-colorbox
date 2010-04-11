@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: techotronic
-Donate link: http://www.techotronic.de/index.php/donate/
+Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay
 Requires at least: 2.8.5
 Tested up to: 2.9.1
@@ -20,7 +20,7 @@ Images are grouped as galleries when linked in the same post or page. Groups can
 
 Individual images can be excluded by adding a special CSS class.
 
-See the <a href="http://www.techotronic.de/index.php/plugins/jquery-colorbox/">plugin page</a> for demo pages.
+See the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
 For more information visit the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>.
 If you have questions or problems, feel free to write an email to blog [at] techotronic.de or write a entry at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>
@@ -125,6 +125,10 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 3.2 (2010-04-20) =
+* NEW: Added theme#10, thx to <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> for all the hard work!
+* CHANGE: <a href="http://www.vjucon.com/">Vedran Jurincic</a> updated the bosnian translation
+
 = 3.1 (2010-04-10) =
 * BUGFIX: Automatic hiding of embedded flash objects under Colorbox layer now works in Internet Explorer.
 * NEW: Added theme#9, a modified version of theme#4.
@@ -172,7 +176,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Added switch that adds automatic start to slideshows (no way to add slideshows individually yet)
 * NEW: Added configuration of slideshow speed
 * NEW: Added switch that allows the user to decide whether Colorbox scales images
-* NEW: Added demos of the plugin on the <a href="http://www.techotronic.de/index.php/plugins/jquery-colorbox/">plugin page</a>
+* NEW: Added demos of the plugin on the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a>
 * NEW: Added configuration for adding colorbox class only to WordPress galleries
 * NEW: Automatically resets settings if settings of a version prior to 1.4 are found upon activation
 * NEW: width and height can now be configured as percent relative to browser window size or in pixels (default is percent)

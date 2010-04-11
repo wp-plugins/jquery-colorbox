@@ -4,9 +4,9 @@
  * @subpackage jQuery Colorbox
  *
  * Plugin Name: jQuery Colorbox
- * Plugin URI: http://www.techotronic.de/index.php/plugins/jquery-colorbox/
+ * Plugin URI: http://www.techotronic.de/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 3.1
+ * Version: 3.2
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -19,7 +19,7 @@
 ?>
 <?php
 //define constants
-define('JQUERYCOLORBOX_VERSION', '3.1');
+define('JQUERYCOLORBOX_VERSION', '3.2');
 
 if (! defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
