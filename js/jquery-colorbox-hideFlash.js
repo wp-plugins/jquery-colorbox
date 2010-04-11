@@ -1,6 +1,8 @@
 /*
- * jQuery Colorbox Wordpress Plugin.
+ * @package Techotronic
+ * @subpackage jQuery Colorbox
  *
+ * @since 3.1
  * @author Arne Franken
  *
  * handles automatic hiding of flash object and embed tags 
