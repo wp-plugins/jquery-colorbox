@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-09 18:05+0100\n"
-"PO-Revision-Date: 2010-04-09 18:05+0100\n"
+"PO-Revision-Date: 2010-04-11 17:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: tolingo translations <info@tolingo.com>\n"
 "MIME-Version: 1.0\n"
@@ -98,12 +98,12 @@ msgstr "arrêter le diaporama"
 
 #: jquery-colorbox.php:411
 msgid "{current} of {total} images"
-msgstr "{en cours} du {total} d'images"
+msgstr "{current} du {total} d'images"
 
 #: jquery-colorbox.php:548
 #, php-format
 msgid "%1$s Settings"
-msgstr "Paramètres %1$s"
+msgstr "Paramètres de la %1$s"
 
 #: jquery-colorbox.php:564
 msgid "Theme"
@@ -142,7 +142,7 @@ msgstr "Ajouter un diaporama aux groupes"
 #: jquery-colorbox.php:613
 #, php-format
 msgid "Add Slideshow functionality for %1$s Groups"
-msgstr "Ajouter la fonction Diaporama aux groupes %1$s"
+msgstr "Ajouter la fonction Diaporama aux groupes de la %1$s"
 
 #: jquery-colorbox.php:618
 msgid "Start Slideshow automatically"
@@ -151,7 +151,7 @@ msgstr "Démarrer automatiquement le diaporama"
 #: jquery-colorbox.php:622
 #, php-format
 msgid "Start Slideshow automatically if slideshow functionality is added to %1$s Groups"
-msgstr "Démarrer automatiquement le diaporama si la fonction Diaporama a été ajoutée aux groupes %1$s"
+msgstr "Démarrer automatiquement le diaporama si la fonction Diaporama a été ajoutée aux groupes de la %1$s"
 
 #: jquery-colorbox.php:627
 msgid "Speed of the slideshow"
@@ -310,17 +310,17 @@ msgstr "Traduction"
 
 #: jquery-colorbox.php:863
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
-msgstr "La traduction en français a été faite par<a href=\"http://www.tolingo.com\">tolingo translations</a>."
+msgstr "La traduction en français a été faite par <a href=\"http://www.tolingo.com\">tolingo translations</a>."
 
 #: jquery-colorbox.php:886
 #, php-format
 msgid "Successfully updated %1$s settings."
-msgstr "Mise à jour réussie des paramètres %1$s."
+msgstr "Mise à jour réussie des paramètres de la %1$s."
 
 #: jquery-colorbox.php:888
 #, php-format
 msgid "%1$s settings were successfully deleted."
-msgstr "Suppression réussie des paramètres %1$s."
+msgstr "Suppression réussie des paramètres de la %1$s."
 
 #: jquery-colorbox.php:929
 msgid "needs attention: the plugin is not activated to work for all images."
@@ -333,7 +333,7 @@ msgstr "Les paramètres n'ont pas été mis à jour, vous ne disposez pas des dr
 #: jquery-colorbox.php:1036
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
-msgstr "Les paramètres %1$s n'ont pas été supprimés. Soit vous ne disposez pas des droits nécessaires, soit vous n'avez pas coché la case."
+msgstr "Les paramètres de la %1$s n'ont pas été supprimés. Soit vous ne disposez pas des droits nécessaires, soit vous n'avez pas coché la case."
 
 #~ msgid "maxWidth"
 #~ msgstr "Maximum width of an image"
