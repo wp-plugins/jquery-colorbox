@@ -3,7 +3,7 @@
  *
  * @author Arne Franken
  *
- * adds colorbox-manual to ALL img tags that are found in the output
+ * adds colorbox-manual to ALL img tags that are found in the HTML output
  */
 jQuery(document).ready(function($) {
     $("img").each( function(index,obj){

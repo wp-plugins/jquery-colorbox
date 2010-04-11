@@ -64,6 +64,7 @@ if (! defined('JQUERYCOLORBOX_SETTINGSNAME')) {
 }
 
 class jQueryColorbox {
+    
     var $colorboxThemes = array();
 
     var $colorboxUnits = array();

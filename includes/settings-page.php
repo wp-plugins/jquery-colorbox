@@ -4,6 +4,7 @@
  * @subpackage jQuery Colorbox
  *
  * @since 3.1
+ * @author Arne Franken
  *
  * HTML for settings page
  */

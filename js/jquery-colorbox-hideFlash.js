@@ -3,7 +3,7 @@
  *
  * @author Arne Franken
  *
- * handles automatic hiding of flash object and embed tags
+ * handles automatic hiding of flash object and embed tags 
  */
 jQuery(document).ready(function($) {
     $(document).bind('cbox_open', function(){
