@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: jQuery-Colorbox 2.0.1 Arabic\n"
+"Project-Id-Version: jQuery-Colorbox 3.2 Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-12 19:53+0100\n"
-"PO-Revision-Date: 2010-04-12 19:53+0100\n"
+"POT-Creation-Date: 2010-04-12 23:34+0100\n"
+"PO-Revision-Date: 2010-04-12 23:34+0100\n"
 "Last-Translator: \n"
-"Language-Team: Mickey Mouse® <modarsoos@yahoo.com>\n"
+"Language-Team: Mickey Mouse <modarsoos@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,22 +37,22 @@ msgstr "القالب الخامس"
 
 #: jquery-colorbox.php:114
 msgid "Theme #6"
-msgstr ""
+msgstr "القالب السادس"
 
 #: jquery-colorbox.php:115
 msgid "Theme #7"
-msgstr ""
+msgstr "القالب السابع"
 
 #: jquery-colorbox.php:116
 msgid "Theme #8"
-msgstr ""
+msgstr "القالب الثامن"
 
 #: jquery-colorbox.php:117
 #, fuzzy
 msgid "Theme #9"
 msgstr "القالب الأول"
 
-#: jquery-colorbox.php:118
+#: jquery-colorbox.php:121
 #, fuzzy
 msgid "Theme #10"
 msgstr "القالب الأول"
@@ -88,47 +88,47 @@ msgstr "بالمئة"
 
 #: jquery-colorbox.php:132
 msgid "pixels"
-msgstr "بالبيكسل"
+msgstr "بيكسل"
 
 #: jquery-colorbox.php:137
 msgid "elastic"
-msgstr ""
+msgstr "تمدد"
 
 #: jquery-colorbox.php:138
 msgid "fade"
-msgstr ""
+msgstr "تضاءل"
 
 #: jquery-colorbox.php:139
 msgid "none"
-msgstr ""
+msgstr "بدون تأثير"
 
-#: jquery-colorbox.php:281
+#: jquery-colorbox.php:294
 #: includes/settings-page.php:101
 msgid "Settings"
 msgstr "إعدادات"
 
-#: jquery-colorbox.php:344
+#: jquery-colorbox.php:357
 #, php-format
 msgid "Successfully updated %1$s settings."
-msgstr "تم تحديث الإعدادات %1$s بنجاح."
+msgstr "تم تحديث إعدادات برنامج %1$s بنجاح."
 
-#: jquery-colorbox.php:346
+#: jquery-colorbox.php:359
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "%1$s تم حذف الإعدادات بنجاح."
 
-#: jquery-colorbox.php:387
+#: jquery-colorbox.php:400
 msgid "needs attention: the plugin is not activated to work for all images."
-msgstr ""
+msgstr "تنبيه: لم يتم تنشيط برنامج صندوق عرض الشرائح ليعمل على جميع الصور."
 
-#: jquery-colorbox.php:447
+#: jquery-colorbox.php:460
 msgid "Did not update settings, you do not have the necessary rights."
-msgstr "لم يتم تحديث الإعدادات، ليس لديك صلاحيات."
+msgstr "لم يتم تحديث الإعدادات، ليس لديك الصلاحيات الكافية."
 
-#: jquery-colorbox.php:494
+#: jquery-colorbox.php:507
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
-msgstr "لا تقم بحذف %1$s الإعدادات. إلا إذا كنت تملك التصريح اللازم بذلك أو بأنك لم تقم بتحديد العلامة داخل المربع الصغير."
+msgstr "لم يتم حذف إعدادات %1$s  أو ليس لديك الصلاحيات الكافية أو بأنك لم تقم بتحديد العلامة داخل المربع الصغير قبل الضغط على زر حذف الإعدادات."
 
 #: includes/colorbox-javascript.php:53
 msgid "close"
@@ -161,7 +161,7 @@ msgstr "%1$s إعدادات"
 
 #: includes/settings-page.php:110
 msgid "Theme"
-msgstr "قالب"
+msgstr "حدد القالب"
 
 #: includes/settings-page.php:122
 msgid "Select the theme you want to use on your blog."
@@ -169,25 +169,25 @@ msgstr "حدد القالب الذي تريد استخدامه في موقعك �
 
 #: includes/settings-page.php:127
 msgid "Theme screenshot"
-msgstr ""
+msgstr "صورة القالب"
 
 #: includes/settings-page.php:137
 #, php-format
 msgid "Automate %1$s for all images"
-msgstr "شغل تلقائياً %1$s لجميع الصور"
+msgstr "شغل برنامج %1$s لجميع الصور تلقائياً"
 
 #: includes/settings-page.php:141
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
-msgstr "أضف بشكل تلقائي صندوق عرض الشرائح في جميع المواضيع والصفحات. أيضاً أضف صندوق عرض الشرائح لمعرض الصور. الصور في صفحة واحدة أو موضوع واحد ستندمج بشكل تلقائي."
+msgstr "أضف صندوق عرض الشرائح بشكل تلقائي لعرض الصور في المواضيع والصفحات. سيقوم البرنامج بدمج جميع الصور في الموضوع تلقائياً."
 
 #: includes/settings-page.php:146
 #, php-format
 msgid "Automate %1$s for images in WordPress galleries"
-msgstr "شغل تلقائياً %1$s لجميع الصور في معرض صور الموقع"
+msgstr "أتمتة %1$s للصور في معرض صور الموقع"
 
 #: includes/settings-page.php:150
 msgid "Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically."
-msgstr "أضف بشكل تلقائي صندوق عرض الشرائح للصور في معرض ووردبريس، ولكن في أي مكان آخر. الصور في الصفحة أو الموضوع ستندمج تلقائياً."
+msgstr "أضف صندوق عرض الشرائح بشكل تلقائي للصور في معرض صور الموقع، سيقوم البرنامج بدمج جميع الصور في الموضوع تلقائياً."
 
 #: includes/settings-page.php:155
 msgid "Add Slideshow to groups"
@@ -196,7 +196,7 @@ msgstr "إضافة عرض الشرائح للمجموعات"
 #: includes/settings-page.php:159
 #, php-format
 msgid "Add Slideshow functionality for %1$s Groups"
-msgstr "إضافة عرض الشرائح ل %1$s مجموعات"
+msgstr "إضافة عرض الشرائح لمجموعات %1$s"
 
 #: includes/settings-page.php:164
 msgid "Start Slideshow automatically"
@@ -205,7 +205,7 @@ msgstr "ابدأ عرض الشرائح تلقائياً"
 #: includes/settings-page.php:168
 #, php-format
 msgid "Start Slideshow automatically if slideshow functionality is added to %1$s Groups"
-msgstr "ابدأ عرض الشرائح تلقائياً إذا كانت خصائص عرض الشرائح قد أضيفت ل %1$s  المجموعات"
+msgstr "ابدأ عرض الشرائح تلقائياً إذا كانت خصائص عرض الشرائح قد أضيفت لمجموعات %1$s"
 
 #: includes/settings-page.php:173
 msgid "Speed of the slideshow"
@@ -218,11 +218,11 @@ msgstr ""
 
 #: includes/settings-page.php:177
 msgid "Sets the speed of the slideshow, in milliseconds"
-msgstr "حدد سرعة عرض الشرائح بالميلي"
+msgstr "حدد سرعة عرض الشرائح بالميلي ثانية"
 
 #: includes/settings-page.php:182
 msgid "Maximum width of an image"
-msgstr "الحد الأقصى لعرض صورة"
+msgstr "أقصى عرض للصورة"
 
 #: includes/settings-page.php:186
 #: includes/settings-page.php:232
@@ -235,7 +235,7 @@ msgstr "تعيين أقصى عرض للصورة"
 
 #: includes/settings-page.php:200
 msgid "Set the maximum width of the image in the Colorbox in relation to the browser window in percent or pixels. If maximum width is not set, image is as wide as the Colorbox"
-msgstr "حدد العرض الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا لم يتم تعيين العرض، سيكون عرض الصورة مثل عرض صندوق عرض الشرائح."
+msgstr "حدد العرض الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا لم يتم تعيين العرض، سيكون عرض الصورة مثل عرض صندوق عرض الشرائح"
 
 #: includes/settings-page.php:205
 msgid "Maximum height of an image"
@@ -284,63 +284,63 @@ msgstr "تعديل حجم الصورة"
 
 #: includes/settings-page.php:278
 msgid "If enabled and if maximum width of images, maximum height of images, width of the Colorbox, or height of the Colorbox have been defined, ColorBox will scale photos to fit within the those values"
-msgstr "إذا تم التفعيل وإذا تم تعديل الحد الأقصى لارتفاع وعرض \"الصور وصندوق عرض الشرائح\" سيقوم البرنامج بتصحيح عرض الصور داخل الصندوق ليلائم هذه القيم."
+msgstr "إذا كنت قد فعلت هذا الخيار وكنت قد عدلت في \"عرض وارتفاع الصور\" و\"عرض وارتفاع صندوق عرض الشرائح\" سيقوم صندوق عرض الشرائح بعرض الصور لتتلائم مع هذه القيم"
 
 #: includes/settings-page.php:283
 msgid "Close Colorbox on overlay click"
-msgstr ""
+msgstr "إغلاق صندوق عرض الشرائح"
 
 #: includes/settings-page.php:287
 msgid "If checked, enables closing ColorBox by clicking on the background overlay"
-msgstr ""
+msgstr "إذا حددت هذا الخيار، يمكنك إغلاق صندوق عرض الشرائح عند الضغط في أي مكان على الخلفية الشفافة"
 
 #: includes/settings-page.php:292
 msgid "Preload images"
-msgstr ""
+msgstr "تحميل مسبق للصور"
 
 #: includes/settings-page.php:296
 msgid "Allows for preloading of \"next\" and \"previous\" content in a group, after the current content has finished loading. Uncheck box to disable."
-msgstr ""
+msgstr "السماح للتحميل المسبق لأزرار \"التالي\" و\"السابق\" في المجموعات، بعد تحميل المحتوى الحالي. أزل المربع للتعطيل."
 
 #: includes/settings-page.php:301
 msgid "Transition type"
-msgstr ""
+msgstr "نوع تبديل الصور"
 
 #: includes/settings-page.php:313
 msgid "The transition type of the Colorbox. Can be set to \"elastic\", \"fade\", or \"none\""
-msgstr ""
+msgstr "يمكن ضبط إعدادات نوع تبديل الصور داخل صندوق عرض الشرائح إلى: تمدد، تضاءل، أو بدون تأثير"
 
 #: includes/settings-page.php:318
 msgid "Transition speed"
-msgstr ""
+msgstr "سرعة التبديل بين الصور"
 
 #: includes/settings-page.php:322
 msgid "Sets the speed of the \"fade\" and \"elastic\" transitions, in milliseconds"
-msgstr ""
+msgstr "حدد سرعة نوع تبديل الصورة \"تمدد، تضاءل، بدون تأثير\" بالميلي ثانية"
 
 #: includes/settings-page.php:327
 msgid "Opacity"
-msgstr ""
+msgstr "شفافية الخلفية"
 
 #: includes/settings-page.php:331
 msgid "The overlay opacity level. Range: 0 to 1"
-msgstr ""
+msgstr "مستوى شفافية الخلفية. المدى: من 0 إلى 1"
 
 #: includes/settings-page.php:336
 msgid "Automate hiding of flash objects"
-msgstr ""
+msgstr "أتمتة إخفاء عناصر الفلاش"
 
 #: includes/settings-page.php:340
 msgid "Automatically hide embeded flash objects behind the Colorbox layer. Done by setting the wmode to transparent."
-msgstr ""
+msgstr "قم بإخفاء عناصر الفلاش المدمجة خلف طبقة صندوق عرض الشرائح. يتم ذلك عن طريق جعل إعدادات wmode شفافة."
 
 #: includes/settings-page.php:345
 msgid "Disable warning"
-msgstr ""
+msgstr "تعطيل التحذير"
 
 #: includes/settings-page.php:349
 msgid "Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off."
-msgstr ""
+msgstr "تعطيل التحذير الذي يعرض في الصفحة الرئيسية للوحة تحكم الموقع عند تفعيل الإضافة وعدم تفعيلها على جميع الصور في الموقع."
 
 #: includes/settings-page.php:355
 msgid "Save Changes"
@@ -353,7 +353,7 @@ msgstr "حذف الإعدادات"
 
 #: includes/settings-page.php:367
 msgid "Check the box and click this button to delete settings of this plugin."
-msgstr "ضع علامة في المربع واضغط على هذا الزر لحذف إعدادات البرنامج."
+msgstr "ضع علامة في المربع واضغط على زر حذف الإعدادات ليتم حذف إعدادات البرنامج."
 
 #: includes/settings-page.php:383
 msgid "Donate"
@@ -361,15 +361,15 @@ msgstr "تبرع"
 
 #: includes/settings-page.php:397
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
-msgstr "إذا كنت ترغب بالمساهمة في تنمية تطوير هذا البرنامج فنرجو منك التبرع لنا."
+msgstr "إذا كنت ترغب بالمساهمة في تطوير البرنامج سواءً كانت مساهمتك (صغيرة أو كبيرة)، فنرجو منك أن تقوم بالتبرع."
 
 #: includes/settings-page.php:406
 msgid "Translation"
-msgstr ""
+msgstr "معلومات عن الترجمة"
 
 #: includes/settings-page.php:409
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
-msgstr ""
+msgstr "تمت الترجمة للغة العربية بواسطة: <a href=\"http://www.photokeens.com\">مضر صوص</a>."
 
 #~ msgid "maxWidth"
 #~ msgstr "Maximum width of an image"

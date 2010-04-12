@@ -33,6 +33,7 @@ Localization
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 * French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
+* Arabic (ar) by <a href="http://www.photokeens.com"></a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -130,6 +131,7 @@ I'll include new FAQs in every new version. Promise.
 * CHANGE: jQuery Colorbox plugin now adds necessary CSS class to all embedded images.
 * CHANGE: jQuery Colorbox plugin is now compatible to <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>
 * CHANGE: <a href="http://www.vjucon.com/">Vedran Jurincic</a> updated the bosnian translation
+* NEW: Arabic translation by <a href="http://www.photokeens.com"></a>
 
 = 3.1 (2010-04-10) =
 * BUGFIX: Automatic hiding of embedded flash objects under Colorbox layer now works in Internet Explorer.
