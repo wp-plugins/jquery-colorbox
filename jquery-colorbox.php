@@ -117,6 +117,15 @@ class jQueryColorbox {
             'theme9' => __('Theme #9', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
+        $dummyThemeNumberArray = array (
+            __('Theme #10', JQUERYCOLORBOX_TEXTDOMAIN),
+            __('Theme #11', JQUERYCOLORBOX_TEXTDOMAIN),
+            __('Theme #12', JQUERYCOLORBOX_TEXTDOMAIN),
+            __('Theme #13', JQUERYCOLORBOX_TEXTDOMAIN),
+            __('Theme #14', JQUERYCOLORBOX_TEXTDOMAIN),
+            __('Theme #15', JQUERYCOLORBOX_TEXTDOMAIN)
+        );
+
         // create list of units
         $this->colorboxUnits = array(
             '%' => __('percent', JQUERYCOLORBOX_TEXTDOMAIN),
@@ -209,9 +218,22 @@ class jQueryColorbox {
         if (isset($colorboxSettings['autoColorbox']) && $colorboxSettings['autoColorbox']) {
             global
             $post;
-            $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
-            $replacement = '<img$1class=$2$3 colorbox-' . $post->ID . '$4$5>';
-            $content = preg_replace($pattern, $replacement, $content);
+            // match all img tags with this pattern
+            $imgPattern = "/<img([^\>]*?)>/i";
+            if ( preg_match_all ( $imgPattern , $content , $imgTags ) ) {
+                foreach ( $imgTags[0] as $imgTag ) {
+                    if(!preg_match('/class/i',$imgTag)){
+                        $pattern = $imgPattern;
+                        $replacement = '<img class="colorbox-' . $post->ID . '" $1>';
+                    }
+                    else{
+                        $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
+                        $replacement = '<img$1class=$2$3 colorbox-' . $post->ID . '$4$5>';
+                    }
+                    $replacedImgTag = preg_replace($pattern, $replacement, $imgTag);
+                    $content = str_replace($imgTag, $replacedImgTag, $content);
+                }
+            }
         }
         return $content;
     }

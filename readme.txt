@@ -127,6 +127,8 @@ I'll include new FAQs in every new version. Promise.
 == Changelog ==
 = 3.2 (2010-04-20) =
 * NEW: Added theme#10, thx to <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> for all the hard work!
+* CHANGE: jQuery Colorbox plugin now adds necessary CSS class to all embedded images.
+* CHANGE: jQuery Colorbox plugin is now compatible to <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>
 * CHANGE: <a href="http://www.vjucon.com/">Vedran Jurincic</a> updated the bosnian translation
 
 = 3.1 (2010-04-10) =
