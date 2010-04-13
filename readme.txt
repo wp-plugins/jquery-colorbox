@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
-Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow
+Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg
 Requires at least: 2.8.5
 Tested up to: 2.9.1
 Stable tag: 3.1
