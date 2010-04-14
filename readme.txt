@@ -6,7 +6,7 @@ Requires at least: 2.8.5
 Tested up to: 2.9.1
 Stable tag: 3.1
 
-Adds Colorbox/Lightbox functionality to images. They are grouped by post or page. Also works for WordPress galleries. Comes with different themes.
+Adds Colorbox/Lightbox functionality to images. They are grouped by post or page. Also works for WordPress and NextGEN galleries. Comes with different themes.
 
 == Description ==
 
@@ -20,7 +20,7 @@ Images are grouped as galleries when linked in the same post or page. Groups can
 
 Individual images can be excluded by adding a special CSS class.
 
-Works out-of-the-box with <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
+Works out-of-the-box with WordPress Galleries and <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
 
 See the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
@@ -71,6 +71,7 @@ Do not forget to activate auto Colorbox if you want Colorbox to work for all ima
 7. Theme #7
 8. Theme #8 (not compatible with IE6)
 9. Theme #9
+10. Theme #10 (IE does not support the CSS3 rounded edges)
 
 == Frequently Asked Questions ==
 * I have installed and activated (or updated) jQuery Colorbox, but it doesn't show up when I click on a thumbnail in my blog. Is the plugin broken?
@@ -129,7 +130,7 @@ I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
 = 3.2 (2010-04-20) =
-* NEW: Added theme#10, thx to <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> for all the hard work!
+* NEW: Added theme#10, thx to <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> for all the hard work! (CSS3 rounded edges, IE does not support that)
 * CHANGE: jQuery Colorbox plugin now adds necessary CSS class to all embedded images.
 * CHANGE: jQuery Colorbox plugin is now compatible to <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>
 * CHANGE: <a href="http://www.vjucon.com/">Vedran Jurincic</a> updated the bosnian translation
