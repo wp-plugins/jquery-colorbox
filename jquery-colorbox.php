@@ -114,11 +114,11 @@ class jQueryColorbox {
             'theme6' => __('Theme #6', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme7' => __('Theme #7', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme8' => __('Theme #8', JQUERYCOLORBOX_TEXTDOMAIN),
-            'theme9' => __('Theme #9', JQUERYCOLORBOX_TEXTDOMAIN)
+            'theme9' => __('Theme #9', JQUERYCOLORBOX_TEXTDOMAIN),
+            'theme10' => __('Theme #10', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
         $dummyThemeNumberArray = array (
-            __('Theme #10', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #11', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #12', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #13', JQUERYCOLORBOX_TEXTDOMAIN),
