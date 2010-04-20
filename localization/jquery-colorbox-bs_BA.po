@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-12 19:54+0100\n"
-"PO-Revision-Date: 2010-04-12 19:54+0100\n"
+"PO-Revision-Date: 2010-04-20 22:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -357,11 +357,11 @@ msgstr "Ako bi želio da daš doprinos daljnjem usavršavanju, molim te razmisli
 
 #: includes/settings-page.php:406
 msgid "Translation"
-msgstr ""
+msgstr "Prijevod"
 
 #: includes/settings-page.php:409
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
-msgstr ""
+msgstr "Na bosanski je preveo <a href=\"http://www.vjucon.com\">Vedran Jurinčić</a>."
 
 #~ msgid "maxWidth"
 #~ msgstr "Maximum width of an image"
