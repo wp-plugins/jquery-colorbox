@@ -4,23 +4,21 @@ Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg
 Requires at least: 2.8.5
 Tested up to: 2.9.1
-Stable tag: 3.1
+Stable tag: 3.2
 
 Adds Colorbox/Lightbox functionality to images. They are grouped by post or page. Also works for WordPress and NextGEN galleries. Comes with different themes.
 
 == Description ==
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
-
 jQuery Colorbox features 9 themes from which you can choose. See screenshots tab.
+Works out-of-the-box with WordPress Galleries and <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
 All images in posts and pages can be displayed in a layer when the thumbnail is clicked.
 Images are grouped as galleries when linked in the same post or page. Groups can be displayed in an automatic slideshow.
 
 Individual images can be excluded by adding a special CSS class.
-
-Works out-of-the-box with WordPress Galleries and <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
 
 See the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
@@ -74,6 +72,15 @@ Do not forget to activate auto Colorbox if you want Colorbox to work for all ima
 10. Theme #10 (IE does not support the CSS3 rounded edges)
 
 == Frequently Asked Questions ==
+* I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
+
+Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
+
+I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
+Chances are that the other jQuery library is loaded after the one that I load. If that happens, the colorbox features are overwritten.
+
+Maybe the images you want jQuery Colorbox to work on are added by a plugin and the images are added after jQuery Colorbox manipulates the HTML when rendering your blog.
+
 * I have installed and activated (or updated) jQuery Colorbox, but it doesn't show up when I click on a thumbnail in my blog. Is the plugin broken?
 
 Since version 2.0, jQuery Colorbox' automatic behaviour can be switched on and off in the settings. That way, you can apply the Colorbox functionality manually to single images.
@@ -104,17 +111,6 @@ This is a Flash issue, but relatively easy to solve. Just activate the automatic
 Adobe described on these sites what the problem is and how to fix it manually:
 <a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Knowledgebase 1</a>
 <a href="http://kb2.adobe.com/cps/142/tn_14201.html">Adobe Knowledgebase 2</a>
-
-* I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
-
-Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
-
-I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
-Chances are that the other jQuery libary is loaded after the one that I load. If that happens, the colorbox features are overwritten.
-
-Maybe the images you want jQuery Colorbox to work on are added by a plugin and the images are added after jQuery Colorbox manipulates the HTML when rendering your blog.
-
-Sometimes I have seen Images without the "class" attribute. If there is no "class" attribute present in the IMG-Tag, jQuery Colorbox can't add the necessary CSS class and won't work on that image.
 
 * Why is jQuery Colorbox not available in my language?
 
