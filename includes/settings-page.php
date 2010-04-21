@@ -80,7 +80,7 @@
 
         //change screenshot if new theme is selected
         $("#jquery-colorbox-theme").change(function() {
-            var src = $("option:selected", this).val().match(/\d$/i);
+            var src = $("option:selected", this).val().match(/\d+$/i);
             if ( src != "" ){
                 var $imgTag = "<img src=\"" + "<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; ?>" + src  + ".jpg\" />";
                 $("#jquery-colorbox-theme_screenshot_image").empty().html($imgTag).fadeIn();
@@ -128,7 +128,7 @@
                     </th>
                     <td height="310px">
                         <div id="jquery-colorbox-theme_screenshot_image">
-                            <img src="<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; preg_match('/\d$/i',$this->colorboxSettings['colorboxTheme'],$matches); echo $matches[0] ?>.jpg"/>
+                            <img src="<?php echo JQUERYCOLORBOX_PLUGIN_URL; echo '/screenshot-' ; preg_match('/\d+$/i',$this->colorboxSettings['colorboxTheme'],$matches); echo $matches[0] ?>.jpg"/>
                         </div>
                     </td>
                 </tr>
