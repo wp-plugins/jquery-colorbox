@@ -21,19 +21,19 @@
 //define constants
 define('JQUERYCOLORBOX_VERSION', '3.2');
 
-if (! defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
+if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
 }
-if (! defined('JQUERYCOLORBOX_PLUGIN_NAME')) {
+if (!defined('JQUERYCOLORBOX_PLUGIN_NAME')) {
     define('JQUERYCOLORBOX_PLUGIN_NAME', trim(dirname(JQUERYCOLORBOX_PLUGIN_BASENAME), '/'));
 }
-if (! defined('JQUERYCOLORBOX_NAME')) {
+if (!defined('JQUERYCOLORBOX_NAME')) {
     define('JQUERYCOLORBOX_NAME', 'jQuery Colorbox');
 }
-if (! defined('JQUERYCOLORBOX_TEXTDOMAIN')) {
+if (!defined('JQUERYCOLORBOX_TEXTDOMAIN')) {
     define('JQUERYCOLORBOX_TEXTDOMAIN', 'jquery-colorbox');
 }
-if (! defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
+if (!defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
     if (is_dir(WPMU_PLUGIN_DIR)) {
         // WP_MU plugin
         define('JQUERYCOLORBOX_PLUGIN_DIR', WPMU_PLUGIN_DIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
@@ -42,29 +42,29 @@ if (! defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
         define('JQUERYCOLORBOX_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
     }
 }
-if (! defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
+if (!defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
     if (is_dir(WPMU_PLUGIN_DIR)) {
         define('JQUERYCOLORBOX_PLUGIN_DIR', ABSPATH . '/' . MUPLUGINDIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
     } else {
         define('JQUERYCOLORBOX_PLUGIN_DIR', ABSPATH . '/' . PLUGINDIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
     }
 }
-if (! defined('JQUERYCOLORBOX_PLUGIN_URL')) {
+if (!defined('JQUERYCOLORBOX_PLUGIN_URL')) {
     if (is_dir(WPMU_PLUGIN_DIR)) {
         define('JQUERYCOLORBOX_PLUGIN_URL', WPMU_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
     } else {
         define('JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
     }
 }
-if (! defined('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR')) {
+if (!defined('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR')) {
     define('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR', JQUERYCOLORBOX_PLUGIN_DIR . '/localization');
 }
-if (! defined('JQUERYCOLORBOX_SETTINGSNAME')) {
+if (!defined('JQUERYCOLORBOX_SETTINGSNAME')) {
     define('JQUERYCOLORBOX_SETTINGSNAME', 'jquery-colorbox_settings');
 }
 
 class jQueryColorbox {
-    
+
     var $colorboxThemes = array();
 
     var $colorboxUnits = array();
@@ -118,7 +118,7 @@ class jQueryColorbox {
             'theme10' => __('Theme #10', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
-        $dummyThemeNumberArray = array (
+        $dummyThemeNumberArray = array(
             __('Theme #11', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #12', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #13', JQUERYCOLORBOX_TEXTDOMAIN),
@@ -187,7 +187,7 @@ class jQueryColorbox {
         // enqueue javascripts in wordpress
         if (!is_admin()) {
             wp_enqueue_script('colorbox', plugins_url('js/jquery.colorbox-min.js', __FILE__), array('jquery'), '1.3.6');
-            if($this->colorboxSettings['autoColorbox']) {
+            if ($this->colorboxSettings['autoColorbox']) {
                 wp_enqueue_script('colorbox-auto', plugins_url('js/jquery-colorbox-auto.js', __FILE__), array('colorbox'), '3.1');
             }
             if ($this->colorboxSettings['autoHideFlash']) {
@@ -220,13 +220,13 @@ class jQueryColorbox {
             $post;
             // match all img tags with this pattern
             $imgPattern = "/<img([^\>]*?)>/i";
-            if ( preg_match_all ( $imgPattern , $content , $imgTags ) ) {
-                foreach ( $imgTags[0] as $imgTag ) {
-                    if(!preg_match('/class/i',$imgTag)){
+            if (preg_match_all($imgPattern, $content, $imgTags)) {
+                foreach ($imgTags[0] as $imgTag) {
+                    if (!preg_match('/class/i', $imgTag)) {
                         $pattern = $imgPattern;
                         $replacement = '<img class="colorbox-' . $post->ID . '" $1>';
                     }
-                    else{
+                    else {
                         $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
                         $replacement = '<img$1class=$2$3 colorbox-' . $post->ID . '$4$5>';
                     }
@@ -312,15 +312,13 @@ class jQueryColorbox {
         ?>
         <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
-            // include CSS fixes for IE for certain themes
-            if ($this->colorboxSettings['colorboxTheme'] == 'theme1') {
-                include_once 'includes/iefix-theme1.php';
-            } elseif ($this->colorboxSettings['colorboxTheme'] == 'theme4') {
-                include_once 'includes/iefix-theme4.php';
-            }
-
-            // include Colorbox Javascript
-            include_once 'includes/colorbox-javascript.php';
+        // include CSS fixes for IE for certain themes
+        preg_match('/\d+$/i',$this->colorboxSettings['colorboxTheme'],$themeNumbers);
+        if(in_array($themeNumbers[0],array(1,4,6,7,9,11))){
+            include_once 'includes/iefix-theme'.$themeNumbers[0].'.php';
+        }
+        // include Colorbox Javascript
+        include_once 'includes/colorbox-javascript.php';
         ?>
         <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
@@ -541,7 +539,7 @@ class jQueryColorbox {
             //if jQueryColorboxVersion does not exist, the plugin is a version prior to 2.0
             //settings are incompatible with 2.0, restore default settings.
             if (!array_key_exists('jQueryColorboxVersion', $jquery_colorbox_settings)) {
-                if(!array_key_exists('scalePhotos', $jquery_colorbox_settings)){
+                if (!array_key_exists('scalePhotos', $jquery_colorbox_settings)) {
                     //in case future versions require resetting the settings
                     //if($jquery_colorbox_settings['jQueryColorboxVersion'] < JQUERYCOLORBOX_VERSION)
                     update_option(JQUERYCOLORBOX_SETTINGSNAME, jQueryColorbox::jQueryColorboxDefaultSettings());

@@ -3,15 +3,15 @@ Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg
 Requires at least: 2.8.5
-Tested up to: 2.9.1
+Tested up to: 2.9.2
 Stable tag: 3.2
 
-Adds Colorbox/Lightbox functionality to images. They are grouped by post or page. Also works for WordPress and NextGEN galleries. Comes with different themes.
+Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
 
 == Description ==
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
-jQuery Colorbox features 9 themes from which you can choose. See screenshots tab.
+jQuery Colorbox features 11 themes from which you can choose. See screenshots tab.
 Works out-of-the-box with WordPress Galleries and <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
@@ -28,12 +28,15 @@ If you have questions or problems, feel free to write an email to blog [at] tech
 Localization
 
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
-* German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
-* Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
-* Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
+
+
+* Arabic (ar) by <a href="http://www.photokeens.com">Modar Soos</a>
+* Belorussian (be_BY) translation by <a href="http://www.pc.de/">Marcis G.</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 * French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
-* Arabic (ar) by <a href="http://www.photokeens.com">Modar Soos</a>
+* German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
+* Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
+* Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -125,6 +128,12 @@ Feel free to write an email to blog [at] techotronic.de or write a entry at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 3.3 (2010-04-30) =
+* NEW: Belorussian translation by <a href="http://www.pc.de/">Marcis G.</a>
+* BUGFIX: Screenshot for Theme#10 is now displayed correctly.
+* NEW: Added Theme#11, a modified version of Theme#4.
+* BUGFIX: Theme#7,9 and 11 will work in Internet Explorer 6 now.
+
 = 3.2 (2010-04-20) =
 * NEW: Added theme#10, thx to <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> for all the hard work! (CSS3 rounded edges, IE does not support that)
 * CHANGE: jQuery Colorbox plugin now adds necessary CSS class to all embedded images.
