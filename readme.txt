@@ -11,7 +11,7 @@ Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works f
 == Description ==
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
-jQuery Colorbox features 11 themes from which you can choose. See screenshots tab.
+jQuery Colorbox features 11 themes from which you can choose. See screenshots tab or <a href="http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/">my website</a>.
 Works out-of-the-box with WordPress Galleries and <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
@@ -48,7 +48,7 @@ The picture I used for the screenshots was designed by <a href="http://wallpaper
 
 ###Updgrading From A Previous Version###
 
-To upgrade from a previous version of this plugin, delete the entire folder and files from the previous version of the plugin and then follow the installation instructions below.
+To upgrade from a previous version of this plugin, use the built in update feature of WordPress or copy the files on top of the current installation.
 
 ###Installing The Plugin###
 
@@ -121,9 +121,13 @@ I speak German and English fluently, but unfortunately no other language well en
 
 Would you like to help? Translating the plugin is easy if you understand English and are fluent in another language.
 
+* I have a problem with the Colorbox or want to style it my own way. Can you help?
+
+Of course I want to help everyone, but I have a full time job and I don't have the time. You can ask your questions at the <a href="http://groups.google.com/group/colorbox/topics">Colorbox Google group</a>.
+
 * My question isn't answered here. What do I do now?
 
-Feel free to write an email to blog [at] techotronic.de or write a entry at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>.
+Feel free to write an email to blog [at] techotronic.de or open a thread at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>.
 
 I'll include new FAQs in every new version. Promise.
 
