@@ -92,6 +92,10 @@ The default ist OFF.
 
 New in 3.0: If the plugin is activated, but the auto Colorbox feature is turned off, a warning is displayed.
 
+* Upon activation of the plugin I see the following error `Parse error: syntax error, unexpected T_STATIC, expecting T_OLD_FUNCTION or T_FUNCTION or T_VAR or '}' in /path/to/jquery-colorbox.php on line XX`
+
+jQuery Colorbox needs PHP5 to work. You see this error message because you are using PHP4.
+
 * How does jQuery Colorbox work?
 
 When inserting a picture, the field "Link URL" needs to contain the link to the full-sized image. (press the button "Link to Image" below the field)
