@@ -27,15 +27,14 @@ If you have questions or problems, feel free to write an email to blog [at] tech
 
 Localization
 
-* English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
-
-
 * Arabic (ar) by <a href="http://www.photokeens.com">Modar Soos</a>
 * Belorussian (be_BY) translation by <a href="http://www.pc.de/">Marcis G.</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
+* English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
+* Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
@@ -63,16 +62,7 @@ Do not forget to activate auto Colorbox if you want Colorbox to work for all ima
 
 == Screenshots ==
 
-1. Theme #1
-2. Theme #2
-3. Theme #3
-4. Theme #4
-5. Theme #5
-6. Theme #6 (not compatible with IE6)
-7. Theme #7
-8. Theme #8 (not compatible with IE6)
-9. Theme #9
-10. Theme #10 (IE does not support the CSS3 rounded edges)
+<a href="http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/">Please visit my site for screenshots</a>.
 
 == Frequently Asked Questions ==
 * I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
@@ -138,6 +128,7 @@ I'll include new FAQs in every new version. Promise.
 == Changelog ==
 = 3.3 (2010-04-30) =
 * NEW: Belorussian translation by <a href="http://www.pc.de/">Marcis G.</a>
+* NEW: Russian translation by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * BUGFIX: Screenshot for Theme#10 is now displayed correctly.
 * NEW: Added Theme#11, a modified version of Theme#4.
 * BUGFIX: Theme#7,9 and 11 will work in Internet Explorer 6 now.
