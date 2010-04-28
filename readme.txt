@@ -11,7 +11,7 @@ Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works f
 == Description ==
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
-jQuery Colorbox features 11 themes from which you can choose. See screenshots tab or <a href="http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/">my website</a>.
+jQuery Colorbox features 11 themes from which you can choose. See <a href="http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/">my website</a>.
 Works out-of-the-box with WordPress Galleries and <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
@@ -109,15 +109,53 @@ Adobe described on these sites what the problem is and how to fix it manually:
 <a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Knowledgebase 1</a>
 <a href="http://kb2.adobe.com/cps/142/tn_14201.html">Adobe Knowledgebase 2</a>
 
+* I have a problem with the Colorbox or want to style it my own way. Can you help?
+
+Of course I want to help everyone, but I have a full time job and I don't have the time. You can ask your questions at the <a href="http://groups.google.com/group/colorbox/topics">Colorbox Google group</a>.
+
 * Why is jQuery Colorbox not available in my language?
 
 I speak German and English fluently, but unfortunately no other language well enough to do a translation.
 
 Would you like to help? Translating the plugin is easy if you understand English and are fluent in another language.
 
-* I have a problem with the Colorbox or want to style it my own way. Can you help?
+* How do I translate jQuery Colorbox?
 
-Of course I want to help everyone, but I have a full time job and I don't have the time. You can ask your questions at the <a href="http://groups.google.com/group/colorbox/topics">Colorbox Google group</a>.
+Take a look at the WordPress site and identify your langyage code:
+http://codex.wordpress.org/WordPress_in_Your_Language
+
+
+I.e. the language code for German is "de_DE".
+
+
+Step 1) download POEdit (http://www.poedit.net/)
+
+
+Step 2) download jQuery Colorbox (from your FTP or from http://wordpress.org/extend/plugins/jquery-colorbox/)
+
+
+Step 3) copy the file localization/jquery-colorbox-en_EN.po and rename it. (in this case jquery-colorbox-de_DE.po)
+
+
+Step 4) open the file with POEdit.
+
+
+Step 5) translate all strings. Things like "{total}" or "%1$s" mean that a value will be inserted later.
+
+
+Step 5a) The string that says "English translation by Arne ...", this is where you put your name, website (or email) and your language in. ;-)
+
+
+Step 5b) (optional) Go to POEdit -> Catalog -> Settings and enter your name, email, language code etc
+
+
+Step 6) Save the file. Now you will see two files, jquery-colorbox-de_DE.po and jquery-colorbox-de_DE.mo.
+
+
+Step 7) Upload your files to your FTP server into the jQuery Colorbox directory (usually /wp-content/plugins/jquery-colorbox/)
+
+
+Step 8) When you are sure that all translations are working correctly, send the po-file to me and I will put it into the next jQuery Colorbox version.
 
 * My question isn't answered here. What do I do now?
 
@@ -132,6 +170,7 @@ I'll include new FAQs in every new version. Promise.
 * BUGFIX: Screenshot for Theme#10 is now displayed correctly.
 * NEW: Added Theme#11, a modified version of Theme#4.
 * BUGFIX: Theme#7,9 and 11 will work in Internet Explorer 6 now.
+* CHANGE: Minified CSS and JavaScript
 
 = 3.2 (2010-04-20) =
 * NEW: Added theme#10, thx to <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> for all the hard work! (CSS3 rounded edges, IE does not support that)
