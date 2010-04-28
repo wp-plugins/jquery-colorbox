@@ -1,0 +1,31 @@
+#colorbox,#cboxOverlay,#cboxWrapper{position:absolute;top:0;left:0;z-index:9999;overflow:hidden;}
+#cboxOverlay{position:fixed;width:100%;height:100%;background:#000;}
+#cboxMiddleLeft,#cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;overflow:visible;background:#fff;}
+#cboxLoadedContent{overflow:auto;margin-bottom:5px;}
+#cboxLoadedContent iframe{display:block;width:100%;height:100%;border:0;}
+#cboxTitle{position:absolute;bottom:-25px;left:0;text-align:center;width:100%;font-weight:700;color:#7C7C7C;margin:0;}
+#cboxLoadingOverlay,#cboxLoadingGraphic{position:absolute;top:0;left:0;width:100%;}
+#cboxPrevious,#cboxNext,#cboxClose,#cboxSlideshow{cursor:pointer;position:absolute;bottom:-29px;width:23px;height:23px;text-indent:-9999px;background:url(images/controls.png) no-repeat;}
+#colorbox{font:12px Tahoma, Arial,sans-serif;}
+#cboxTopLeft{width:14px;height:14px;background:url(images/controls.png) no-repeat;}
+#cboxTopCenter{height:14px;background:url(images/border.png) top left repeat-x;}
+#cboxTopRight{width:14px;height:14px;background:-36px url(images/controls.png) 0 no-repeat;}
+#cboxBottomLeft{width:14px;height:43px;background:-32px url(images/controls.png) 0 no-repeat;}
+#cboxBottomCenter{height:43px;background:url(images/border.png) bottom left repeat-x;}
+#cboxBottomRight{width:14px;height:43px;background:-36px url(images/controls.png) no-repeat;}
+#cboxMiddleLeft{width:14px;background:-175px url(images/controls.png) 0 repeat-y;}
+#cboxMiddleRight{width:14px;background:-211px url(images/controls.png) 0 repeat-y;}
+#cboxLoadingOverlay{background:url(images/loading_background.png) center center no-repeat;}
+#cboxLoadingGraphic{background:url(images/loading.gif) center center no-repeat;}
+#cboxCurrent{position:absolute;bottom:-25px;left:58px;font-weight:700;color:#7C7C7C;}
+#cboxPrevious{left:0;background:-51px -25px;}
+#cboxPrevious.hover{background:-51px 0;}
+#cboxNext{left:27px;background:-75px -25px;}
+#cboxNext.hover{background:-75px 0;}
+#cboxClose{right:0;background:-100px -25px;}
+#cboxClose.hover{background:-100px 0;}
+.cboxSlideshow_on #cboxSlideshow{right:27px;background:-125px 0;}
+.cboxSlideshow_on #cboxSlideshow.hover{background:-150px 0;}
+.cboxSlideshow_off #cboxSlideshow{right:27px;background:-150px -25px;}
+.cboxSlideshow_off #cboxSlideshow.hover{background:-125px 0;}
