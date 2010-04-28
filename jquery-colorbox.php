@@ -180,7 +180,7 @@ class jQueryColorbox {
             $this->colorboxSettings['colorboxTheme'] = $defaultArray['colorboxTheme'];
         }
         if (!is_admin()) {
-            wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'], plugins_url('themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox.css', __FILE__), array(), '1.3.6', 'screen');
+            wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'], plugins_url('themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox.css', __FILE__), array(), JQUERYCOLORBOX_VERSION, 'screen');
             wp_enqueue_style('colorbox-' . $this->colorboxSettings['colorboxTheme']);
         }
 
@@ -188,10 +188,10 @@ class jQueryColorbox {
         if (!is_admin()) {
             wp_enqueue_script('colorbox', plugins_url('js/jquery.colorbox-min.js', __FILE__), array('jquery'), '1.3.6');
             if ($this->colorboxSettings['autoColorbox']) {
-                wp_enqueue_script('colorbox-auto', plugins_url('js/jquery-colorbox-auto.js', __FILE__), array('colorbox'), '3.1');
+                wp_enqueue_script('colorbox-auto', plugins_url('js/jquery-colorbox-auto.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
             }
             if ($this->colorboxSettings['autoHideFlash']) {
-                wp_enqueue_script('colorbox-hideflash', plugins_url('js/jquery-colorbox-hideFlash.js', __FILE__), array('colorbox'), '3.1');
+                wp_enqueue_script('colorbox-hideflash', plugins_url('js/jquery-colorbox-hideFlash.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
             }
         }
     }
