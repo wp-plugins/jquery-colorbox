@@ -51,7 +51,7 @@ To upgrade from a previous version of this plugin, use the built in update featu
 
 ###Installing The Plugin###
 
-Extract all files from the ZIP file, making sure to keep the file structure intact, and then upload it to `/wp-content/plugins/`. Then just visit your admin area and activate the plugin. That's it!
+Either use the built in plugin installation feature of WordPress, or extract all files from the ZIP file, making sure to keep the file structure intact, and then upload it to `/wp-content/plugins/`. Then just visit your admin area and activate the plugin. That's it!
 
 ###Configuring The Plugin###
 
