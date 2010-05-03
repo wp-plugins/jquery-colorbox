@@ -39,7 +39,8 @@ Localization
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
-Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.6 jQuery plugin from Jack Moore. Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
+Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.6 jQuery plugin from Jack Moore.
+Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
 jQuery Colorbox uses the jQuery library version 1.3.2 bundled with Wordpress. Works with jQuery 1.4.2 too.
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
 
@@ -164,13 +165,14 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 3.3 (2010-04-30) =
+= 3.3 (2010-05-04) =
 * NEW: Belorussian translation by <a href="http://www.pc.de/">Marcis G.</a>
 * NEW: Russian translation by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * BUGFIX: Screenshot for Theme#10 is now displayed correctly.
 * NEW: Added Theme#11, a modified version of Theme#4.
 * BUGFIX: Theme#7,9 and 11 will work in Internet Explorer 6 now.
 * CHANGE: Minified CSS and JavaScript
+* NEW: registered link to plugin page in WordPress Meta widget
 
 = 3.2 (2010-04-20) =
 * NEW: Added theme#10, thx to <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a> for all the hard work! (CSS3 rounded edges, IE does not support that)

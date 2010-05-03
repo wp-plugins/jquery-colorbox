@@ -88,6 +88,7 @@ class jQueryColorbox {
         load_plugin_textdomain(JQUERYCOLORBOX_TEXTDOMAIN, false, '/jquery-colorbox/localization/');
 
         add_action('wp_head', array(& $this, 'buildWordpressHeader'));
+        add_action('wp_meta',array(& $this, 'renderMetaLink'));
         add_action('admin_post_jQueryColorboxDeleteSettings', array(& $this, 'jQueryColorboxDeleteSettings'));
         add_action('admin_post_jQueryColorboxUpdateSettings', array(& $this, 'jQueryColorboxUpdateSettings'));
         // add options page
@@ -115,11 +116,11 @@ class jQueryColorbox {
             'theme7' => __('Theme #7', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme8' => __('Theme #8', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme9' => __('Theme #9', JQUERYCOLORBOX_TEXTDOMAIN),
-            'theme10' => __('Theme #10', JQUERYCOLORBOX_TEXTDOMAIN)
+            'theme10' => __('Theme #10', JQUERYCOLORBOX_TEXTDOMAIN),
+            'theme11' => __('Theme #11', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
         $dummyThemeNumberArray = array(
-            __('Theme #11', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #12', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #13', JQUERYCOLORBOX_TEXTDOMAIN),
             __('Theme #14', JQUERYCOLORBOX_TEXTDOMAIN),
@@ -139,53 +140,20 @@ class jQueryColorbox {
             'none' => __('none', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
-        // Create array of default settings
-        $this->colorboxDefaultSettings = array(
-            'jQueryColorboxVersion' => JQUERYCOLORBOX_VERSION,
-            'colorboxTheme' => 'theme1',
-            'maxWidth' => 'false',
-            'maxWidthValue' => '',
-            'maxWidthUnit' => '%',
-            'maxHeight' => 'false',
-            'maxHeightValue' => '',
-            'maxHeightUnit' => '%',
-            'height' => 'false',
-            'heightValue' => '',
-            'heightUnit' => '%',
-            'width' => 'false',
-            'widthValue' => '',
-            'widthUnit' => '%',
-            'autoColorbox' => false,
-            'autoColorboxGalleries' => false,
-            'slideshow' => false,
-            'slideshowAuto' => false,
-            'scalePhotos' => false,
-            'slideshowSpeed' => '2500',
-            'opacity' => '0.85',
-            'preloading' => false,
-            'transition' => 'elastic',
-            'speed' => '350',
-            'overlayClose' => false,
-            'autoHideFlash' => false,
-            'colorboxWarningOff' => false
-        );
-
         // Create the settings array by merging the user's settings and the defaults
         $usersettings = (array) get_option(JQUERYCOLORBOX_SETTINGSNAME);
-        $this->colorboxSettings = wp_parse_args($usersettings, jQueryColorbox::jQueryColorboxDefaultSettings());
+        $defaultArray = jQueryColorbox::jQueryColorboxDefaultSettings();
+        $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
 
         // Enqueue the theme in wordpress
         if (empty($this->colorboxThemes[$this->colorboxSettings['colorboxTheme']])) {
-            $defaultArray = jQueryColorbox::jQueryColorboxDefaultSettings();
             $this->colorboxSettings['colorboxTheme'] = $defaultArray['colorboxTheme'];
         }
+        
         if (!is_admin()) {
+            // enqueue javascripts in wordpress
             wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'], plugins_url('themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox-min.css', __FILE__), array(), JQUERYCOLORBOX_VERSION, 'screen');
             wp_enqueue_style('colorbox-' . $this->colorboxSettings['colorboxTheme']);
-        }
-
-        // enqueue javascripts in wordpress
-        if (!is_admin()) {
             wp_enqueue_script('colorbox', plugins_url('js/jquery.colorbox-min.js', __FILE__), array('jquery'), '1.3.6');
             if ($this->colorboxSettings['autoColorbox']) {
                 wp_enqueue_script('colorbox-auto', plugins_url('js/jquery-colorbox-auto-min.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
@@ -199,10 +167,21 @@ class jQueryColorbox {
     //jQueryColorbox()
 
     /**
-     * ugly way to make the images Colorbox-ready by adding the necessary CSS class.
+     * Renders plugin link in Meta widget
      *
+     * @since 1.0
+     * @access private
+     * @author Arne Franken
+     */
+    function renderMetaLink() { ?>
+        <li><?php _e('Powered by');?> <a href="http://www.techotronic.de/plugins/jquery-colorbox/" title="<?php echo JQUERYCOLORBOX_NAME ?>"><?php echo JQUERYCOLORBOX_NAME ?></a></li>
+    <?php }
+
+    /**
+     * Add Colorbox group Id to images.
      * function is called for every page or post rendering.
-     *
+     * 
+     * ugly way to make the images Colorbox-ready by adding the necessary CSS class.
      * unfortunately, Wordpress does not offer a convenient way to get certain elements from the_content,
      * so I had to do this by regexp replacement...
      *
@@ -210,7 +189,7 @@ class jQueryColorbox {
      * @access public
      * @author Arne Franken
      *
-     * @param  the_content or the_excerpt
+     * @param  $content
      * @return replaced content or excerpt
      */
     function addColorboxGroupIdToImages($content) {
@@ -242,6 +221,7 @@ class jQueryColorbox {
 
     /**
      * Add colorbox-CSS-Class to WP Galleries
+     * 
      * If wp_get_attachment_image() is called, filters registered for the_content are not applied on the img-tag.
      * So we'll need to manipulate the class attribute separately.
      *
@@ -439,7 +419,8 @@ class jQueryColorbox {
             'speed' => '350',
             'overlayClose' => false,
             'autoHideFlash' => false,
-            'colorboxWarningOff' => false
+            'colorboxWarningOff' => false,
+            'colorboxMetaLinkOff' => false
         );
     }
 
