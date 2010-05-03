@@ -152,7 +152,7 @@ class jQueryColorbox {
         
         if (!is_admin()) {
             // enqueue javascripts in wordpress
-            wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'], plugins_url('themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox-min.css', __FILE__), array(), JQUERYCOLORBOX_VERSION, 'screen');
+            wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'], plugins_url('themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox.css', __FILE__), array(), JQUERYCOLORBOX_VERSION, 'screen');
             wp_enqueue_style('colorbox-' . $this->colorboxSettings['colorboxTheme']);
             wp_enqueue_script('colorbox', plugins_url('js/jquery.colorbox-min.js', __FILE__), array('jquery'), '1.3.6');
             if ($this->colorboxSettings['autoColorbox']) {
