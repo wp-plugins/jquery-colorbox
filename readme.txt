@@ -169,7 +169,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Belorussian translation by <a href="http://www.pc.de/">Marcis G.</a>
 * NEW: Russian translation by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * BUGFIX: Screenshot for Theme#10 is now displayed correctly.
-* NEW: Added Theme#11, a modified version of Theme#4.
+* NEW: Added Theme#11, a modified version of Theme#1.
 * BUGFIX: Theme#7,9 and 11 will work in Internet Explorer 6 now.
 * CHANGE: Minified CSS and JavaScript
 * NEW: registered link to plugin page in WordPress Meta widget

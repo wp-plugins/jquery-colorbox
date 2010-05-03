@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-03 23:52+0100\n"
-"PO-Revision-Date: 2010-05-03 23:52+0100\n"
+"POT-Creation-Date: 2010-05-04 00:11+0100\n"
+"PO-Revision-Date: 2010-05-04 00:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: Marcis G <by.marcis@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgid "none"
 msgstr "не"
 
 #: jquery-colorbox.php:177
-msgid "Powered by"
+msgid "Using"
 msgstr ""
 
 #: jquery-colorbox.php:274
