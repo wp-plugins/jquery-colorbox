@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox 3.2 Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-12 23:34+0100\n"
-"PO-Revision-Date: 2010-04-13 10:46+0200\n"
-"Last-Translator: Modar <modarsoos@yahoo.com>\n"
+"POT-Creation-Date: 2010-05-03 23:52+0100\n"
+"PO-Revision-Date: 2010-05-03 23:52+0100\n"
+"Last-Translator: \n"
 "Language-Team: Mickey Mouse <modarsoos@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,110 +15,114 @@ msgstr ""
 "X-Poedit-Country: SYRIAN ARAB REPUBLIC\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:109
+#: jquery-colorbox.php:110
 msgid "Theme #1"
 msgstr "القالب الأول"
 
-#: jquery-colorbox.php:110
+#: jquery-colorbox.php:111
 msgid "Theme #2"
 msgstr "القالب الثاني"
 
-#: jquery-colorbox.php:111
+#: jquery-colorbox.php:112
 msgid "Theme #3"
 msgstr "القالب الثالث"
 
-#: jquery-colorbox.php:112
+#: jquery-colorbox.php:113
 msgid "Theme #4"
 msgstr "القالب الرابع"
 
-#: jquery-colorbox.php:113
+#: jquery-colorbox.php:114
 msgid "Theme #5"
 msgstr "القالب الخامس"
 
-#: jquery-colorbox.php:114
+#: jquery-colorbox.php:115
 msgid "Theme #6"
 msgstr "القالب السادس"
 
-#: jquery-colorbox.php:115
+#: jquery-colorbox.php:116
 msgid "Theme #7"
 msgstr "القالب السابع"
 
-#: jquery-colorbox.php:116
+#: jquery-colorbox.php:117
 msgid "Theme #8"
 msgstr "القالب الثامن"
 
-#: jquery-colorbox.php:117
+#: jquery-colorbox.php:118
 msgid "Theme #9"
 msgstr "القالب التاسع"
 
-#: jquery-colorbox.php:121
+#: jquery-colorbox.php:119
 msgid "Theme #10"
 msgstr "القالب العاشر"
 
-#: jquery-colorbox.php:122
+#: jquery-colorbox.php:120
 msgid "Theme #11"
 msgstr "القالب الحادي عشر"
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:124
 msgid "Theme #12"
 msgstr "القالب الثاني عشر"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:125
 msgid "Theme #13"
 msgstr "القالب الثالث عشر"
 
-#: jquery-colorbox.php:125
+#: jquery-colorbox.php:126
 msgid "Theme #14"
 msgstr "القالب الرابع عشر"
 
-#: jquery-colorbox.php:126
+#: jquery-colorbox.php:127
 msgid "Theme #15"
 msgstr "القالب الخامس عشر"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:132
 msgid "percent"
 msgstr "بالمئة"
 
-#: jquery-colorbox.php:132
+#: jquery-colorbox.php:133
 msgid "pixels"
 msgstr "بيكسل"
 
-#: jquery-colorbox.php:137
+#: jquery-colorbox.php:138
 msgid "elastic"
 msgstr "تمدد"
 
-#: jquery-colorbox.php:138
+#: jquery-colorbox.php:139
 msgid "fade"
 msgstr "تضاءل"
 
-#: jquery-colorbox.php:139
+#: jquery-colorbox.php:140
 msgid "none"
 msgstr "بدون تأثير"
 
-#: jquery-colorbox.php:294
+#: jquery-colorbox.php:177
+msgid "Powered by"
+msgstr ""
+
+#: jquery-colorbox.php:274
 #: includes/settings-page.php:101
 msgid "Settings"
 msgstr "إعدادات"
 
-#: jquery-colorbox.php:357
+#: jquery-colorbox.php:335
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "تم تحديث إعدادات برنامج %1$s بنجاح."
 
-#: jquery-colorbox.php:359
+#: jquery-colorbox.php:337
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "%1$s تم حذف الإعدادات بنجاح."
 
-#: jquery-colorbox.php:400
+#: jquery-colorbox.php:378
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "تنبيه: لم يتم تنشيط برنامج صندوق عرض الشرائح ليعمل على جميع الصور."
 
-#: jquery-colorbox.php:460
+#: jquery-colorbox.php:439
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "لم يتم تحديث الإعدادات، ليس لديك الصلاحيات الكافية."
 
-#: jquery-colorbox.php:507
+#: jquery-colorbox.php:486
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "لم يتم حذف إعدادات %1$s  أو ليس لديك الصلاحيات الكافية أو بأنك لم تقم بتحديد العلامة داخل المربع الصغير قبل الضغط على زر حذف الإعدادات."

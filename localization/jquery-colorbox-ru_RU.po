@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox-Русская-версия\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-12 19:54+0100\n"
-"PO-Revision-Date: 2010-04-28 14:54+0100\n"
+"POT-Creation-Date: 2010-05-03 23:50+0100\n"
+"PO-Revision-Date: 2010-05-03 23:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: Drive2Life <info@drive2life.ru>\n"
 "MIME-Version: 1.0\n"
@@ -15,110 +15,114 @@ msgstr ""
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:109
+#: jquery-colorbox.php:110
 msgid "Theme #1"
 msgstr "Тема #1"
 
-#: jquery-colorbox.php:110
+#: jquery-colorbox.php:111
 msgid "Theme #2"
 msgstr "Тема #2"
 
-#: jquery-colorbox.php:111
+#: jquery-colorbox.php:112
 msgid "Theme #3"
 msgstr "Тема #3"
 
-#: jquery-colorbox.php:112
+#: jquery-colorbox.php:113
 msgid "Theme #4"
 msgstr "Тема #4"
 
-#: jquery-colorbox.php:113
+#: jquery-colorbox.php:114
 msgid "Theme #5"
 msgstr "Тема #5"
 
-#: jquery-colorbox.php:114
+#: jquery-colorbox.php:115
 msgid "Theme #6"
 msgstr "Тема #6"
 
-#: jquery-colorbox.php:115
+#: jquery-colorbox.php:116
 msgid "Theme #7"
 msgstr "Тема #7"
 
-#: jquery-colorbox.php:116
+#: jquery-colorbox.php:117
 msgid "Theme #8"
 msgstr "Тема #8"
 
-#: jquery-colorbox.php:117
+#: jquery-colorbox.php:118
 msgid "Theme #9"
 msgstr "Тема #9"
 
-#: jquery-colorbox.php:118
+#: jquery-colorbox.php:119
 msgid "Theme #10"
 msgstr "Тема #10"
 
-#: jquery-colorbox.php:122
+#: jquery-colorbox.php:120
 msgid "Theme #11"
 msgstr "Тема #11"
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:124
 msgid "Theme #12"
 msgstr "Тема #12"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:125
 msgid "Theme #13"
 msgstr "Тема #13"
 
-#: jquery-colorbox.php:125
+#: jquery-colorbox.php:126
 msgid "Theme #14"
 msgstr "Тема #14"
 
-#: jquery-colorbox.php:126
+#: jquery-colorbox.php:127
 msgid "Theme #15"
 msgstr "Тема #15"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:132
 msgid "percent"
 msgstr "процентов"
 
-#: jquery-colorbox.php:132
+#: jquery-colorbox.php:133
 msgid "pixels"
 msgstr "пикселей"
 
-#: jquery-colorbox.php:137
+#: jquery-colorbox.php:138
 msgid "elastic"
 msgstr "гибкий"
 
-#: jquery-colorbox.php:138
+#: jquery-colorbox.php:139
 msgid "fade"
 msgstr "затухание"
 
-#: jquery-colorbox.php:139
+#: jquery-colorbox.php:140
 msgid "none"
 msgstr "отсутствует"
 
-#: jquery-colorbox.php:281
+#: jquery-colorbox.php:177
+msgid "Powered by"
+msgstr ""
+
+#: jquery-colorbox.php:274
 #: includes/settings-page.php:101
 msgid "Settings"
 msgstr "Настройки"
 
-#: jquery-colorbox.php:344
+#: jquery-colorbox.php:335
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "Удачно обновлены настройки %1$s"
 
-#: jquery-colorbox.php:346
+#: jquery-colorbox.php:337
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "Настройки %1$s были удачно удалены"
 
-#: jquery-colorbox.php:387
+#: jquery-colorbox.php:378
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "Внимание: плагин не настроен на работу со всеми изображениями блога (можно изменить в настройках плагина)."
 
-#: jquery-colorbox.php:447
+#: jquery-colorbox.php:439
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "Настройки не обновлены. У вас нет достаточных прав."
 
-#: jquery-colorbox.php:494
+#: jquery-colorbox.php:486
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "%1$s не удален. У вас нет достаточных прав."
