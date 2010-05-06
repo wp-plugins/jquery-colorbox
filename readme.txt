@@ -2,7 +2,7 @@
 Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg
-Requires at least: 2.8.5
+Requires at least: 2.8
 Tested up to: 3.0
 Stable tag: 3.3
 
@@ -28,7 +28,7 @@ If you have questions or problems, feel free to write an email to blog [at] tech
 Localization
 
 * Arabic (ar) by <a href="http://www.photokeens.com">Modar Soos</a>
-* Belorussian (be_BY) translation by <a href="http://www.pc.de/">Marcis G.</a>
+* Belorussian (be_BY) <a href="http://www.pc.de/">Marcis G.</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
