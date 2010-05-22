@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
-Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg
+Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
 Requires at least: 2.8
 Tested up to: 3.0
 Stable tag: 3.3
@@ -30,6 +30,7 @@ Localization
 * Arabic (ar) by <a href="http://www.photokeens.com">Modar Soos</a>
 * Belorussian (be_BY) <a href="http://www.pc.de/">Marcis G.</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
+* Dutch (nl_NL) by <a href="http://nl.linkedin.com/pub/richard-laak/b/b21/672">Richard van Laak</a>
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
@@ -73,16 +74,6 @@ Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
 I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
 Chances are that the other jQuery library is loaded after the one that I load. If that happens, the colorbox features are overwritten.
 
-Maybe the images you want jQuery Colorbox to work on are added by a plugin and the images are added after jQuery Colorbox manipulates the HTML when rendering your blog.
-
-* I have installed and activated (or updated) jQuery Colorbox, but it doesn't show up when I click on a thumbnail in my blog. Is the plugin broken?
-
-Since version 2.0, jQuery Colorbox' automatic behaviour can be switched on and off in the settings. That way, you can apply the Colorbox functionality manually to single images.
-
-The default ist OFF.
-
-New in 3.0: If the plugin is activated, but the auto Colorbox feature is turned off, a warning is displayed.
-
 * Upon activation of the plugin I see the following error `Parse error: syntax error, unexpected T_STATIC, expecting T_OLD_FUNCTION or T_FUNCTION or T_VAR or '}' in /path/to/jquery-colorbox.php on line XX`
 
 jQuery Colorbox needs PHP5 to work. You see this error message because you are using PHP4.
@@ -95,7 +86,7 @@ This CSS class is then passed to the colorbox JavaScript.
 
 * How do I exclude an image from Colorbox in a page or post?
 
-Add the CSS class "colorbox-off" to the image you want to exclude.
+Add the CSS class "colorbox-off" to the image or to the link to the big sized image you want to exclude.
 jQuery Colorbox does not add the colorbox effect to images that have the CSS class "colorbox-off".
 
 * How does jQuery Colorbox group images?
@@ -167,6 +158,7 @@ I'll include new FAQs in every new version. Promise.
 == Changelog ==
 = 3.4 (2010-) =
 * NEW: Colorbox is not applied to image links that have the class "colorbox-off"
+* NEW: Dutch translation by <a href="http://nl.linkedin.com/pub/richard-laak/b/b21/672">Richard van Laak</a>
 
 = 3.3 (2010-05-05) =
 * NEW: Belorussian translation by <a href="http://www.pc.de/">Marcis G.</a>
