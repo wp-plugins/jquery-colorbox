@@ -34,6 +34,7 @@ Localization
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
+* Malay (ms_MY) by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
@@ -159,6 +160,7 @@ I'll include new FAQs in every new version. Promise.
 = 3.4 (2010-) =
 * NEW: Colorbox is not applied to image links that have the class "colorbox-off"
 * NEW: Dutch translation by <a href="http://nl.linkedin.com/pub/richard-laak/b/b21/672">Richard van Laak</a>
+* NEW: Malay translation by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
 
 = 3.3 (2010-05-05) =
 * NEW: Belorussian translation by <a href="http://www.pc.de/">Marcis G.</a>
