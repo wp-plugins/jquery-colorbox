@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
 Requires at least: 2.8
 Tested up to: 3.0
-Stable tag: 3.3
+Stable tag: 3.4
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
 
@@ -99,7 +99,11 @@ For all images in a post or page, the same CSS class is added. All images with t
 This is a Flash issue, but relatively easy to solve. Just activate the automatic hiding of embedded flash objects on the settings page.
 
 Adobe described on these sites what the problem is and how to fix it manually:
+
+
 <a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Knowledgebase 1</a>
+
+
 <a href="http://kb2.adobe.com/cps/142/tn_14201.html">Adobe Knowledgebase 2</a>
 
 * I have a problem with the Colorbox or want to style it my own way. Can you help?
@@ -157,10 +161,12 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 3.4 (2010-) =
-* NEW: Colorbox is not applied to image links that have the class "colorbox-off"
+= 3.4 (2010-05-24) =
+* NEW: Colorbox is not applied to image links that have the class "colorbox-off" any more. Useful for NextGEN users.
 * NEW: Dutch translation by <a href="http://nl.linkedin.com/pub/richard-laak/b/b21/672">Richard van Laak</a>
 * NEW: Malay translation by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
+* CHANGE: Added CSS id "colorboxLink" to link in Meta container.
+* CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
 
 = 3.3 (2010-05-05) =
 * NEW: Belorussian translation by <a href="http://www.pc.de/">Marcis G.</a>
