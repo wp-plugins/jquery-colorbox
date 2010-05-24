@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: jQuery-Colorbox 3.2 Arabic\n"
+"Project-Id-Version: jQuery-Colorbox 3.3 Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-04 00:11+0100\n"
-"PO-Revision-Date: 2010-05-04 00:11+0100\n"
+"POT-Creation-Date: 2010-05-24 22:50+0100\n"
+"PO-Revision-Date: 2010-05-24 22:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: Mickey Mouse <modarsoos@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "بدون تأثير"
 
 #: jquery-colorbox.php:177
 msgid "Using"
-msgstr ""
+msgstr "أستخدم معرض صور"
 
 #: jquery-colorbox.php:274
 #: includes/settings-page.php:101
