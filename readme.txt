@@ -38,6 +38,7 @@ Localization
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
+* Ukrainian (uk) by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -161,6 +162,9 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 3.5 (2010-06-00) =
+* NEW: Ukrainian translation by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
+
 = 3.4 (2010-05-24) =
 * NEW: Colorbox is not applied to image links that have the class "colorbox-off" any more. Useful for NextGEN users.
 * NEW: Dutch translation by <a href="http://nl.linkedin.com/pub/richard-laak/b/b21/672">Richard van Laak</a>
