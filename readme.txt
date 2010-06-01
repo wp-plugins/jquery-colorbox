@@ -34,6 +34,7 @@ Localization
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * French (fr_FR) by <a href="http://www.tolingo.com/">Tolingo Translations</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
+* Italian (it_IT) by <a href="http://erkinson.altervista.org/">Erkinson</a>
 * Malay (ms_MY) by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
@@ -164,6 +165,7 @@ I'll include new FAQs in every new version. Promise.
 == Changelog ==
 = 3.5 (2010-06-00) =
 * NEW: Ukrainian translation by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
+* NEW: Italian translation by <a href="http://erkinson.altervista.org/">Erkinson</a>
 
 = 3.4 (2010-05-24) =
 * NEW: Colorbox is not applied to image links that have the class "colorbox-off" any more. Useful for NextGEN users.
