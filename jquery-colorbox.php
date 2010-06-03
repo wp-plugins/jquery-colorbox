@@ -62,6 +62,9 @@ if (!defined('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR')) {
 if (!defined('JQUERYCOLORBOX_SETTINGSNAME')) {
     define('JQUERYCOLORBOX_SETTINGSNAME', 'jquery-colorbox_settings');
 }
+if (!defined('JQUERYCOLORBOX_DONATEURL')) {
+    define('JQUERYCOLORBOX_DONATEURL', 'http://colorbox.techotronic.de/latest-donations.php');
+}
 
 class jQueryColorbox {
 
