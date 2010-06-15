@@ -168,6 +168,8 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Ukrainian translation by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
 * NEW: Italian translation by <a href="http://erkinson.altervista.org/">Erkinson</a>
 * NEW: Hebrew translation by <a href="www.TommyGordon.co.il">Tommy Gordon</a>
+* BUGFIX: URLs are now generated correctly for WP-MU installations
+* NEW: Added latest donations and top donations to settings page
 
 = 3.4 (2010-05-24) =
 * NEW: Colorbox is not applied to image links that have the class "colorbox-off" any more. Useful for NextGEN users.

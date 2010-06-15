@@ -19,7 +19,7 @@
 ?>
 <?php
 //define constants
-define('JQUERYCOLORBOX_VERSION', '3.4');
+define('JQUERYCOLORBOX_VERSION', '3.4.1');
 
 if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -34,27 +34,10 @@ if (!defined('JQUERYCOLORBOX_TEXTDOMAIN')) {
     define('JQUERYCOLORBOX_TEXTDOMAIN', 'jquery-colorbox');
 }
 if (!defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
-    if (is_dir(WPMU_PLUGIN_DIR)) {
-        // WP_MU plugin
-        define('JQUERYCOLORBOX_PLUGIN_DIR', WPMU_PLUGIN_DIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
-    } else {
-        // WP regular plugin
-        define('JQUERYCOLORBOX_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
-    }
-}
-if (!defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
-    if (is_dir(WPMU_PLUGIN_DIR)) {
-        define('JQUERYCOLORBOX_PLUGIN_DIR', ABSPATH . '/' . MUPLUGINDIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
-    } else {
-        define('JQUERYCOLORBOX_PLUGIN_DIR', ABSPATH . '/' . PLUGINDIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
-    }
+    define('JQUERYCOLORBOX_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
 }
 if (!defined('JQUERYCOLORBOX_PLUGIN_URL')) {
-    if (is_dir(WPMU_PLUGIN_DIR)) {
-        define('JQUERYCOLORBOX_PLUGIN_URL', WPMU_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
-    } else {
-        define('JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
-    }
+    define('JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
 }
 if (!defined('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR')) {
     define('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR', JQUERYCOLORBOX_PLUGIN_DIR . '/localization');
@@ -62,8 +45,11 @@ if (!defined('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR')) {
 if (!defined('JQUERYCOLORBOX_SETTINGSNAME')) {
     define('JQUERYCOLORBOX_SETTINGSNAME', 'jquery-colorbox_settings');
 }
-if (!defined('JQUERYCOLORBOX_DONATEURL')) {
-    define('JQUERYCOLORBOX_DONATEURL', 'http://colorbox.techotronic.de/latest-donations.php');
+if (!defined('JQUERYCOLORBOX_LATESTDONATEURL')) {
+    define('JQUERYCOLORBOX_LATESTDONATEURL', 'http://colorbox.techotronic.de/latest-donations.php');
+}
+if (!defined('JQUERYCOLORBOX_TOPDONATEURL')) {
+    define('JQUERYCOLORBOX_TOPDONATEURL', 'http://colorbox.techotronic.de/top-donations.php');
 }
 
 class jQueryColorbox {
@@ -148,7 +134,7 @@ class jQueryColorbox {
         $defaultArray = jQueryColorbox::jQueryColorboxDefaultSettings();
         $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
 
-        // Enqueue the theme in wordpress
+        // Set default theme if no theme is set already
         if (empty($this->colorboxThemes[$this->colorboxSettings['colorboxTheme']])) {
             $this->colorboxSettings['colorboxTheme'] = $defaultArray['colorboxTheme'];
         }
@@ -158,11 +144,15 @@ class jQueryColorbox {
             wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'], plugins_url('themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox.css', __FILE__), array(), JQUERYCOLORBOX_VERSION, 'screen');
             wp_enqueue_style('colorbox-' . $this->colorboxSettings['colorboxTheme']);
             wp_enqueue_script('colorbox', plugins_url('js/jquery.colorbox-min.js', __FILE__), array('jquery'), '1.3.6');
+//            if($this->colorboxSettings['draggable']) {
+//                ?!?wp_enqueue_script('jquery-ui-draggable');
+//                wp_enqueue_script('colorbox-draggable', plugins_url('js/jquery-colorbox-draggable.js', __FILE__), array('jquery-ui-draggable'), JQUERYCOLORBOX_VERSION);
+//            }
             if ($this->colorboxSettings['autoColorbox']) {
                 wp_enqueue_script('colorbox-auto', plugins_url('js/jquery-colorbox-auto-min.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
             }
             if ($this->colorboxSettings['autoHideFlash']) {
-                wp_enqueue_script('colorbox-hideflash', plugins_url('js/jquery-colorbox-hideFlash-min.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
+                wp_enqueue_script('colorbox-hideflash', plugins_url('js/jquery-colorbox-hideFlash.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
             }
         }
     }
@@ -533,6 +523,95 @@ class jQueryColorbox {
     }
 
     // activateJqueryColorbox()
+
+    /**
+     * Read HTML from a remote url
+     *
+     * @param string $url
+     * @return the response
+     */
+    function getRemoteContent($url) {
+        if ( function_exists('wp_remote_request') ) {
+
+            $options = array();
+            $options['headers'] = array(
+                'User-Agent' => 'jQuery Colorbox V' . JQUERYCOLORBOX_VERSION . '; (' . get_bloginfo('url') .')'
+             );
+
+            $response = wp_remote_request($url, $options);
+
+            if ( is_wp_error( $response ) )
+                return false;
+
+            if ( 200 != wp_remote_retrieve_response_code($response) )
+                return false;
+
+            return wp_remote_retrieve_body($response);
+        }
+
+        return false;
+    }
+
+    /**
+     *
+     *
+     */
+    function isDirWritable() {
+        return (is_dir(JQUERYCOLORBOX_PLUGIN_DIR.'custom-js') && is_writable(JQUERYCOLORBOX_PLUGIN_DIR.'custom-js'));
+    }
+
+    /**
+     *
+     */
+    function writeCustomFile($filename) {
+        if ( $type == 'png' ) {
+          $fp_opt = 'w+b';
+        }
+        else {
+          $fp_opt = 'w+';
+        }
+
+
+        $fp = @fopen($filename, $fp_opt);
+
+        if ( $fp !== FALSE ) {
+          $ret = @fwrite($fp, $content);
+          @fclose($fp);
+        }
+        else {
+          $ret = @file_put_contents($filename, $content);
+        }
+
+        if ( $ret !== FALSE ) {
+          @chmod($filename, 0666);
+          return 0;
+        }
+        else {
+          return 1;
+        }
+    }
+
+    /**
+     *
+     */
+    function getReturnLocation(){
+        // gets current URL to return to after donating
+        $sexy_current_location = "http";
+        $sexy_current_location .= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? "s" : "")."://";
+        $sexy_current_location .= $_SERVER['SERVER_NAME'];
+        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') {
+            if($_SERVER['SERVER_PORT']!='443') {
+                $sexy_current_location .= ":".$_SERVER['SERVER_PORT'];
+            }
+        }
+        else {
+            if($_SERVER['SERVER_PORT']!='80') {
+                $sexy_current_location .= ":".$_SERVER['SERVER_PORT'];
+            }
+        }
+        $sexy_current_location .= $_SERVER['REQUEST_URI'];
+        echo $sexy_current_location;
+    }
 }
 
 // class jQueryColorbox()
