@@ -179,6 +179,24 @@
                         <br/><?php _e('Sets the speed of the slideshow, in milliseconds', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                     </td>
                 </tr>
+                <!--tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-disableLoop"><?php __('Disable loop', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[disableLoop]" id="jquery-colorbox-disableLoop" value="true" <?php //echo ($this->colorboxSettings['disableLoop']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php __('Disable looping through image groups', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                    </td>
+                </tr-->
+                <!--tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-disableKeys"><?php __('Disable keys', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[disableKeys]" id="jquery-colorbox-disableKeys" value="true" <?php //echo ($this->colorboxSettings['disableKeys']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php __('Disable ESC to close Colorbox and arrow keys to go to next and previous images', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                    </td>
+                </tr-->
                 <tr>
                     <th scope="row">
                         <label for="jquery-colorbox-maxWidthValue"><?php _e('Maximum width of an image', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
@@ -335,11 +353,11 @@
                 </tr>
                 <!--tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-draggable"><?php //_e('Make images draggable', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                        <label for="jquery-colorbox-draggable"><?php __('Make images draggable', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
                         <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[draggable]" id="jquery-colorbox-draggable" value="true" <?php //echo ($this->colorboxSettings['draggable']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php //_e('Make images draggable instead of scrollable', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                        <br/><?php __('Make images draggable instead of scrollable', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                     </td>
                 </tr-->
                 <tr>
@@ -421,15 +439,15 @@
                     <input type="hidden" name="business" value="G75G3Z6PQWXXQ" />
                     <input type="hidden" name="item_name" value="<?php _e('Techotronic Development Support' , JQUERYCOLORBOX_TEXTDOMAIN); ?>" />
                     <input type="hidden" name="item_number" value="jQuery Colorbox"/>
-                    <input type="hidden" name="no_shipping" value="0">
-                    <input type="hidden" name="no_note" value="0">
-                    <input type="hidden" name="cn" value="<?php _e("Please enter the URL you'd like me to link to in the donors lists.", JQUERYCOLORBOX_TEXTDOMAIN); ?>" />
+                    <input type="hidden" name="no_shipping" value="0"/>
+                    <input type="hidden" name="no_note" value="0"/>
+                    <input type="hidden" name="cn" value="<?php _e("Please enter the URL you'd like me to link to in the donors lists", JQUERYCOLORBOX_TEXTDOMAIN); ?>." />
                     <input type="hidden" name="return" value="<?php $this->getReturnLocation(); ?>" />
                     <input type="hidden" name="cbt" value="<?php _e('Return to Your Dashboard' , JQUERYCOLORBOX_TEXTDOMAIN); ?>" />
-                    <input type="hidden" name="currency_code" value="USD">
-                    <input type="hidden" name="lc" value="US">
-                    <input type="hidden" name="bn" value="PP-DonationsBF">
-                    <label for="preset-amounts"><?php _e('Select Preset Amount:', JQUERYCOLORBOX_TEXTDOMAIN); echo " "; ?></label>
+                    <input type="hidden" name="currency_code" value="USD"/>
+                    <input type="hidden" name="lc" value="US"/>
+                    <input type="hidden" name="bn" value="PP-DonationsBF"/>
+                    <label for="preset-amounts"><?php _e('Select Preset Amount', JQUERYCOLORBOX_TEXTDOMAIN); echo ": "; ?></label>
                     <select name="amount" id="preset-amounts">
                         <option value="10">10</option>
                         <option value="20" selected>20</option>
@@ -437,11 +455,11 @@
                         <option value="40">40</option>
                         <option value="50">50</option>
                         <option value="100">100</option>
-                    </select><span><?php _e('EUR',JQUERYCOLORBOX_TEXTDOMAIN) ?></span>
+                    </select><span><?php _e('USD',JQUERYCOLORBOX_TEXTDOMAIN) ?></span>
                     <br /><br /><?php _e('Or', JQUERYCOLORBOX_TEXTDOMAIN); ?><br /><br />
-                    <label for="custom-amounts"><?php _e('Enter Custom Amount:', JQUERYCOLORBOX_TEXTDOMAIN); echo " "; ?></label>
+                    <label for="custom-amounts"><?php _e('Enter Custom Amount', JQUERYCOLORBOX_TEXTDOMAIN); echo ": "; ?></label>
                     <input type="text" name="amount" size="4" id="custom-amounts"/>
-                    <span><?php _e('EUR',JQUERYCOLORBOX_TEXTDOMAIN) ?></span>
+                    <span><?php _e('USD',JQUERYCOLORBOX_TEXTDOMAIN) ?></span>
                     <br /><br />
                     <input type="submit" value="<?php _e('Submit',JQUERYCOLORBOX_TEXTDOMAIN) ?>" class="button-secondary"/>
                 </form>
