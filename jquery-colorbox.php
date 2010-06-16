@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 3.4
+ * Version: 3.5
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -19,7 +19,7 @@
 ?>
 <?php
 //define constants
-define('JQUERYCOLORBOX_VERSION', '3.4.1');
+define('JQUERYCOLORBOX_VERSION', '3.5');
 
 if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -108,6 +108,8 @@ class jQueryColorbox {
             'theme10' => __('Theme #10', JQUERYCOLORBOX_TEXTDOMAIN),
             'theme11' => __('Theme #11', JQUERYCOLORBOX_TEXTDOMAIN)
         );
+
+//        $this->colorboxThemes = array_merge($this->getThemeDirs(),$this->colorboxThemes);
 
         $dummyThemeNumberArray = array(
             __('Theme #12', JQUERYCOLORBOX_TEXTDOMAIN),
@@ -527,6 +529,10 @@ class jQueryColorbox {
     /**
      * Read HTML from a remote url
      *
+     * @since 3.5
+     * @access private
+     * @author Arne Franken
+     * 
      * @param string $url
      * @return the response
      */
@@ -552,66 +558,34 @@ class jQueryColorbox {
         return false;
     }
 
-    /**
-     *
-     *
-     */
-    function isDirWritable() {
-        return (is_dir(JQUERYCOLORBOX_PLUGIN_DIR.'custom-js') && is_writable(JQUERYCOLORBOX_PLUGIN_DIR.'custom-js'));
-    }
+    // getRemoteContent()
 
     /**
+     * gets current URL to return to after donating
      *
-     */
-    function writeCustomFile($filename) {
-        if ( $type == 'png' ) {
-          $fp_opt = 'w+b';
-        }
-        else {
-          $fp_opt = 'w+';
-        }
-
-
-        $fp = @fopen($filename, $fp_opt);
-
-        if ( $fp !== FALSE ) {
-          $ret = @fwrite($fp, $content);
-          @fclose($fp);
-        }
-        else {
-          $ret = @file_put_contents($filename, $content);
-        }
-
-        if ( $ret !== FALSE ) {
-          @chmod($filename, 0666);
-          return 0;
-        }
-        else {
-          return 1;
-        }
-    }
-
-    /**
-     *
+     * @since 3.5
+     * @access private
+     * @author Arne Franken
      */
     function getReturnLocation(){
-        // gets current URL to return to after donating
-        $sexy_current_location = "http";
-        $sexy_current_location .= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? "s" : "")."://";
-        $sexy_current_location .= $_SERVER['SERVER_NAME'];
+        $currentLocation = "http";
+        $currentLocation .= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? "s" : "")."://";
+        $currentLocation .= $_SERVER['SERVER_NAME'];
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') {
             if($_SERVER['SERVER_PORT']!='443') {
-                $sexy_current_location .= ":".$_SERVER['SERVER_PORT'];
+                $currentLocation .= ":".$_SERVER['SERVER_PORT'];
             }
         }
         else {
             if($_SERVER['SERVER_PORT']!='80') {
-                $sexy_current_location .= ":".$_SERVER['SERVER_PORT'];
+                $currentLocation .= ":".$_SERVER['SERVER_PORT'];
             }
         }
-        $sexy_current_location .= $_SERVER['REQUEST_URI'];
-        echo $sexy_current_location;
+        $currentLocation .= $_SERVER['REQUEST_URI'];
+        echo $currentLocation;
     }
+
+    // getReturnLocation()
 }
 
 // class jQueryColorbox()

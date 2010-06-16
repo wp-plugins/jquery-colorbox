@@ -164,7 +164,7 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 3.5 (2010-06-00) =
+= 3.5 (2010-06-16) =
 * NEW: Ukrainian translation by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
 * NEW: Italian translation by <a href="http://erkinson.altervista.org/">Erkinson</a>
 * NEW: Hebrew translation by <a href="www.TommyGordon.co.il">Tommy Gordon</a>
