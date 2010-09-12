@@ -44,7 +44,7 @@ Localization
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
-Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.6 jQuery plugin from Jack Moore.
+Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.9 jQuery plugin from Jack Moore.
 Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
 jQuery Colorbox uses the jQuery library version 1.3.2 bundled with Wordpress. Works with jQuery 1.4.2 too.
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
