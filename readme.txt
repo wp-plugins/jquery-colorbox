@@ -164,6 +164,9 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 3.6 (2010-09-12) =
+* CHANGE: Update of Colorbox library to version 1.3.9 which fixes lots of bugs. Most notably the "0 by 0" bug in Chrome.
+
 = 3.5 (2010-06-16) =
 * NEW: Ukrainian translation by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
 * NEW: Italian translation by <a href="http://erkinson.altervista.org/">Erkinson</a>
