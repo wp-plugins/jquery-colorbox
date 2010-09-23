@@ -408,6 +408,8 @@ class jQueryColorbox {
             'slideshow' => false,
             'slideshowAuto' => false,
             'scalePhotos' => false,
+            'displayScrollbar' => false,
+            'draggable' => false,
             'slideshowSpeed' => '2500',
             'opacity' => '0.85',
             'preloading' => false,
@@ -587,6 +589,63 @@ class jQueryColorbox {
     }
 
     // getReturnLocation()
+    
+//    /**
+//     *
+//     *
+//     */
+//    function getThemeDirs() {
+//        $themesDirPath = JQUERYCOLORBOX_PLUGIN_DIR.'/themes/';
+//        if ($themesDir = opendir($themesDirPath)) {
+//            while (false !== ($dir = readdir($themesDir))) {
+//                if (substr("$dir", 0, 1) != "."){
+//                    $themeDirs[$dir] = $dir;
+//                }
+//            }
+//            closedir($themesDir);
+//        }
+//        asort($themeDirs);
+//        return $themeDirs;
+//    }
+//
+//    /**
+//     *
+//     *
+//     */
+//    function isDirWritable() {
+//        return (is_dir(JQUERYCOLORBOX_PLUGIN_DIR.'/custom/') && is_writable(JQUERYCOLORBOX_PLUGIN_DIR.'/custom/'));
+//    }
+//
+//    /**
+//     *
+//     */
+//    function writeCustomFile($filename) {
+//        if ( $type == 'binary' ) {
+//          $fp_opt = 'w+b';
+//        }
+//        else {
+//          $fp_opt = 'w+';
+//        }
+//
+//
+//        $fp = @fopen($filename, $fp_opt);
+//
+//        if ( $fp !== FALSE ) {
+//          $ret = @fwrite($fp, $content);
+//          @fclose($fp);
+//        }
+//        else {
+//          $ret = @file_put_contents($filename, $content);
+//        }
+//
+//        if ( $ret !== FALSE ) {
+//          @chmod($filename, 0666);
+//          return 0;
+//        }
+//        else {
+//          return 1;
+//        }
+//    }
 }
 
 // class jQueryColorbox()
