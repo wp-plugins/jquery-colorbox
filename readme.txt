@@ -165,7 +165,7 @@ I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
 = 3.7 (2010-00-00) =
-* BUGFIX: Fixes compatibility with "WP_DEBUG". (Setting default values for "displayScrollbar" and "draggable" now)
+* BUGFIX: Plugin now works if "WP_DEBUG" is set to "true". Thx to <a href="http://iversenweb.no">Roy Iversen</a> for the bug report!
 
 = 3.6 (2010-09-12) =
 * CHANGE: Update of Colorbox library to version 1.3.9 which fixes lots of bugs. Most notably the "0 by 0" bug in Chrome.
