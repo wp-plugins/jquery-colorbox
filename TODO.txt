@@ -1,0 +1,33 @@
+/**
+ * @package Techotronic
+ * @subpackage jQuery Colorbox
+ *
+ * @since 3.7
+ * @author Arne Franken
+ *
+ * todo list for the stuff that needs to be done.
+ */
+
+Administrative Stuff
+- plan features for 4.0
+- add as many translatable strings as possible for 4.0+ versions
+- ask all translators for new translation after implementation and before release
+
+Features
+
+Feature 1
+- add separate option for "jquery-colorbox-auto.js"
+
+Feature 2
+- add separate options for "add colorbox to galleries" and "add colorbox to images"
+
+Feature 3
+- add possibility for custom themes
+    - rename themes to have a leading zero
+
+Feature 4
+- add possibility to use a custom JavaScript file instead of inline JavaScript for colorbox
+
+
+Still in question
+- add option to switch colorbox off for whole posts and pages
