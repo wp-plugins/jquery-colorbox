@@ -40,6 +40,9 @@ if (!defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
 if (!defined('JQUERYCOLORBOX_PLUGIN_URL')) {
     define('JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
 }
+if (!defined('JQUERYCOLORBOX_PLUGIN_URL')) {
+    define('JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
+}
 if (!defined('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR')) {
     define('JQUERYCOLORBOX_PLUGIN_LOCALIZATION_DIR', JQUERYCOLORBOX_PLUGIN_DIR . '/localization');
 }
@@ -94,6 +97,9 @@ class jQueryColorbox {
         add_filter('the_content', array(& $this, 'addColorboxGroupIdToImages'), 100);
         add_filter('the_excerpt', array(& $this, 'addColorboxGroupIdToImages'), 100);
         add_filter('wp_get_attachment_image_attributes', array(& $this, 'wpPostThumbnailClassFilter'));
+
+        //add CSS classes to "add link" dropdown menu
+        add_filter('mce_css', array(& $this, 'addColorboxLinkClasses'));
 
         // Create list of themes and their human readable names
         $this->colorboxThemes = array(
@@ -589,7 +595,27 @@ class jQueryColorbox {
     }
 
     // getReturnLocation()
-    
+
+    /**
+     * adds Colorbox CSS class to "add link" dialog
+     *
+     * @since 3.7
+     * @access private
+     * @author Arne Franken
+     *
+     * @param  $defaultCss
+     * @return modified array
+     */
+    function addColorboxLinkClasses($defaultCss) {
+
+        $jqueryColorboxCss = JQUERYCOLORBOX_PLUGIN_URL . '/css/jquery-colorbox.css';
+        $defaultCss .= ',' . $jqueryColorboxCss;
+
+        return trim($defaultCss, ' ,');
+    }
+
+    // addColorboxLinkClasses()
+
 //    /**
 //     *
 //     *
