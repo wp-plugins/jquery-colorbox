@@ -104,6 +104,9 @@
             $title = $(obj).attr("title");
             $iframe = true;
             $groupId = "nofollow";
+            if ($(obj).attr("href").match(/\.(?:jpe?g|gif|png|bmp)/i)) {
+                $iframe = false;
+            }
             colorboxWrapper(obj);
         }
     })(jQuery);
