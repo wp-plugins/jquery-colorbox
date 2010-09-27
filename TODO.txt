@@ -19,15 +19,24 @@ Feature 1
 - add separate option for "jquery-colorbox-auto.js"
 
 Feature 2
-- add separate options for "add colorbox to galleries" and "add colorbox to images"
+- add option to add JavaScript at the bottom
 
 Feature 3
+- add separate options for "add colorbox to galleries" and "add colorbox to images"
+
+Feature 4
 - add possibility for custom themes
     - rename themes to have a leading zero
 
-Feature 4
+Feature 5
 - add possibility to use a custom JavaScript file instead of inline JavaScript for colorbox
 
+Need to think about these features
+- add link to Fullscreen to Colorbox
+(http://groups.google.com/group/colorbox/browse_thread/thread/6d28c99111051f41/8505ab852396c500?lnk=gst&q=fullscreen#8505ab852396c500)
 
-Still in question
+- display description/caption when mouse is hovering on the image
+(http://groups.google.com/group/colorbox/browse_thread/thread/4d4d5a02daa85ce9/1fcb9056d993a6e5?lnk=gst&q=description#1fcb9056d993a6e5)
+    - big question: how do I get the description/caption in the JavaScript?
+
 - add option to switch colorbox off for whole posts and pages
