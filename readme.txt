@@ -39,6 +39,7 @@ Localization
 * Malay (ms_MY) by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
+* Slovak (sk_SK) by <a href="http://itec.sk/">Stefan Stieranka</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * Ukrainian (uk) by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
 
@@ -168,6 +169,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: jQuery Colorbox can now open external websites/pictures if the link has the class "colorbox-link" and a width/height for the colorbox is set.
 * BUGFIX: Plugin now works if "WP_DEBUG" is set to "true". Thx to <a href="http://iversenweb.no">Roy Iversen</a> for the bug report!
 * CHANGE: rewrote auto-add JavaScript. Thx to <a href="http://">jrevillini</a> for the help!
+* NEW: Slovak translation by <a href="http://itec.sk/">Stefan Stieranka</a>
 
 = 3.6 (2010-09-12) =
 * CHANGE: Update of Colorbox library to version 1.3.9 which fixes lots of bugs. Most notably the "0 by 0" bug in Chrome.
