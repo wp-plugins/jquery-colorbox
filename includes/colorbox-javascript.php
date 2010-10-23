@@ -36,16 +36,7 @@
                 colorboxImage(index, obj)
             }
         });
-    });
-
-<?php
-    /**
-     * jQuery selector
-     *
-     * //call colorboxLink on all elements that have CSS class called "colorbox-link"
-     */
-    ?>
-    jQuery(document).ready(function($) {
+        <?php //call colorboxLink on all elements that have CSS class called "colorbox-link" ?>
         $(".colorbox-link").each(function(index, obj) {
             colorboxLink(index, obj)
         });
