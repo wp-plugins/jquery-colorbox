@@ -45,7 +45,7 @@ Localization
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
-Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.9 jQuery plugin from Jack Moore.
+Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.13 jQuery plugin from Jack Moore.
 Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
 jQuery Colorbox uses the jQuery library version 1.4.2 bundled with WordPress 3.0. Works with jQuery  1.3.2 bundled with Wordpress 2.9 too.
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
@@ -170,6 +170,7 @@ I'll include new FAQs in every new version. Promise.
 * BUGFIX: Plugin now works if "WP_DEBUG" is set to "true". Thx to <a href="http://iversenweb.no">Roy Iversen</a> for the bug report!
 * CHANGE: rewrote auto-add JavaScript. Thx to <a href="http://">jrevillini</a> for the help!
 * NEW: Slovak translation by <a href="http://itec.sk/">Stefan Stieranka</a>
+* CHANGE: Update of Colorbox library to version 1.3.13
 
 = 3.6 (2010-09-12) =
 * CHANGE: Update of Colorbox library to version 1.3.9 which fixes lots of bugs. Most notably the "0 by 0" bug in Chrome.
