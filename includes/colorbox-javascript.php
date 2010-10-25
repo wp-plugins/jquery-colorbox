@@ -29,18 +29,20 @@
      * call colorboxImage on all "a" elements that have a nested "img"
      */
     ?>
-    jQuery(document).ready(function($) {
-        $("a:has(img):not(.colorbox-off)").each(function(index, obj) {
-        <?php //only go on if link points to an image ?>
-            if ($(obj).attr("href").match(/\.(?:jpe?g|gif|png|bmp)/i)) {
-                colorboxImage(index, obj)
-            }
-        });
-        <?php //call colorboxLink on all elements that have CSS class called "colorbox-link" ?>
-        $(".colorbox-link").each(function(index, obj) {
-            colorboxLink(index, obj)
-        });
-    });
+    (function($) {
+        colorboxSelector = function() {
+            $("a:has(img):not(.colorbox-off)").each(function(index, obj) {
+            <?php //only go on if link points to an image ?>
+                if ($(obj).attr("href").match(/\.(?:jpe?g|gif|png|bmp)/i)) {
+                    colorboxImage(index, obj)
+                }
+            });
+            <?php //call colorboxLink on all elements that have CSS class called "colorbox-link" ?>
+            $(".colorbox-link").each(function(index, obj) {
+                colorboxLink(index, obj)
+            });
+        }
+    })(jQuery);
 
 <?php
     /**
@@ -139,5 +141,18 @@
             });
         }
     })(jQuery);
+    // ]]>
+</script>
+
+<script type="text/javascript">
+    // <![CDATA[
+    <?php
+     /**
+      * call colorbox selector function.
+      */
+     ?>
+    jQuery(document).ready(function($) {
+        colorboxSelector();
+    });
     // ]]>
 </script>
