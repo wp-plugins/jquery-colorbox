@@ -203,16 +203,21 @@ class jQueryColorbox {
             $imgPattern = "/<img([^\>]*?)>/i";
             if (preg_match_all($imgPattern, $content, $imgTags)) {
                 foreach ($imgTags[0] as $imgTag) {
-                    if (!preg_match('/class/i', $imgTag)) {
-                        $pattern = $imgPattern;
-                        $replacement = '<img class="colorbox-' . $post->ID . '" $1>';
+                    // only work on imgTags that do not already contain the String "colorbox-"
+                    if(!preg_match('/colorbox-/i', $imgTag)){
+                        if (!preg_match('/class/i', $imgTag)) {
+                            // imgTag does not contain class-attribute
+                            $pattern = $imgPattern;
+                            $replacement = '<img class="colorbox-' . $post->ID . '" $1>';
+                        }
+                        else {
+                            // imgTag already contains class-attribute
+                            $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
+                            $replacement = '<img$1class=$2$3 colorbox-' . $post->ID . '$4$5>';
+                        }
+                        $replacedImgTag = preg_replace($pattern, $replacement, $imgTag);
+                        $content = str_replace($imgTag, $replacedImgTag, $content);
                     }
-                    else {
-                        $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
-                        $replacement = '<img$1class=$2$3 colorbox-' . $post->ID . '$4$5>';
-                    }
-                    $replacedImgTag = preg_replace($pattern, $replacement, $imgTag);
-                    $content = str_replace($imgTag, $replacedImgTag, $content);
                 }
             }
         }
