@@ -40,6 +40,7 @@ Localization
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * Slovak (sk_SK) by <a href="http://itec.sk/">Stefan Stieranka</a>
+* Swedish (sv_SE) by <a href="">Christian</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * Ukrainian (uk) by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
 
@@ -170,6 +171,7 @@ I'll include new FAQs in every new version. Promise.
 * BUGFIX: Plugin now works if "WP_DEBUG" is set to "true". Thx to <a href="http://iversenweb.no">Roy Iversen</a> for the bug report!
 * CHANGE: rewrote auto-add JavaScript. Thx to <a href="http://wordpress.org/support/profile/jrevillini">jrevillini</a> for the help!
 * NEW: Slovak translation by <a href="http://itec.sk/">Stefan Stieranka</a>
+* NEW: Swedish translation by <a href="">Christian</a>
 * CHANGE: Update of Colorbox library to version 1.3.13
 * CHANGE: colorbox-class is only automatically added to images that do not already have a colorbox-class.
 
