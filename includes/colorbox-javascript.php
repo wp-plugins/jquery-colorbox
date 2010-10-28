@@ -69,10 +69,10 @@
                     }
                 <?php //only call Colorbox if there is a groupId for the image?>
                     if ($groupId) {
-                    <?php //convert groupId to string for easier use ?>
-                        $groupId = $groupId.toString();
+                    <?php //convert groupId to string and lose "colorbox-" for easier use ?>
+                        $groupId = $groupId.toString().split('-')[1];
                     <?php  //if groudId is colorbox-manual, set groupId to "nofollow" so that images are not grouped ?>
-                        if ($groupId == "colorbox-manual") {
+                        if ($groupId == "manual") {
                             $groupId = "nofollow";
                         }
                     <?php //the title of the img is used as the title for the Colorbox. ?>
