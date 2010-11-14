@@ -98,14 +98,99 @@
     <?php settings_fields(JQUERYCOLORBOX_SETTINGSNAME); ?>
 
     <div class="postbox-container" style="width: 69%;">
+    <form name="jquery-colorbox-settings-update" method="post" action="admin-post.php">
+    <?php if (function_exists('wp_nonce_field') === true) wp_nonce_field('jquery-colorbox-settings-form'); ?>
     <div id="poststuff">
         <div id="jquery-colorbox-settings" class="postbox">
-            <h3 id="settings"><?php _e('Settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
+            <h3 id="colorbox-settings"><?php _e('Plugin settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
 
             <div class="inside">
-                <form name="jquery-colorbox-settings-update" method="post" action="admin-post.php">
-                <?php if (function_exists('wp_nonce_field') === true) wp_nonce_field('jquery-colorbox-settings-form'); ?>
-                
+
+                <table class="form-table">
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-autoColorbox"><?php printf(__('Automate %1$s for all images in pages, posts and galleries', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]" id="jquery-colorbox-autoColorbox" value="true" <?php echo ($this->colorboxSettings['autoColorbox']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-autoColorboxGalleries"><?php printf(__('Automate %1$s for images in WordPress galleries only', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxGalleries]" id="jquery-colorbox-autoColorboxGalleries" value="true" <?php echo ($this->colorboxSettings['autoColorboxGalleries']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-autoColorboxJavaScript"><?php printf(__('Automate %1$s for all other images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxJavaScript]" id="jquery-colorbox-autoColorboxJavaScript" value="true" <?php echo ($this->colorboxSettings['autoColorboxJavaScript']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar).', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-autoHideFlash"><?php printf(__('Automate hiding of flash objects', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoHideFlash]" id="jquery-colorbox-autoHideFlash" value="true" <?php echo ($this->colorboxSettings['autoHideFlash']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Automatically hide embeded flash objects behind the Colorbox layer.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-javascriptInFooter"><?php printf(__('Add JavaScript to footer', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[javascriptInFooter]" id="jquery-colorbox-javascriptInFooter" value="true" <?php echo ($this->colorboxSettings['javascriptInFooter']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Add JavaScript to footer instead of the header.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-removeLinkFromMetaBox"><?php printf(__('Remove link from Meta-box', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[removeLinkFromMetaBox]" id="jquery-colorbox-removeLinkFromMetaBox" value="true" <?php echo ($this->colorboxSettings['removeLinkFromMetaBox']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Remove the link to the developers site from the WordPress meta-box.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-debugMode"><?php printf(__('Activate debug mode', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[debugMode]" id="jquery-colorbox-debugMode" value="true" <?php echo ($this->colorboxSettings['debugMode']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Adds debug information and non-minified JavaScript to the page. Useful for troubleshooting.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-colorboxWarningOff"><?php printf(__('Disable warning', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[colorboxWarningOff]" id="jquery-colorbox-colorboxWarningOff" value="true" <?php echo ($this->colorboxSettings['colorboxWarningOff']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                    </td>
+                </tr>
+                </table>
+                <p class="submit">
+                    <input type="hidden" name="action" value="jQueryColorboxUpdateSettings"/>
+                    <input type="submit" name="jQueryColorboxUpdateSettings" class="button-primary" value="<?php _e('Save Changes') ?>"/>
+                </p>
+            </div>
+        </div>
+        <div id="jquery-colorbox-plugin-settings" class="postbox">
+            <h3 id="plugin-settings"><?php _e('Colorbox settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
+
+            <div class="inside">
+
                 <table class="form-table">
                 <tr valign="top">
                     <th scope="row">
@@ -134,24 +219,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">
-                        <label for="jquery-colorbox-autoColorbox"><?php printf(__('Automate %1$s for all images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
-                    </th>
-                    <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]" id="jquery-colorbox-autoColorbox" value="true" <?php echo ($this->colorboxSettings['autoColorbox']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <label for="jquery-colorbox-autoColorboxGalleries"><?php printf(__('Automate %1$s for images in WordPress galleries', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
-                    </th>
-                    <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxGalleries]" id="jquery-colorbox-autoColorboxGalleries" value="true" <?php echo ($this->colorboxSettings['autoColorboxGalleries']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                    </td>
-                </tr>
+
                 <tr>
                     <th scope="row">
                         <label for="jquery-colorbox-slideshow"><?php _e('Add Slideshow to groups', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
@@ -360,33 +428,16 @@
                         <br/><?php __('Make images draggable instead of scrollable', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                     </td>
                 </tr-->
-                <tr>
-                    <th scope="row">
-                        <label for="jquery-colorbox-autoHideFlash"><?php printf(__('Automate hiding of flash objects', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
-                    </th>
-                    <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoHideFlash]" id="jquery-colorbox-autoHideFlash" value="true" <?php echo ($this->colorboxSettings['autoHideFlash']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Automatically hide embeded flash objects behind the Colorbox layer.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <label for="jquery-colorbox-colorboxWarningOff"><?php printf(__('Disable warning', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
-                    </th>
-                    <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[colorboxWarningOff]" id="jquery-colorbox-colorboxWarningOff" value="true" <?php echo ($this->colorboxSettings['colorboxWarningOff']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-                    </td>
-                </tr>
                 </table>
                 <p class="submit">
                     <input type="hidden" name="action" value="jQueryColorboxUpdateSettings"/>
                     <input type="submit" name="jQueryColorboxUpdateSettings" class="button-primary" value="<?php _e('Save Changes') ?>"/>
                 </p>
-                </form>
+
             </div>
         </div>
     </div>
+    </form>
 
     <div id="poststuff">
         <div id="jquery-colorbox-delete_settings" class="postbox">
@@ -434,6 +485,28 @@
                 <p>
                     <?php _e('If you would like to make a small (or large) contribution towards future development please consider making a donation.', JQUERYCOLORBOX_TEXTDOMAIN) ?>
                 </p>
+            </div>
+        </div>
+    </div>
+    <div id="poststuff">
+        <div id="jquery-colorbox-donateFlattr" class="postbox">
+            <h3 id="donateFlattr"><?php _e('Donate using Flattr', JQUERYCOLORBOX_TEXTDOMAIN) ?></h3>
+
+            <div class="inside">
+                <div  style="text-align:center;">
+                    <script type="text/javascript">
+                        var flattr_url = 'http://www.techotronic.de/plugins/jquery-colorbox/';
+                    </script>
+                    <script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="poststuff">
+        <div id="jquery-colorbox-donatePaypal" class="postbox">
+            <h3 id="donatePaypal"><?php _e('Donate using Paypal', JQUERYCOLORBOX_TEXTDOMAIN) ?></h3>
+
+            <div class="inside">
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                     <input type="hidden" name="cmd" value="_xclick" />
                     <input type="hidden" name="business" value="G75G3Z6PQWXXQ" />
