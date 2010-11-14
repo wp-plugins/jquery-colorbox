@@ -17,12 +17,15 @@ Features
 
 Feature 1
 - add separate option for "jquery-colorbox-auto.js"
+DONE
 
 Feature 2
 - add option to add JavaScript at the bottom
+DONE
 
 Feature 3
 - add separate options for "add colorbox to galleries" and "add colorbox to images"
+NOT POSSIBLE
 
 Feature 4
 - add possibility for custom themes
@@ -30,16 +33,28 @@ Feature 4
 
 Feature 5
 - add possibility to use a custom JavaScript file instead of inline JavaScript for colorbox
+-> always use external file
+-> set all variables inline
 
 Feature 6
 - add "debug"-option which loads non-minified JavaScript
+DONE
 
 Feature 7
 - add Flattr-button to settings page
+Feature 7a
+DONE
+- add option to remove link from meta box
+DONE
 
 Feature 8
 - add option (loop:false) to disable looping in a group.
 - add options (escKey:false, arrowKey:false) to disable esc-key and arrow-key bindings.
+DONE
+
+Feature 9
+- display error when PHP version is less than 5
+DONE
 
 
 Need to think about these features
