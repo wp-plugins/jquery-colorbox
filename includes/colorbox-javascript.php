@@ -11,17 +11,17 @@
  * Colorbox Javascript
  */
 ?>
+
 <script type="text/javascript">
     // <![CDATA[
 <?php
     /**
-     * declare variables that are used in more than one function
-     */
+    * declare variables that are used in more than one function
+    */
     ?>
-    var $iframe = false;
-    var $groupId;
-    var $title;
-
+        var $iframe = false;
+        var $groupId;
+        var $title;
 <?php
     /**
      * jQuery selector
@@ -43,7 +43,6 @@
             });
         }
     })(jQuery);
-
 <?php
     /**
      * colorboxImage
@@ -84,7 +83,6 @@
             }
         }
     })(jQuery);
-
 <?php
     /**
      * colorboxLink
@@ -126,6 +124,9 @@
             echo $this->colorboxSettings['scalePhotos'] ? '' : 'scalePhotos:false,';
             echo $this->colorboxSettings['preloading'] ? '' : 'preloading:false,';
             echo $this->colorboxSettings['overlayClose'] ? '' : 'overlayClose:false,';
+            echo !$this->colorboxSettings['disableLoop'] ? '' : 'loop:false,';
+            echo !$this->colorboxSettings['disableKeys'] ? '' : 'escKey:false,';
+            echo !$this->colorboxSettings['disableKeys'] ? '' : 'arrowKey:false,';
             echo !$this->colorboxSettings['displayScrollbar'] || $this->colorboxSettings['draggable'] ? '' : 'scrolling:false,';?>
                 opacity:"<?php echo $this->colorboxSettings['opacity']; ?>",
                 transition:"<?php echo $this->colorboxSettings['transition']; ?>",
@@ -141,18 +142,5 @@
             });
         }
     })(jQuery);
-    // ]]>
-</script>
-
-<script type="text/javascript">
-    // <![CDATA[
-    <?php
-     /**
-      * call colorbox selector function.
-      */
-     ?>
-    jQuery(document).ready(function($) {
-        colorboxSelector();
-    });
     // ]]>
 </script>
