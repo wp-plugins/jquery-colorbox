@@ -40,13 +40,13 @@ Localization
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * Slovak (sk_SK) by <a href="http://itec.sk/">Stefan Stieranka</a>
-* Swedish (sv_SE) by <a href="">Christian</a>
+* Swedish (sv_SE) by <a href="http://www.theindiaexperience.se/">Christian</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * Ukrainian (uk) by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
-Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.13 jQuery plugin from Jack Moore.
+Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.14 jQuery plugin from Jack Moore.
 Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
 jQuery Colorbox uses the jQuery library version 1.4.2 bundled with WordPress 3.0. Works with jQuery 1.4.3 and 1.3.2 bundled with Wordpress 2.9 too.
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
@@ -171,8 +171,8 @@ I'll include new FAQs in every new version. Promise.
 * BUGFIX: Plugin now works if "WP_DEBUG" is set to "true". Thx to <a href="http://iversenweb.no">Roy Iversen</a> for the bug report!
 * CHANGE: rewrote auto-add JavaScript. Thx to <a href="http://wordpress.org/support/profile/jrevillini">jrevillini</a> for the help!
 * NEW: Slovak translation by <a href="http://itec.sk/">Stefan Stieranka</a>
-* NEW: Swedish translation by <a href="">Christian</a>
-* CHANGE: Update of Colorbox library to version 1.3.13
+* NEW: Swedish translation by <a href="http://www.theindiaexperience.se/">Christian</a>
+* CHANGE: Update of Colorbox library to version 1.3.14
 * CHANGE: colorbox-class is only automatically added to images that do not already have a colorbox-class.
 
 = 3.6 (2010-09-12) =
