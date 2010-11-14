@@ -20,7 +20,7 @@
 <?php
 //define constants
 define('JQUERYCOLORBOX_VERSION', '3.6.5');
-define('COLORBOXLIBRARY_VERSION', '1.3.9');
+define('COLORBOXLIBRARY_VERSION', '1.3.14');
 
 if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -81,7 +81,6 @@ class jQueryColorbox {
         load_plugin_textdomain(JQUERYCOLORBOX_TEXTDOMAIN, false, '/jquery-colorbox/localization/');
 
         add_action('wp_head', array(& $this, 'buildWordpressHeader'));
-        add_action('wp_meta',array(& $this, 'renderMetaLink'));
         add_action('admin_post_jQueryColorboxDeleteSettings', array(& $this, 'jQueryColorboxDeleteSettings'));
         add_action('admin_post_jQueryColorboxUpdateSettings', array(& $this, 'jQueryColorboxUpdateSettings'));
         // add options page
@@ -92,11 +91,30 @@ class jQueryColorbox {
             register_uninstall_hook(__FILE__, array('jQueryColorbox', 'deleteSettingsFromDatabase'));
         }
 
-        //write "colorbox-postID" to "img"-tags class attribute.
-        //Priority = 100, hopefully the preg_replace is then executed after other plugins messed with the_content
-        add_filter('the_content', array(& $this, 'addColorboxGroupIdToImages'), 100);
-        add_filter('the_excerpt', array(& $this, 'addColorboxGroupIdToImages'), 100);
-        add_filter('wp_get_attachment_image_attributes', array(& $this, 'wpPostThumbnailClassFilter'));
+        // Create the settings array by merging the user's settings and the defaults
+        $usersettings = (array) get_option(JQUERYCOLORBOX_SETTINGSNAME);
+        $defaultArray = jQueryColorbox::jQueryColorboxDefaultSettings();
+        $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
+
+        //only add link to meta box
+        if(isset($this->colorboxSettings['removeLinkFromMetaBox']) && !$this->colorboxSettings['removeLinkFromMetaBox']){
+            add_action('wp_meta',array(& $this, 'renderMetaLink'));
+        }
+
+        // Set default theme if no theme is set already
+        if (empty($this->colorboxThemes[$this->colorboxSettings['colorboxTheme']])) {
+            $this->colorboxSettings['colorboxTheme'] = $defaultArray['colorboxTheme'];
+        }
+
+        if(isset($this->colorboxSettings['autoColorbox']) && $this->colorboxSettings['autoColorbox']){
+            //write "colorbox-postID" to "img"-tags class attribute.
+            //Priority = 100, hopefully the preg_replace is then executed after other plugins messed with the_content
+            add_filter('the_content', array(& $this, 'addColorboxGroupIdToImages'), 100);
+            add_filter('the_excerpt', array(& $this, 'addColorboxGroupIdToImages'), 100);
+        }
+        if(isset($this->colorboxSettings['autoColorboxGalleries']) && $this->colorboxSettings['autoColorboxGalleries']) {
+            add_filter('wp_get_attachment_image_attributes', array(& $this, 'wpPostThumbnailClassFilter'));
+        }
 
         //add CSS classes to "add link" dropdown menu
         add_filter('mce_css', array(& $this, 'addColorboxLinkClasses'));
@@ -138,30 +156,38 @@ class jQueryColorbox {
             'none' => __('none', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
-        // Create the settings array by merging the user's settings and the defaults
-        $usersettings = (array) get_option(JQUERYCOLORBOX_SETTINGSNAME);
-        $defaultArray = jQueryColorbox::jQueryColorboxDefaultSettings();
-        $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
-
-        // Set default theme if no theme is set already
-        if (empty($this->colorboxThemes[$this->colorboxSettings['colorboxTheme']])) {
-            $this->colorboxSettings['colorboxTheme'] = $defaultArray['colorboxTheme'];
-        }
-        
         if (!is_admin()) {
-            // enqueue javascripts in wordpress
+            // enqueue JavaScript and CSS files in wordpress
             wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'], plugins_url('themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox.css', __FILE__), array(), JQUERYCOLORBOX_VERSION, 'screen');
             wp_enqueue_style('colorbox-' . $this->colorboxSettings['colorboxTheme']);
-            wp_enqueue_script('colorbox', plugins_url('js/jquery.colorbox-min.js', __FILE__), array('jquery'), COLORBOXLIBRARY_VERSION);
+            if($this->colorboxSettings['debugMode']) {
+                $jqueryColorboxJavaScriptName = "js/jquery.colorbox.js";
+            }
+            else {
+                $jqueryColorboxJavaScriptName = "js/jquery.colorbox-min.js";
+            }
+            wp_enqueue_script('colorbox', plugins_url($jqueryColorboxJavaScriptName, __FILE__), array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
 //            if($this->colorboxSettings['draggable']) {
 //                ?!?wp_enqueue_script('jquery-ui-draggable');
-//                wp_enqueue_script('colorbox-draggable', plugins_url('js/jquery-colorbox-draggable.js', __FILE__), array('jquery-ui-draggable'), JQUERYCOLORBOX_VERSION);
+//                wp_enqueue_script('colorbox-draggable', plugins_url('js/jquery-colorbox-draggable.js', __FILE__), array('jquery-ui-draggable'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
 //            }
-            if ($this->colorboxSettings['autoColorbox']) {
-                wp_enqueue_script('colorbox-auto', plugins_url('js/jquery-colorbox-auto-min.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
+            if ($this->colorboxSettings['autoColorboxJavaScript']) {
+                if($this->colorboxSettings['debugMode']) {
+                    $jqueryColorboxAutoJavaScriptName = "js/jquery-colorbox-auto.js";
+                }
+                else {
+                    $jqueryColorboxAutoJavaScriptName = "js/jquery-colorbox-auto-min.js";
+                }
+                wp_enqueue_script('colorbox-auto', plugins_url($jqueryColorboxAutoJavaScriptName, __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
             }
             if ($this->colorboxSettings['autoHideFlash']) {
-                wp_enqueue_script('colorbox-hideflash', plugins_url('js/jquery-colorbox-hideFlash.js', __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION);
+                if($this->colorboxSettings['debugMode']) {
+                    $jqueryColorboxFlashJavaScriptName = "js/jquery-colorbox-hideFlash.js";
+                }
+                else {
+                    $jqueryColorboxFlashJavaScriptName = "js/jquery-colorbox-hideFlash-min.js";
+                }
+                wp_enqueue_script('colorbox-hideflash', plugins_url($jqueryColorboxFlashJavaScriptName, __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
             }
         }
     }
@@ -195,29 +221,26 @@ class jQueryColorbox {
      * @return replaced content or excerpt
      */
     function addColorboxGroupIdToImages($content) {
-        $colorboxSettings = (array) get_option(JQUERYCOLORBOX_SETTINGSNAME);
-        if (isset($colorboxSettings['autoColorbox']) && $colorboxSettings['autoColorbox']) {
-            global
-            $post;
-            // match all img tags with this pattern
-            $imgPattern = "/<img([^\>]*?)>/i";
-            if (preg_match_all($imgPattern, $content, $imgTags)) {
-                foreach ($imgTags[0] as $imgTag) {
-                    // only work on imgTags that do not already contain the String "colorbox-"
-                    if(!preg_match('/colorbox-/i', $imgTag)){
-                        if (!preg_match('/class/i', $imgTag)) {
-                            // imgTag does not contain class-attribute
-                            $pattern = $imgPattern;
-                            $replacement = '<img class="colorbox-' . $post->ID . '" $1>';
-                        }
-                        else {
-                            // imgTag already contains class-attribute
-                            $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
-                            $replacement = '<img$1class=$2$3 colorbox-' . $post->ID . '$4$5>';
-                        }
-                        $replacedImgTag = preg_replace($pattern, $replacement, $imgTag);
-                        $content = str_replace($imgTag, $replacedImgTag, $content);
+        global
+        $post;
+        // match all img tags with this pattern
+        $imgPattern = "/<img([^\>]*?)>/i";
+        if (preg_match_all($imgPattern, $content, $imgTags)) {
+            foreach ($imgTags[0] as $imgTag) {
+                // only work on imgTags that do not already contain the String "colorbox-"
+                if(!preg_match('/colorbox-/i', $imgTag)){
+                    if (!preg_match('/class/i', $imgTag)) {
+                        // imgTag does not contain class-attribute
+                        $pattern = $imgPattern;
+                        $replacement = '<img class="colorbox-' . $post->ID . '" $1>';
                     }
+                    else {
+                        // imgTag already contains class-attribute
+                        $pattern = "/<img(.*?)class=('|\")([A-Za-z0-9 \/_\.\~\:-]*?)('|\")([^\>]*?)>/i";
+                        $replacement = '<img$1class=$2$3 colorbox-' . $post->ID . '$4$5>';
+                    }
+                    $replacedImgTag = preg_replace($pattern, $replacement, $imgTag);
+                    $content = str_replace($imgTag, $replacedImgTag, $content);
                 }
             }
         }
@@ -236,17 +259,13 @@ class jQueryColorbox {
      * @access public
      * @author Arne Franken
      *
-     * @param  $attr class attribute of the attachment link
+     * @param  $attribute class attribute of the attachment link
      * @return repaced attributes
      */
-    function wpPostThumbnailClassFilter($attr) {
-        $colorboxSettings = (array) get_option(JQUERYCOLORBOX_SETTINGSNAME);
-        if (isset($colorboxSettings['autoColorboxGalleries']) && $colorboxSettings['autoColorboxGalleries']) {
-            global
-            $post;
-            $attr['class'] .= ' colorbox-' . $post->ID . ' ';
-        }
-        return $attr;
+    function wpPostThumbnailClassFilter($attribute) {
+        global $post;
+        $attribute['class'] .= ' colorbox-' . $post->ID . ' ';
+        return $attribute;
     }
 
     // wpPostThumbnailClassFilter()
@@ -305,8 +324,9 @@ class jQueryColorbox {
             include_once 'includes/iefix-theme'.$themeNumbers[0].'.php';
         }
         // include Colorbox Javascript
-        include_once 'includes/colorbox-javascript.php';
-        ?>
+            include_once 'includes/colorbox-javascript.php';
+            include_once 'includes/colorbox-javascript-loader.php';
+            ?>
         <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
 
@@ -375,7 +395,7 @@ class jQueryColorbox {
      * @author Arne Franken
      */
     function registerAdminWarning() {
-        if (true == $this->colorboxSettings['colorboxWarningOff'] || true == $this->colorboxSettings['autoColorbox']) {
+        if ($this->colorboxSettings['colorboxWarningOff'] || $this->colorboxSettings['autoColorbox']) {
             return;
         }
         ?>
@@ -427,9 +447,15 @@ class jQueryColorbox {
             'transition' => 'elastic',
             'speed' => '350',
             'overlayClose' => false,
+            'disableLoop' => false,
+            'disableKeys' => false,
             'autoHideFlash' => false,
             'colorboxWarningOff' => false,
-            'colorboxMetaLinkOff' => false
+            'colorboxMetaLinkOff' => false,
+            'javascriptInFooter' => false,
+            'debugMode' => false,
+            'autoColorboxJavaScript' => false,
+            'removeLinkFromMetaBox' => false
         );
     }
 
@@ -621,10 +647,10 @@ class jQueryColorbox {
 
     // addColorboxLinkClasses()
 
-//    /**
-//     *
-//     *
-//     */
+    /**
+     *
+     *
+     */
 //    function getThemeDirs() {
 //        $themesDirPath = JQUERYCOLORBOX_PLUGIN_DIR.'/themes/';
 //        if ($themesDir = opendir($themesDirPath)) {
@@ -638,45 +664,7 @@ class jQueryColorbox {
 //        asort($themeDirs);
 //        return $themeDirs;
 //    }
-//
-//    /**
-//     *
-//     *
-//     */
-//    function isDirWritable() {
-//        return (is_dir(JQUERYCOLORBOX_PLUGIN_DIR.'/custom/') && is_writable(JQUERYCOLORBOX_PLUGIN_DIR.'/custom/'));
-//    }
-//
-//    /**
-//     *
-//     */
-//    function writeCustomFile($filename) {
-//        if ( $type == 'binary' ) {
-//          $fp_opt = 'w+b';
-//        }
-//        else {
-//          $fp_opt = 'w+';
-//        }
-//
-//
-//        $fp = @fopen($filename, $fp_opt);
-//
-//        if ( $fp !== FALSE ) {
-//          $ret = @fwrite($fp, $content);
-//          @fclose($fp);
-//        }
-//        else {
-//          $ret = @file_put_contents($filename, $content);
-//        }
-//
-//        if ( $ret !== FALSE ) {
-//          @chmod($filename, 0666);
-//          return 0;
-//        }
-//        else {
-//          return 1;
-//        }
-//    }
+
 }
 
 // class jQueryColorbox()
@@ -689,16 +677,46 @@ class jQueryColorbox {
  * @author Arne Franken
  */
 function jQueryColorbox() {
-    global
-    $jQueryColorbox;
-    $jQueryColorbox = new jQueryColorbox();
+    // check whether the PHP installation is version 5 or newer.
+    if (strnatcmp(phpversion(),'5.0.0') >= 0)
+    {
+        // PHP version equals 5 or is newer, load plugin
+        global
+        $jQueryColorbox;
+        $jQueryColorbox = new jQueryColorbox();
+    }
+    else
+    {
+        // PHP version not sufficient, display warning
+        add_action('admin_notices', 'registerPhpWarning');
+    }
+
+    /**
+     * Registers the PHP warning for admins
+     *
+     * @since 4.0
+     * @access private
+     * @author Arne Franken
+     */
+    function registerPhpWarning() {
+        ?>
+
+        <div class="updated" style="background-color:#f66;">
+            <p>
+                <?php echo JQUERYCOLORBOX_NAME ?> <?php _e('does not work with PHP 4. Please update or uninstall the plugin.', JQUERYCOLORBOX_TEXTDOMAIN)?>
+            </p>
+        </div>
+        <?php
+    }
+
+    // registerPhpWarning()
 }
 
-//jQueryColorbox()
+// jQueryColorbox()
 
 // add jQueryColorbox() to WordPress initialization
 add_action('init', 'jQueryColorbox', 7);
 
-//register method for activation
+// register method for activation
 register_activation_hook(__FILE__, array('jQueryColorbox', 'activateJqueryColorbox'));
 ?>
