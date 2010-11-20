@@ -43,7 +43,7 @@ DONE
 Feature 7
 - add Flattr-button to settings page
 Feature 7a
-DONE
+NOT IMPLEMENTED
 - add option to remove link from meta box
 DONE
 

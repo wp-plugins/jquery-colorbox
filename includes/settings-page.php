@@ -485,28 +485,7 @@
                 <p>
                     <?php _e('If you would like to make a small (or large) contribution towards future development please consider making a donation.', JQUERYCOLORBOX_TEXTDOMAIN) ?>
                 </p>
-            </div>
-        </div>
-    </div>
-    <div id="poststuff">
-        <div id="jquery-colorbox-donateFlattr" class="postbox">
-            <h3 id="donateFlattr"><?php _e('Donate using Flattr', JQUERYCOLORBOX_TEXTDOMAIN) ?></h3>
-
-            <div class="inside">
-                <div  style="text-align:center;">
-                    <script type="text/javascript">
-                        var flattr_url = 'http://www.techotronic.de/plugins/jquery-colorbox/';
-                    </script>
-                    <script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="poststuff">
-        <div id="jquery-colorbox-donatePaypal" class="postbox">
-            <h3 id="donatePaypal"><?php _e('Donate using Paypal', JQUERYCOLORBOX_TEXTDOMAIN) ?></h3>
-
-            <div class="inside">
+                <h5 id="donatePaypal"><?php _e('Donate using Paypal', JQUERYCOLORBOX_TEXTDOMAIN) ?></h5>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                     <input type="hidden" name="cmd" value="_xclick" />
                     <input type="hidden" name="business" value="G75G3Z6PQWXXQ" />
