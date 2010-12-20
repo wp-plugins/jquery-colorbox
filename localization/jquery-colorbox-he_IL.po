@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-17 00:02+0100\n"
-"PO-Revision-Date: 2010-06-17 00:02+0100\n"
+"POT-Creation-Date: 2010-12-20 22:40+0100\n"
+"PO-Revision-Date: 2010-12-20 22:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: Tommy Gordon\n"
 "MIME-Version: 1.0\n"
@@ -15,139 +15,143 @@ msgstr ""
 "X-Poedit-Country: ISRAEL\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:99
+#: jquery-colorbox.php:124
 msgid "Theme #1"
 msgstr "תבנית 1"
 
-#: jquery-colorbox.php:100
+#: jquery-colorbox.php:125
 msgid "Theme #2"
 msgstr "תבנית 2"
 
-#: jquery-colorbox.php:101
+#: jquery-colorbox.php:126
 msgid "Theme #3"
 msgstr "תבנית 3"
 
-#: jquery-colorbox.php:102
+#: jquery-colorbox.php:127
 msgid "Theme #4"
 msgstr "תבנית 4"
 
-#: jquery-colorbox.php:103
+#: jquery-colorbox.php:128
 msgid "Theme #5"
 msgstr "תבנית 5"
 
-#: jquery-colorbox.php:104
+#: jquery-colorbox.php:129
 msgid "Theme #6"
 msgstr "תבנית 6"
 
-#: jquery-colorbox.php:105
+#: jquery-colorbox.php:130
 msgid "Theme #7"
 msgstr "תבנית 7"
 
-#: jquery-colorbox.php:106
+#: jquery-colorbox.php:131
 msgid "Theme #8"
 msgstr "תבנית 8"
 
-#: jquery-colorbox.php:107
+#: jquery-colorbox.php:132
 msgid "Theme #9"
 msgstr "תבנית 9"
 
-#: jquery-colorbox.php:108
+#: jquery-colorbox.php:133
 msgid "Theme #10"
 msgstr "תבנית 10"
 
-#: jquery-colorbox.php:109
+#: jquery-colorbox.php:134
 msgid "Theme #11"
 msgstr "תבנית 11"
 
-#: jquery-colorbox.php:115
+#: jquery-colorbox.php:140
 msgid "Theme #12"
 msgstr "תבנית 12"
 
-#: jquery-colorbox.php:116
+#: jquery-colorbox.php:141
 msgid "Theme #13"
 msgstr "תבנית 13"
 
-#: jquery-colorbox.php:117
+#: jquery-colorbox.php:142
 msgid "Theme #14"
 msgstr "תבנית 14"
 
-#: jquery-colorbox.php:118
+#: jquery-colorbox.php:143
 msgid "Theme #15"
 msgstr "תבנית 15"
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:148
 msgid "percent"
 msgstr "אחוזים"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:149
 msgid "pixels"
 msgstr "פיקסלים"
 
-#: jquery-colorbox.php:129
+#: jquery-colorbox.php:154
 msgid "elastic"
 msgstr "אלסטי"
 
-#: jquery-colorbox.php:130
+#: jquery-colorbox.php:155
 msgid "fade"
 msgstr "עימעום"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:156
 msgid "none"
 msgstr "ללא"
 
-#: jquery-colorbox.php:172
+#: jquery-colorbox.php:206
 msgid "Using"
 msgstr "שימוש"
 
-#: jquery-colorbox.php:269
-#: includes/settings-page.php:103
+#: jquery-colorbox.php:301
+#: includes/settings-page.php:105
 msgid "Settings"
 msgstr "הגדרות"
 
-#: jquery-colorbox.php:330
+#: jquery-colorbox.php:363
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "עדכנתי בהצלחה את ההגדרות של %1$s."
 
-#: jquery-colorbox.php:332
+#: jquery-colorbox.php:365
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "הגדרות %1$s נמחקו בהצלחה."
 
-#: jquery-colorbox.php:373
+#: jquery-colorbox.php:406
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "שים לב: התוסף אינו מופעל עבור כל התמונות."
 
-#: jquery-colorbox.php:434
+#: jquery-colorbox.php:481
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "לא עדכנתי את ההגדרות, אין לך הרשאות מתאימות."
 
-#: jquery-colorbox.php:481
+#: jquery-colorbox.php:528
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "לא מחקתי את ההגדרות של %1$s. ייתכן שאין לך הרשאות מתאימות, או שלא סימנת את תיבת הסימון."
 
-#: includes/colorbox-javascript.php:54
+#: jquery-colorbox.php:713
+msgid "does not work with PHP 4. Please update or uninstall the plugin."
+msgstr ""
+
+#: includes/colorbox-javascript.php:49
 msgid "close"
 msgstr "סגור"
 
-#: includes/colorbox-javascript.php:55
+#: includes/colorbox-javascript.php:50
 msgid "next"
 msgstr "הבא"
 
-#: includes/colorbox-javascript.php:56
+#: includes/colorbox-javascript.php:51
 msgid "previous"
 msgstr "הקודם"
 
-#: includes/colorbox-javascript.php:57
+#: includes/colorbox-javascript.php:52
 msgid "start slideshow"
 msgstr "הפעל מצגת"
 
-#: includes/colorbox-javascript.php:58
+#: includes/colorbox-javascript.php:53
 msgid "stop slideshow"
 msgstr "הפסק מצגת"
 
-#: includes/colorbox-javascript.php:59
+#: includes/colorbox-javascript.php:54
 msgid "{current} of {total} images"
 msgstr "תמונה {current} מתוך {total}"
 
@@ -156,281 +160,348 @@ msgstr "תמונה {current} מתוך {total}"
 msgid "%1$s Settings"
 msgstr "הגדרות %1$s"
 
-#: includes/settings-page.php:112
-msgid "Theme"
-msgstr "תבנית"
+#: includes/settings-page.php:106
+#, fuzzy
+msgid "Plugin settings"
+msgstr "הגדרות"
 
-#: includes/settings-page.php:124
-msgid "Select the theme you want to use on your blog."
-msgstr "בחר את התבנית בה ברצונך להשתמש עבור הבלוג שלך."
-
-#: includes/settings-page.php:129
-msgid "Theme screenshot"
-msgstr "צילום מסך של התבנית"
-
-#: includes/settings-page.php:139
+#: includes/settings-page.php:113
 #, php-format
 msgid "Automate %1$s for all images"
 msgstr "הפעל %1$s אוטומטית לכל התמונות"
 
-#: includes/settings-page.php:143
+#: includes/settings-page.php:113
+#, fuzzy, php-format
+msgid "Automate %1$s for all images in pages, posts and galleries"
+msgstr "הוסף את %1$s אוטומטית לתמונות בגלריות וורדפרס"
+
+#: includes/settings-page.php:117
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
 msgstr "הוסף הגדרת סגנון (קלאס) קולור-בוקס אוטומטית לתמונות בפוסטים או בעמודים. בנוסף, מוסיף הגדרת סגנון (קלאס) קולור-בוקס לגלריות. תמונות המופיעות בפוסט או בעמוד כלשהו מאוחדות אוטומטית לקבוצה אחת."
 
-#: includes/settings-page.php:148
+#: includes/settings-page.php:122
 #, php-format
 msgid "Automate %1$s for images in WordPress galleries"
 msgstr "הוסף את %1$s אוטומטית לתמונות בגלריות וורדפרס"
 
-#: includes/settings-page.php:152
+#: includes/settings-page.php:122
+#, fuzzy, php-format
+msgid "Automate %1$s for images in WordPress galleries only"
+msgstr "הוסף את %1$s אוטומטית לתמונות בגלריות וורדפרס"
+
+#: includes/settings-page.php:126
 msgid "Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically."
 msgstr "הוסף הגדרת סגנון (קלאס) קולור-בוקס באופן אוטומטי לתמונות בגלריות של וורדפרס, ורק שם. תמונות המופיעות בפוסט או בעמוד כלשהו מאוחדות אוטומטית לקבוצה אחת."
 
-#: includes/settings-page.php:157
-msgid "Add Slideshow to groups"
-msgstr "הוסף הגדרת מצגת לקבוצות"
+#: includes/settings-page.php:131
+#, fuzzy, php-format
+msgid "Automate %1$s for all other images"
+msgstr "הפעל %1$s אוטומטית לכל התמונות"
 
-#: includes/settings-page.php:161
-#, php-format
-msgid "Add Slideshow functionality for %1$s Groups"
-msgstr "הוסף הגדרת מצגת לקבוצות %1$s "
-
-#: includes/settings-page.php:166
-msgid "Start Slideshow automatically"
-msgstr "הפעל מצגת אוטומטית"
-
-#: includes/settings-page.php:170
-#, php-format
-msgid "Start Slideshow automatically if slideshow functionality is added to %1$s Groups"
-msgstr "הפעל מצגת אוטומטית אם קבוצות %1$s הוגדרו כמצגת"
-
-#: includes/settings-page.php:175
-msgid "Speed of the slideshow"
-msgstr "מהירות המצגת"
-
-#: includes/settings-page.php:178
-#: includes/settings-page.php:341
-msgid "milliseconds"
-msgstr "אלפיות שניה"
-
-#: includes/settings-page.php:179
-msgid "Sets the speed of the slideshow, in milliseconds"
-msgstr "קובע את מהירות המצגת, באלפיות שניה"
-
-#: includes/settings-page.php:184
-msgid "Disable loop"
+#: includes/settings-page.php:135
+msgid "Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar)."
 msgstr ""
 
-#: includes/settings-page.php:188
-msgid "Disable looping through image groups"
-msgstr ""
-
-#: includes/settings-page.php:193
-msgid "Disable keys"
-msgstr ""
-
-#: includes/settings-page.php:197
-msgid "Disable ESC to close Colorbox and arrow keys to go to next and previous images"
-msgstr ""
-
-#: includes/settings-page.php:202
-msgid "Maximum width of an image"
-msgstr "רוחב תמונה מרבי"
-
-#: includes/settings-page.php:206
-#: includes/settings-page.php:252
-msgid "Do not set width"
-msgstr "אל תקבע רוחב"
-
-#: includes/settings-page.php:209
-msgid "Set maximum width of an image"
-msgstr "קבע רוחב תמונה מרבי"
-
-#: includes/settings-page.php:220
-msgid "Set the maximum width of the image in the Colorbox in relation to the browser window in percent or pixels. If maximum width is not set, image is as wide as the Colorbox"
-msgstr "קבע רוחב מרבי של תמונה בקולור-בוקס ביחס לגודל החלון של הדפדפן באחוזים, או בפיקסלים. אם לא נקבע רוחב מרבי, תהיה התמונה רחבה כרוחב הקולור-בוקס."
-
-#: includes/settings-page.php:225
-msgid "Maximum height of an image"
-msgstr "גובה תמונה מרבי"
-
-#: includes/settings-page.php:229
-#: includes/settings-page.php:275
-msgid "Do not set height"
-msgstr "אל תקבע גובה"
-
-#: includes/settings-page.php:232
-msgid "Set maximum height of an image"
-msgstr "קבע גובה תמונה מרבי"
-
-#: includes/settings-page.php:243
-msgid "Set the maximum height of the image in the Colorbox in relation to the browser window to a value in percent or pixels. If maximum height is not set, the image is as high as the Colorbox"
-msgstr "קבע גובה מרבי של תמונה בקולור-בוקס ביחס לגודל החלון של הדפדפן באחוזים, או בפיקסלים. אם לא נקבע גובה מרבי, התמונה תהיה גבוהה כגובה הקולור-בוקס"
-
-#: includes/settings-page.php:248
-msgid "Maximum width of the Colorbox"
-msgstr "רוחב מרבי של קולור-בוקס"
-
-#: includes/settings-page.php:255
-msgid "Set width of the Colorbox"
-msgstr "קבע רוחב של קולור-בוקס"
-
-#: includes/settings-page.php:266
-msgid "Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it"
-msgstr "קבע את הרוחב המרבי של קולור-בוקס ביחס לחלון הדפדפן באחוזים או בפיקסלים. אם התמונה גדולה מהקולור-בוקס, יוצגו פסי גלילה. אם לא נקבע הרוחב, קולור-בוקס יהיה כרוחב התמונה שבתוכו."
-
-#: includes/settings-page.php:271
-msgid "Maximum height of the Colorbox"
-msgstr "גובה מרבי של קולור-בוקס"
-
-#: includes/settings-page.php:278
-msgid "Set height of the Colorbox"
-msgstr "קבע את גובה קולור-בוקס"
-
-#: includes/settings-page.php:289
-msgid "Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it"
-msgstr "קבע את הגובה המרבי של קולור-בוקס ביחס לחלון הדפדפן באחוזים או בפיקסלים. אם התמונה גדולה מהקולור-בוקס, יוצגו פסי גלילה. אם לא נקבע הגובה, קולור-בוקס יהיה כגובה התמונה שבתוכו."
-
-#: includes/settings-page.php:294
-msgid "Resize images"
-msgstr "שנה גודל תמונות"
-
-#: includes/settings-page.php:298
-msgid "If enabled and if maximum width of images, maximum height of images, width of the Colorbox, or height of the Colorbox have been defined, ColorBox will scale photos to fit within the those values"
-msgstr "אם דולק והרוחב המקסימלי של תמונות, הגובה המקסימלי של תמונות, הרוחב של קולור-בוקס או הגובה של קולור-בוקס הוגדרו, קולור-בוקס ישנה את גודל התמונה על מנת שתתאים לערכים אלה."
-
-#: includes/settings-page.php:303
-msgid "Close Colorbox on overlay click"
-msgstr "סגור קולור-בוקס בלחיצה על שכבת הרקע"
-
-#: includes/settings-page.php:307
-msgid "If checked, enables closing ColorBox by clicking on the background overlay"
-msgstr "אם מסומן, מאפשר סגירת קולור-בוקס ע\"י לחיצה על שכבת הרקע"
-
-#: includes/settings-page.php:312
-msgid "Preload images"
-msgstr "טען תמונות מראש"
-
-#: includes/settings-page.php:316
-msgid "Allows for preloading of \"next\" and \"previous\" content in a group, after the current content has finished loading. Uncheck box to disable."
-msgstr "מאפשר טעינה מראש של התוכן \"הבא\" ו\"הקודם\" בקבוצה, לאחר שהתוכן הנוכחי נטען בשלמותו. הסר את הסימון כדי לכבות."
-
-#: includes/settings-page.php:321
-msgid "Transition type"
-msgstr "סוג מעבר"
-
-#: includes/settings-page.php:333
-msgid "The transition type of the Colorbox. Can be set to \"elastic\", \"fade\", or \"none\""
-msgstr "סוג המעבר בקולור-בוקס. יכול להיות אלסטי, עמעום, או ללא."
-
-#: includes/settings-page.php:338
-msgid "Transition speed"
-msgstr "מהירות מעבר"
-
-#: includes/settings-page.php:342
-msgid "Sets the speed of the \"fade\" and \"elastic\" transitions, in milliseconds"
-msgstr "מגדיר את מהירות המעבר ב\"אלסטי\" וב\"עמעום\" במילי-שניות"
-
-#: includes/settings-page.php:347
-msgid "Opacity"
-msgstr "שקיפות"
-
-#: includes/settings-page.php:351
-msgid "The overlay opacity level. Range: 0 to 1"
-msgstr "רמת השקיפות של הרקע. תחום: 0 עד 1"
-
-#: includes/settings-page.php:356
-msgid "Make images draggable"
-msgstr ""
-
-#: includes/settings-page.php:360
-msgid "Make images draggable instead of scrollable"
-msgstr ""
-
-#: includes/settings-page.php:365
+#: includes/settings-page.php:140
 msgid "Automate hiding of flash objects"
 msgstr "הסתר אובייקטים של פלאש אוטומטית"
 
-#: includes/settings-page.php:369
+#: includes/settings-page.php:144
 #, fuzzy
 msgid "Automatically hide embeded flash objects behind the Colorbox layer."
 msgstr "הסתר פלאש אוטומטית מאחורי שכבת הקולור-בוקס. נעשה ע\"י שינוי שקיפות של הפלאש."
 
-#: includes/settings-page.php:374
+#: includes/settings-page.php:149
+msgid "Add JavaScript to footer"
+msgstr ""
+
+#: includes/settings-page.php:153
+msgid "Add JavaScript to footer instead of the header."
+msgstr ""
+
+#: includes/settings-page.php:158
+msgid "Remove link from Meta-box"
+msgstr ""
+
+#: includes/settings-page.php:162
+msgid "Remove the link to the developers site from the WordPress meta-box."
+msgstr ""
+
+#: includes/settings-page.php:167
+msgid "Activate debug mode"
+msgstr ""
+
+#: includes/settings-page.php:171
+msgid "Adds debug information and non-minified JavaScript to the page. Useful for troubleshooting."
+msgstr ""
+
+#: includes/settings-page.php:176
 msgid "Disable warning"
 msgstr "כבה אזהרה."
 
-#: includes/settings-page.php:378
+#: includes/settings-page.php:180
 msgid "Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off."
 msgstr "כבה את האזהרה המוצגת אם התוסף מופעל אך אינו מוגדר לפעול אוטומטית לכל התמונות."
 
-#: includes/settings-page.php:384
+#: includes/settings-page.php:186
+#: includes/settings-page.php:481
 msgid "Save Changes"
 msgstr "שמור שינויים"
 
-#: includes/settings-page.php:393
-#: includes/settings-page.php:402
+#: includes/settings-page.php:191
+msgid "Colorbox settings"
+msgstr ""
+
+#: includes/settings-page.php:198
+msgid "Theme"
+msgstr "תבנית"
+
+#: includes/settings-page.php:210
+msgid "Select the theme you want to use on your blog."
+msgstr "בחר את התבנית בה ברצונך להשתמש עבור הבלוג שלך."
+
+#: includes/settings-page.php:215
+msgid "Theme screenshot"
+msgstr "צילום מסך של התבנית"
+
+#: includes/settings-page.php:226
+msgid "Add Slideshow to groups"
+msgstr "הוסף הגדרת מצגת לקבוצות"
+
+#: includes/settings-page.php:230
+#, php-format
+msgid "Add Slideshow functionality for %1$s Groups"
+msgstr "הוסף הגדרת מצגת לקבוצות %1$s "
+
+#: includes/settings-page.php:235
+msgid "Start Slideshow automatically"
+msgstr "הפעל מצגת אוטומטית"
+
+#: includes/settings-page.php:239
+#, php-format
+msgid "Start Slideshow automatically if slideshow functionality is added to %1$s Groups"
+msgstr "הפעל מצגת אוטומטית אם קבוצות %1$s הוגדרו כמצגת"
+
+#: includes/settings-page.php:244
+msgid "Speed of the slideshow"
+msgstr "מהירות המצגת"
+
+#: includes/settings-page.php:247
+#: includes/settings-page.php:456
+msgid "milliseconds"
+msgstr "אלפיות שניה"
+
+#: includes/settings-page.php:248
+msgid "Sets the speed of the slideshow, in milliseconds"
+msgstr "קובע את מהירות המצגת, באלפיות שניה"
+
+#: includes/settings-page.php:253
+msgid "Disable loop"
+msgstr ""
+
+#: includes/settings-page.php:257
+msgid "Disable looping through image groups"
+msgstr ""
+
+#: includes/settings-page.php:262
+msgid "Disable keys"
+msgstr ""
+
+#: includes/settings-page.php:266
+msgid "Disable ESC to close Colorbox and arrow keys to go to next and previous images"
+msgstr ""
+
+#: includes/settings-page.php:271
+msgid "Maximum width of an image"
+msgstr "רוחב תמונה מרבי"
+
+#: includes/settings-page.php:275
+#: includes/settings-page.php:321
+msgid "Do not set width"
+msgstr "אל תקבע רוחב"
+
+#: includes/settings-page.php:278
+msgid "Set maximum width of an image"
+msgstr "קבע רוחב תמונה מרבי"
+
+#: includes/settings-page.php:289
+msgid "Set the maximum width of the image in the Colorbox in relation to the browser window in percent or pixels. If maximum width is not set, image is as wide as the Colorbox"
+msgstr "קבע רוחב מרבי של תמונה בקולור-בוקס ביחס לגודל החלון של הדפדפן באחוזים, או בפיקסלים. אם לא נקבע רוחב מרבי, תהיה התמונה רחבה כרוחב הקולור-בוקס."
+
+#: includes/settings-page.php:294
+msgid "Maximum height of an image"
+msgstr "גובה תמונה מרבי"
+
+#: includes/settings-page.php:298
+#: includes/settings-page.php:344
+msgid "Do not set height"
+msgstr "אל תקבע גובה"
+
+#: includes/settings-page.php:301
+msgid "Set maximum height of an image"
+msgstr "קבע גובה תמונה מרבי"
+
+#: includes/settings-page.php:312
+msgid "Set the maximum height of the image in the Colorbox in relation to the browser window to a value in percent or pixels. If maximum height is not set, the image is as high as the Colorbox"
+msgstr "קבע גובה מרבי של תמונה בקולור-בוקס ביחס לגודל החלון של הדפדפן באחוזים, או בפיקסלים. אם לא נקבע גובה מרבי, התמונה תהיה גבוהה כגובה הקולור-בוקס"
+
+#: includes/settings-page.php:317
+msgid "Maximum width of the Colorbox"
+msgstr "רוחב מרבי של קולור-בוקס"
+
+#: includes/settings-page.php:324
+msgid "Set width of the Colorbox"
+msgstr "קבע רוחב של קולור-בוקס"
+
+#: includes/settings-page.php:335
+msgid "Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it"
+msgstr "קבע את הרוחב המרבי של קולור-בוקס ביחס לחלון הדפדפן באחוזים או בפיקסלים. אם התמונה גדולה מהקולור-בוקס, יוצגו פסי גלילה. אם לא נקבע הרוחב, קולור-בוקס יהיה כרוחב התמונה שבתוכו."
+
+#: includes/settings-page.php:340
+msgid "Maximum height of the Colorbox"
+msgstr "גובה מרבי של קולור-בוקס"
+
+#: includes/settings-page.php:347
+msgid "Set height of the Colorbox"
+msgstr "קבע את גובה קולור-בוקס"
+
+#: includes/settings-page.php:358
+msgid "Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it"
+msgstr "קבע את הגובה המרבי של קולור-בוקס ביחס לחלון הדפדפן באחוזים או בפיקסלים. אם התמונה גדולה מהקולור-בוקס, יוצגו פסי גלילה. אם לא נקבע הגובה, קולור-בוקס יהיה כגובה התמונה שבתוכו."
+
+#: includes/settings-page.php:363
+#, fuzzy
+msgid "Maximum width of the Colorbox used for links"
+msgstr "רוחב מרבי של קולור-בוקס"
+
+#: includes/settings-page.php:386
+#, fuzzy
+msgid "Maximum height of the Colorbox used for links"
+msgstr "גובה מרבי של קולור-בוקס"
+
+#: includes/settings-page.php:409
+msgid "Resize images"
+msgstr "שנה גודל תמונות"
+
+#: includes/settings-page.php:413
+msgid "If enabled and if maximum width of images, maximum height of images, width of the Colorbox, or height of the Colorbox have been defined, ColorBox will scale photos to fit within the those values"
+msgstr "אם דולק והרוחב המקסימלי של תמונות, הגובה המקסימלי של תמונות, הרוחב של קולור-בוקס או הגובה של קולור-בוקס הוגדרו, קולור-בוקס ישנה את גודל התמונה על מנת שתתאים לערכים אלה."
+
+#: includes/settings-page.php:418
+msgid "Close Colorbox on overlay click"
+msgstr "סגור קולור-בוקס בלחיצה על שכבת הרקע"
+
+#: includes/settings-page.php:422
+msgid "If checked, enables closing ColorBox by clicking on the background overlay"
+msgstr "אם מסומן, מאפשר סגירת קולור-בוקס ע\"י לחיצה על שכבת הרקע"
+
+#: includes/settings-page.php:427
+msgid "Preload images"
+msgstr "טען תמונות מראש"
+
+#: includes/settings-page.php:431
+msgid "Allows for preloading of \"next\" and \"previous\" content in a group, after the current content has finished loading. Uncheck box to disable."
+msgstr "מאפשר טעינה מראש של התוכן \"הבא\" ו\"הקודם\" בקבוצה, לאחר שהתוכן הנוכחי נטען בשלמותו. הסר את הסימון כדי לכבות."
+
+#: includes/settings-page.php:436
+msgid "Transition type"
+msgstr "סוג מעבר"
+
+#: includes/settings-page.php:448
+msgid "The transition type of the Colorbox. Can be set to \"elastic\", \"fade\", or \"none\""
+msgstr "סוג המעבר בקולור-בוקס. יכול להיות אלסטי, עמעום, או ללא."
+
+#: includes/settings-page.php:453
+msgid "Transition speed"
+msgstr "מהירות מעבר"
+
+#: includes/settings-page.php:457
+msgid "Sets the speed of the \"fade\" and \"elastic\" transitions, in milliseconds"
+msgstr "מגדיר את מהירות המעבר ב\"אלסטי\" וב\"עמעום\" במילי-שניות"
+
+#: includes/settings-page.php:462
+msgid "Opacity"
+msgstr "שקיפות"
+
+#: includes/settings-page.php:466
+msgid "The overlay opacity level. Range: 0 to 1"
+msgstr "רמת השקיפות של הרקע. תחום: 0 עד 1"
+
+#: includes/settings-page.php:471
+msgid "Make images draggable"
+msgstr ""
+
+#: includes/settings-page.php:475
+msgid "Make images draggable instead of scrollable"
+msgstr ""
+
+#: includes/settings-page.php:491
+#: includes/settings-page.php:500
 msgid "Delete Settings"
 msgstr "מחק הגדרות"
 
-#: includes/settings-page.php:396
+#: includes/settings-page.php:494
 msgid "Check the box and click this button to delete settings of this plugin."
 msgstr "סמן את תיבת הסימון ולחץ על הכפתור על מנת למחוק את הגדרות התוסף"
 
-#: includes/settings-page.php:413
+#: includes/settings-page.php:511
 msgid "Top donations"
 msgstr ""
 
-#: includes/settings-page.php:422
+#: includes/settings-page.php:520
 msgid "Latest donations"
 msgstr ""
 
-#: includes/settings-page.php:431
+#: includes/settings-page.php:529
 msgid "Donate"
 msgstr "תרום"
 
-#: includes/settings-page.php:435
+#: includes/settings-page.php:533
 msgid "If you would like to make a small (or large) contribution towards future development please consider making a donation."
 msgstr "אם אתה מעוניין לסייע לפיתוח עתידי של תוסף זה, נשמח אם תשקול תרומה כספית."
 
-#: includes/settings-page.php:440
+#: includes/settings-page.php:535
+msgid "Donate using Paypal"
+msgstr ""
+
+#: includes/settings-page.php:539
 msgid "Techotronic Development Support"
 msgstr ""
 
-#: includes/settings-page.php:444
+#: includes/settings-page.php:543
 msgid "Please enter the URL you'd like me to link to in the donors lists"
 msgstr ""
 
-#: includes/settings-page.php:446
+#: includes/settings-page.php:545
 msgid "Return to Your Dashboard"
 msgstr ""
 
-#: includes/settings-page.php:450
+#: includes/settings-page.php:549
 msgid "Select Preset Amount"
 msgstr ""
 
-#: includes/settings-page.php:458
-#: includes/settings-page.php:462
+#: includes/settings-page.php:557
+#: includes/settings-page.php:561
 msgid "USD"
 msgstr ""
 
-#: includes/settings-page.php:459
+#: includes/settings-page.php:558
 msgid "Or"
 msgstr ""
 
-#: includes/settings-page.php:460
+#: includes/settings-page.php:559
 msgid "Enter Custom Amount"
 msgstr ""
 
-#: includes/settings-page.php:464
+#: includes/settings-page.php:563
 msgid "Submit"
 msgstr ""
 
-#: includes/settings-page.php:471
+#: includes/settings-page.php:570
 msgid "Translation"
 msgstr "תרגום"
 
-#: includes/settings-page.php:474
+#: includes/settings-page.php:573
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
 msgstr "התרגום לעברית נעשה על ידי <a href=\"http://tommygordon.co.il\">תומי גורדון</a>"
 
