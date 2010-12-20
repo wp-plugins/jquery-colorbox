@@ -19,9 +19,39 @@
     * declare variables that are used in more than one function
     */
     ?>
-        var $iframe = false;
-        var $groupId;
-        var $title;
+        var COLORBOX_IMG_PATTERN = /\.(?:jpe?g|gif|png|bmp)/i;
+        var COLORBOX_MANUAL = "colorbox-manual";
+        var COLORBOX_OFF_CLASS = ".colorbox-off";
+        var COLORBOX_LINK_CLASS = ".colorbox-link";
+        var COLORBOX_OFF = "colorbox-off";
+        var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
+
+        var colorboxIframe = false;
+        var colorboxGroupId;
+        var colorboxTitle;
+        var colorboxWidth = false;
+        var colorboxHeight = false;
+        var colorboxMaxWidth = false;
+        var colorboxMaxHeight = false;
+        var colorboxSlideshow = <?php echo !$this->colorboxSettings['slideshow'] ? 'false' : 'true'; ?>;
+        var colorboxSlideshowAuto = <?php echo $this->colorboxSettings['slideshowAuto'] ? 'true' : 'false';?>;
+        var colorboxScalePhotos = <?php echo $this->colorboxSettings['scalePhotos'] ? 'true' : 'false';?>;
+        var colorboxPreloading = <?php echo $this->colorboxSettings['preloading'] ? 'true' : 'false';?>;
+        var colorboxOverlayClose = <?php echo $this->colorboxSettings['overlayClose'] ? 'true' : 'false';?>;
+        var colorboxLoop = <?php echo !$this->colorboxSettings['disableLoop'] ? 'true' : 'false';?>;
+        var colorboxEscKey = <?php echo !$this->colorboxSettings['disableKeys'] ? 'true' : 'false';?>;
+        var colorboxArrowKey = <?php echo !$this->colorboxSettings['disableKeys'] ? 'true' : 'false';?>;
+        var colorboxScrolling = <?php echo !$this->colorboxSettings['displayScrollbar'] || $this->colorboxSettings['draggable'] ? 'true' : 'false';?>;
+        var colorboxOpacity = "<?php echo $this->colorboxSettings['opacity']; ?>";
+        var colorboxTransition = "<?php echo $this->colorboxSettings['transition']; ?>";
+        var colorboxSpeed = <?php echo $this->colorboxSettings['speed']; ?>;
+        var colorboxSlideshowSpeed = <?php echo $this->colorboxSettings['slideshowSpeed']; ?>;
+        var colorboxClose = "<?php _e('close', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
+        var colorboxNext = "<?php _e('next', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
+        var colorboxPrevious = "<?php _e('previous', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
+        var colorboxSlideshowStart = "<?php _e('start slideshow', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
+        var colorboxSlideshowStop = "<?php _e('stop slideshow', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
+        var colorboxCurrent = "<?php _e('{current} of {total} images', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
 <?php
     /**
      * jQuery selector
@@ -31,14 +61,27 @@
     ?>
     (function($) {
         colorboxSelector = function() {
+
+            <?php //set variables for images ?>
+            colorboxMaxWidth = <?php echo $this->colorboxSettings['maxWidth'] == "false" ? 'false' : '"' . $this->colorboxSettings['maxWidthValue'] . $this->colorboxSettings['maxWidthUnit'] . '"'; ?>;
+            colorboxMaxHeight = <?php echo $this->colorboxSettings['maxHeight'] == "false" ? 'false' : '"' . $this->colorboxSettings['maxHeightValue'] . $this->colorboxSettings['maxHeightUnit'] . '"'; ?>;
+            colorboxHeight = <?php echo $this->colorboxSettings['height'] == "false" ? 'false' : '"' . $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'] . '"'; ?>;
+            colorboxWidth = <?php echo $this->colorboxSettings['width'] == "false" ? 'false' : '"' . $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'] . '"'; ?>;
             $("a:has(img):not(.colorbox-off)").each(function(index, obj) {
             <?php //only go on if link points to an image ?>
-                if ($(obj).attr("href").match(/\.(?:jpe?g|gif|png|bmp)/i)) {
+                if ($(obj).attr("href").match(COLORBOX_IMG_PATTERN)) {
                     colorboxImage(index, obj)
                 }
             });
+            <?php //set variables for links ?>
+            colorboxMaxWidth = false;
+            colorboxMaxHeight = false;
+            colorboxHeight = <?php echo $this->colorboxSettings['height'] == "false" ? 'false' : '"' . $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'] . '"'; ?>;
+            //colorboxHeight = <?php //echo $this->colorboxSettings['linkHeight'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkHeightValue'] . $this->colorboxSettings['linkHeightUnit'] . '"'; ?>;
+            colorboxWidth = <?php echo $this->colorboxSettings['width'] == "false" ? 'false' : '"' . $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'] . '"'; ?>;
+            //colorboxWidth = <?php //echo $this->colorboxSettings['linkWidth'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkWidthValue'] . $this->colorboxSettings['linkWidthUnit'] . '"'; ?>;
             <?php //call colorboxLink on all elements that have CSS class called "colorbox-link" ?>
-            $(".colorbox-link").each(function(index, obj) {
+            $(COLORBOX_LINK_CLASS).each(function(index, obj) {
                 colorboxLink(index, obj)
             });
         }
@@ -58,24 +101,24 @@
             <?php //check if the link has a colorbox class ?>
                 var $linkClasses = $(obj).attr("class");
             <?php //groupId is either the automatically created colorbox-123 or the manually added colorbox-manual ?>
-                $groupId = $linkClasses.match('colorbox-[0-9]+') || $linkClasses.match('colorbox-manual');
-                if (!$groupId) {
+                colorboxGroupId = $linkClasses.match(COLORBOX_CLASS_MATCH) || $linkClasses.match(COLORBOX_MANUAL);
+                if (!colorboxGroupId) {
                 <?php // link does not have colorbox class. Check if image has colorbox class. ?>
                     var $imageClasses = $image.attr("class");
-                    if (!$imageClasses.match('colorbox-off')) {
+                    if (!$imageClasses.match(COLORBOX_OFF)) {
                     <?php //groupId is either the automatically created colorbox-123 or the manually added colorbox-manual ?>
-                        $groupId = $imageClasses.match('colorbox-[0-9]+') || $imageClasses.match('colorbox-manual');
+                        colorboxGroupId = $imageClasses.match(COLORBOX_CLASS_MATCH) || $imageClasses.match(COLORBOX_MANUAL);
                     }
                 <?php //only call Colorbox if there is a groupId for the image?>
-                    if ($groupId) {
+                    if (colorboxGroupId) {
                     <?php //convert groupId to string and lose "colorbox-" for easier use ?>
-                        $groupId = $groupId.toString().split('-')[1];
+                        colorboxGroupId = colorboxGroupId.toString().split('-')[1];
                     <?php  //if groudId is colorbox-manual, set groupId to "nofollow" so that images are not grouped ?>
-                        if ($groupId == "manual") {
-                            $groupId = "nofollow";
+                        if (colorboxGroupId == "manual") {
+                            colorboxGroupId = "nofollow";
                         }
                     <?php //the title of the img is used as the title for the Colorbox. ?>
-                        $title = $image.attr("title");
+                        colorboxTitle = $image.attr("title");
 
                         colorboxWrapper(obj);
                     }
@@ -92,11 +135,11 @@
     ?>
     (function($) {
         colorboxLink = function(index, obj) {
-            $title = $(obj).attr("title");
-            $iframe = true;
-            $groupId = "nofollow";
-            if ($(obj).attr("href").match(/\.(?:jpe?g|gif|png|bmp)/i)) {
-                $iframe = false;
+            colorboxTitle = $(obj).attr("title");
+            colorboxIframe = true;
+            colorboxGroupId = "nofollow";
+            if ($(obj).attr("href").match(COLORBOX_IMG_PATTERN)) {
+                colorboxIframe = false;
             }
             colorboxWrapper(obj);
         }
@@ -113,32 +156,32 @@
     (function($) {
         colorboxWrapper = function(obj) {
             $(obj).colorbox({
-                rel:$groupId,
-                title:$title,
-            <?php echo $this->colorboxSettings['maxWidth'] == "false" ? '' : 'maxWidth:"' . $this->colorboxSettings['maxWidthValue'] . $this->colorboxSettings['maxWidthUnit'] . '",';
-            echo $this->colorboxSettings['maxHeight'] == "false" ? '' : 'maxHeight:"' . $this->colorboxSettings['maxHeightValue'] . $this->colorboxSettings['maxHeightUnit'] . '",';
-            echo $this->colorboxSettings['height'] == "false" ? '' : 'height:"' . $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'] . '",';
-            echo $this->colorboxSettings['width'] == "false" ? '' : 'width:"' . $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'] . '",';
-            echo !$this->colorboxSettings['slideshow'] ? '' : 'slideshow:true,';
-            echo $this->colorboxSettings['slideshowAuto'] ? '' : 'slideshowAuto:false,';
-            echo $this->colorboxSettings['scalePhotos'] ? '' : 'scalePhotos:false,';
-            echo $this->colorboxSettings['preloading'] ? '' : 'preloading:false,';
-            echo $this->colorboxSettings['overlayClose'] ? '' : 'overlayClose:false,';
-            echo !$this->colorboxSettings['disableLoop'] ? '' : 'loop:false,';
-            echo !$this->colorboxSettings['disableKeys'] ? '' : 'escKey:false,';
-            echo !$this->colorboxSettings['disableKeys'] ? '' : 'arrowKey:false,';
-            echo !$this->colorboxSettings['displayScrollbar'] || $this->colorboxSettings['draggable'] ? '' : 'scrolling:false,';?>
-                opacity:"<?php echo $this->colorboxSettings['opacity']; ?>",
-                transition:"<?php echo $this->colorboxSettings['transition']; ?>",
-                speed:<?php echo $this->colorboxSettings['speed']; ?>,
-                slideshowSpeed:<?php echo $this->colorboxSettings['slideshowSpeed']; ?>,
-                close:"<?php _e('close', JQUERYCOLORBOX_TEXTDOMAIN); ?>",
-                next:"<?php _e('next', JQUERYCOLORBOX_TEXTDOMAIN); ?>",
-                previous:"<?php _e('previous', JQUERYCOLORBOX_TEXTDOMAIN); ?>",
-                slideshowStart:"<?php _e('start slideshow', JQUERYCOLORBOX_TEXTDOMAIN); ?>",
-                slideshowStop:"<?php _e('stop slideshow', JQUERYCOLORBOX_TEXTDOMAIN); ?>",
-                current:"<?php _e('{current} of {total} images', JQUERYCOLORBOX_TEXTDOMAIN); ?>",
-                iframe:$iframe
+                rel:colorboxGroupId,
+                title:colorboxTitle,
+                maxHeight:colorboxMaxHeight,
+                maxWidth:colorboxMaxWidth,
+                height:colorboxHeight,
+                width:colorboxWidth,
+                slideshow:colorboxSlideshow,
+                slideshowAuto:colorboxSlideshowAuto,
+                scalePhotos:colorboxScalePhotos,
+                preloading:colorboxPreloading,
+                overlayClose:colorboxOverlayClose,
+                loop:colorboxLoop,
+                escKey:colorboxEscKey,
+                arrowKey:colorboxArrowKey,
+                scrolling:colorboxScrolling,
+                opacity:colorboxOpacity,
+                transition:colorboxTransition,
+                speed:colorboxSpeed,
+                slideshowSpeed:colorboxSlideshowSpeed,
+                close:colorboxClose,
+                next:colorboxNext,
+                previous:colorboxPrevious,
+                slideshowStart:colorboxSlideshowStart,
+                slideshowStop:colorboxSlideshowStop,
+                current:colorboxCurrent,
+                iframe:colorboxIframe
             });
         }
     })(jQuery);

@@ -20,7 +20,7 @@
 <?php
 //define constants
 define('JQUERYCOLORBOX_VERSION', '3.6.5');
-define('COLORBOXLIBRARY_VERSION', '1.3.14');
+define('COLORBOXLIBRARY_VERSION', '1.3.15');
 
 if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -171,7 +171,8 @@ class jQueryColorbox {
 //                ?!?wp_enqueue_script('jquery-ui-draggable');
 //                wp_enqueue_script('colorbox-draggable', plugins_url('js/jquery-colorbox-draggable.js', __FILE__), array('jquery-ui-draggable'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
 //            }
-            if ($this->colorboxSettings['autoColorboxJavaScript']) {
+            if ($this->colorboxSettings['autoColorbox']) {
+//            if ($this->colorboxSettings['autoColorboxJavaScript']) {
                 if($this->colorboxSettings['debugMode']) {
                     $jqueryColorboxAutoJavaScriptName = "js/jquery-colorbox-auto.js";
                 }
@@ -434,6 +435,12 @@ class jQueryColorbox {
             'width' => 'false',
             'widthValue' => '',
             'widthUnit' => '%',
+            'linkHeight' => 'false',
+            'linkHeightValue' => '',
+            'linkHeightUnit' => '%',
+            'linkWidth' => 'false',
+            'linkWidthValue' => '',
+            'linkWidthUnit' => '%',
             'autoColorbox' => false,
             'autoColorboxGalleries' => false,
             'slideshow' => false,
@@ -694,7 +701,7 @@ function jQueryColorbox() {
     /**
      * Registers the PHP warning for admins
      *
-     * @since 4.0
+     * @since 3.7
      * @access private
      * @author Arne Franken
      */

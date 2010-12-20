@@ -102,14 +102,15 @@
     <?php if (function_exists('wp_nonce_field') === true) wp_nonce_field('jquery-colorbox-settings-form'); ?>
     <div id="poststuff">
         <div id="jquery-colorbox-settings" class="postbox">
-            <h3 id="colorbox-settings"><?php _e('Plugin settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
+            <h3 id="colorbox-settings"><?php _e('Settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
+            <!--h3 id="colorbox-settings"><?php __('Plugin settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3-->
 
             <div class="inside">
 
                 <table class="form-table">
                 <tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-autoColorbox"><?php printf(__('Automate %1$s for all images in pages, posts and galleries', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-autoColorbox"><?php printf(__('Automate %1$s for all images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); __('Automate %1$s for all images in pages, posts and galleries', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
                         <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]" id="jquery-colorbox-autoColorbox" value="true" <?php echo ($this->colorboxSettings['autoColorbox']) ? 'checked="checked"' : '';?>/>
@@ -118,58 +119,58 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-autoColorboxGalleries"><?php printf(__('Automate %1$s for images in WordPress galleries only', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-autoColorboxGalleries"><?php printf(__('Automate %1$s for images in WordPress galleries', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); __('Automate %1$s for images in WordPress galleries only', JQUERYCOLORBOX_TEXTDOMAIN) ?>:</label>
                     </th>
                     <td>
                         <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxGalleries]" id="jquery-colorbox-autoColorboxGalleries" value="true" <?php echo ($this->colorboxSettings['autoColorboxGalleries']) ? 'checked="checked"' : '';?>/>
                         <br/><?php _e('Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
                 </tr>
-                <tr>
+                <!--tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-autoColorboxJavaScript"><?php printf(__('Automate %1$s for all other images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-autoColorboxJavaScript"><?php __('Automate %1$s for all other images', JQUERYCOLORBOX_TEXTDOMAIN); //printf(__('Automate %1$s for all other images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
                     </th>
                     <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxJavaScript]" id="jquery-colorbox-autoColorboxJavaScript" value="true" <?php echo ($this->colorboxSettings['autoColorboxJavaScript']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar).', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxJavaScript]" id="jquery-colorbox-autoColorboxJavaScript" value="true" <?php //echo ($this->colorboxSettings['autoColorboxJavaScript']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php __('Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar).', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
-                </tr>
-                <tr>
+                </tr-->
+                <!--tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-autoHideFlash"><?php printf(__('Automate hiding of flash objects', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-autoHideFlash"><?php __('Automate hiding of flash objects', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoHideFlash]" id="jquery-colorbox-autoHideFlash" value="true" <?php echo ($this->colorboxSettings['autoHideFlash']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Automatically hide embeded flash objects behind the Colorbox layer.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoHideFlash]" id="jquery-colorbox-autoHideFlash" value="true" <?php //echo ($this->colorboxSettings['autoHideFlash']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php __('Automatically hide embeded flash objects behind the Colorbox layer.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
-                </tr>
-                <tr>
+                </tr-->
+                <!--tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-javascriptInFooter"><?php printf(__('Add JavaScript to footer', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-javascriptInFooter"><?php __('Add JavaScript to footer', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[javascriptInFooter]" id="jquery-colorbox-javascriptInFooter" value="true" <?php echo ($this->colorboxSettings['javascriptInFooter']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Add JavaScript to footer instead of the header.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[javascriptInFooter]" id="jquery-colorbox-javascriptInFooter" value="true" <?php //echo ($this->colorboxSettings['javascriptInFooter']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php __('Add JavaScript to footer instead of the header.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
-                </tr>
-                <tr>
+                </tr-->
+                <!--tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-removeLinkFromMetaBox"><?php printf(__('Remove link from Meta-box', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-removeLinkFromMetaBox"><?php __('Remove link from Meta-box', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[removeLinkFromMetaBox]" id="jquery-colorbox-removeLinkFromMetaBox" value="true" <?php echo ($this->colorboxSettings['removeLinkFromMetaBox']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Remove the link to the developers site from the WordPress meta-box.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[removeLinkFromMetaBox]" id="jquery-colorbox-removeLinkFromMetaBox" value="true" <?php //echo ($this->colorboxSettings['removeLinkFromMetaBox']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php __('Remove the link to the developers site from the WordPress meta-box.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
-                </tr>
-                <tr>
+                </tr-->
+                <!--tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-debugMode"><?php printf(__('Activate debug mode', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-debugMode"><?php __('Activate debug mode', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
-                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[debugMode]" id="jquery-colorbox-debugMode" value="true" <?php echo ($this->colorboxSettings['debugMode']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php _e('Adds debug information and non-minified JavaScript to the page. Useful for troubleshooting.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[debugMode]" id="jquery-colorbox-debugMode" value="true" <?php //echo ($this->colorboxSettings['debugMode']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php __('Adds debug information and non-minified JavaScript to the page. Useful for troubleshooting.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
-                </tr>
+                </tr-->
                 <tr>
                     <th scope="row">
                         <label for="jquery-colorbox-colorboxWarningOff"><?php printf(__('Disable warning', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
@@ -179,7 +180,7 @@
                         <br/><?php _e('Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
                 </tr>
-                </table>
+                <!--/table>
                 <p class="submit">
                     <input type="hidden" name="action" value="jQueryColorboxUpdateSettings"/>
                     <input type="submit" name="jQueryColorboxUpdateSettings" class="button-primary" value="<?php _e('Save Changes') ?>"/>
@@ -187,11 +188,11 @@
             </div>
         </div>
         <div id="jquery-colorbox-plugin-settings" class="postbox">
-            <h3 id="plugin-settings"><?php _e('Colorbox settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
+            <h3 id="plugin-settings"><?php __('Colorbox settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
 
             <div class="inside">
 
-                <table class="form-table">
+                <table class="form-table"-->
                 <tr valign="top">
                     <th scope="row">
                         <label for="jquery-colorbox-theme"><?php _e('Theme', JQUERYCOLORBOX_TEXTDOMAIN); ?></label>
@@ -357,6 +358,52 @@
                         <br/><?php _e('Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                     </td>
                 </tr>
+                <!--tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-linkWidthValue"><?php __('Maximum width of the Colorbox used for links', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="radio" name="<?php// echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidth]" id="jquery-colorbox-link-width-false-radio" value="false" <?php //echo ($this->colorboxSettings['linkWidth']) == 'false' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-width-false-radio"><?php //_e('Do not set width', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <br/>
+                        <input type="radio" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidth]" id="jquery-colorbox-link-width-custom-radio" value="custom" <?php //echo ($this->colorboxSettings['linkWidth']) == 'custom' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-width-custom-radio"><?php //_e('Set width of the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <input type="text" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthValue]" id="jquery-colorbox-linkWidthValue" value="<?php //echo $this->colorboxSettings['linkWidthValue'] ?>" size="3" maxlength="3"/>
+                        <select name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthUnit]" id="jquery-colorbox-width-unit" class="postform" style="margin:0">
+                        <?php
+                        //foreach ($this->colorboxUnits as $unit => $name) {
+                        //    echo '<option value="' . esc_attr($unit) . '"';
+                        //    selected($this->colorboxSettings['linkWidthUnit'], $unit);
+                        //    echo '>' . htmlspecialchars($name) . "</option>\n";
+                        //}
+                        ?>
+                        </select>
+                        <br/><?php //_e('Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="jquery-colorbox-linkHeightValue"><?php __('Maximum height of the Colorbox used for links', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                    </th>
+                    <td>
+                        <input type="radio" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeight]" id="jquery-colorbox-link-height-false-radio" value="false" <?php //echo ($this->colorboxSettings['linkHeight']) == 'false' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-height-false-radio"><?php //_e('Do not set height', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <br/>
+                        <input type="radio" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeight]" id="jquery-colorbox-link-height-custom-radio" value="custom" <?php //echo ($this->colorboxSettings['linkHeight']) == 'custom' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-height-custom-radio"><?php //_e('Set height of the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <input type="text" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightValue]" id="jquery-colorbox-linkHeightValue" value="<?php //echo $this->colorboxSettings['linkHeightValue'] ?>" size="3" maxlength="3"/>
+                        <select name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightUnit]" id="jquery-colorbox-link-height-unit" class="postform" style="margin:0">
+                        <?php
+                        //foreach ($this->colorboxUnits as $unit => $name) {
+                        //    echo '<option value="' . esc_attr($unit) . '"';
+                        //    selected($this->colorboxSettings['linkHeightUnit'], $unit);
+                        //    echo '>' . htmlspecialchars($name) . "</option>\n";
+                        //}
+                        ?>
+                        </select>
+                        <br/><?php //_e('Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                    </td>
+                </tr-->
                 <tr>
                     <th scope="row">
                         <label for="jquery-colorbox-scalePhotos"><?php _e('Resize images', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
@@ -485,7 +532,7 @@
                 <p>
                     <?php _e('If you would like to make a small (or large) contribution towards future development please consider making a donation.', JQUERYCOLORBOX_TEXTDOMAIN) ?>
                 </p>
-                <h5 id="donatePaypal"><?php _e('Donate using Paypal', JQUERYCOLORBOX_TEXTDOMAIN) ?></h5>
+<!--                <h5 id="donatePaypal">--><?php __('Donate using Paypal', JQUERYCOLORBOX_TEXTDOMAIN) ?><!--</h5>-->
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                     <input type="hidden" name="cmd" value="_xclick" />
                     <input type="hidden" name="business" value="G75G3Z6PQWXXQ" />
