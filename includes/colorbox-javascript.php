@@ -16,44 +16,6 @@
     // <![CDATA[
 <?php
     /**
-    * declare variables that are used in more than one function
-    */
-    ?>
-        var COLORBOX_IMG_PATTERN = /\.(?:jpe?g|gif|png|bmp)/i;
-        var COLORBOX_MANUAL = "colorbox-manual";
-        var COLORBOX_OFF_CLASS = ".colorbox-off";
-        var COLORBOX_LINK_CLASS = ".colorbox-link";
-        var COLORBOX_OFF = "colorbox-off";
-        var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
-
-        var colorboxIframe = false;
-        var colorboxGroupId;
-        var colorboxTitle;
-        var colorboxWidth = false;
-        var colorboxHeight = false;
-        var colorboxMaxWidth = false;
-        var colorboxMaxHeight = false;
-        var colorboxSlideshow = <?php echo !$this->colorboxSettings['slideshow'] ? 'false' : 'true'; ?>;
-        var colorboxSlideshowAuto = <?php echo $this->colorboxSettings['slideshowAuto'] ? 'true' : 'false';?>;
-        var colorboxScalePhotos = <?php echo $this->colorboxSettings['scalePhotos'] ? 'true' : 'false';?>;
-        var colorboxPreloading = <?php echo $this->colorboxSettings['preloading'] ? 'true' : 'false';?>;
-        var colorboxOverlayClose = <?php echo $this->colorboxSettings['overlayClose'] ? 'true' : 'false';?>;
-        var colorboxLoop = <?php echo !$this->colorboxSettings['disableLoop'] ? 'true' : 'false';?>;
-        var colorboxEscKey = <?php echo !$this->colorboxSettings['disableKeys'] ? 'true' : 'false';?>;
-        var colorboxArrowKey = <?php echo !$this->colorboxSettings['disableKeys'] ? 'true' : 'false';?>;
-        var colorboxScrolling = <?php echo !$this->colorboxSettings['displayScrollbar'] || $this->colorboxSettings['draggable'] ? 'true' : 'false';?>;
-        var colorboxOpacity = "<?php echo $this->colorboxSettings['opacity']; ?>";
-        var colorboxTransition = "<?php echo $this->colorboxSettings['transition']; ?>";
-        var colorboxSpeed = <?php echo $this->colorboxSettings['speed']; ?>;
-        var colorboxSlideshowSpeed = <?php echo $this->colorboxSettings['slideshowSpeed']; ?>;
-        var colorboxClose = "<?php _e('close', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
-        var colorboxNext = "<?php _e('next', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
-        var colorboxPrevious = "<?php _e('previous', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
-        var colorboxSlideshowStart = "<?php _e('start slideshow', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
-        var colorboxSlideshowStop = "<?php _e('stop slideshow', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
-        var colorboxCurrent = "<?php _e('{current} of {total} images', JQUERYCOLORBOX_TEXTDOMAIN); ?>";
-<?php
-    /**
      * jQuery selector
      *
      * call colorboxImage on all "a" elements that have a nested "img"
@@ -63,10 +25,10 @@
         colorboxSelector = function() {
 
             <?php //set variables for images ?>
-            colorboxMaxWidth = <?php echo $this->colorboxSettings['maxWidth'] == "false" ? 'false' : '"' . $this->colorboxSettings['maxWidthValue'] . $this->colorboxSettings['maxWidthUnit'] . '"'; ?>;
-            colorboxMaxHeight = <?php echo $this->colorboxSettings['maxHeight'] == "false" ? 'false' : '"' . $this->colorboxSettings['maxHeightValue'] . $this->colorboxSettings['maxHeightUnit'] . '"'; ?>;
-            colorboxHeight = <?php echo $this->colorboxSettings['height'] == "false" ? 'false' : '"' . $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'] . '"'; ?>;
-            colorboxWidth = <?php echo $this->colorboxSettings['width'] == "false" ? 'false' : '"' . $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'] . '"'; ?>;
+            colorboxMaxWidth = colorboxImageMaxWidth;
+            colorboxMaxHeight = colorboxImageMaxHeight;
+            colorboxHeight = colorboxImageHeight;
+            colorboxWidth = colorboxImageWidth;
             $("a:has(img):not(.colorbox-off)").each(function(index, obj) {
             <?php //only go on if link points to an image ?>
                 if ($(obj).attr("href").match(COLORBOX_IMG_PATTERN)) {
@@ -76,10 +38,8 @@
             <?php //set variables for links ?>
             colorboxMaxWidth = false;
             colorboxMaxHeight = false;
-            colorboxHeight = <?php echo $this->colorboxSettings['height'] == "false" ? 'false' : '"' . $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'] . '"'; ?>;
-            //colorboxHeight = <?php //echo $this->colorboxSettings['linkHeight'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkHeightValue'] . $this->colorboxSettings['linkHeightUnit'] . '"'; ?>;
-            colorboxWidth = <?php echo $this->colorboxSettings['width'] == "false" ? 'false' : '"' . $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'] . '"'; ?>;
-            //colorboxWidth = <?php //echo $this->colorboxSettings['linkWidth'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkWidthValue'] . $this->colorboxSettings['linkWidthUnit'] . '"'; ?>;
+            colorboxHeight = colorboxLinkHeight;
+            colorboxWidth = colorboxLinkWidth;
             <?php //call colorboxLink on all elements that have CSS class called "colorbox-link" ?>
             $(COLORBOX_LINK_CLASS).each(function(index, obj) {
                 colorboxLink(index, obj)
