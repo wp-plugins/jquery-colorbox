@@ -40,6 +40,7 @@ Localization
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
 * Slovak (sk_SK) by <a href="http://itec.sk/">Stefan Stieranka</a>
+* Spanish (es_ES) by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
 * Swedish (sv_SE) by <a href="http://www.theindiaexperience.se/">Christian</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * Ukrainian (uk) by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
@@ -166,6 +167,10 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 4.0 (2011-01-31) =
+* NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
+
+
 = 3.8.2 (2010-12-21) =
 * BUGFIX: Last bugfix broke minor functionality.
 
