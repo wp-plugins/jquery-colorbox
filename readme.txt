@@ -167,9 +167,9 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
-= 4.0 (2011-01-31) =
+= 3.8.3 (2011-01-31) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
-
+* BUGFIX: re-added the option to hide flash objects behind the colorbox overlay.
 
 = 3.8.2 (2010-12-21) =
 * BUGFIX: Last bugfix broke minor functionality.
