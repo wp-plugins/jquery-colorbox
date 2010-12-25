@@ -20,6 +20,8 @@ Images are grouped as galleries when linked in the same post or page. Groups can
 
 Individual images can be excluded by adding a special CSS class.
 
+Starting with version 3.8, jQuery Colorbox can also open linked contents in a Colorbox.
+
 See the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
 For more information visit the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>.
@@ -167,6 +169,10 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in every new version. Promise.
 
 == Changelog ==
+= 4.0 (2011-01-31) =
+* CHANGE: Restructured settings page
+* NEW: set width and height for Colorbox links separately
+
 = 3.8.3 (2010-12-24) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
 * BUGFIX: re-added the option to hide flash objects behind the colorbox overlay.

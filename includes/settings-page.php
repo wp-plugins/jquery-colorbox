@@ -12,11 +12,13 @@
 <script type="text/javascript">
     //<![CDATA[
     jQuery(document).ready(function($) {
+
         //delete value from maxWidthValue if maxWidth radio button is selected
         $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[maxWidth]']").click(function() {
             if ("jquery-colorbox-maxWidth-custom-radio" != $(this).attr("id"))
                 $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[maxWidthValue]']").val("");
         });
+        
         //set maxWidth radio button if cursor is set into maxWidthValue
         $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[maxWidthValue]']").focus(function() {
             $("#jquery-colorbox-maxWidth-custom-radio").attr("checked", "checked");
@@ -102,8 +104,8 @@
     <?php if (function_exists('wp_nonce_field') === true) wp_nonce_field('jquery-colorbox-settings-form'); ?>
     <div id="poststuff">
         <div id="jquery-colorbox-settings" class="postbox">
-            <h3 id="colorbox-settings"><?php _e('Settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
-            <!--h3 id="colorbox-settings"><?php __('Plugin settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3-->
+            <!--h3 id="colorbox-settings"><?php __('Settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3-->
+            <h3 id="colorbox-settings"><?php _e('Plugin settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
 
             <div class="inside">
 
@@ -180,7 +182,7 @@
                         <br/><?php _e('Disables the warning that is displayed if the plugin is activated but the auto-colorbox feature for all images is turned off.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
                 </tr>
-                <!--/table>
+                </table>
                 <p class="submit">
                     <input type="hidden" name="action" value="jQueryColorboxUpdateSettings"/>
                     <input type="submit" name="jQueryColorboxUpdateSettings" class="button-primary" value="<?php _e('Save Changes') ?>"/>
@@ -188,11 +190,11 @@
             </div>
         </div>
         <div id="jquery-colorbox-plugin-settings" class="postbox">
-            <h3 id="plugin-settings"><?php __('Colorbox settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
+            <h3 id="plugin-settings"><?php _e('Colorbox settings', JQUERYCOLORBOX_TEXTDOMAIN); ?></h3>
 
             <div class="inside">
 
-                <table class="form-table"-->
+                <table class="form-table">
                 <tr valign="top">
                     <th scope="row">
                         <label for="jquery-colorbox-theme"><?php _e('Theme', JQUERYCOLORBOX_TEXTDOMAIN); ?></label>
@@ -358,52 +360,52 @@
                         <br/><?php _e('Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                     </td>
                 </tr>
-                <!--tr>
+                <tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-linkWidthValue"><?php __('Maximum width of the Colorbox used for links', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                        <label for="jquery-colorbox-linkWidthValue"><?php _e('Maximum width of the Colorbox used for links', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
-                        <input type="radio" name="<?php// echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidth]" id="jquery-colorbox-link-width-false-radio" value="false" <?php //echo ($this->colorboxSettings['linkWidth']) == 'false' ? 'checked="checked"' : ''; ?>"/>
-                        <label for="jquery-colorbox-link-width-false-radio"><?php //_e('Do not set width', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <input type="radio" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidth]" id="jquery-colorbox-link-width-false-radio" value="false" <?php echo ($this->colorboxSettings['linkWidth']) == 'false' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-width-false-radio"><?php _e('Do not set width', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
                         <br/>
-                        <input type="radio" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidth]" id="jquery-colorbox-link-width-custom-radio" value="custom" <?php //echo ($this->colorboxSettings['linkWidth']) == 'custom' ? 'checked="checked"' : ''; ?>"/>
-                        <label for="jquery-colorbox-link-width-custom-radio"><?php //_e('Set width of the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
-                        <input type="text" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthValue]" id="jquery-colorbox-linkWidthValue" value="<?php //echo $this->colorboxSettings['linkWidthValue'] ?>" size="3" maxlength="3"/>
-                        <select name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthUnit]" id="jquery-colorbox-width-unit" class="postform" style="margin:0">
+                        <input type="radio" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidth]" id="jquery-colorbox-link-width-custom-radio" value="custom" <?php echo ($this->colorboxSettings['linkWidth']) == 'custom' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-width-custom-radio"><?php _e('Set width of the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthValue]" id="jquery-colorbox-linkWidthValue" value="<?php echo $this->colorboxSettings['linkWidthValue'] ?>" size="3" maxlength="3"/>
+                        <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthUnit]" id="jquery-colorbox-width-unit" class="postform" style="margin:0">
                         <?php
-                        //foreach ($this->colorboxUnits as $unit => $name) {
-                        //    echo '<option value="' . esc_attr($unit) . '"';
-                        //    selected($this->colorboxSettings['linkWidthUnit'], $unit);
-                        //    echo '>' . htmlspecialchars($name) . "</option>\n";
-                        //}
+                        foreach ($this->colorboxUnits as $unit => $name) {
+                            echo '<option value="' . esc_attr($unit) . '"';
+                            selected($this->colorboxSettings['linkWidthUnit'], $unit);
+                            echo '>' . htmlspecialchars($name) . "</option>\n";
+                        }
                         ?>
                         </select>
-                        <br/><?php //_e('Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                        <br/><?php _e('Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-linkHeightValue"><?php __('Maximum height of the Colorbox used for links', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                        <label for="jquery-colorbox-linkHeightValue"><?php _e('Maximum height of the Colorbox used for links', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
                     </th>
                     <td>
-                        <input type="radio" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeight]" id="jquery-colorbox-link-height-false-radio" value="false" <?php //echo ($this->colorboxSettings['linkHeight']) == 'false' ? 'checked="checked"' : ''; ?>"/>
-                        <label for="jquery-colorbox-link-height-false-radio"><?php //_e('Do not set height', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <input type="radio" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeight]" id="jquery-colorbox-link-height-false-radio" value="false" <?php echo ($this->colorboxSettings['linkHeight']) == 'false' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-height-false-radio"><?php _e('Do not set height', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
                         <br/>
-                        <input type="radio" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeight]" id="jquery-colorbox-link-height-custom-radio" value="custom" <?php //echo ($this->colorboxSettings['linkHeight']) == 'custom' ? 'checked="checked"' : ''; ?>"/>
-                        <label for="jquery-colorbox-link-height-custom-radio"><?php //_e('Set height of the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
-                        <input type="text" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightValue]" id="jquery-colorbox-linkHeightValue" value="<?php //echo $this->colorboxSettings['linkHeightValue'] ?>" size="3" maxlength="3"/>
-                        <select name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightUnit]" id="jquery-colorbox-link-height-unit" class="postform" style="margin:0">
+                        <input type="radio" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeight]" id="jquery-colorbox-link-height-custom-radio" value="custom" <?php echo ($this->colorboxSettings['linkHeight']) == 'custom' ? 'checked="checked"' : ''; ?>"/>
+                        <label for="jquery-colorbox-link-height-custom-radio"><?php _e('Set height of the Colorbox', JQUERYCOLORBOX_TEXTDOMAIN); ?>.</label>
+                        <input type="text" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightValue]" id="jquery-colorbox-linkHeightValue" value="<?php echo $this->colorboxSettings['linkHeightValue'] ?>" size="3" maxlength="3"/>
+                        <select name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightUnit]" id="jquery-colorbox-link-height-unit" class="postform" style="margin:0">
                         <?php
-                        //foreach ($this->colorboxUnits as $unit => $name) {
-                        //    echo '<option value="' . esc_attr($unit) . '"';
-                        //    selected($this->colorboxSettings['linkHeightUnit'], $unit);
-                        //    echo '>' . htmlspecialchars($name) . "</option>\n";
-                        //}
+                        foreach ($this->colorboxUnits as $unit => $name) {
+                            echo '<option value="' . esc_attr($unit) . '"';
+                            selected($this->colorboxSettings['linkHeightUnit'], $unit);
+                            echo '>' . htmlspecialchars($name) . "</option>\n";
+                        }
                         ?>
                         </select>
-                        <br/><?php //_e('Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
+                        <br/><?php _e('Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it', JQUERYCOLORBOX_TEXTDOMAIN); ?>.
                     </td>
-                </tr-->
+                </tr>
                 <tr>
                     <th scope="row">
                         <label for="jquery-colorbox-scalePhotos"><?php _e('Resize images', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
