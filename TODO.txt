@@ -56,13 +56,16 @@ Feature 9
 - display error when PHP version is less than 5
 DONE
 
+Feature 10
+- enable tracking by Google Analytics and/or Piwik
+    - https://groups.google.com/group/colorbox/browse_thread/thread/eed5244f9e033292/a80fc8be79ab4d34?lnk=gst&q=analytics#a80fc8be79ab4d34
+
 
 Need to think about these features
 - add link to Fullscreen to Colorbox
-(http://groups.google.com/group/colorbox/browse_thread/thread/6d28c99111051f41/8505ab852396c500?lnk=gst&q=fullscreen#8505ab852396c500)
+    - http://groups.google.com/group/colorbox/browse_thread/thread/6d28c99111051f41/8505ab852396c500?lnk=gst&q=fullscreen#8505ab852396c500
 
 - display description/caption when mouse is hovering on the image
-(http://groups.google.com/group/colorbox/browse_thread/thread/4d4d5a02daa85ce9/1fcb9056d993a6e5?lnk=gst&q=description#1fcb9056d993a6e5)
-    - big question: how do I get the description/caption in the JavaScript?
+    - http://groups.google.com/group/colorbox/browse_thread/thread/4d4d5a02daa85ce9/1fcb9056d993a6e5?lnk=gst&q=description#1fcb9056d993a6e5
 
 - add option to switch colorbox off for whole posts and pages
