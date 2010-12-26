@@ -55,10 +55,8 @@
         var colorboxImageHeight = <?php echo $this->colorboxSettings['height'] == "false" ? 'false' : '"' . $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'] . '"'; ?>;
         var colorboxImageWidth = <?php echo $this->colorboxSettings['width'] == "false" ? 'false' : '"' . $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'] . '"'; ?>;
 
-        var colorboxLinkHeight = <?php echo $this->colorboxSettings['height'] == "false" ? 'false' : '"' . $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'] . '"'; ?>;
-        //var colorboxHeight = <?php //echo $this->colorboxSettings['linkHeight'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkHeightValue'] . $this->colorboxSettings['linkHeightUnit'] . '"'; ?>;
-        var colorboxLinkWidth = <?php echo $this->colorboxSettings['width'] == "false" ? 'false' : '"' . $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'] . '"'; ?>;
-        //var colorboxWidth = <?php //echo $this->colorboxSettings['linkWidth'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkWidthValue'] . $this->colorboxSettings['linkWidthUnit'] . '"'; ?>;
+        var colorboxLinkHeight = <?php echo $this->colorboxSettings['linkHeight'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkHeightValue'] . $this->colorboxSettings['linkHeightUnit'] . '"'; ?>;
+        var colorboxLinkWidth = <?php echo $this->colorboxSettings['linkWidth'] == "false" ? 'false' : '"' . $this->colorboxSettings['linkWidthValue'] . $this->colorboxSettings['linkWidthUnit'] . '"'; ?>;
 
     <?php
      /**

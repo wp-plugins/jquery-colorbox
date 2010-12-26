@@ -54,6 +54,26 @@
             $("#jquery-colorbox-height-custom-radio").attr("checked", "checked");
         });
 
+        //delete value from widthValue if width radio button is selected
+        $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidth]']").click(function() {
+            if ("jquery-colorbox-link-width-custom-radio" != $(this).attr("id"))
+                $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthValue]']").val("");
+        });
+        //set width radio button if cursor is set into widthValue
+        $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkWidthValue]']").focus(function() {
+            $("#jquery-colorbox-link-width-custom-radio").attr("checked", "checked");
+        });
+
+        //delete value from heightValue if height radio button is selected
+        $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeight]']").click(function() {
+            if ("jquery-colorbox-link-height-custom-radio" != $(this).attr("id"))
+                $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightValue]']").val("");
+        });
+        //set height radio button if cursor is set into heightValue
+        $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[linkHeightValue]']").focus(function() {
+            $("#jquery-colorbox-link-height-custom-radio").attr("checked", "checked");
+        });
+
         //only one of the checkboxes is allowed to be selected.
         $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]']").click(function() {
             if ($("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]']").is(':checked')) {
@@ -66,7 +86,7 @@
             }
         });
 
-        //activate warning if auto Colorbox is activated
+        //deactivate warning if auto Colorbox is activated
         $("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]']").click(function() {
             if ($("input[name='<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]']").is(':checked')) {
                 $("#jquery-colorbox-colorboxWarningOff").attr("checked", true);
