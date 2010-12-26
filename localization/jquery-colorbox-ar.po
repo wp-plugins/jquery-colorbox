@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: jQuery-Colorbox 3.3 Arabic\n"
+"Project-Id-Version: jQuery-Colorbox 3.8.3 Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-20 22:39+0100\n"
-"PO-Revision-Date: 2010-12-20 22:39+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2010-12-26 17:27+0200\n"
+"PO-Revision-Date: 2010-12-26 17:35+0200\n"
+"Last-Translator: Modar Soos <modarsoos@yahoo.com>\n"
 "Language-Team: Mickey Mouse <modarsoos@yahoo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,155 +15,154 @@ msgstr ""
 "X-Poedit-Country: SYRIAN ARAB REPUBLIC\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:119
 msgid "Theme #1"
 msgstr "القالب الأول"
 
-#: jquery-colorbox.php:125
+#: jquery-colorbox.php:120
 msgid "Theme #2"
 msgstr "القالب الثاني"
 
-#: jquery-colorbox.php:126
+#: jquery-colorbox.php:121
 msgid "Theme #3"
 msgstr "القالب الثالث"
 
-#: jquery-colorbox.php:127
+#: jquery-colorbox.php:122
 msgid "Theme #4"
 msgstr "القالب الرابع"
 
-#: jquery-colorbox.php:128
+#: jquery-colorbox.php:123
 msgid "Theme #5"
 msgstr "القالب الخامس"
 
-#: jquery-colorbox.php:129
+#: jquery-colorbox.php:124
 msgid "Theme #6"
 msgstr "القالب السادس"
 
-#: jquery-colorbox.php:130
+#: jquery-colorbox.php:125
 msgid "Theme #7"
 msgstr "القالب السابع"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:126
 msgid "Theme #8"
 msgstr "القالب الثامن"
 
-#: jquery-colorbox.php:132
+#: jquery-colorbox.php:127
 msgid "Theme #9"
 msgstr "القالب التاسع"
 
-#: jquery-colorbox.php:133
+#: jquery-colorbox.php:128
 msgid "Theme #10"
 msgstr "القالب العاشر"
 
-#: jquery-colorbox.php:134
+#: jquery-colorbox.php:129
 msgid "Theme #11"
 msgstr "القالب الحادي عشر"
 
-#: jquery-colorbox.php:140
+#: jquery-colorbox.php:135
 msgid "Theme #12"
 msgstr "القالب الثاني عشر"
 
-#: jquery-colorbox.php:141
+#: jquery-colorbox.php:136
 msgid "Theme #13"
 msgstr "القالب الثالث عشر"
 
-#: jquery-colorbox.php:142
+#: jquery-colorbox.php:137
 msgid "Theme #14"
 msgstr "القالب الرابع عشر"
 
-#: jquery-colorbox.php:143
+#: jquery-colorbox.php:138
 msgid "Theme #15"
 msgstr "القالب الخامس عشر"
 
-#: jquery-colorbox.php:148
+#: jquery-colorbox.php:143
 msgid "percent"
 msgstr "بالمئة"
 
-#: jquery-colorbox.php:149
+#: jquery-colorbox.php:144
 msgid "pixels"
 msgstr "بيكسل"
 
-#: jquery-colorbox.php:154
+#: jquery-colorbox.php:149
 msgid "elastic"
 msgstr "تمدد"
 
-#: jquery-colorbox.php:155
+#: jquery-colorbox.php:150
 msgid "fade"
 msgstr "تضاءل"
 
-#: jquery-colorbox.php:156
+#: jquery-colorbox.php:151
 msgid "none"
 msgstr "بدون تأثير"
 
-#: jquery-colorbox.php:206
+#: jquery-colorbox.php:201
 msgid "Using"
 msgstr "أستخدم معرض صور"
 
-#: jquery-colorbox.php:301
+#: jquery-colorbox.php:298
 #: includes/settings-page.php:105
 msgid "Settings"
 msgstr "إعدادات"
 
-#: jquery-colorbox.php:363
+#: jquery-colorbox.php:360
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "تم تحديث إعدادات برنامج %1$s بنجاح."
 
-#: jquery-colorbox.php:365
+#: jquery-colorbox.php:362
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "%1$s تم حذف الإعدادات بنجاح."
 
-#: jquery-colorbox.php:406
+#: jquery-colorbox.php:405
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "تنبيه: لم يتم تنشيط برنامج صندوق عرض الشرائح ليعمل على جميع الصور."
 
-#: jquery-colorbox.php:481
+#: jquery-colorbox.php:484
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "لم يتم تحديث الإعدادات، ليس لديك الصلاحيات الكافية."
 
-#: jquery-colorbox.php:528
+#: jquery-colorbox.php:531
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "لم يتم حذف إعدادات %1$s  أو ليس لديك الصلاحيات الكافية أو بأنك لم تقم بتحديد العلامة داخل المربع الصغير قبل الضغط على زر حذف الإعدادات."
 
-#: jquery-colorbox.php:713
+#: jquery-colorbox.php:716
 msgid "does not work with PHP 4. Please update or uninstall the plugin."
-msgstr ""
+msgstr "لا يعمل مع PHP 4. يرجى تحديث الإضافة أو حذفها."
 
-#: includes/colorbox-javascript.php:49
+#: includes/colorbox-javascript-loader.php:46
 msgid "close"
 msgstr "إغلاق"
 
-#: includes/colorbox-javascript.php:50
+#: includes/colorbox-javascript-loader.php:47
 msgid "next"
 msgstr "التالي"
 
-#: includes/colorbox-javascript.php:51
+#: includes/colorbox-javascript-loader.php:48
 msgid "previous"
 msgstr "السابق"
 
-#: includes/colorbox-javascript.php:52
+#: includes/colorbox-javascript-loader.php:49
 msgid "start slideshow"
 msgstr "بدء عرض الشرائح"
 
-#: includes/colorbox-javascript.php:53
+#: includes/colorbox-javascript-loader.php:50
 msgid "stop slideshow"
 msgstr "إيقاف عرض الشرائح"
 
-#: includes/colorbox-javascript.php:54
+#: includes/colorbox-javascript-loader.php:51
 msgid "{current} of {total} images"
 msgstr "{current} من {total} إجمالي الصور"
 
 #: includes/settings-page.php:95
 #, php-format
 msgid "%1$s Settings"
-msgstr "%1$s إعدادات"
+msgstr "إعدادات %1$s"
 
 #: includes/settings-page.php:106
-#, fuzzy
 msgid "Plugin settings"
-msgstr "إعدادات"
+msgstr "إعدادات الإضافة"
 
 #: includes/settings-page.php:113
 #, php-format
@@ -171,9 +170,9 @@ msgid "Automate %1$s for all images"
 msgstr "شغل برنامج %1$s لجميع الصور تلقائياً"
 
 #: includes/settings-page.php:113
-#, fuzzy, php-format
+#, php-format
 msgid "Automate %1$s for all images in pages, posts and galleries"
-msgstr "أتمتة %1$s للصور في معرض صور الموقع"
+msgstr "أتمتة %1$s لجميع الصور في الصفحات، المواضيع، ومعرض صور الموقع"
 
 #: includes/settings-page.php:117
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
@@ -185,47 +184,46 @@ msgid "Automate %1$s for images in WordPress galleries"
 msgstr "أتمتة %1$s للصور في معرض صور الموقع"
 
 #: includes/settings-page.php:122
-#, fuzzy, php-format
+#, php-format
 msgid "Automate %1$s for images in WordPress galleries only"
-msgstr "أتمتة %1$s للصور في معرض صور الموقع"
+msgstr "أتمتة %1$s للصور في معرض صور الموقع فقط"
 
 #: includes/settings-page.php:126
 msgid "Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically."
 msgstr "أضف صندوق عرض الشرائح بشكل تلقائي للصور في معرض صور الموقع، سيقوم البرنامج بدمج جميع الصور في الموضوع تلقائياً."
 
 #: includes/settings-page.php:131
-#, fuzzy, php-format
+#, php-format
 msgid "Automate %1$s for all other images"
-msgstr "شغل برنامج %1$s لجميع الصور تلقائياً"
+msgstr "أتمتة %1$s لجميع الصور الأخرى تلقائياً"
 
 #: includes/settings-page.php:135
 msgid "Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar)."
-msgstr ""
+msgstr "إضافة colorbox-class تلقائياً لجميع الصور في الموقع غير المواضيع والصفحات (مثال: القائمة الجانبية)."
 
 #: includes/settings-page.php:140
 msgid "Automate hiding of flash objects"
 msgstr "أتمتة إخفاء عناصر الفلاش"
 
 #: includes/settings-page.php:144
-#, fuzzy
 msgid "Automatically hide embeded flash objects behind the Colorbox layer."
-msgstr "قم بإخفاء عناصر الفلاش المدمجة خلف طبقة صندوق عرض الشرائح. يتم ذلك عن طريق جعل إعدادات wmode شفافة."
+msgstr "قم بإخفاء عناصر الفلاش المدمجة خلف طبقة صندوق عرض الشرائح."
 
 #: includes/settings-page.php:149
 msgid "Add JavaScript to footer"
-msgstr ""
+msgstr "إضافة الجافا سكريبت للفوتر"
 
 #: includes/settings-page.php:153
 msgid "Add JavaScript to footer instead of the header."
-msgstr ""
+msgstr "إضافة الجافا سكريبت للفوتر بدلاً من الهيدر."
 
 #: includes/settings-page.php:158
 msgid "Remove link from Meta-box"
-msgstr ""
+msgstr "حذف الرابط من صندوق الروابط"
 
 #: includes/settings-page.php:162
 msgid "Remove the link to the developers site from the WordPress meta-box."
-msgstr ""
+msgstr "حذف الرابط لمطوري الموقع من صندوق روابط ووردبريس."
 
 #: includes/settings-page.php:167
 msgid "Activate debug mode"
@@ -250,7 +248,7 @@ msgstr "حفظ التغييرات"
 
 #: includes/settings-page.php:191
 msgid "Colorbox settings"
-msgstr ""
+msgstr "إعدادات Colorbox"
 
 #: includes/settings-page.php:198
 msgid "Theme"
@@ -297,19 +295,19 @@ msgstr "حدد سرعة عرض الشرائح بالميلي ثانية"
 
 #: includes/settings-page.php:253
 msgid "Disable loop"
-msgstr ""
+msgstr "تعطيل التكرار"
 
 #: includes/settings-page.php:257
 msgid "Disable looping through image groups"
-msgstr ""
+msgstr "تعطيل التكرار عن طريق مجموعات الصور"
 
 #: includes/settings-page.php:262
 msgid "Disable keys"
-msgstr ""
+msgstr "تعطيل المفاتيح"
 
 #: includes/settings-page.php:266
 msgid "Disable ESC to close Colorbox and arrow keys to go to next and previous images"
-msgstr ""
+msgstr "تعطيل زر ESC للإغلاق صندوق عرض الشرائح وتعطيل أزرار الأسهم اليمين واليسار للإنتقال ما بين الصور."
 
 #: includes/settings-page.php:271
 msgid "Maximum width of an image"
@@ -343,7 +341,7 @@ msgstr "تعيين الارتفاع الأقصى للصورة"
 
 #: includes/settings-page.php:312
 msgid "Set the maximum height of the image in the Colorbox in relation to the browser window to a value in percent or pixels. If maximum height is not set, the image is as high as the Colorbox"
-msgstr "حدد الارتفاع الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا لم يتم تعيين الارتفاع، سيكون ارتفاع الصورة مثل ارتفاع صندوق عرض الشرائح."
+msgstr "حدد الارتفاع الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا لم يتم تعيين الارتفاع، سيكون ارتفاع الصورة مثل ارتفاع صندوق عرض الشرائح"
 
 #: includes/settings-page.php:317
 msgid "Maximum width of the Colorbox"
@@ -355,7 +353,7 @@ msgstr "تعيين عرض صندوق عرض الشرائح"
 
 #: includes/settings-page.php:335
 msgid "Set the maximum width of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If width is not set, the Colorbox will be as wide as the picture in it"
-msgstr "حدد العرض الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا كانت الصورة أكبر من صندوق عرض الشرائح، سيتم عرض أشرطة التمرير، وإذا لم يتم تعيين العرض، سيكون صندوق عرض الشرائح عريضاً كعرض الصورة التي بداخله."
+msgstr "حدد العرض الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا كانت الصورة أكبر من صندوق عرض الشرائح، سيتم عرض أشرطة التمرير، وإذا لم يتم تعيين العرض، سيكون صندوق عرض الشرائح عريضاً كعرض الصورة التي بداخله"
 
 #: includes/settings-page.php:340
 msgid "Maximum height of the Colorbox"
@@ -367,17 +365,15 @@ msgstr "تعيين ارتفاع صندوق عرض الشرائح"
 
 #: includes/settings-page.php:358
 msgid "Set the maximum height of the Colorbox itself in relation to the browser window to a value between in percent or pixels. If the image is bigger than the colorbox, scrollbars are displayed. If height is not set, the Colorbox will be as high as the picture in it"
-msgstr "حدد الارتفاع الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا كانت الصورة أكبر من صندوق عرض الشرائح، سيتم عرض أشرطة التمرير، وإذا لم يتم تعيين الارتفاع، سيكون صندوق عرض الشرائح طويلاً كطول الصورة التي بداخله."
+msgstr "حدد الارتفاع الأقصى لصندوق عرض الشرائح بالنسبة المئوية أو بالبيكسل ليتناسب مع متصفحك. إذا كانت الصورة أكبر من صندوق عرض الشرائح، سيتم عرض أشرطة التمرير، وإذا لم يتم تعيين الارتفاع، سيكون صندوق عرض الشرائح طويلاً كطول الصورة التي بداخله"
 
 #: includes/settings-page.php:363
-#, fuzzy
 msgid "Maximum width of the Colorbox used for links"
-msgstr "الحد الأقصى لعرض صندوق عرض الشرائح"
+msgstr "الحد الأقصى لعرض صندوق عرض الشرائح المستخدم للروابط"
 
 #: includes/settings-page.php:386
-#, fuzzy
 msgid "Maximum height of the Colorbox used for links"
-msgstr "الحد الأقصى لارتفاع صندوق عرض الشرائح"
+msgstr "الحد الأقصى لارتفاع صندوق عرض الشرائح المستخدم للروابط"
 
 #: includes/settings-page.php:409
 msgid "Resize images"
@@ -401,7 +397,7 @@ msgstr "تحميل مسبق للصور"
 
 #: includes/settings-page.php:431
 msgid "Allows for preloading of \"next\" and \"previous\" content in a group, after the current content has finished loading. Uncheck box to disable."
-msgstr "السماح للتحميل المسبق لأزرار \"التالي\" و\"السابق\" في المجموعات، بعد تحميل المحتوى الحالي. أزل المربع للتعطيل."
+msgstr "السماح للتحميل المسبق لأزرار \"التالي\" و\"السابق\" في المجموعات، بعد تحميل المحتوى الحالي. أزل المربع للتعطيل"
 
 #: includes/settings-page.php:436
 msgid "Transition type"
@@ -429,11 +425,11 @@ msgstr "مستوى شفافية الخلفية. المدى: من 0 إلى 1"
 
 #: includes/settings-page.php:471
 msgid "Make images draggable"
-msgstr ""
+msgstr "جعل الصور منزلقة"
 
 #: includes/settings-page.php:475
 msgid "Make images draggable instead of scrollable"
-msgstr ""
+msgstr "جعل الصور منزلقة متوافقة مع  حركة السكرول"
 
 #: includes/settings-page.php:491
 #: includes/settings-page.php:500
@@ -446,11 +442,11 @@ msgstr "ضع علامة في المربع واضغط على زر حذف الإع
 
 #: includes/settings-page.php:511
 msgid "Top donations"
-msgstr ""
+msgstr "أعلى المتبرعين"
 
 #: includes/settings-page.php:520
 msgid "Latest donations"
-msgstr ""
+msgstr "آخر المتبرعين"
 
 #: includes/settings-page.php:529
 msgid "Donate"
@@ -462,40 +458,40 @@ msgstr "إذا كنت ترغب بالمساهمة في تطوير البرنام
 
 #: includes/settings-page.php:535
 msgid "Donate using Paypal"
-msgstr ""
+msgstr "تبرع عن طريق باي بال"
 
 #: includes/settings-page.php:539
 msgid "Techotronic Development Support"
-msgstr ""
+msgstr "دعم التطوير"
 
 #: includes/settings-page.php:543
 msgid "Please enter the URL you'd like me to link to in the donors lists"
-msgstr ""
+msgstr "رجاءً أدخل الرابط الذي تود أن أربطه بصفحة قائمة المتبرعين"
 
 #: includes/settings-page.php:545
 msgid "Return to Your Dashboard"
-msgstr ""
+msgstr "الرجوع للصفحة الرئيسية"
 
 #: includes/settings-page.php:549
 msgid "Select Preset Amount"
-msgstr ""
+msgstr "حدد كمية موجودة مسبقاً"
 
 #: includes/settings-page.php:557
 #: includes/settings-page.php:561
 msgid "USD"
-msgstr ""
+msgstr "دولار"
 
 #: includes/settings-page.php:558
 msgid "Or"
-msgstr ""
+msgstr "أو"
 
 #: includes/settings-page.php:559
 msgid "Enter Custom Amount"
-msgstr ""
+msgstr "أدخل كمية مخصصة"
 
 #: includes/settings-page.php:563
 msgid "Submit"
-msgstr ""
+msgstr "نشر"
 
 #: includes/settings-page.php:570
 msgid "Translation"
