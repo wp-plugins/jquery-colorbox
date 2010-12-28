@@ -93,7 +93,7 @@ class jQueryColorbox {
 
         // Create the settings array by merging the user's settings and the defaults
         $usersettings = (array) get_option(JQUERYCOLORBOX_SETTINGSNAME);
-        $defaultArray = jQueryColorbox::jQueryColorboxDefaultSettings();
+        $defaultArray = $this->jQueryColorboxDefaultSettings();
         $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
 
         //only add link to meta box
@@ -417,7 +417,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      */
-    static function jQueryColorboxDefaultSettings() {
+    function jQueryColorboxDefaultSettings() {
 
         // Create and return array of default settings
         return array(
@@ -525,7 +525,7 @@ class jQueryColorbox {
             //cross check the given referer for nonce set in delete settings form
             check_admin_referer('jquery-delete_settings-form');
             $this->deleteSettingsFromDatabase();
-            $this->colorboxSettings = jQueryColorbox::jQueryColorboxDefaultSettings();
+            $this->colorboxSettings = $this->jQueryColorboxDefaultSettings();
         } else {
             wp_die(sprintf(__('Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox.', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME));
         }
@@ -567,7 +567,7 @@ class jQueryColorbox {
                 if (!array_key_exists('scalePhotos', $jquery_colorbox_settings)) {
                     //in case future versions require resetting the settings
                     //if($jquery_colorbox_settings['jQueryColorboxVersion'] < JQUERYCOLORBOX_VERSION)
-                    update_option(JQUERYCOLORBOX_SETTINGSNAME, jQueryColorbox::jQueryColorboxDefaultSettings());
+                    update_option(JQUERYCOLORBOX_SETTINGSNAME, $this->jQueryColorboxDefaultSettings());
                 }
             }
         }
@@ -686,40 +686,10 @@ class jQueryColorbox {
  * @author Arne Franken
  */
 function jQueryColorbox() {
-    // check whether the PHP installation is version 5 or newer.
-    if (strnatcmp(phpversion(),'5.0.0') >= 0)
-    {
-        // PHP version equals 5 or is newer, load plugin
         global
         $jQueryColorbox;
         $jQueryColorbox = new jQueryColorbox();
     }
-    else
-    {
-        // PHP version not sufficient, display warning
-        add_action('admin_notices', 'jQueryColorboxRegisterPhpWarning');
-    }
-
-    /**
-     * Registers the PHP warning for admins
-     *
-     * @since 3.7
-     * @access private
-     * @author Arne Franken
-     */
-    function jQueryColorboxRegisterPhpWarning() {
-        ?>
-
-        <div class="updated" style="background-color:#f66;">
-            <p>
-                <?php echo JQUERYCOLORBOX_NAME ?> <?php _e('does not work with PHP 4. Please update or uninstall the plugin.', JQUERYCOLORBOX_TEXTDOMAIN)?>
-            </p>
-        </div>
-        <?php
-    }
-
-    // registerPhpWarning()
-}
 
 // jQueryColorbox()
 

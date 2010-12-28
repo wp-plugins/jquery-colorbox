@@ -173,6 +173,7 @@ I'll include new FAQs in every new version. Promise.
 * CHANGE: Restructured settings page
 * NEW: set width and height for Colorbox links separately
 * CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
+* CHANGE: plugin again compatible to PHP4.
 
 = 3.8.3 (2010-12-24) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
