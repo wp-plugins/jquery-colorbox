@@ -38,6 +38,7 @@ Localization
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * Hebrew (he_IL) by <a href="http://www.TommyGordon.co.il">Tommy Gordon</a>
 * Italian (it_IT) by <a href="http://erkinson.altervista.org/">Erkinson</a>
+* Latvian (lv) by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * Malay (ms_MY) by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
@@ -174,6 +175,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: set width and height for Colorbox links separately
 * CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
 * CHANGE: plugin again compatible to PHP4.
+* NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 
 = 3.8.3 (2010-12-24) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
