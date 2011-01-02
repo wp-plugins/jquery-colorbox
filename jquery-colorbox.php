@@ -35,7 +35,7 @@ if (!defined('JQUERYCOLORBOX_TEXTDOMAIN')) {
     define('JQUERYCOLORBOX_TEXTDOMAIN', 'jquery-colorbox');
 }
 if (!defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
-    define('JQUERYCOLORBOX_PLUGIN_DIR', WP_PLUGIN_DIR . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
+    define('JQUERYCOLORBOX_PLUGIN_DIR', dirname(__FILE__));
 }
 if (!defined('JQUERYCOLORBOX_PLUGIN_URL')) {
     define('JQUERYCOLORBOX_PLUGIN_URL', WP_PLUGIN_URL . '/' . JQUERYCOLORBOX_PLUGIN_NAME);
@@ -70,10 +70,10 @@ class jQueryColorbox {
      * Plugin initialization
      *
      * @since 1.0
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function jQueryColorbox() {
+    public function jQueryColorbox() {
         if (!function_exists('plugins_url')) {
             return;
         }
@@ -194,10 +194,10 @@ class jQueryColorbox {
      * Renders plugin link in Meta widget
      *
      * @since 3.3
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function renderMetaLink() { ?>
+    public function renderMetaLink() { ?>
         <li id="colorboxLink"><?php _e('Using',JQUERYCOLORBOX_TEXTDOMAIN);?> <a href="http://www.techotronic.de/plugins/jquery-colorbox/" title="<?php echo JQUERYCOLORBOX_NAME ?>"><?php echo JQUERYCOLORBOX_NAME ?></a></li>
     <?php }
 
@@ -218,7 +218,7 @@ class jQueryColorbox {
      * @param  $content
      * @return replaced content or excerpt
      */
-    function addColorboxGroupIdToImages($content) {
+    public function addColorboxGroupIdToImages($content) {
         global
         $post;
         // match all img tags with this pattern
@@ -260,7 +260,7 @@ class jQueryColorbox {
      * @param  $attribute class attribute of the attachment link
      * @return repaced attributes
      */
-    function wpPostThumbnailClassFilter($attribute) {
+    public function wpPostThumbnailClassFilter($attribute) {
         global $post;
         $attribute['class'] .= ' colorbox-' . $post->ID . ' ';
         return $attribute;
@@ -275,7 +275,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      */
-    function registerSettingsPage() {
+    private function registerSettingsPage() {
         if (current_user_can('manage_options')) {
             add_filter('plugin_action_links_' . JQUERYCOLORBOX_PLUGIN_BASENAME, array(& $this, 'addPluginActionLinks'));
             add_options_page(JQUERYCOLORBOX_NAME, JQUERYCOLORBOX_NAME, 'manage_options', JQUERYCOLORBOX_PLUGIN_BASENAME, array(& $this, 'renderSettingsPage'));
@@ -288,13 +288,13 @@ class jQueryColorbox {
      * Add settings link to plugin management page
      *
      * @since 1.0
-     * @access private
+     * @access public
      * @author Arne Franken
      *
      * @param  original action_links
      * @return action_links with link to settings page
      */
-    function addPluginActionLinks($action_links) {
+    public function addPluginActionLinks($action_links) {
         $settings_link = '<a href="options-general.php?page=' . JQUERYCOLORBOX_PLUGIN_BASENAME . '">' . __('Settings', JQUERYCOLORBOX_TEXTDOMAIN) . '</a>';
         array_unshift($action_links, $settings_link);
 
@@ -307,23 +307,23 @@ class jQueryColorbox {
      * Insert JavaScript and CSS for Colorbox into WP Header
      *
      * @since 1.0
-     * @access private
+     * @access public
      * @author Arne Franken
      *
      * @return wordpress header insert
      */
-    function buildWordpressHeader() {
+    public function buildWordpressHeader() {
         ?>
         <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
         // include CSS fixes for IE for certain themes
         preg_match('/\d+$/i',$this->colorboxSettings['colorboxTheme'],$themeNumbers);
         if(in_array($themeNumbers[0],array(1,4,6,7,9,11))){
-            include_once 'includes/iefix-theme'.$themeNumbers[0].'.php';
+            require_once 'includes/iefix-theme'.$themeNumbers[0].'.php';
         }
         // include Colorbox Javascript
-            include_once 'includes/colorbox-javascript.php';
-            include_once 'includes/colorbox-javascript-loader.php';
+            require_once 'includes/colorbox-javascript.php';
+            require_once 'includes/colorbox-javascript-loader.php';
             ?>
         <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
@@ -336,11 +336,11 @@ class jQueryColorbox {
      * Render Settings page
      *
      * @since 1.0
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function renderSettingsPage() {
-        include_once 'includes/settings-page.php';
+    public function renderSettingsPage() {
+        require_once 'includes/settings-page.php';
     }
 
     //renderSettingsPage()
@@ -349,10 +349,10 @@ class jQueryColorbox {
      * Registers the Settings Page in the Admin Menu
      *
      * @since 1.3.3
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function registerAdminMenu() {
+    public function registerAdminMenu() {
         if (function_exists('add_management_page') && current_user_can('manage_options')) {
 
             // update, uninstall message
@@ -378,7 +378,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      */
-    function registerAdminNotice($notice) {
+    private function registerAdminNotice($notice) {
         if ($notice != '') {
             $message = '<div class="updated fade"><p>' . $notice . '</p></div>';
             add_action('admin_notices', create_function('', "echo '$message';"));
@@ -391,10 +391,10 @@ class jQueryColorbox {
      * Registers the warning for admins
      *
      * @since 2.5
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function registerAdminWarning() {
+    public function registerAdminWarning() {
         if ($this->colorboxSettings['colorboxWarningOff'] || $this->colorboxSettings['autoColorbox']) {
             return;
         }
@@ -417,7 +417,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      */
-    function jQueryColorboxDefaultSettings() {
+    private function jQueryColorboxDefaultSettings() {
 
         // Create and return array of default settings
         return array(
@@ -474,10 +474,10 @@ class jQueryColorbox {
      * handles checks and redirect
      *
      * @since 1.3.3
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function jQueryColorboxUpdateSettings() {
+    public function jQueryColorboxUpdateSettings() {
 
         if (!current_user_can('manage_options'))
             wp_die(__('Did not update settings, you do not have the necessary rights.', JQUERYCOLORBOX_TEXTDOMAIN));
@@ -504,7 +504,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      */
-    function updateSettingsInDatabase() {
+    private function updateSettingsInDatabase() {
         update_option(JQUERYCOLORBOX_SETTINGSNAME, $this->colorboxSettings);
     }
 
@@ -516,10 +516,10 @@ class jQueryColorbox {
      * handles checks and redirect
      *
      * @since 1.3.3
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function jQueryColorboxDeleteSettings() {
+    public function jQueryColorboxDeleteSettings() {
 
         if (current_user_can('manage_options') && isset($_POST['delete_settings-true'])) {
             //cross check the given referer for nonce set in delete settings form
@@ -545,7 +545,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      */
-    function deleteSettingsFromDatabase() {
+    private function deleteSettingsFromDatabase() {
         delete_option(JQUERYCOLORBOX_SETTINGSNAME);
     }
 
@@ -555,10 +555,10 @@ class jQueryColorbox {
      * executed during activation.
      *
      * @since 2.0
-     * @access private
+     * @access public
      * @author Arne Franken
      */
-    function activateJqueryColorbox() {
+    public function activateJqueryColorbox() {
         $jquery_colorbox_settings = get_option(JQUERYCOLORBOX_SETTINGSNAME);
         if ($jquery_colorbox_settings) {
             //if jQueryColorboxVersion does not exist, the plugin is a version prior to 2.0
@@ -585,7 +585,7 @@ class jQueryColorbox {
      * @param string $url
      * @return the response
      */
-    function getRemoteContent($url) {
+    private function getRemoteContent($url) {
         if ( function_exists('wp_remote_request') ) {
 
             $options = array();
@@ -616,7 +616,7 @@ class jQueryColorbox {
      * @access private
      * @author Arne Franken
      */
-    function getReturnLocation(){
+    private function getReturnLocation(){
         $currentLocation = "http";
         $currentLocation .= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') ? "s" : "")."://";
         $currentLocation .= $_SERVER['SERVER_NAME'];
@@ -640,13 +640,13 @@ class jQueryColorbox {
      * adds Colorbox CSS class to "add link" dialog
      *
      * @since 3.7
-     * @access private
+     * @access public
      * @author Arne Franken
      *
      * @param  $defaultCss
      * @return modified array
      */
-    function addColorboxLinkClasses($defaultCss) {
+    public function addColorboxLinkClasses($defaultCss) {
 
         $jqueryColorboxCss = JQUERYCOLORBOX_PLUGIN_URL . '/css/jquery-colorbox.css';
         $defaultCss .= ',' . $jqueryColorboxCss;
@@ -686,8 +686,7 @@ class jQueryColorbox {
  * @author Arne Franken
  */
 function jQueryColorbox() {
-        global
-        $jQueryColorbox;
+        global $jQueryColorbox;
         $jQueryColorbox = new jQueryColorbox();
     }
 
