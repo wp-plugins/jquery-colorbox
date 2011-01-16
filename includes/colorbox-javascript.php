@@ -35,11 +35,6 @@
                     colorboxImage(index, obj)
                 }
             });
-            <?php //set variables for links ?>
-            colorboxMaxWidth = false;
-            colorboxMaxHeight = false;
-            colorboxHeight = colorboxLinkHeight;
-            colorboxWidth = colorboxLinkWidth;
             <?php //call colorboxLink on all elements that have CSS class called "colorbox-link" ?>
             $(COLORBOX_LINK_CLASS).each(function(index, obj) {
                 colorboxLink(index, obj)
@@ -98,8 +93,16 @@
             colorboxTitle = $(obj).attr("title");
             colorboxIframe = true;
             colorboxGroupId = "nofollow";
+            colorboxMaxWidth = false;
+            colorboxMaxHeight = false;
+            colorboxHeight = colorboxLinkHeight;
+            colorboxWidth = colorboxLinkWidth;
             if ($(obj).attr("href").match(COLORBOX_IMG_PATTERN)) {
                 colorboxIframe = false;
+                colorboxMaxWidth = colorboxImageMaxWidth;
+                colorboxMaxHeight = colorboxImageMaxHeight;
+                colorboxHeight = colorboxImageHeight;
+                colorboxWidth = colorboxImageWidth;
             }
             colorboxWrapper(obj);
         }
