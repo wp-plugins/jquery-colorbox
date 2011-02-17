@@ -51,32 +51,30 @@
     (function($) {
         colorboxImage = function(index, obj) {
         <?php //in this context, the first child is always an image if fundamental Wordpress functions are used ?>
-            var $image = $(obj).children(0);
-            if ($image.is("img")) {
+            var $image = $(obj).children("img:nth-child(1)");
             <?php //check if the link has a colorbox class ?>
-                var $linkClasses = $(obj).attr("class");
+            var $linkClasses = $(obj).attr("class");
             <?php //groupId is either the automatically created colorbox-123 or the manually added colorbox-manual ?>
-                colorboxGroupId = $linkClasses.match(COLORBOX_CLASS_MATCH) || $linkClasses.match(COLORBOX_MANUAL);
-                if (!colorboxGroupId) {
-                <?php // link does not have colorbox class. Check if image has colorbox class. ?>
-                    var $imageClasses = $image.attr("class");
-                    if (!$imageClasses.match(COLORBOX_OFF)) {
-                    <?php //groupId is either the automatically created colorbox-123 or the manually added colorbox-manual ?>
-                        colorboxGroupId = $imageClasses.match(COLORBOX_CLASS_MATCH) || $imageClasses.match(COLORBOX_MANUAL);
+            colorboxGroupId = $linkClasses.match(COLORBOX_CLASS_MATCH) || $linkClasses.match(COLORBOX_MANUAL);
+            if (!colorboxGroupId) {
+            <?php // link does not have colorbox class. Check if image has colorbox class. ?>
+                var $imageClasses = $image.attr("class");
+                if (!$imageClasses.match(COLORBOX_OFF)) {
+                <?php //groupId is either the automatically created colorbox-123 or the manually added colorbox-manual ?>
+                    colorboxGroupId = $imageClasses.match(COLORBOX_CLASS_MATCH) || $imageClasses.match(COLORBOX_MANUAL);
+                }
+            <?php //only call Colorbox if there is a groupId for the image?>
+                if (colorboxGroupId) {
+                <?php //convert groupId to string and lose "colorbox-" for easier use ?>
+                    colorboxGroupId = colorboxGroupId.toString().split('-')[1];
+                <?php  //if groudId is colorbox-manual, set groupId to "nofollow" so that images are not grouped ?>
+                    if (colorboxGroupId == "manual") {
+                        colorboxGroupId = "nofollow";
                     }
-                <?php //only call Colorbox if there is a groupId for the image?>
-                    if (colorboxGroupId) {
-                    <?php //convert groupId to string and lose "colorbox-" for easier use ?>
-                        colorboxGroupId = colorboxGroupId.toString().split('-')[1];
-                    <?php  //if groudId is colorbox-manual, set groupId to "nofollow" so that images are not grouped ?>
-                        if (colorboxGroupId == "manual") {
-                            colorboxGroupId = "nofollow";
-                        }
-                    <?php //the title of the img is used as the title for the Colorbox. ?>
-                        colorboxTitle = $image.attr("title");
+                <?php //the title of the img is used as the title for the Colorbox. ?>
+                    colorboxTitle = $image.attr("title");
 
-                        colorboxWrapper(obj);
-                    }
+                    colorboxWrapper(obj);
                 }
             }
         }
@@ -91,7 +89,11 @@
     (function($) {
         colorboxLink = function(index, obj) {
             colorboxTitle = $(obj).attr("title");
-            colorboxIframe = true;
+            if ($(obj).attr("href").match(COLORBOX_INTERNAL_LINK_PATTERN)) {
+                colorboxInline = true;
+            } else {
+                colorboxIframe = true;
+            }
             colorboxGroupId = "nofollow";
             colorboxMaxWidth = false;
             colorboxMaxHeight = false;
@@ -144,6 +146,7 @@
                 slideshowStart:colorboxSlideshowStart,
                 slideshowStop:colorboxSlideshowStop,
                 current:colorboxCurrent,
+                inline:colorboxInline,
                 iframe:colorboxIframe
             });
         }

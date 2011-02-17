@@ -16,6 +16,7 @@
     * declare variables that are used in more than one function
     */
     ?>
+        var COLORBOX_INTERNAL_LINK_PATTERN = /^#.*/;
         var COLORBOX_IMG_PATTERN = /\.(?:jpe?g|gif|png|bmp)/i;
         var COLORBOX_MANUAL = "colorbox-manual";
         var COLORBOX_OFF_CLASS = ".colorbox-off";
@@ -23,6 +24,7 @@
         var COLORBOX_OFF = "colorbox-off";
         var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
 
+        var colorboxInline = false;
         var colorboxIframe = false;
         var colorboxGroupId;
         var colorboxTitle;

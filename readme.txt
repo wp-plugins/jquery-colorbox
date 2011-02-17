@@ -131,7 +131,7 @@ Take a look at the WordPress site and identify your langyage code:
 http://codex.wordpress.org/WordPress_in_Your_Language
 
 
-I.e. the language code for German is "de_DE".
+e.g. the language code for German is "de_DE".
 
 
 Step 1) download POEdit (http://www.poedit.net/)
@@ -173,9 +173,11 @@ I'll include new FAQs in every new version. Promise.
 = 4.0 (2011-01-31) =
 * CHANGE: Restructured settings page
 * NEW: set width and height for Colorbox links separately
+* NEW: inline HTML content can now be loaded in the Colorbox.
 * CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
 * CHANGE: plugin again compatible to PHP4.
 * NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
+* CHANGE: made plugin compatible to the "smugmug" plugin.
 
 = 3.8.3 (2010-12-24) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
