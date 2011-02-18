@@ -50,8 +50,7 @@
     ?>
     (function($) {
         colorboxImage = function(index, obj) {
-        <?php //in this context, the first child is always an image if fundamental Wordpress functions are used ?>
-            var $image = $(obj).children("img:nth-child(1)");
+            var $image = $(obj).find("img:first");
             <?php //check if the link has a colorbox class ?>
             var $linkClasses = $(obj).attr("class");
             <?php //groupId is either the automatically created colorbox-123 or the manually added colorbox-manual ?>
