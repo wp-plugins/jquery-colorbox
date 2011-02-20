@@ -20,7 +20,7 @@ Images are grouped as galleries when linked in the same post or page. Groups can
 
 Individual images can be excluded by adding a special CSS class.
 
-Starting with version 3.8, jQuery Colorbox can also open linked contents in a Colorbox.
+jQuery Colorbox can also open linked content (external as well as inline) in a Colorbox.
 
 See the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
@@ -83,10 +83,6 @@ Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
 
 I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
 Chances are that the other jQuery library is loaded after the one that I load. If that happens, the colorbox features are overwritten.
-
-* Upon activation of the plugin I see the following error `Parse error: syntax error, unexpected T_STATIC, expecting T_OLD_FUNCTION or T_FUNCTION or T_VAR or '}' in /path/to/jquery-colorbox.php on line XX`
-
-jQuery Colorbox needs PHP5 to work. You see this error message because you are using PHP4.
 
 * How does jQuery Colorbox work?
 

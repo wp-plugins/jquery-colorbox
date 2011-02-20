@@ -453,6 +453,8 @@ class jQueryColorbox {
             'linkWidth' => 'false',
             'linkWidthValue' => '',
             'linkWidthUnit' => '%',
+            'initialWidth' => '300',
+            'initialHeight' => '100',
             'autoColorbox' => false,
             'autoColorboxGalleries' => false,
             'slideshow' => false,
