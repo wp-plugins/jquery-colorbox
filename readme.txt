@@ -3,7 +3,7 @@ Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
 Requires at least: 2.8
-Tested up to: 3.0
+Tested up to: 3.1
 Stable tag: 3.8.3
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
@@ -25,7 +25,7 @@ jQuery Colorbox can also open linked content (external as well as inline) in a C
 See the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
 For more information visit the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>.
-If you have questions or problems, feel free to write an email to blog [at] techotronic.de or write a entry at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>
+If you have questions or problems, feel free to write an entry at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>
 
 Localization
 
@@ -52,7 +52,7 @@ Is your native language missing? Translating the plugin is easy if you understan
 
 Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.15 jQuery plugin from Jack Moore.
 Colorbox is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
-jQuery Colorbox uses the jQuery library version 1.4.2 bundled with WordPress 3.0. Works with jQuery 1.4.4 and 1.3.2 bundled with Wordpress 2.9 too.
+jQuery Colorbox uses the jQuery library version 1.4 bundled with WordPress 3.x. Also works with jQuery 1.3.2 bundled with Wordpress 2.9.
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
 
 == Installation ==
@@ -174,6 +174,7 @@ I'll include new FAQs in every new version. Promise.
 * CHANGE: plugin again compatible to PHP4.
 * NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * CHANGE: made plugin compatible to the "smugmug" plugin.
+* CHANGE: moved Colorbox CSS class add to style dropdown of TinyMCE
 
 = 3.8.3 (2010-12-24) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
