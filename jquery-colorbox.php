@@ -19,8 +19,8 @@
 ?>
 <?php
 //define constants
-define('JQUERYCOLORBOX_VERSION', '3.8.5');
-define('COLORBOXLIBRARY_VERSION', '1.3.15');
+define('JQUERYCOLORBOX_VERSION', '3.8.8');
+define('COLORBOXLIBRARY_VERSION', '1.3.16');
 
 if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
     define('JQUERYCOLORBOX_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -327,10 +327,10 @@ class jQueryColorbox {
         <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
         <?php
         // include CSS fixes for IE for certain themes
-        preg_match('/\d+$/i',$this->colorboxSettings['colorboxTheme'],$themeNumbers);
-        if(in_array($themeNumbers[0],array(1,4,6,7,9,11))){
-            require_once 'includes/iefix-theme'.$themeNumbers[0].'.php';
-        }
+//        preg_match('/\d+$/i',$this->colorboxSettings['colorboxTheme'],$themeNumbers);
+//        if(in_array($themeNumbers[0],array(1,4,6,7,9,11))){
+//            require_once 'includes/iefix-theme'.$themeNumbers[0].'.php';
+//        }
         // include Colorbox Javascript
             require_once 'includes/colorbox-javascript.php';
             require_once 'includes/colorbox-javascript-loader.php';
