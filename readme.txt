@@ -176,6 +176,7 @@ I'll include new FAQs in every new version. Promise.
 * NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * CHANGE: made plugin compatible to the "smugmug" plugin.
 * CHANGE: moved Colorbox CSS class add to style dropdown of TinyMCE
+* CHANGE: plugin doesn't break prototype and scriptaculous any more.
 
 = 3.8.3 (2010-12-24) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>

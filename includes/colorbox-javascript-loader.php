@@ -68,7 +68,7 @@
      * call colorbox selector function.
      */
     ?>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function(jQuery) {
         colorboxSelector();
     });
     // ]]>
