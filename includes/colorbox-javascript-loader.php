@@ -13,8 +13,8 @@
     // <![CDATA[
 <?php
     /**
-    * declare variables that are used in more than one function
-    */
+     * declare variables that are used in more than one function
+     */
     ?>
     var COLORBOX_INTERNAL_LINK_PATTERN = /^#.*/;
     var COLORBOX_IMG_PATTERN = /\.(?:jpe?g|gif|png|bmp)/i;
@@ -68,7 +68,7 @@
      * call colorbox selector function.
      */
     ?>
-    jQuery(document).ready(function(jQuery) {
+    jQuery(document).ready(function() {
         colorboxSelector();
     });
     // ]]>

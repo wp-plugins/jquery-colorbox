@@ -169,6 +169,7 @@ I'll include new FAQs in newer versions.
 = 4.0 (2011-01-31) =
 * CHANGE: Restructured settings page
 * CHANGE: Update of Colorbox library to version 1.3.16
+* CHANGE: jQuery calls won't break other JavaScript libraries like Prototype any more
 * NEW: set width and height for Colorbox links separately
 * NEW: inline HTML content can now be loaded in the Colorbox.
 * CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
