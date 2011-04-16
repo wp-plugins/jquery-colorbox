@@ -41,7 +41,7 @@ Localization
 * Latvian (lv) by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * Malay (ms_MY) by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
-* Russian (ru_RU) by <a href="http://drive2life.ru">Drive2Life.ru</a>
+* Russian (ru_RU) by <a href="http://drive2life.ru">Arkadiy Florinskiy</a>
 * Slovak (sk_SK) by <a href="http://itec.sk/">Stefan Stieranka</a>
 * Spanish (es_ES) by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
 * Swedish (sv_SE) by <a href="http://www.theindiaexperience.se/">Christian</a>
@@ -166,14 +166,15 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in newer versions.
 
 == Changelog ==
-= 4.0 (2011-01-31) =
+= 4.0 (2011-04-16) =
 * CHANGE: Restructured settings page
 * CHANGE: Update of Colorbox library to version 1.3.16
 * CHANGE: jQuery calls won't break other JavaScript libraries like Prototype any more
-* NEW: set width and height for Colorbox links separately
+* NEW: set width and height for Colorbox links once separate from the Colorbox setting for images
 * NEW: inline HTML content can now be loaded in the Colorbox.
 * CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
 * CHANGE: <a href="mailto:nettojp@gmail.com">Joao Netto</a> updated the Portuguese translation
+* CHANGE: <a href="http://drive2life.ru">Arkadiy Florinskiy</a> updated the Russian translation
 * CHANGE: plugin again compatible to PHP4.
 * NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * CHANGE: made plugin compatible to the "smugmug" plugin.
