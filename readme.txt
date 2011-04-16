@@ -168,18 +168,17 @@ I'll include new FAQs in newer versions.
 == Changelog ==
 = 4.0 (2011-04-16) =
 * CHANGE: Restructured settings page
+* CHANGE: plugin again compatible to PHP4.
 * CHANGE: Update of Colorbox library to version 1.3.16
-* CHANGE: jQuery calls won't break other JavaScript libraries like Prototype any more
+* CHANGE: jQuery calls won't break other JavaScript libraries like Prototype or Scriptaculous any more
 * NEW: set width and height for Colorbox links once separate from the Colorbox setting for images
 * NEW: inline HTML content can now be loaded in the Colorbox.
+* NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
 * CHANGE: <a href="mailto:nettojp@gmail.com">Joao Netto</a> updated the Portuguese translation
 * CHANGE: <a href="http://drive2life.ru">Arkadiy Florinskiy</a> updated the Russian translation
-* CHANGE: plugin again compatible to PHP4.
-* NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * CHANGE: made plugin compatible to the "smugmug" plugin.
 * CHANGE: moved Colorbox CSS class add to style dropdown of TinyMCE
-* CHANGE: plugin doesn't break prototype and scriptaculous any more.
 
 = 3.8.3 (2010-12-24) =
 * NEW: Spanish translation by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
