@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: jQuery-Colorbox-Русская-версия\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-20 22:42+0100\n"
-"PO-Revision-Date: 2010-12-20 22:42+0100\n"
+"PO-Revision-Date: 2011-04-16 23:32+0300\n"
 "Last-Translator: \n"
 "Language-Team: Drive2Life <info@drive2life.ru>\n"
 "MIME-Version: 1.0\n"
@@ -97,7 +97,7 @@ msgstr "отсутствует"
 
 #: jquery-colorbox.php:206
 msgid "Using"
-msgstr ""
+msgstr "Использует"
 
 #: jquery-colorbox.php:301
 #: includes/settings-page.php:105
@@ -129,7 +129,7 @@ msgstr "%1$s не удален. У вас нет достаточных прав
 
 #: jquery-colorbox.php:713
 msgid "does not work with PHP 4. Please update or uninstall the plugin."
-msgstr ""
+msgstr "Не работает с PHP 4. Пожалуйста, обновите или удалите плагин"
 
 #: includes/colorbox-javascript.php:49
 msgid "close"
@@ -200,40 +200,39 @@ msgstr "Автоматически применять %1$s для всех из�
 
 #: includes/settings-page.php:135
 msgid "Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar)."
-msgstr ""
+msgstr "Автоматически применять Colorbox ко всем изображениям вне постов и страниц (например, в сайдбаре)"
 
 #: includes/settings-page.php:140
 msgid "Automate hiding of flash objects"
 msgstr "Автоматически прятать flash-объекты"
 
 #: includes/settings-page.php:144
-#, fuzzy
 msgid "Automatically hide embeded flash objects behind the Colorbox layer."
-msgstr "Автоматически прячет flash-объекты за слоем ColorBox. Работает посредством переключения wmode в режим прозрачности."
+msgstr "Автоматически прятать flash-объекты за слоем ColorBox."
 
 #: includes/settings-page.php:149
 msgid "Add JavaScript to footer"
-msgstr ""
+msgstr "Добавить Java-скрипт плагина в footer.php"
 
 #: includes/settings-page.php:153
 msgid "Add JavaScript to footer instead of the header."
-msgstr ""
+msgstr "Добавить Java-скрипт плагина в footer.php вместо header.php"
 
 #: includes/settings-page.php:158
 msgid "Remove link from Meta-box"
-msgstr ""
+msgstr "Удалить ссылку из мета-бокса"
 
 #: includes/settings-page.php:162
 msgid "Remove the link to the developers site from the WordPress meta-box."
-msgstr ""
+msgstr "Удалить ссылку на сайт разработчика плагина из мета-бокса Wordpress"
 
 #: includes/settings-page.php:167
 msgid "Activate debug mode"
-msgstr ""
+msgstr "Активировать режим отладки (debug-mode)"
 
 #: includes/settings-page.php:171
 msgid "Adds debug information and non-minified JavaScript to the page. Useful for troubleshooting."
-msgstr ""
+msgstr "Добавить информацию отладки и не-минифицированный Java-скрипт на страницу. Полезно при проверке работоспособности внесенных вами изменений"
 
 #: includes/settings-page.php:176
 msgid "Disable warning"
@@ -250,7 +249,7 @@ msgstr "Сохранить настройки"
 
 #: includes/settings-page.php:191
 msgid "Colorbox settings"
-msgstr ""
+msgstr "Настройки Colorbox'а"
 
 #: includes/settings-page.php:198
 msgid "Theme"
@@ -297,19 +296,19 @@ msgstr "Устанавливает скорость Слайдшоу в мили
 
 #: includes/settings-page.php:253
 msgid "Disable loop"
-msgstr ""
+msgstr "Запретить повтор"
 
 #: includes/settings-page.php:257
 msgid "Disable looping through image groups"
-msgstr ""
+msgstr "Запретить повтор в группах изображений"
 
 #: includes/settings-page.php:262
 msgid "Disable keys"
-msgstr ""
+msgstr "Запретить ключи"
 
 #: includes/settings-page.php:266
 msgid "Disable ESC to close Colorbox and arrow keys to go to next and previous images"
-msgstr ""
+msgstr "Отключить ESC для закрывания Colorbox'а и клавиши стрелок для перелистывания изображений"
 
 #: includes/settings-page.php:271
 msgid "Maximum width of an image"
@@ -429,11 +428,11 @@ msgstr "Прозрачность фона ColorBox. От 0 до 1"
 
 #: includes/settings-page.php:471
 msgid "Make images draggable"
-msgstr ""
+msgstr "Сделать изображения перетаскиваемыми"
 
 #: includes/settings-page.php:475
 msgid "Make images draggable instead of scrollable"
-msgstr ""
+msgstr "Сделать изображения перетаскиваемыми вместо масштабируемых"
 
 #: includes/settings-page.php:491
 #: includes/settings-page.php:500
@@ -446,11 +445,11 @@ msgstr "Поставьте галочку и нажмите на кнопку, �
 
 #: includes/settings-page.php:511
 msgid "Top donations"
-msgstr ""
+msgstr "Топ пожертвований"
 
 #: includes/settings-page.php:520
 msgid "Latest donations"
-msgstr ""
+msgstr "Последние пожертвования"
 
 #: includes/settings-page.php:529
 msgid "Donate"
@@ -462,40 +461,40 @@ msgstr "Если вам понравился плагин и вы хотите �
 
 #: includes/settings-page.php:535
 msgid "Donate using Paypal"
-msgstr ""
+msgstr "Пожертвовать через PayPal"
 
 #: includes/settings-page.php:539
 msgid "Techotronic Development Support"
-msgstr ""
+msgstr "Поддержка плагина - Technotronic"
 
 #: includes/settings-page.php:543
 msgid "Please enter the URL you'd like me to link to in the donors lists"
-msgstr ""
+msgstr "Пожалуйста, укажите URL, который я должен разместить в списке пожертвовавших"
 
 #: includes/settings-page.php:545
 msgid "Return to Your Dashboard"
-msgstr ""
+msgstr "Вернуться к Консоли Wordpress"
 
 #: includes/settings-page.php:549
 msgid "Select Preset Amount"
-msgstr ""
+msgstr "Выбрать заданное значение"
 
 #: includes/settings-page.php:557
 #: includes/settings-page.php:561
 msgid "USD"
-msgstr ""
+msgstr "USD"
 
 #: includes/settings-page.php:558
 msgid "Or"
-msgstr ""
+msgstr "или"
 
 #: includes/settings-page.php:559
 msgid "Enter Custom Amount"
-msgstr ""
+msgstr "Ввести произвольное значение"
 
 #: includes/settings-page.php:563
 msgid "Submit"
-msgstr ""
+msgstr "Отправить"
 
 #: includes/settings-page.php:570
 msgid "Translation"
