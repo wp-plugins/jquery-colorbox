@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 4.0
+ * Version: 4.0.1
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -19,7 +19,7 @@
 ?>
 <?php
 //define constants
-define('JQUERYCOLORBOX_VERSION', '4.0');
+define('JQUERYCOLORBOX_VERSION', '4.0.1');
 define('COLORBOXLIBRARY_VERSION', '1.3.16');
 
 if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
@@ -171,14 +171,15 @@ class jQueryColorbox {
 //                wp_enqueue_script('colorbox-draggable', plugins_url('js/jquery-colorbox-draggable.js', __FILE__), array('jquery-ui-draggable'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
 //            }
             if ($this->colorboxSettings['autoColorbox']) {
-//            if ($this->colorboxSettings['autoColorboxJavaScript']) {
-                if($this->colorboxSettings['debugMode']) {
-                    $jqueryColorboxAutoJavaScriptName = "js/jquery-colorbox-auto.js";
+                if ($this->colorboxSettings['autoColorboxJavaScript']) {
+                    if($this->colorboxSettings['debugMode']) {
+                        $jqueryColorboxAutoJavaScriptName = "js/jquery-colorbox-auto.js";
+                    }
+                    else {
+                        $jqueryColorboxAutoJavaScriptName = "js/jquery-colorbox-auto-min.js";
+                    }
+                    wp_enqueue_script('colorbox-auto', plugins_url($jqueryColorboxAutoJavaScriptName, __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
                 }
-                else {
-                    $jqueryColorboxAutoJavaScriptName = "js/jquery-colorbox-auto-min.js";
-                }
-                wp_enqueue_script('colorbox-auto', plugins_url($jqueryColorboxAutoJavaScriptName, __FILE__), array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
             }
             if ($this->colorboxSettings['autoHideFlash']) {
                 if($this->colorboxSettings['debugMode']) {

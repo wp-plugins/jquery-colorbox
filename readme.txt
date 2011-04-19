@@ -166,6 +166,9 @@ Feel free to write an email to blog [at] techotronic.de or open a thread at <a h
 I'll include new FAQs in newer versions.
 
 == Changelog ==
+= 4.1 (2011-06-30) =
+* CHANGE: additional option for adding colorbox class to images outside of posts and pages.
+
 = 4.0 (2011-04-16) =
 * CHANGE: Restructured settings page
 * CHANGE: plugin again compatible to PHP4.

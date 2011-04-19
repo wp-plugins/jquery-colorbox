@@ -132,7 +132,7 @@
                 <table class="form-table">
                 <tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-autoColorbox"><?php printf(__('Automate %1$s for all images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); __('Automate %1$s for all images in pages, posts and galleries', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+                        <label for="jquery-colorbox-autoColorbox"><?php printf(__('Automate %1$s for all images in pages, posts and galleries', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
                     </th>
                     <td>
                         <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorbox]" id="jquery-colorbox-autoColorbox" value="true" <?php echo ($this->colorboxSettings['autoColorbox']) ? 'checked="checked"' : '';?>/>
@@ -141,22 +141,22 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-autoColorboxGalleries"><?php printf(__('Automate %1$s for images in WordPress galleries', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); __('Automate %1$s for images in WordPress galleries only', JQUERYCOLORBOX_TEXTDOMAIN) ?>:</label>
+                        <label for="jquery-colorbox-autoColorboxGalleries"><?php printf(__('Automate %1$s for images in WordPress galleries only', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
                     </th>
                     <td>
                         <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxGalleries]" id="jquery-colorbox-autoColorboxGalleries" value="true" <?php echo ($this->colorboxSettings['autoColorboxGalleries']) ? 'checked="checked"' : '';?>/>
                         <br/><?php _e('Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
                 </tr>
-                <!--tr>
+                <tr>
                     <th scope="row">
-                        <label for="jquery-colorbox-autoColorboxJavaScript"><?php __('Automate %1$s for all other images', JQUERYCOLORBOX_TEXTDOMAIN); //printf(__('Automate %1$s for all other images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
+                        <label for="jquery-colorbox-autoColorboxJavaScript"><?php printf(__('Automate %1$s for all other images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
                     </th>
                     <td>
-                        <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxJavaScript]" id="jquery-colorbox-autoColorboxJavaScript" value="true" <?php //echo ($this->colorboxSettings['autoColorboxJavaScript']) ? 'checked="checked"' : '';?>/>
-                        <br/><?php __('Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar).', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+                        <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[autoColorboxJavaScript]" id="jquery-colorbox-autoColorboxJavaScript" value="true" <?php echo ($this->colorboxSettings['autoColorboxJavaScript']) ? 'checked="checked"' : '';?>/>
+                        <br/><?php _e('Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar).', JQUERYCOLORBOX_TEXTDOMAIN); ?>
                     </td>
-                </tr-->
+                </tr>
                 <tr>
                     <th scope="row">
                         <label for="jquery-colorbox-autoHideFlash"><?php _e('Automate hiding of flash objects', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
