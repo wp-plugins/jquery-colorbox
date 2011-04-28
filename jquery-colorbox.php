@@ -56,7 +56,7 @@ if (!defined('JQUERYCOLORBOX_TOPDONATEURL')) {
     define('JQUERYCOLORBOX_TOPDONATEURL', 'http://colorbox.techotronic.de/top-donations.php');
 }
 
-class jQueryColorbox {
+class JQueryColorbox {
 
     var $colorboxThemes = array();
 
@@ -65,6 +65,8 @@ class jQueryColorbox {
     var $colorboxSettings = array();
 
     var $colorboxDefaultSettings = array();
+
+//    var $colorboxAdminStuff;
 
     /**
      * Plugin initialization
@@ -81,7 +83,11 @@ class jQueryColorbox {
 
         load_plugin_textdomain(JQUERYCOLORBOX_TEXTDOMAIN, false, '/jquery-colorbox/localization/');
 
-        add_action('wp_head', array(& $this, 'buildWordpressHeader'));
+//        if (is_admin()) {
+//            $this->colorboxAdminStuff = new AdminStuff();
+//        }
+
+        add_action('wp_head', array(& $this, 'buildWordpressHeader'), 9);
         add_action('admin_post_jQueryColorboxDeleteSettings', array(& $this, 'jQueryColorboxDeleteSettings'));
         add_action('admin_post_jQueryColorboxUpdateSettings', array(& $this, 'jQueryColorboxUpdateSettings'));
         // add options page
@@ -89,7 +95,7 @@ class jQueryColorbox {
         add_action('admin_notices', array(& $this, 'registerAdminWarning'));
         //register method for uninstall
         if (function_exists('register_uninstall_hook')) {
-            register_uninstall_hook(__FILE__, array('jQueryColorbox', 'deleteSettingsFromDatabase'));
+            register_uninstall_hook(__FILE__, array('JQueryColorbox', 'deleteSettingsFromDatabase'));
         }
 
         // Create the settings array by merging the user's settings and the defaults
@@ -97,7 +103,7 @@ class jQueryColorbox {
         $defaultArray = $this->jQueryColorboxDefaultSettings();
         $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
 
-        //only add link to meta box
+        //only add link to meta box if 
         if(isset($this->colorboxSettings['removeLinkFromMetaBox']) && !$this->colorboxSettings['removeLinkFromMetaBox']){
             add_action('wp_meta',array(& $this, 'renderMetaLink'));
         }
@@ -166,6 +172,15 @@ class jQueryColorbox {
                 $jqueryColorboxJavaScriptName = "js/jquery.colorbox-min.js";
             }
             wp_enqueue_script('colorbox', plugins_url($jqueryColorboxJavaScriptName, __FILE__), array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
+
+            if($this->colorboxSettings['debugMode']) {
+                $jqueryColorboxWrapperJavaScriptName = "js/jquery-colorbox-wrapper.js";
+            }
+            else {
+                $jqueryColorboxWrapperJavaScriptName = "js/jquery-colorbox-wrapper-min.js";
+            }
+            wp_enqueue_script('colorbox-wrapper', plugins_url($jqueryColorboxWrapperJavaScriptName, __FILE__), array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
+
 //            if($this->colorboxSettings['draggable']) {
 //                ?!?wp_enqueue_script('jquery-ui-draggable');
 //                wp_enqueue_script('colorbox-draggable', plugins_url('js/jquery-colorbox-draggable.js', __FILE__), array('jquery-ui-draggable'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
@@ -325,20 +340,13 @@ class jQueryColorbox {
     //public function buildWordpressHeader() {
     function buildWordpressHeader() {
         ?>
-        <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
-        <?php
-        // include CSS fixes for IE for certain themes
-//        preg_match('/\d+$/i',$this->colorboxSettings['colorboxTheme'],$themeNumbers);
-//        if(in_array($themeNumbers[0],array(1,4,6,7,9,11))){
-//            require_once 'includes/iefix-theme'.$themeNumbers[0].'.php';
-//        }
+<!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
+<?php
         // include Colorbox Javascript
-            require_once 'includes/colorbox-javascript.php';
-            require_once 'includes/colorbox-javascript-loader.php';
-            ?>
-        <!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
-        <?php
-
+        require_once 'includes/colorbox-javascript-loader.php';
+        ?>
+<!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
+<?php
     }
 
     //buildWordpressHeader()
@@ -721,7 +729,7 @@ class jQueryColorbox {
 
 }
 
-// class jQueryColorbox()
+// class JQueryColorbox()
 ?><?php
 /**
  * initialize plugin, call constructor
@@ -730,16 +738,16 @@ class jQueryColorbox {
  * @access public
  * @author Arne Franken
  */
-function jQueryColorbox() {
+function initJQueryColorbox() {
         global $jQueryColorbox;
-        $jQueryColorbox = new jQueryColorbox();
+        $jQueryColorbox = new JQueryColorbox();
     }
 
 // jQueryColorbox()
 
 // add jQueryColorbox() to WordPress initialization
-add_action('init', 'jQueryColorbox', 7);
+add_action('init', 'initJQueryColorbox', 7);
 
 // register method for activation
-register_activation_hook(__FILE__, array('jQueryColorbox', 'activateJqueryColorbox'));
+register_activation_hook(__FILE__, array('JQueryColorbox', 'activateJqueryColorbox'));
 ?>
