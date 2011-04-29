@@ -40,6 +40,7 @@ Localization
 * Italian (it_IT) by <a href="http://erkinson.altervista.org/">Erkinson</a>
 * Latvian (lv) by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
 * Malay (ms_MY) by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
+* Polish (pl_PL) by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Arkadiy Florinskiy</a>
 * Slovak (sk_SK) by <a href="http://itec.sk/">Stefan Stieranka</a>
@@ -161,12 +162,13 @@ Step 8) When you are sure that all translations are working correctly, send the 
 
 * My question isn't answered here. What do I do now?
 
-Feel free to write an email to blog [at] techotronic.de or open a thread at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>.
+Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>.
 
 I'll include new FAQs in newer versions.
 
 == Changelog ==
 = 4.1 (2011-06-30) =
+* NEW: Polish translation by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
 * CHANGE: moved bulk of JavaScript from inline to file
 * CHANGE: additional option for adding colorbox class to images outside of posts and pages.
 * CHANGE: major refactoring, hopefully speeds up frontend and backend rendering
@@ -178,7 +180,7 @@ I'll include new FAQs in newer versions.
 * CHANGE: jQuery calls won't break other JavaScript libraries like Prototype or Scriptaculous any more
 * NEW: set width and height for Colorbox links once separate from the Colorbox setting for images
 * NEW: inline HTML content can now be loaded in the Colorbox.
-* NEW: Latvian translation by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
+* NEW: Latvian translation by <a href="http://lapuvieta.lv">Uldis Jansons</a>
 * CHANGE: <a href="http://www.photokeens.com">Modar Soos</a> updated the Arabic translation
 * CHANGE: <a href="mailto:nettojp@gmail.com">Joao Netto</a> updated the Portuguese translation
 * CHANGE: <a href="http://drive2life.ru">Arkadiy Florinskiy</a> updated the Russian translation
