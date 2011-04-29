@@ -169,6 +169,7 @@ I'll include new FAQs in newer versions.
 = 4.1 (2011-06-30) =
 * CHANGE: moved bulk of JavaScript from inline to file
 * CHANGE: additional option for adding colorbox class to images outside of posts and pages.
+* CHANGE: major refactoring, hopefully speeds up frontend and backend rendering
 
 = 4.0 (2011-04-16) =
 * CHANGE: Restructured settings page
