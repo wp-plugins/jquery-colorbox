@@ -60,7 +60,7 @@ class JQueryColorboxFrontend {
         else {
             $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper-min.js";
         }
-        wp_enqueue_script('colorbox-wrapper', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxWrapperJavaScriptPath, array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
+        wp_enqueue_script('colorbox-wrapper', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxWrapperJavaScriptPath, array('colorbox'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
 //            wp_enqueue_script('colorbox-wrapper', plugins_url($jqueryColorboxWrapperJavaScriptName, __FILE__), array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
 
 //            if($this->colorboxSettings['draggable']) {
