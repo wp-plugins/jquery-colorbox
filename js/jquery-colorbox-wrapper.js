@@ -11,6 +11,13 @@
  */
 
 /**
+ * call colorbox selector function.
+ */
+jQuery(document).ready(function() {
+    colorboxSelector();
+});
+
+/**
  * jQuery selector
  *
  * call colorboxImage on all "a" elements that have a nested "img"

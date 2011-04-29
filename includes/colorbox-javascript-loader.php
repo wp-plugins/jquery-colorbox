@@ -62,14 +62,5 @@
 
     var colorboxInitialHeight = <?php echo $this->colorboxSettings['initialHeight']; ?>;
     var colorboxInitialWidth = <?php echo $this->colorboxSettings['initialWidth']; ?>;
-
-<?php
-    /**
-     * call colorbox selector function.
-     */
-    ?>
-    jQuery(document).ready(function() {
-        colorboxSelector();
-    });
     // ]]>
 </script>
