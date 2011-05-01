@@ -25,7 +25,8 @@ class JQueryColorboxFrontend {
 
         $this->colorboxSettings = $colorboxSettings;
 
-        add_action('wp_head', array(& $this, 'buildWordpressHeader'), 9);
+        // Add meta tag with version number to the header
+		add_action('wp_head',array(& $this, 'renderMetaTag') );
 
         //only add link to meta box if 
         if(isset($this->colorboxSettings['removeLinkFromMetaBox']) && !$this->colorboxSettings['removeLinkFromMetaBox']){
@@ -42,54 +43,35 @@ class JQueryColorboxFrontend {
             add_filter('wp_get_attachment_image_attributes', array(& $this, 'wpPostThumbnailClassFilter'));
         }
 
-        // enqueue JavaScript and CSS files in wordpress
+        // enqueue JavaScript and CSS files in WordPress
         wp_enqueue_script('jquery');
         wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'],  JQUERYCOLORBOX_PLUGIN_URL . '/' . 'themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox.css', array(), JQUERYCOLORBOX_VERSION, 'screen');
         wp_enqueue_style('colorbox-' . $this->colorboxSettings['colorboxTheme']);
-        if($this->colorboxSettings['debugMode']) {
-            $jqueryColorboxJavaScriptPath = "js/jquery.colorbox.js";
-        }
-        else {
-            $jqueryColorboxJavaScriptPath = "js/jquery.colorbox-min.js";
-        }
-        wp_enqueue_script('colorbox', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxJavaScriptPath, array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
-
-        if($this->colorboxSettings['debugMode']) {
-            $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper.js";
-        }
-        else {
-            $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper-min.js";
-        }
-        wp_enqueue_script('colorbox-wrapper', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxWrapperJavaScriptPath, array('colorbox'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
-//            wp_enqueue_script('colorbox-wrapper', plugins_url($jqueryColorboxWrapperJavaScriptName, __FILE__), array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
-
-//            if($this->colorboxSettings['draggable']) {
-//                ?!?wp_enqueue_script('jquery-ui-draggable');
-//                wp_enqueue_script('colorbox-draggable', plugins_url('js/jquery-colorbox-draggable.js', __FILE__), array('jquery-ui-draggable'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
-//            }
-        if ($this->colorboxSettings['autoColorbox']) {
-            if ($this->colorboxSettings['autoColorboxJavaScript']) {
-                if($this->colorboxSettings['debugMode']) {
-                    $jqueryColorboxAutoJavaScriptPath = "js/jquery-colorbox-auto.js";
-                }
-                else {
-                    $jqueryColorboxAutoJavaScriptPath = "js/jquery-colorbox-auto-min.js";
-                }
-                wp_enqueue_script('colorbox-auto', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxAutoJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
-            }
-        }
-        if ($this->colorboxSettings['autoHideFlash']) {
-            if($this->colorboxSettings['debugMode']) {
-                $jqueryColorboxFlashJavaScriptPath = "js/jquery-colorbox-hideFlash.js";
-            }
-            else {
-                $jqueryColorboxFlashJavaScriptPath = "js/jquery-colorbox-hideFlash-min.js";
-            }
-            wp_enqueue_script('colorbox-hideflash', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxFlashJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
-        }
+        $this->addColorboxJS();
+        $this->addColorboxWrapperJS();
+        $this->addAutoColorboxJS();
+        $this->addHideFlashJS();
+        $this->addColorboxProperties();
     }
 
     // JQueryColorboxFrontend()
+
+    /**
+     * Renders plugin Meta tag
+     *
+     * @since 4.1
+     * @access public
+     * @author Arne Franken
+     */
+    //public function renderMetaTag() {
+    function renderMetaTag() {
+?>
+
+<meta name="<?php echo JQUERYCOLORBOX_NAME ?>" content="<?php echo JQUERYCOLORBOX_VERSION ?>" />
+
+<?php }
+
+    // renderMetaTag()
 
 
     /**
@@ -173,28 +155,147 @@ class JQueryColorboxFrontend {
     // wpPostThumbnailClassFilter()
 
     /**
-     * Insert JavaScript and CSS for Colorbox into WP Header
+     * Insert JavaScript with properties for Colorbox into WP Header
      *
      * @since 1.0
      * @access public
      * @author Arne Franken
-     *
-     * @return wordpress header insert
      */
-    //public function buildWordpressHeader() {
-    function buildWordpressHeader() {
-        ?>
-<!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
-<?php
-        // include Colorbox Javascript
-        require_once 'colorbox-javascript-loader.php';
-        ?>
-<!-- <?php echo JQUERYCOLORBOX_NAME ?> <?php echo JQUERYCOLORBOX_VERSION ?> | by Arne Franken, http://www.techotronic.de/ -->
-<?php
+    //public function addColorboxProperties() {
+    function addColorboxProperties() {
+        /**
+         * declare variables that are used in more than one function
+         */
+        $colorboxPropertyArray = array(
+            'colorboxInline' => 'false',
+            'colorboxIframe' => 'false',
+            'colorboxGroupId' => '',
+            'colorboxTitle' => '',
+            'colorboxWidth' => 'false',
+            'colorboxHeight' => 'false',
+            'colorboxMaxWidth' => 'false',
+            'colorboxMaxHeight' => 'false',
+            'colorboxSlideshow' => !$this->colorboxSettings['slideshow'] ? 'false' : 'true',
+            'colorboxSlideshowAuto' => $this->colorboxSettings['slideshowAuto'] ? 'true' : 'false',
+            'colorboxScalePhotos' => $this->colorboxSettings['scalePhotos'] ? 'true' : 'false',
+            'colorboxPreloading' => $this->colorboxSettings['preloading'] ? 'true' : 'false',
+            'colorboxOverlayClose' => $this->colorboxSettings['overlayClose'] ? 'true' : 'false',
+            'colorboxLoop' => !$this->colorboxSettings['disableLoop'] ? 'true' : 'false',
+            'colorboxEscKey' => !$this->colorboxSettings['disableKeys'] ? 'true' : 'false',
+            'colorboxArrowKey' => !$this->colorboxSettings['disableKeys'] ? 'true' : 'false',
+            'colorboxScrolling' => !$this->colorboxSettings['displayScrollbar'] ? 'true' : 'false',
+            'colorboxOpacity' => $this->colorboxSettings['opacity'],
+            'colorboxTransition' => $this->colorboxSettings['transition'],
+            'colorboxSpeed' => $this->colorboxSettings['speed'],
+            'colorboxSlideshowSpeed' => $this->colorboxSettings['slideshowSpeed'],
+            'colorboxClose' => __('close', JQUERYCOLORBOX_TEXTDOMAIN),
+            'colorboxNext' => __('next', JQUERYCOLORBOX_TEXTDOMAIN),
+            'colorboxPrevious' => __('previous', JQUERYCOLORBOX_TEXTDOMAIN),
+            'colorboxSlideshowStart' => __('start slideshow', JQUERYCOLORBOX_TEXTDOMAIN),
+            'colorboxSlideshowStop' => __('stop slideshow', JQUERYCOLORBOX_TEXTDOMAIN),
+            'colorboxCurrent' => __('{current} of {total} images', JQUERYCOLORBOX_TEXTDOMAIN),
+
+            'colorboxImageMaxWidth' => $this->colorboxSettings['maxWidth'] == "false" ? 'false' : $this->colorboxSettings['maxWidthValue'] . $this->colorboxSettings['maxWidthUnit'],
+            'colorboxImageMaxHeight' => $this->colorboxSettings['maxHeight'] == "false" ? 'false' : $this->colorboxSettings['maxHeightValue'] . $this->colorboxSettings['maxHeightUnit'],
+            'colorboxImageHeight' => $this->colorboxSettings['height'] == "false" ? 'false' : $this->colorboxSettings['heightValue'] . $this->colorboxSettings['heightUnit'],
+            'colorboxImageWidth' => $this->colorboxSettings['width'] == "false" ? 'false' : $this->colorboxSettings['widthValue'] . $this->colorboxSettings['widthUnit'],
+        
+            'colorboxLinkHeight' => $this->colorboxSettings['linkHeight'] == "false" ? 'false' : $this->colorboxSettings['linkHeightValue'] . $this->colorboxSettings['linkHeightUnit'],
+            'colorboxLinkWidth' => $this->colorboxSettings['linkWidth'] == "false" ? 'false' : $this->colorboxSettings['linkWidthValue'] . $this->colorboxSettings['linkWidthUnit'],
+
+            'colorboxInitialHeight' => $this->colorboxSettings['initialHeight'],
+            'colorboxInitialWidth' => $this->colorboxSettings['initialWidth']
+        );
+        wp_localize_script( 'colorbox', 'Colorbox', $colorboxPropertyArray );
     }
 
-    //buildWordpressHeader()
+    //addColorboxProperties()
 
+    /**
+     * Insert JavaScript into WP Header
+     *
+     * @since 4.1
+     * @access public
+     * @author Arne Franken
+     */
+    //public function addHideFlashJS() {
+    function addHideFlashJS() {
+        if ($this->colorboxSettings['autoHideFlash']) {
+            if($this->colorboxSettings['debugMode']) {
+                $jqueryColorboxFlashJavaScriptPath = "js/jquery-colorbox-hideFlash.js";
+            }
+            else {
+                $jqueryColorboxFlashJavaScriptPath = "js/jquery-colorbox-hideFlash-min.js";
+            }
+            wp_enqueue_script('colorbox-hideflash', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxFlashJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
+        }
+    }
+
+    // addHideFlashJS()
+
+    /**
+     * Insert JavaScript into WP Header
+     *
+     * @since 4.1
+     * @access public
+     * @author Arne Franken
+     */
+    //public function addAutoColorboxJS() {
+    function addAutoColorboxJS() {
+        if ($this->colorboxSettings['autoColorbox']) {
+            if ($this->colorboxSettings['autoColorboxJavaScript']) {
+                if($this->colorboxSettings['debugMode']) {
+                    $jqueryColorboxAutoJavaScriptPath = "js/jquery-colorbox-auto.js";
+                }
+                else {
+                    $jqueryColorboxAutoJavaScriptPath = "js/jquery-colorbox-auto-min.js";
+                }
+                wp_enqueue_script('colorbox-auto', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxAutoJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
+            }
+        }
+    }
+
+    // addAutoColorboxJS()
+
+    /**
+     * Insert JavaScript into WP Header
+     *
+     * @since 4.1
+     * @access public
+     * @author Arne Franken
+     */
+    //public function addColorboxWrapperJS() {
+    function addColorboxWrapperJS() {
+        if($this->colorboxSettings['debugMode']) {
+            $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper.js";
+        }
+        else {
+            $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper-min.js";
+        }
+        wp_enqueue_script('colorbox-wrapper', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxWrapperJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
+    }
+
+    // addColorboxWrapperJS()
+
+    /**
+     * Insert JavaScript into WP Header
+     *
+     * @since 4.1
+     * @access public
+     * @author Arne Franken
+     */
+    //public function addColorboxJS() {
+    function addColorboxJS() {
+        if($this->colorboxSettings['debugMode']) {
+            $jqueryColorboxJavaScriptPath = "js/jquery.colorbox.js";
+        }
+        else {
+            $jqueryColorboxJavaScriptPath = "js/jquery.colorbox-min.js";
+        }
+        wp_enqueue_script('colorbox', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxJavaScriptPath, array('jquery'), COLORBOXLIBRARY_VERSION, $this->colorboxSettings['javascriptInFooter']);
+    }
+
+    // addColorboxJS()
 }
 
 // class JQueryColorboxFrontend()

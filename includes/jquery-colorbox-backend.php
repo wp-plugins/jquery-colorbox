@@ -38,10 +38,6 @@ class JQueryColorboxBackend {
         // add options page
         add_action('admin_menu', array(& $this, 'registerAdminMenu'));
         add_action('admin_notices', array(& $this, 'registerAdminWarning'));
-        //register method for uninstall
-        if (function_exists('register_uninstall_hook')) {
-            register_uninstall_hook(__FILE__, array('JQueryColorbox', 'deleteSettingsFromDatabase'));
-        }
 
         //add style selector dropdown to TinyMCE
         add_filter('mce_buttons_2', array(& $this, 'addStyleSelectorBox'), 100);
@@ -257,31 +253,6 @@ class JQueryColorboxBackend {
     }
 
     // deleteSettings()
-
-    /**
-     * executed during activation.
-     *
-     * @since 2.0
-     * @access public
-     * @author Arne Franken
-     */
-    //public function activateJqueryColorbox() {
-    function activateJqueryColorbox() {
-        $jquery_colorbox_settings = get_option(JQUERYCOLORBOX_SETTINGSNAME);
-        if ($jquery_colorbox_settings) {
-            //if jQueryColorboxVersion does not exist, the plugin is a version prior to 2.0
-            //settings are incompatible with 2.0, restore default settings.
-            if (!array_key_exists('jQueryColorboxVersion', $jquery_colorbox_settings)) {
-                if (!array_key_exists('scalePhotos', $jquery_colorbox_settings)) {
-                    //in case future versions require resetting the settings
-                    //if($jquery_colorbox_settings['jQueryColorboxVersion'] < JQUERYCOLORBOX_VERSION)
-                    update_option(JQUERYCOLORBOX_SETTINGSNAME, $this->colorboxDefaultSettings);
-                }
-            }
-        }
-    }
-
-    // activateJqueryColorbox()
 
     /**
      * Read HTML from a remote url

@@ -120,7 +120,6 @@ class JQueryColorbox {
             'none' => __('none', JQUERYCOLORBOX_TEXTDOMAIN)
         );
 
-
         if (is_admin()) {
             require_once 'includes/jquery-colorbox-backend.php';
             new JQueryColorboxBackend($this->colorboxSettings, $this->colorboxThemes, $this->colorboxUnits, $this->colorboxTransitions, $this->jQueryColorboxDefaultSettings());
@@ -128,7 +127,11 @@ class JQueryColorbox {
             require_once 'includes/jquery-colorbox-frontend.php';
             new JQueryColorboxFrontend($this->colorboxSettings);
         }
-        
+
+        //register method for uninstall
+        if (function_exists('register_uninstall_hook')) {
+            register_uninstall_hook(__FILE__, array('JQueryColorbox', 'uninstallJqueryColorbox'));
+        }
     }
 
     // JQueryColorbox()
@@ -196,6 +199,44 @@ class JQueryColorbox {
 
     // jQueryColorboxDefaultSettings()
 
+    /**
+     * executed during activation.
+     *
+     * @since 2.0
+     * @access public
+     * @author Arne Franken
+     */
+    //public function activateJqueryColorbox() {
+    function activateJqueryColorbox() {
+        $jquery_colorbox_settings = get_option(JQUERYCOLORBOX_SETTINGSNAME);
+        if ($jquery_colorbox_settings) {
+            //if jQueryColorboxVersion does not exist, the plugin is a version prior to 2.0
+            //settings are incompatible with 2.0, restore default settings.
+            if (!array_key_exists('jQueryColorboxVersion', $jquery_colorbox_settings)) {
+                if (!array_key_exists('scalePhotos', $jquery_colorbox_settings)) {
+                    //in case future versions require resetting the settings
+                    //if($jquery_colorbox_settings['jQueryColorboxVersion'] < JQUERYCOLORBOX_VERSION)
+                    update_option(JQUERYCOLORBOX_SETTINGSNAME, $this->colorboxDefaultSettings);
+                }
+            }
+        }
+    }
+
+    // activateJqueryColorbox()
+
+    /**
+     * Delete jQuery Colorbox settings
+     *
+     * handles deletion from WordPress database
+     *
+     * @since 4.1
+     * @access private
+     * @author Arne Franken
+     */
+    //private function uninstallJqueryColorbox() {
+    function uninstallJqueryColorbox() {
+        delete_option(JQUERYCOLORBOX_SETTINGSNAME);
+    }
 
     /**
      *
