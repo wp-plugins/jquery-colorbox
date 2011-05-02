@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-29 23:42+0100\n"
-"PO-Revision-Date: 2011-04-29 23:42+0100\n"
+"POT-Creation-Date: 2011-05-02 20:20+0100\n"
+"PO-Revision-Date: 2011-05-02 20:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: Techotronic <blog@techotronic.de>\n"
 "MIME-Version: 1.0\n"
@@ -97,61 +97,61 @@ msgstr "wyciemniane"
 msgid "none"
 msgstr "brak"
 
-#: includes/colorbox-javascript-loader.php:48
-msgid "close"
-msgstr "zamknij"
-
-#: includes/colorbox-javascript-loader.php:49
-msgid "next"
-msgstr "następne"
-
-#: includes/colorbox-javascript-loader.php:50
-msgid "previous"
-msgstr "poprzednie"
-
-#: includes/colorbox-javascript-loader.php:51
-msgid "start slideshow"
-msgstr "zacznij pokaz slajdów"
-
-#: includes/colorbox-javascript-loader.php:52
-msgid "stop slideshow"
-msgstr "zatrzymaj pokaz slajdów"
-
-#: includes/colorbox-javascript-loader.php:53
-msgid "{current} of {total} images"
-msgstr "{current} z {total} obrazów"
-
-#: includes/jquery-colorbox-backend.php:83
+#: includes/jquery-colorbox-backend.php:79
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "Pomyślnie zaktualizowano ustawienia %1$s"
 
-#: includes/jquery-colorbox-backend.php:85
+#: includes/jquery-colorbox-backend.php:81
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "Ustawienia %1$s zostały usunięte."
 
-#: includes/jquery-colorbox-backend.php:128
+#: includes/jquery-colorbox-backend.php:124
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "wymaga uwagi: plugin nie jest ustawiony, by działał ze wszystkimi obrazami."
 
-#: includes/jquery-colorbox-backend.php:165
+#: includes/jquery-colorbox-backend.php:161
 #: includes/settings-page.php:127
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: includes/jquery-colorbox-backend.php:187
+#: includes/jquery-colorbox-backend.php:183
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "Nie zaktualizowano ustawienia, brak odpowiednich uprawnień."
 
-#: includes/jquery-colorbox-backend.php:236
+#: includes/jquery-colorbox-backend.php:232
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "Nie usunięto ustawień %1$s. Albo nie masz odpowiednych praw albo nie zaznaczono checkboksa."
 
-#: includes/jquery-colorbox-frontend.php:104
+#: includes/jquery-colorbox-frontend.php:86
 msgid "Using"
 msgstr "Używa"
+
+#: includes/jquery-colorbox-frontend.php:191
+msgid "close"
+msgstr "zamknij"
+
+#: includes/jquery-colorbox-frontend.php:192
+msgid "next"
+msgstr "następne"
+
+#: includes/jquery-colorbox-frontend.php:193
+msgid "previous"
+msgstr "poprzednie"
+
+#: includes/jquery-colorbox-frontend.php:194
+msgid "start slideshow"
+msgstr "zacznij pokaz slajdów"
+
+#: includes/jquery-colorbox-frontend.php:195
+msgid "stop slideshow"
+msgstr "zatrzymaj pokaz slajdów"
+
+#: includes/jquery-colorbox-frontend.php:196
+msgid "{current} of {total} images"
+msgstr "{current} z {total} obrazów"
 
 #: includes/settings-page.php:117
 #, php-format

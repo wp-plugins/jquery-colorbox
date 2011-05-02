@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox 3.8.3 Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-16 21:46+0100\n"
-"PO-Revision-Date: 2011-04-16 21:46+0100\n"
+"POT-Creation-Date: 2011-05-02 20:18+0100\n"
+"PO-Revision-Date: 2011-05-02 20:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: Mickey Mouse <modarsoos@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,141 +15,141 @@ msgstr ""
 "X-Poedit-Country: SYRIAN ARAB REPUBLIC\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:122
+#: jquery-colorbox.php:88
 msgid "Theme #1"
 msgstr "القالب الأول"
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:89
 msgid "Theme #2"
 msgstr "القالب الثاني"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:90
 msgid "Theme #3"
 msgstr "القالب الثالث"
 
-#: jquery-colorbox.php:125
+#: jquery-colorbox.php:91
 msgid "Theme #4"
 msgstr "القالب الرابع"
 
-#: jquery-colorbox.php:126
+#: jquery-colorbox.php:92
 msgid "Theme #5"
 msgstr "القالب الخامس"
 
-#: jquery-colorbox.php:127
+#: jquery-colorbox.php:93
 msgid "Theme #6"
 msgstr "القالب السادس"
 
-#: jquery-colorbox.php:128
+#: jquery-colorbox.php:94
 msgid "Theme #7"
 msgstr "القالب السابع"
 
-#: jquery-colorbox.php:129
+#: jquery-colorbox.php:95
 msgid "Theme #8"
 msgstr "القالب الثامن"
 
-#: jquery-colorbox.php:130
+#: jquery-colorbox.php:96
 msgid "Theme #9"
 msgstr "القالب التاسع"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:97
 msgid "Theme #10"
 msgstr "القالب العاشر"
 
-#: jquery-colorbox.php:132
+#: jquery-colorbox.php:98
 msgid "Theme #11"
 msgstr "القالب الحادي عشر"
 
-#: jquery-colorbox.php:138
+#: jquery-colorbox.php:104
 msgid "Theme #12"
 msgstr "القالب الثاني عشر"
 
-#: jquery-colorbox.php:139
+#: jquery-colorbox.php:105
 msgid "Theme #13"
 msgstr "القالب الثالث عشر"
 
-#: jquery-colorbox.php:140
+#: jquery-colorbox.php:106
 msgid "Theme #14"
 msgstr "القالب الرابع عشر"
 
-#: jquery-colorbox.php:141
+#: jquery-colorbox.php:107
 msgid "Theme #15"
 msgstr "القالب الخامس عشر"
 
-#: jquery-colorbox.php:146
+#: jquery-colorbox.php:112
 msgid "percent"
 msgstr "بالمئة"
 
-#: jquery-colorbox.php:147
+#: jquery-colorbox.php:113
 #: includes/settings-page.php:434
 #: includes/settings-page.php:443
 msgid "pixels"
 msgstr "بيكسل"
 
-#: jquery-colorbox.php:152
+#: jquery-colorbox.php:118
 msgid "elastic"
 msgstr "تمدد"
 
-#: jquery-colorbox.php:153
+#: jquery-colorbox.php:119
 msgid "fade"
 msgstr "تضاءل"
 
-#: jquery-colorbox.php:154
+#: jquery-colorbox.php:120
 msgid "none"
 msgstr "بدون تأثير"
 
-#: jquery-colorbox.php:206
-msgid "Using"
-msgstr "أستخدم معرض صور"
-
-#: jquery-colorbox.php:307
-#: includes/settings-page.php:127
-msgid "Settings"
-msgstr "إعدادات"
-
-#: jquery-colorbox.php:372
+#: includes/jquery-colorbox-backend.php:79
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "تم تحديث إعدادات برنامج %1$s بنجاح."
 
-#: jquery-colorbox.php:374
+#: includes/jquery-colorbox-backend.php:81
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "%1$s تم حذف الإعدادات بنجاح."
 
-#: jquery-colorbox.php:419
+#: includes/jquery-colorbox-backend.php:124
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "تنبيه: لم يتم تنشيط برنامج صندوق عرض الشرائح ليعمل على جميع الصور."
 
-#: jquery-colorbox.php:501
+#: includes/jquery-colorbox-backend.php:161
+#: includes/settings-page.php:127
+msgid "Settings"
+msgstr "إعدادات"
+
+#: includes/jquery-colorbox-backend.php:183
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "لم يتم تحديث الإعدادات، ليس لديك الصلاحيات الكافية."
 
-#: jquery-colorbox.php:550
+#: includes/jquery-colorbox-backend.php:232
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "لم يتم حذف إعدادات %1$s  أو ليس لديك الصلاحيات الكافية أو بأنك لم تقم بتحديد العلامة داخل المربع الصغير قبل الضغط على زر حذف الإعدادات."
 
-#: includes/colorbox-javascript-loader.php:48
+#: includes/jquery-colorbox-frontend.php:86
+msgid "Using"
+msgstr "أستخدم معرض صور"
+
+#: includes/jquery-colorbox-frontend.php:191
 msgid "close"
 msgstr "إغلاق"
 
-#: includes/colorbox-javascript-loader.php:49
+#: includes/jquery-colorbox-frontend.php:192
 msgid "next"
 msgstr "التالي"
 
-#: includes/colorbox-javascript-loader.php:50
+#: includes/jquery-colorbox-frontend.php:193
 msgid "previous"
 msgstr "السابق"
 
-#: includes/colorbox-javascript-loader.php:51
+#: includes/jquery-colorbox-frontend.php:194
 msgid "start slideshow"
 msgstr "بدء عرض الشرائح"
 
-#: includes/colorbox-javascript-loader.php:52
+#: includes/jquery-colorbox-frontend.php:195
 msgid "stop slideshow"
 msgstr "إيقاف عرض الشرائح"
 
-#: includes/colorbox-javascript-loader.php:53
+#: includes/jquery-colorbox-frontend.php:196
 msgid "{current} of {total} images"
 msgstr "{current} من {total} إجمالي الصور"
 
@@ -164,22 +164,12 @@ msgstr "إعدادات الإضافة"
 
 #: includes/settings-page.php:135
 #, php-format
-msgid "Automate %1$s for all images"
-msgstr "شغل برنامج %1$s لجميع الصور تلقائياً"
-
-#: includes/settings-page.php:135
-#, php-format
 msgid "Automate %1$s for all images in pages, posts and galleries"
 msgstr "أتمتة %1$s لجميع الصور في الصفحات، المواضيع، ومعرض صور الموقع"
 
 #: includes/settings-page.php:139
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
 msgstr "أضف صندوق عرض الشرائح بشكل تلقائي لعرض الصور في المواضيع والصفحات. سيقوم البرنامج بدمج جميع الصور في الموضوع تلقائياً."
-
-#: includes/settings-page.php:144
-#, php-format
-msgid "Automate %1$s for images in WordPress galleries"
-msgstr "أتمتة %1$s للصور في معرض صور الموقع"
 
 #: includes/settings-page.php:144
 #, php-format
@@ -524,6 +514,12 @@ msgstr "معلومات عن الترجمة"
 #: includes/settings-page.php:613
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
 msgstr "تمت الترجمة للغة العربية بواسطة: <a href=\"http://www.photokeens.com\">مضر صوص</a>."
+
+#~ msgid "Automate %1$s for all images"
+#~ msgstr "شغل برنامج %1$s لجميع الصور تلقائياً"
+
+#~ msgid "Automate %1$s for images in WordPress galleries"
+#~ msgstr "أتمتة %1$s للصور في معرض صور الموقع"
 
 #~ msgid "does not work with PHP 4. Please update or uninstall the plugin."
 #~ msgstr "لا يعمل مع PHP 4. يرجى تحديث الإضافة أو حذفها."

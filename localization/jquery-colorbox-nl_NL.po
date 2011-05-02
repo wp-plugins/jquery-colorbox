@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-16 21:52+0100\n"
-"PO-Revision-Date: 2011-04-16 21:52+0100\n"
+"POT-Creation-Date: 2011-05-02 20:19+0100\n"
+"PO-Revision-Date: 2011-05-02 20:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: Techotronic <blog@techotronic.de>\n"
 "MIME-Version: 1.0\n"
@@ -15,141 +15,141 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:122
+#: jquery-colorbox.php:88
 msgid "Theme #1"
 msgstr "Thema #1"
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:89
 msgid "Theme #2"
 msgstr "Thema #2"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:90
 msgid "Theme #3"
 msgstr "Thema #3"
 
-#: jquery-colorbox.php:125
+#: jquery-colorbox.php:91
 msgid "Theme #4"
 msgstr "Thema #4"
 
-#: jquery-colorbox.php:126
+#: jquery-colorbox.php:92
 msgid "Theme #5"
 msgstr "Thema #5"
 
-#: jquery-colorbox.php:127
+#: jquery-colorbox.php:93
 msgid "Theme #6"
 msgstr "Thema #6"
 
-#: jquery-colorbox.php:128
+#: jquery-colorbox.php:94
 msgid "Theme #7"
 msgstr "Thema #7"
 
-#: jquery-colorbox.php:129
+#: jquery-colorbox.php:95
 msgid "Theme #8"
 msgstr "Thema #8"
 
-#: jquery-colorbox.php:130
+#: jquery-colorbox.php:96
 msgid "Theme #9"
 msgstr "Thema #9"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:97
 msgid "Theme #10"
 msgstr "Thema #10"
 
-#: jquery-colorbox.php:132
+#: jquery-colorbox.php:98
 msgid "Theme #11"
 msgstr "Thema #11"
 
-#: jquery-colorbox.php:138
+#: jquery-colorbox.php:104
 msgid "Theme #12"
 msgstr "Thema #12"
 
-#: jquery-colorbox.php:139
+#: jquery-colorbox.php:105
 msgid "Theme #13"
 msgstr "Thema #13"
 
-#: jquery-colorbox.php:140
+#: jquery-colorbox.php:106
 msgid "Theme #14"
 msgstr "Thema #14"
 
-#: jquery-colorbox.php:141
+#: jquery-colorbox.php:107
 msgid "Theme #15"
 msgstr "Thema #15"
 
-#: jquery-colorbox.php:146
+#: jquery-colorbox.php:112
 msgid "percent"
 msgstr "procent"
 
-#: jquery-colorbox.php:147
+#: jquery-colorbox.php:113
 #: includes/settings-page.php:434
 #: includes/settings-page.php:443
 msgid "pixels"
 msgstr "pixels"
 
-#: jquery-colorbox.php:152
+#: jquery-colorbox.php:118
 msgid "elastic"
 msgstr "elastisch"
 
-#: jquery-colorbox.php:153
+#: jquery-colorbox.php:119
 msgid "fade"
 msgstr "vervagen"
 
-#: jquery-colorbox.php:154
+#: jquery-colorbox.php:120
 msgid "none"
 msgstr "geen"
 
-#: jquery-colorbox.php:206
-msgid "Using"
-msgstr ""
-
-#: jquery-colorbox.php:307
-#: includes/settings-page.php:127
-msgid "Settings"
-msgstr "Instellingen"
-
-#: jquery-colorbox.php:372
+#: includes/jquery-colorbox-backend.php:79
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "Succesvol %1$s instellingen geupdate."
 
-#: jquery-colorbox.php:374
+#: includes/jquery-colorbox-backend.php:81
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "%1$s instellingen zijn succesvol verwijderd."
 
-#: jquery-colorbox.php:419
+#: includes/jquery-colorbox-backend.php:124
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "aandacht vereist: de plugin is niet geactiveerd om alle afbeeldingen te tonen."
 
-#: jquery-colorbox.php:501
+#: includes/jquery-colorbox-backend.php:161
+#: includes/settings-page.php:127
+msgid "Settings"
+msgstr "Instellingen"
+
+#: includes/jquery-colorbox-backend.php:183
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "Er zijn geen instellingen geupdate, u bezit de benodigde rechten niet."
 
-#: jquery-colorbox.php:550
+#: includes/jquery-colorbox-backend.php:232
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "%1$s instellingen zijn niet verwijderd. U bezit de benodigde rechten niet of de checkbox was niet aangevinkt."
 
-#: includes/colorbox-javascript-loader.php:48
+#: includes/jquery-colorbox-frontend.php:86
+msgid "Using"
+msgstr ""
+
+#: includes/jquery-colorbox-frontend.php:191
 msgid "close"
 msgstr "sluiten"
 
-#: includes/colorbox-javascript-loader.php:49
+#: includes/jquery-colorbox-frontend.php:192
 msgid "next"
 msgstr "volgende"
 
-#: includes/colorbox-javascript-loader.php:50
+#: includes/jquery-colorbox-frontend.php:193
 msgid "previous"
 msgstr "vorige"
 
-#: includes/colorbox-javascript-loader.php:51
+#: includes/jquery-colorbox-frontend.php:194
 msgid "start slideshow"
 msgstr "start slideshow"
 
-#: includes/colorbox-javascript-loader.php:52
+#: includes/jquery-colorbox-frontend.php:195
 msgid "stop slideshow"
 msgstr "stop slideshow"
 
-#: includes/colorbox-javascript-loader.php:53
+#: includes/jquery-colorbox-frontend.php:196
 msgid "{current} of {total} images"
 msgstr "{current} / {total}"
 
@@ -164,11 +164,6 @@ msgid "Plugin settings"
 msgstr "Instellingen"
 
 #: includes/settings-page.php:135
-#, php-format
-msgid "Automate %1$s for all images"
-msgstr "Automatiseer %1$s voor alle afbeeldingen"
-
-#: includes/settings-page.php:135
 #, fuzzy, php-format
 msgid "Automate %1$s for all images in pages, posts and galleries"
 msgstr "Automatiseer %1$s voor afbeeldingen in Wordpress galerijen"
@@ -176,11 +171,6 @@ msgstr "Automatiseer %1$s voor afbeeldingen in Wordpress galerijen"
 #: includes/settings-page.php:139
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
 msgstr "Voeg automatisch de colorbox-class toe aan afbeeldingen in posts en pagina's. Voeg de colorbox-class ook toe aan galerijen. Afbeeldingen op een pagina of post worden automatisch gegroepeerd."
-
-#: includes/settings-page.php:144
-#, php-format
-msgid "Automate %1$s for images in WordPress galleries"
-msgstr "Automatiseer %1$s voor afbeeldingen in Wordpress galerijen"
 
 #: includes/settings-page.php:144
 #, fuzzy, php-format
@@ -528,6 +518,12 @@ msgstr "Vertaling"
 #: includes/settings-page.php:613
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
 msgstr "De Nederlandse vertaling is gedaan door <a href=\"http://nl.linkedin.com/pub/richard-laak/b/b21/672\">Richard van Laak</a>."
+
+#~ msgid "Automate %1$s for all images"
+#~ msgstr "Automatiseer %1$s voor alle afbeeldingen"
+
+#~ msgid "Automate %1$s for images in WordPress galleries"
+#~ msgstr "Automatiseer %1$s voor afbeeldingen in Wordpress galerijen"
 
 #~ msgid "maxWidth"
 #~ msgstr "Maximum width of an image"

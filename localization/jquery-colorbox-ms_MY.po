@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox 3.3 Malay (Bahasa/Melayu)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-16 21:52+0100\n"
-"PO-Revision-Date: 2011-04-16 21:52+0100\n"
+"POT-Creation-Date: 2011-05-02 20:19+0100\n"
+"PO-Revision-Date: 2011-05-02 20:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: ini;sahaini <sahaini@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,141 +15,141 @@ msgstr ""
 "X-Poedit-Country: MALAYSIA\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:122
+#: jquery-colorbox.php:88
 msgid "Theme #1"
 msgstr "Tema #1"
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:89
 msgid "Theme #2"
 msgstr "Tema #2"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:90
 msgid "Theme #3"
 msgstr "Tema #3"
 
-#: jquery-colorbox.php:125
+#: jquery-colorbox.php:91
 msgid "Theme #4"
 msgstr "Tema #4"
 
-#: jquery-colorbox.php:126
+#: jquery-colorbox.php:92
 msgid "Theme #5"
 msgstr "Tema #5"
 
-#: jquery-colorbox.php:127
+#: jquery-colorbox.php:93
 msgid "Theme #6"
 msgstr "Tema #6"
 
-#: jquery-colorbox.php:128
+#: jquery-colorbox.php:94
 msgid "Theme #7"
 msgstr "Tema #7"
 
-#: jquery-colorbox.php:129
+#: jquery-colorbox.php:95
 msgid "Theme #8"
 msgstr "Tema #8"
 
-#: jquery-colorbox.php:130
+#: jquery-colorbox.php:96
 msgid "Theme #9"
 msgstr "Tema #9"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:97
 msgid "Theme #10"
 msgstr "Tema #10"
 
-#: jquery-colorbox.php:132
+#: jquery-colorbox.php:98
 msgid "Theme #11"
 msgstr "Tema #11"
 
-#: jquery-colorbox.php:138
+#: jquery-colorbox.php:104
 msgid "Theme #12"
 msgstr "Tema #12"
 
-#: jquery-colorbox.php:139
+#: jquery-colorbox.php:105
 msgid "Theme #13"
 msgstr "Tema #13"
 
-#: jquery-colorbox.php:140
+#: jquery-colorbox.php:106
 msgid "Theme #14"
 msgstr "Tema #14"
 
-#: jquery-colorbox.php:141
+#: jquery-colorbox.php:107
 msgid "Theme #15"
 msgstr "Tema #15"
 
-#: jquery-colorbox.php:146
+#: jquery-colorbox.php:112
 msgid "percent"
 msgstr "peratus"
 
-#: jquery-colorbox.php:147
+#: jquery-colorbox.php:113
 #: includes/settings-page.php:434
 #: includes/settings-page.php:443
 msgid "pixels"
 msgstr "piksel"
 
-#: jquery-colorbox.php:152
+#: jquery-colorbox.php:118
 msgid "elastic"
 msgstr "anjal"
 
-#: jquery-colorbox.php:153
+#: jquery-colorbox.php:119
 msgid "fade"
 msgstr "pudar"
 
-#: jquery-colorbox.php:154
+#: jquery-colorbox.php:120
 msgid "none"
 msgstr "tiada"
 
-#: jquery-colorbox.php:206
-msgid "Using"
-msgstr "Menggunakan"
-
-#: jquery-colorbox.php:307
-#: includes/settings-page.php:127
-msgid "Settings"
-msgstr "Tetapan"
-
-#: jquery-colorbox.php:372
+#: includes/jquery-colorbox-backend.php:79
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "Tetapan %1$s telah berjaya dikemaskinikan"
 
-#: jquery-colorbox.php:374
+#: includes/jquery-colorbox-backend.php:81
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "Tetapan %1$s telah berjaya dibubarkan"
 
-#: jquery-colorbox.php:419
+#: includes/jquery-colorbox-backend.php:124
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "perhatian diperlukan: palam (plugin) tidak diaktifkan untuk semua imej"
 
-#: jquery-colorbox.php:501
+#: includes/jquery-colorbox-backend.php:161
+#: includes/settings-page.php:127
+msgid "Settings"
+msgstr "Tetapan"
+
+#: includes/jquery-colorbox-backend.php:183
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "Tetapan tidak dikemaskini, anda tidak mempunyai kebenaran yang diperlukan"
 
-#: jquery-colorbox.php:550
+#: includes/jquery-colorbox-backend.php:232
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "Tetapan %1$s tidak dibubarkan. Sama ada anda tidak mempunyai kebenaran yang diperlukan atau anda tidak menanda pada kotak pilihan"
 
-#: includes/colorbox-javascript-loader.php:48
+#: includes/jquery-colorbox-frontend.php:86
+msgid "Using"
+msgstr "Menggunakan"
+
+#: includes/jquery-colorbox-frontend.php:191
 msgid "close"
 msgstr "tutup"
 
-#: includes/colorbox-javascript-loader.php:49
+#: includes/jquery-colorbox-frontend.php:192
 msgid "next"
 msgstr "selepasnya"
 
-#: includes/colorbox-javascript-loader.php:50
+#: includes/jquery-colorbox-frontend.php:193
 msgid "previous"
 msgstr "sebelumnya"
 
-#: includes/colorbox-javascript-loader.php:51
+#: includes/jquery-colorbox-frontend.php:194
 msgid "start slideshow"
 msgstr "mula persembahan-slaid"
 
-#: includes/colorbox-javascript-loader.php:52
+#: includes/jquery-colorbox-frontend.php:195
 msgid "stop slideshow"
 msgstr "henti persembahan-slaid"
 
-#: includes/colorbox-javascript-loader.php:53
+#: includes/jquery-colorbox-frontend.php:196
 msgid "{current} of {total} images"
 msgstr "{current} daripada {total} imej"
 
@@ -164,11 +164,6 @@ msgid "Plugin settings"
 msgstr "Tetapan"
 
 #: includes/settings-page.php:135
-#, php-format
-msgid "Automate %1$s for all images"
-msgstr "Auto-jana %1$s untuk semua imej"
-
-#: includes/settings-page.php:135
 #, fuzzy, php-format
 msgid "Automate %1$s for all images in pages, posts and galleries"
 msgstr "Auto-jana %1$s untuk semua imej di dalam galeri Wordpress"
@@ -176,11 +171,6 @@ msgstr "Auto-jana %1$s untuk semua imej di dalam galeri Wordpress"
 #: includes/settings-page.php:139
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
 msgstr "Menjana secara auto penambahan Colorbox-class untuk setiap imej-imej di dalam setiap kiriman (posts) dan laman (pages). Imej di dalam laman atau kiriman dikumpulkan secara auto."
-
-#: includes/settings-page.php:144
-#, php-format
-msgid "Automate %1$s for images in WordPress galleries"
-msgstr "Auto-jana %1$s untuk semua imej di dalam galeri Wordpress"
 
 #: includes/settings-page.php:144
 #, fuzzy, php-format
@@ -528,6 +518,12 @@ msgstr "Alihbahasa"
 #: includes/settings-page.php:613
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
 msgstr "Alihbahasa melayu telah disiapkan oleh <a href=\"http://www.inisahaini.com\">Saha-ini Ahmad Safian</a>."
+
+#~ msgid "Automate %1$s for all images"
+#~ msgstr "Auto-jana %1$s untuk semua imej"
+
+#~ msgid "Automate %1$s for images in WordPress galleries"
+#~ msgstr "Auto-jana %1$s untuk semua imej di dalam galeri Wordpress"
 
 #~ msgid "maxWidth"
 #~ msgstr "Maximum width of an image"

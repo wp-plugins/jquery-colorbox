@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-16 21:51+0100\n"
-"PO-Revision-Date: 2011-04-16 21:51+0100\n"
+"POT-Creation-Date: 2011-05-02 20:19+0100\n"
+"PO-Revision-Date: 2011-05-02 20:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: Techotronic <blog@techotronic.de>\n"
 "MIME-Version: 1.0\n"
@@ -15,141 +15,141 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: jquery-colorbox.php:122
+#: jquery-colorbox.php:88
 msgid "Theme #1"
 msgstr "Tema #1"
 
-#: jquery-colorbox.php:123
+#: jquery-colorbox.php:89
 msgid "Theme #2"
 msgstr "Tema #2"
 
-#: jquery-colorbox.php:124
+#: jquery-colorbox.php:90
 msgid "Theme #3"
 msgstr "Tema #3"
 
-#: jquery-colorbox.php:125
+#: jquery-colorbox.php:91
 msgid "Theme #4"
 msgstr "Tema #4"
 
-#: jquery-colorbox.php:126
+#: jquery-colorbox.php:92
 msgid "Theme #5"
 msgstr "Tema #5"
 
-#: jquery-colorbox.php:127
+#: jquery-colorbox.php:93
 msgid "Theme #6"
 msgstr "Tema #6"
 
-#: jquery-colorbox.php:128
+#: jquery-colorbox.php:94
 msgid "Theme #7"
 msgstr "Tema #7"
 
-#: jquery-colorbox.php:129
+#: jquery-colorbox.php:95
 msgid "Theme #8"
 msgstr "Tema #8"
 
-#: jquery-colorbox.php:130
+#: jquery-colorbox.php:96
 msgid "Theme #9"
 msgstr "Tema #9"
 
-#: jquery-colorbox.php:131
+#: jquery-colorbox.php:97
 msgid "Theme #10"
 msgstr "Tema #10"
 
-#: jquery-colorbox.php:132
+#: jquery-colorbox.php:98
 msgid "Theme #11"
 msgstr "Tema #11"
 
-#: jquery-colorbox.php:138
+#: jquery-colorbox.php:104
 msgid "Theme #12"
 msgstr "Tema #12"
 
-#: jquery-colorbox.php:139
+#: jquery-colorbox.php:105
 msgid "Theme #13"
 msgstr "Tema #13"
 
-#: jquery-colorbox.php:140
+#: jquery-colorbox.php:106
 msgid "Theme #14"
 msgstr "Tema #14"
 
-#: jquery-colorbox.php:141
+#: jquery-colorbox.php:107
 msgid "Theme #15"
 msgstr "Tema #15"
 
-#: jquery-colorbox.php:146
+#: jquery-colorbox.php:112
 msgid "percent"
 msgstr "porcentaje"
 
-#: jquery-colorbox.php:147
+#: jquery-colorbox.php:113
 #: includes/settings-page.php:434
 #: includes/settings-page.php:443
 msgid "pixels"
 msgstr "píxeles"
 
-#: jquery-colorbox.php:152
+#: jquery-colorbox.php:118
 msgid "elastic"
 msgstr "elastico"
 
-#: jquery-colorbox.php:153
+#: jquery-colorbox.php:119
 msgid "fade"
 msgstr "fundido"
 
-#: jquery-colorbox.php:154
+#: jquery-colorbox.php:120
 msgid "none"
 msgstr "ninguno"
 
-#: jquery-colorbox.php:206
-msgid "Using"
-msgstr "Utilizando"
-
-#: jquery-colorbox.php:307
-#: includes/settings-page.php:127
-msgid "Settings"
-msgstr "Opciones"
-
-#: jquery-colorbox.php:372
+#: includes/jquery-colorbox-backend.php:79
 #, php-format
 msgid "Successfully updated %1$s settings."
 msgstr "Actualizadas %1$s opciones."
 
-#: jquery-colorbox.php:374
+#: includes/jquery-colorbox-backend.php:81
 #, php-format
 msgid "%1$s settings were successfully deleted."
 msgstr "Han sido eliminadas %1$s opciones."
 
-#: jquery-colorbox.php:419
+#: includes/jquery-colorbox-backend.php:124
 msgid "needs attention: the plugin is not activated to work for all images."
 msgstr "atención: el plugin no se ha activado para funcionar con todas las imágenes."
 
-#: jquery-colorbox.php:501
+#: includes/jquery-colorbox-backend.php:161
+#: includes/settings-page.php:127
+msgid "Settings"
+msgstr "Opciones"
+
+#: includes/jquery-colorbox-backend.php:183
 msgid "Did not update settings, you do not have the necessary rights."
 msgstr "No se han actualizado las opciones, no tienes los permisos necesarios."
 
-#: jquery-colorbox.php:550
+#: includes/jquery-colorbox-backend.php:232
 #, php-format
 msgid "Did not delete %1$s settings. Either you dont have the nececssary rights or you didnt check the checkbox."
 msgstr "No se han eliminado %1$s opciones. O bien no tiene los permisos necesarios o aún no ha marcado la casilla."
 
-#: includes/colorbox-javascript-loader.php:48
+#: includes/jquery-colorbox-frontend.php:86
+msgid "Using"
+msgstr "Utilizando"
+
+#: includes/jquery-colorbox-frontend.php:191
 msgid "close"
 msgstr "cerrar"
 
-#: includes/colorbox-javascript-loader.php:49
+#: includes/jquery-colorbox-frontend.php:192
 msgid "next"
 msgstr "siguiente"
 
-#: includes/colorbox-javascript-loader.php:50
+#: includes/jquery-colorbox-frontend.php:193
 msgid "previous"
 msgstr "anterior"
 
-#: includes/colorbox-javascript-loader.php:51
+#: includes/jquery-colorbox-frontend.php:194
 msgid "start slideshow"
 msgstr "comenzar slideshow"
 
-#: includes/colorbox-javascript-loader.php:52
+#: includes/jquery-colorbox-frontend.php:195
 msgid "stop slideshow"
 msgstr "parar slideshow"
 
-#: includes/colorbox-javascript-loader.php:53
+#: includes/jquery-colorbox-frontend.php:196
 msgid "{current} of {total} images"
 msgstr "{current} de {total} imágenes"
 
@@ -164,22 +164,12 @@ msgstr "Opciones del plugin"
 
 #: includes/settings-page.php:135
 #, php-format
-msgid "Automate %1$s for all images"
-msgstr "Automatizar %1$s para todas las imágenes"
-
-#: includes/settings-page.php:135
-#, php-format
 msgid "Automate %1$s for all images in pages, posts and galleries"
 msgstr "Automatizar %1$s para todas las imágenes en páginas, entradas y galerías"
 
 #: includes/settings-page.php:139
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
 msgstr "Añadir automáticamente colorbox-class a todas las imágenes en entradas y páginas. Añade también colorbox-class a las galerías. Las imágenes de una página o entrada son agrupadas automáticamente."
-
-#: includes/settings-page.php:144
-#, php-format
-msgid "Automate %1$s for images in WordPress galleries"
-msgstr "Automatizar %1$s para las imágenes en las galerías WordPress"
 
 #: includes/settings-page.php:144
 #, php-format
@@ -524,6 +514,12 @@ msgstr "Traducción"
 #: includes/settings-page.php:613
 msgid "The english translation was done by <a href=\"http://www.techotronic.de\">Arne Franken</a>."
 msgstr "La traducción al español ha sido realizada por <a href=\"http://www.redywebs.com\">Inma Zubizarreta</a>."
+
+#~ msgid "Automate %1$s for all images"
+#~ msgstr "Automatizar %1$s para todas las imágenes"
+
+#~ msgid "Automate %1$s for images in WordPress galleries"
+#~ msgstr "Automatizar %1$s para las imágenes en las galerías WordPress"
 
 #~ msgid "does not work with PHP 4. Please update or uninstall the plugin."
 #~ msgstr "no funciona con PHP4. Actualice por favor o desinstale el plugin."
