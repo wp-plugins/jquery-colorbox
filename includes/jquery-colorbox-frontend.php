@@ -47,6 +47,7 @@ class JQueryColorboxFrontend {
         wp_enqueue_script('jquery');
         wp_register_style('colorbox-' . $this->colorboxSettings['colorboxTheme'],  JQUERYCOLORBOX_PLUGIN_URL . '/' . 'themes/' . $this->colorboxSettings['colorboxTheme'] . '/colorbox.css', array(), JQUERYCOLORBOX_VERSION, 'screen');
         wp_enqueue_style('colorbox-' . $this->colorboxSettings['colorboxTheme']);
+        
         $this->addColorboxJS();
         $this->addColorboxWrapperJS();
         $this->addAutoColorboxJS();
@@ -66,9 +67,7 @@ class JQueryColorboxFrontend {
     //public function renderMetaTag() {
     function renderMetaTag() {
 ?>
-
 <meta name="<?php echo JQUERYCOLORBOX_NAME ?>" content="<?php echo JQUERYCOLORBOX_VERSION ?>" />
-
 <?php }
 
     // renderMetaTag()
@@ -209,7 +208,7 @@ class JQueryColorboxFrontend {
         wp_localize_script( 'colorbox', 'Colorbox', $colorboxPropertyArray );
     }
 
-    //addColorboxProperties()
+    // addColorboxProperties()
 
     /**
      * Insert JavaScript into WP Header

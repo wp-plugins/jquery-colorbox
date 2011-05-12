@@ -72,8 +72,6 @@ class JQueryColorboxBackend {
         $return_message = '';
 
         if (function_exists('add_management_page') && current_user_can('manage_options')) {
-
-
             // update, uninstall message
             if (strpos($_SERVER['REQUEST_URI'], 'jquery-colorbox.php') && isset($_GET['jQueryColorboxUpdateSettings'])) {
                 $return_message = sprintf(__('Successfully updated %1$s settings.', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME);
