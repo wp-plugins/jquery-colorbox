@@ -1,10 +1,12 @@
 <?php
 /**
- * Created by JetBrains PhpStorm.
- * User: fourmyle
- * Date: 02.05.11
- * Time: 20:56
- * To change this template use File | Settings | File Templates.
+ * @package Techotronic
+ * @subpackage jQuery Colorbox
+ *
+ * @since 4.1
+ * @author Arne Franken
+ *
+ * Right column for settings page
  */
 ?>
 <div class="postbox-container" style="width: 29%;">

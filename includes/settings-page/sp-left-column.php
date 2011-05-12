@@ -1,10 +1,12 @@
 <?php
 /**
- * Created by JetBrains PhpStorm.
- * User: fourmyle
- * Date: 02.05.11
- * Time: 20:55
- * To change this template use File | Settings | File Templates.
+ * @package Techotronic
+ * @subpackage jQuery Colorbox
+ *
+ * @since 4.1
+ * @author Arne Franken
+ *
+ * Left column for settings page
  */
 ?>
 <div class="postbox-container" style="width: 69%;">
@@ -13,8 +15,6 @@
         <div id="poststuff">
             <?php
                 require_once 'sp-plugin-settings.php';
-            ?>
-            <?php
                 require_once 'sp-colorbox-settings.php';
             ?>
         </div>
