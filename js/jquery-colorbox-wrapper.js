@@ -36,14 +36,15 @@ jQuery(document).ready(function() {
         Colorbox.colorboxMaxHeight = Colorbox.colorboxImageMaxHeight;
         Colorbox.colorboxHeight = Colorbox.colorboxImageHeight;
         Colorbox.colorboxWidth = Colorbox.colorboxImageWidth;
+
         jQuery("a:has(img):not(.colorbox-off)").each(function(index, obj) {
-            //only go on if link points to an image
             if (jQuery(obj).attr("href").match(COLORBOX_SUFFIX_PATTERN)) {
                 colorboxImage(index, obj)
+            } else {
+                colorboxLink(index, obj)
             }
         });
 
-        //call colorboxLink on all elements that have CSS class called "colorbox-link"
         jQuery(COLORBOX_LINK_CLASS).each(function(index, obj) {
             colorboxLink(index, obj)
         });

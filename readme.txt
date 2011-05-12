@@ -169,6 +169,7 @@ I'll include new FAQs in newer versions.
 == Changelog ==
 = 4.1 (2011-06-30) =
 * NEW: Polish translation by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
+* CHANGE: Links from images to non-images are now opened in a Colorbox.
 * CHANGE: Moved bulk of JavaScript from inline to file
 * CHANGE: Additional option for adding colorbox class to images outside of posts and pages.
 * CHANGE: Major refactoring, hopefully speeds up frontend and backend rendering
