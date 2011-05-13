@@ -38,7 +38,7 @@ jQuery(document).ready(function() {
         Colorbox.colorboxWidth = Colorbox.colorboxImageWidth;
 
         jQuery("a:has(img):not(.colorbox-off)").each(function(index, obj) {
-            if (jQuery(obj).attr("href").match(COLORBOX_SUFFIX_PATTERN)) {
+            if (jQuery(obj).attr("href") && jQuery(obj).attr("href").match(COLORBOX_SUFFIX_PATTERN)) {
                 colorboxImage(index, obj)
             } else {
                 colorboxLink(index, obj)
@@ -99,7 +99,7 @@ jQuery(document).ready(function() {
 (function(jQuery) {
     colorboxLink = function(index, obj) {
         Colorbox.colorboxTitle = jQuery(obj).attr("title");
-        if (jQuery(obj).attr("href").match(COLORBOX_INTERNAL_LINK_PATTERN)) {
+        if (jQuery(obj).attr("href") && jQuery(obj).attr("href").match(COLORBOX_INTERNAL_LINK_PATTERN)) {
             Colorbox.colorboxInline = true;
         } else {
             Colorbox.colorboxIframe = true;
