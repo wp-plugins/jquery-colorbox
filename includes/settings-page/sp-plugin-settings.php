@@ -42,15 +42,15 @@
                 <br/><?php _e('Automatically add colorbox-class to all images that are not in posts and pages (e.g. the sidebar).', JQUERYCOLORBOX_TEXTDOMAIN); ?>
             </td>
         </tr>
-        <tr>
-            <th scope="row">
-                <label for="jquery-colorbox-colorboxAddClassToLinks"><?php printf(__('Automate %1$s for all text links to images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?>:</label>
-            </th>
-            <td>
-                <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[colorboxAddClassToLinks]" id="jquery-colorbox-colorboxAddClassToLinks" value="true" <?php echo ($this->colorboxSettings['colorboxAddClassToLinks']) ? 'checked="checked"' : '';?>/>
-                <br/><?php _e('Automatically add colorbox-link-class to all links that point to images.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-            </td>
-        </tr>
+<!--        <tr>-->
+<!--            <th scope="row">-->
+<!--                <label for="jquery-colorbox-colorboxAddClassToLinks">--><?php __('Automate %1$s for all text links to images', JQUERYCOLORBOX_TEXTDOMAIN) //printf(__('Automate %1$s for all text links to images', JQUERYCOLORBOX_TEXTDOMAIN), JQUERYCOLORBOX_NAME); ?><!--:</label>-->
+<!--            </th>-->
+<!--            <td>-->
+<!--                <input type="checkbox" name="--><?php //echo JQUERYCOLORBOX_SETTINGSNAME ?><!--[colorboxAddClassToLinks]" id="jquery-colorbox-colorboxAddClassToLinks" value="true" --><?php //echo ($this->colorboxSettings['colorboxAddClassToLinks']) ? 'checked="checked"' : '';?><!--/>-->
+<!--                <br/>--><?php __('Automatically add colorbox-link-class to all links that point to images.', JQUERYCOLORBOX_TEXTDOMAIN); //_e('Automatically add colorbox-link-class to all links that point to images.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+<!--            </td>-->
+<!--        </tr>-->
         <tr>
             <th scope="row">
                 <label for="jquery-colorbox-autoHideFlash"><?php _e('Automate hiding of flash objects', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
