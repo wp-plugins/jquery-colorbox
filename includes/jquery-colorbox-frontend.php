@@ -50,8 +50,6 @@ class JQueryColorboxFrontend {
         
         $this->addColorboxJS();
         $this->addColorboxWrapperJS();
-        $this->addAutoColorboxJS();
-        $this->addHideFlashJS();
         $this->addColorboxProperties();
     }
 
@@ -203,58 +201,15 @@ class JQueryColorboxFrontend {
             'colorboxLinkWidth' => $this->colorboxSettings['linkWidth'] == "false" ? 'false' : $this->colorboxSettings['linkWidthValue'] . $this->colorboxSettings['linkWidthUnit'],
 
             'colorboxInitialHeight' => $this->colorboxSettings['initialHeight'],
-            'colorboxInitialWidth' => $this->colorboxSettings['initialWidth']
+            'colorboxInitialWidth' => $this->colorboxSettings['initialWidth'],
+            'autoColorboxJavaScript' => $this->colorboxSettings['autoColorboxJavaScript'],
+            'autoHideFlash' => $this->colorboxSettings['autoHideFlash'],
+            'colorboxAddClassToLinks' => $this->colorboxSettings['colorboxAddClassToLinks']
         );
         wp_localize_script( 'colorbox', 'Colorbox', $colorboxPropertyArray );
     }
 
     // addColorboxProperties()
-
-    /**
-     * Insert JavaScript into WP Header
-     *
-     * @since 4.1
-     * @access public
-     * @author Arne Franken
-     */
-    //public function addHideFlashJS() {
-    function addHideFlashJS() {
-        if ($this->colorboxSettings['autoHideFlash']) {
-            if($this->colorboxSettings['debugMode']) {
-                $jqueryColorboxFlashJavaScriptPath = "js/jquery-colorbox-hideFlash.js";
-            }
-            else {
-                $jqueryColorboxFlashJavaScriptPath = "js/jquery-colorbox-hideFlash-min.js";
-            }
-            wp_enqueue_script('colorbox-hideflash', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxFlashJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
-        }
-    }
-
-    // addHideFlashJS()
-
-    /**
-     * Insert JavaScript into WP Header
-     *
-     * @since 4.1
-     * @access public
-     * @author Arne Franken
-     */
-    //public function addAutoColorboxJS() {
-    function addAutoColorboxJS() {
-        if ($this->colorboxSettings['autoColorbox']) {
-            if ($this->colorboxSettings['autoColorboxJavaScript']) {
-                if($this->colorboxSettings['debugMode']) {
-                    $jqueryColorboxAutoJavaScriptPath = "js/jquery-colorbox-auto.js";
-                }
-                else {
-                    $jqueryColorboxAutoJavaScriptPath = "js/jquery-colorbox-auto-min.js";
-                }
-                wp_enqueue_script('colorbox-auto', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxAutoJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
-            }
-        }
-    }
-
-    // addAutoColorboxJS()
 
     /**
      * Insert JavaScript into WP Header

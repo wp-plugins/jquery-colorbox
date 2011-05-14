@@ -18,14 +18,104 @@ var COLORBOX_OFF = "colorbox-off";
 var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
 
 /**
- * call colorbox selector function.
+ * This block calls all functions on page load.
  */
 jQuery(document).ready(function() {
+    if(Colorbox.autoColorboxJavaScript == "true") {
+        colorboxAddManualClass();
+    }
+    if(Colorbox.colorboxAddClassToLinks == "true") {
+        colorboxAddClassToLinks();
+    }
+    if(Colorbox.autoHideFlash == "true") {
+        colorboxHideFlash();
+        colorboxShowFlash();
+    }
     colorboxSelector();
 });
 
 /**
- * jQuery selector
+ * colorboxShowFlash
+ *
+ * show embedded flash objects when Colorbox closes
+ */
+(function(jQuery) {
+    colorboxShowFlash = function() {
+        jQuery(document).bind('cbox_closed', function(){
+            var flashObjects = document.getElementsByTagName("object");
+            for (i = 0; i < flashObjects.length; i++) {
+                flashObjects[i].style.visibility = "visible";
+            }
+            var flashEmbeds = document.getElementsByTagName("embed");
+            for (i = 0; i < flashEmbeds.length; i++) {
+                flashEmbeds[i].style.visibility = "visible";
+            }
+        });
+    }
+})(jQuery);
+
+// colorboxShowFlash()
+
+/**
+ * colorboxHideFlash
+ *
+ * hide embedded flash objects when Colorbox opens
+ */
+(function(jQuery) {
+    colorboxHideFlash = function() {
+        jQuery(document).bind('cbox_open', function(){
+        var flashObjects = document.getElementsByTagName("object");
+        for (i = 0; i < flashObjects.length; i++) {
+            flashObjects[i].style.visibility = "hidden";
+        }
+        var flashEmbeds = document.getElementsByTagName("embed");
+        for (i = 0; i < flashEmbeds.length; i++) {
+            flashEmbeds[i].style.visibility = "hidden";
+        }
+    });
+    }
+})(jQuery);
+
+// colorboxHideFlash()
+
+/**
+ * colorboxAddClassToLinks
+ *
+ * add colorbox-link to anchor tags
+ */
+(function(jQuery) {
+    colorboxAddClassToLinks = function() {
+        jQuery("a:not(:contains(img))").each( function(index,obj){
+            if(!jQuery(obj).attr("class").match('colorbox')) {
+                if (jQuery(obj).attr("href") && jQuery(obj).attr("href").match(COLORBOX_SUFFIX_PATTERN)) {
+                    jQuery(obj).addClass('colorbox-link');
+                }
+            }
+        });
+    }
+})(jQuery);
+
+// colorboxAddClassToLinks()
+
+/**
+ * colorboxAddManualClass
+ *
+ * add colorbox-manual to ALL img tags
+ */
+(function(jQuery) {
+    colorboxAddManualClass = function() {
+        jQuery("img").each( function(index,obj){
+            if(!jQuery(obj).attr("class").match('colorbox')) {
+                jQuery(obj).addClass('colorbox-manual');
+            }
+        });
+    }
+})(jQuery);
+
+// colorboxAddManualClass()
+
+/**
+ * colorboxSelector
  *
  * call colorboxImage on all "a" elements that have a nested "img"
  */
