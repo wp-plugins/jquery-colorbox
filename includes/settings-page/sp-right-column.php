@@ -10,9 +10,9 @@
  */
 ?>
 <div class="postbox-container" style="width: 29%;">
-    <?php 
-        require_once 'sp-donations.php';
-        require_once 'sp-donate-box.php';
-        require_once 'sp-translation.php';
-    ?>
+<?php
+  require_once 'sp-donations.php';
+  require_once 'sp-donate-box.php';
+  require_once 'sp-translation.php';
+  ?>
 </div>

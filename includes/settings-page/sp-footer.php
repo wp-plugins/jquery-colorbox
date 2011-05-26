@@ -10,7 +10,7 @@
  */
 ?>
 <div class="clear">
-    <p>
-        <br/>&copy; Copyright 2009 - <?php echo date("Y"); ?> <a href="http://www.techotronic.de">Arne Franken</a>
-    </p>
+  <p>
+    <br/>&copy; Copyright 2009 - <?php echo date("Y"); ?> <a href="http://www.techotronic.de">Arne Franken</a>
+  </p>
 </div>
