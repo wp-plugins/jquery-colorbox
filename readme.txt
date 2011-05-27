@@ -169,6 +169,7 @@ I'll include new FAQs in newer versions.
 == Changelog ==
 = 4.1 (2011-06-30) =
 * NEW: Polish translation by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
+* BUGFIX: Plugin will only select links with class "colorbox-link"
 * CHANGE: Update of Colorbox library to version 1.3.17.1
 * CHANGE: JavaScript now ignores links that do not have the optional "href" attribute.
 * CHANGE: Links from images to non-images are now opened in a Colorbox.

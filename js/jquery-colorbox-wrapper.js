@@ -135,7 +135,7 @@ jQuery(document).ready(function() {
             }
         });
 
-        jQuery(COLORBOX_LINK_CLASS).each(function(index, obj) {
+        jQuery("a[class*=colorbox-link]").each(function(index, obj) {
             colorboxLink(index, obj)
         });
     }
