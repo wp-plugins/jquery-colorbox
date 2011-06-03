@@ -127,14 +127,14 @@ jQuery(document).ready(function() {
  */
 (function(jQuery) {
   colorboxSelector = function() {
-    jQuery("a:has(img):not(.colorbox-off)").each(function(index, obj) {
+    jQuery("a:has(img[class*=colorbox-]):not(.colorbox-off)").each(function(index, obj) {
       //create local copy of Colorbox array so that modifications can be made for every link
-      ColorboxLocal = Colorbox;
+      ColorboxLocal = jQuery.extend(true,{},Colorbox);
       //set variables for images
-      ColorboxLocal.colorboxMaxWidth = Colorbox.colorboxImageMaxWidth;
-      ColorboxLocal.colorboxMaxHeight = Colorbox.colorboxImageMaxHeight;
-      ColorboxLocal.colorboxHeight = Colorbox.colorboxImageHeight;
-      ColorboxLocal.colorboxWidth = Colorbox.colorboxImageWidth;
+      ColorboxLocal.colorboxMaxWidth = ColorboxLocal.colorboxImageMaxWidth;
+      ColorboxLocal.colorboxMaxHeight = ColorboxLocal.colorboxImageMaxHeight;
+      ColorboxLocal.colorboxHeight = ColorboxLocal.colorboxImageHeight;
+      ColorboxLocal.colorboxWidth = ColorboxLocal.colorboxImageWidth;
       var $linkHref = jQuery(obj).attr("href");
       if ($linkHref !== undefined && $linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
         colorboxImage(index, obj)
@@ -146,7 +146,7 @@ jQuery(document).ready(function() {
 
     jQuery("a[class*=colorbox-link]").each(function(index, obj) {
       //create local copy of Colorbox array so that modifications can be made for every link
-      ColorboxLocal = Colorbox;
+      ColorboxLocal = jQuery.extend(true,{},Colorbox);
       var $linkHref = jQuery(obj).attr("href");
       if ($linkHref !== undefined) {
         colorboxLink(index, obj,$linkHref)
@@ -206,12 +206,8 @@ jQuery(document).ready(function() {
  */
 (function(jQuery) {
   colorboxLink = function(index, obj,$linkHref) {
-    //initial settings for all Colorbox contents
+    //Colorbox links should not be grouped
     ColorboxLocal.colorboxGroupId = "nofollow";
-    ColorboxLocal.colorboxMaxWidth = false;
-    ColorboxLocal.colorboxMaxHeight = false;
-    ColorboxLocal.colorboxHeight = Colorbox.colorboxLinkHeight;
-    ColorboxLocal.colorboxWidth = Colorbox.colorboxLinkWidth;
 
     var $link = jQuery(obj);
     //the title of the link is used as the title for the Colorbox
@@ -223,18 +219,26 @@ jQuery(document).ready(function() {
     }
 
     // already checked for ($linkHref !== undefined) before calling this method
-    if ($linkHref.match(COLORBOX_INTERNAL_LINK_PATTERN)) {
-      //link points to inline content
-      ColorboxLocal.colorboxInline = true;
-    } else if ($linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
-      //link points to image
-      ColorboxLocal.colorboxMaxWidth = Colorbox.colorboxImageMaxWidth;
-      ColorboxLocal.colorboxMaxHeight = Colorbox.colorboxImageMaxHeight;
-      ColorboxLocal.colorboxHeight = Colorbox.colorboxImageHeight;
-      ColorboxLocal.colorboxWidth = Colorbox.colorboxImageWidth;
+    if ($linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
+      //set variables for images
+      ColorboxLocal.colorboxMaxWidth = ColorboxLocal.colorboxImageMaxWidth;
+      ColorboxLocal.colorboxMaxHeight = ColorboxLocal.colorboxImageMaxHeight;
+      ColorboxLocal.colorboxHeight = ColorboxLocal.colorboxImageHeight;
+      ColorboxLocal.colorboxWidth = ColorboxLocal.colorboxImageWidth;
     } else {
-      //link points to something else, load in iframe
-      ColorboxLocal.colorboxIframe = true;
+      //set variables for non-images
+      ColorboxLocal.colorboxMaxWidth = false;
+      ColorboxLocal.colorboxMaxHeight = false;
+      ColorboxLocal.colorboxHeight = ColorboxLocal.colorboxLinkHeight;
+      ColorboxLocal.colorboxWidth = ColorboxLocal.colorboxLinkWidth;
+
+      if ($linkHref.match(COLORBOX_INTERNAL_LINK_PATTERN)) {
+        //link points to inline content
+        ColorboxLocal.colorboxInline = true;
+      } else {
+        //link points to something else, load in iframe
+        ColorboxLocal.colorboxIframe = true;
+      }
     }
 
     colorboxWrapper(obj);
@@ -261,6 +265,7 @@ jQuery(document).ready(function() {
       }
     });
 
+    //finally call Colorbox library
     jQuery(obj).colorbox({
       rel:ColorboxLocal.colorboxGroupId,
       title:ColorboxLocal.colorboxTitle,
