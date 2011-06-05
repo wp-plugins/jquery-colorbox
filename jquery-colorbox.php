@@ -79,7 +79,16 @@ class JQueryColorbox {
     // Create the settings array by merging the user's settings and the defaults
     $usersettings = (array)get_option(JQUERYCOLORBOX_SETTINGSNAME);
     $defaultArray = $this->jQueryColorboxDefaultSettings();
-    $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
+
+    //check whether stored settings are compatible with current plugin version.
+    //if not: overwrite stored settings
+    $validSettings = $this->validateSettingsInDatabase($usersettings);
+    if(!$validSettings) {
+      $this->colorboxSettings = $defaultArray;
+      update_option(JQUERYCOLORBOX_SETTINGSNAME, $defaultArray);
+    } else {
+      $this->colorboxSettings = wp_parse_args($usersettings, $defaultArray);
+    }
 
     // Create list of themes and their human readable names
     $this->colorboxThemes = array(
@@ -133,6 +142,45 @@ class JQueryColorbox {
   }
 
   // JQueryColorbox()
+
+  /**
+   * This is what an example jQuery Colorbox configuration looks like in the wp_options-table of the database:
+   *
+   * Database-entry name: "jquery-colorbox_settings"
+   *
+   * a:29:{
+   * s:12:"autoColorbox";s:4:"true";
+   * s:22:"autoColorboxJavaScript";s:4:"true";
+   * s:13:"autoHideFlash";s:4:"true";
+   * s:18:"colorboxWarningOff";s:4:"true";
+   * s:13:"colorboxTheme";s:7:"theme11";
+   * s:14:"slideshowSpeed";s:4:"2500";
+   * s:8:"maxWidth";s:5:"false";s
+   * :13:"maxWidthValue";s:0:"";
+   * s:12:"maxWidthUnit";s:1:"%";
+   * s:9:"maxHeight";s:5:"false";
+   * s:14:"maxHeightValue";s:0:"";
+   * s:13:"maxHeightUnit";s:1:"%";
+   * s:5:"width";s:5:"false";
+   * s:10:"widthValue";s:0:"";
+   * s:9:"widthUnit";s:1:"%";
+   * s:6:"height";s:5:"false";
+   * s:11:"heightValue";s:0:"";
+   * s:10:"heightUnit";s:1:"%";
+   * s:9:"linkWidth";s:6:"custom";
+   * s:14:"linkWidthValue";s:2:"80";
+   * s:13:"linkWidthUnit";s:1:"%";
+   * s:10:"linkHeight";s:6:"custom";
+   * s:15:"linkHeightValue";s:2:"80";
+   * s:14:"linkHeightUnit";s:1:"%";
+   * s:12:"overlayClose";s:4:"true";
+   * s:10:"transition";s:7:"elastic";
+   * s:5:"speed";s:3:"350";
+   * s:7:"opacity";s:4:"0.85";
+   * s:21:"jQueryColorboxVersion";s:5:"4.0.1";
+   * }
+   */
+
 
   /**
    * Default array of plugin settings
@@ -198,29 +246,30 @@ class JQueryColorbox {
   // jQueryColorboxDefaultSettings()
 
   /**
-   * executed during activation.
+   * Checks wheter the settings stored in the database are compatible with current version.
    *
    * @since 2.0
    * @access public
    * @author Arne Franken
+   * @param $colorboxSettings current colorboxSettings.
+   *
+   * @return bool true if settings work with this plugin version
    */
-  //public function activateJqueryColorbox() {
-  function activateJqueryColorbox() {
-    $jquery_colorbox_settings = get_option(JQUERYCOLORBOX_SETTINGSNAME);
-    if ($jquery_colorbox_settings) {
+  //public function validateSettingsInDatabase() {
+  function validateSettingsInDatabase($colorboxSettings) {
+    if ($colorboxSettings) {
       //if jQueryColorboxVersion does not exist, the plugin is a version prior to 2.0
       //settings are incompatible with 2.0, restore default settings.
-      if (!array_key_exists('jQueryColorboxVersion', $jquery_colorbox_settings)) {
-        if (!array_key_exists('scalePhotos', $jquery_colorbox_settings)) {
-          //in case future versions require resetting the settings
-          //if($jquery_colorbox_settings['jQueryColorboxVersion'] < JQUERYCOLORBOX_VERSION)
-          update_option(JQUERYCOLORBOX_SETTINGSNAME, $this->colorboxDefaultSettings);
-        }
+      if (!array_key_exists('jQueryColorboxVersion', $colorboxSettings)) {
+        //in case future versions require resetting the settings
+        //if($jquery_colorbox_settings['jQueryColorboxVersion'] < JQUERYCOLORBOX_VERSION)
+        return false;
       }
     }
+    return true;
   }
 
-  // activateJqueryColorbox()
+  // validateSettingsInDatabase()
 
   /**
    * Delete plugin settings
@@ -277,7 +326,4 @@ add_action('init', 'initJQueryColorbox', 7);
 
 //static call to constructor is only possible if constructor is 'public static', therefore not PHP4 compatible:
 //add_action('init', array('JQueryColorbox','JQueryColorbox'), 7);
-
-// register method for activation
-register_activation_hook(__FILE__, array('JQueryColorbox', 'activateJqueryColorbox'));
 ?>
