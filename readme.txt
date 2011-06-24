@@ -3,7 +3,7 @@ Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
 Requires at least: 2.8
-Tested up to: 3.1
+Tested up to: 3.2
 Stable tag: 4.0
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
@@ -32,8 +32,10 @@ Localization
 * Arabic (ar) by <a href="http://www.photokeens.com">Modar Soos</a>
 * Belorussian (be_BY) <a href="http://www.pc.de/">Marcis G.</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
+* Simplified Chinese (zh_CN) by <a href="http://tech.yiandya.com/">Lucas Ho</a>
 * Dutch (nl_NL) by <a href="http://nl.linkedin.com/pub/richard-laak/b/b21/672">Richard van Laak</a>
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
+* Finnish (fi) by <a href="http://www.merisaari.com/">Lauri Merisaari</a>
 * French (fr_FR) by <a href="http://www.monblogamoua.fr/">Pierre Sudarovich</a>
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * Hebrew (he_IL) by <a href="http://www.TommyGordon.co.il">Tommy Gordon</a>
@@ -169,6 +171,8 @@ I'll include new FAQs in newer versions.
 == Changelog ==
 = 4.1 (2011-06-30) =
 * NEW: Polish translation by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
+* NEW: Finnish translation by <a href="http://www.merisaari.com/">Lauri Merisaari</a>
+* NEW: Simplified Chinese (zh_CN) by <a href="http://tech.yiandya.com/">Lucas Ho</a>
 * BUGFIX: Plugin will only select links with class "colorbox-link", no other HTML tags.
 * BUGFIX: JavaScript will work with jQuery 1.6 now
 * BUGFIX: loading inline content does not trigger loading an iframe any more.
