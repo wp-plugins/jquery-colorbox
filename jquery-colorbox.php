@@ -6,7 +6,7 @@
  * Plugin Name: jQuery Colorbox
  * Plugin URI: http://www.techotronic.de/plugins/jquery-colorbox/
  * Description: Used to overlay images on the current page. Images in one post are grouped automatically.
- * Version: 4.0.2
+ * Version: 4.1
  * Author: Arne Franken
  * Author URI: http://www.techotronic.de/
  * License: GPL
@@ -19,7 +19,7 @@
 ?>
 <?php
 //define constants
-define('JQUERYCOLORBOX_VERSION', '4.0.2');
+define('JQUERYCOLORBOX_VERSION', '4.1');
 define('COLORBOXLIBRARY_VERSION', '1.3.17');
 
 if (!defined('JQUERYCOLORBOX_PLUGIN_BASENAME')) {
@@ -177,7 +177,7 @@ class JQueryColorbox {
    * s:10:"transition";s:7:"elastic";
    * s:5:"speed";s:3:"350";
    * s:7:"opacity";s:4:"0.85";
-   * s:21:"jQueryColorboxVersion";s:5:"4.0.1";
+   * s:21:"jQueryColorboxVersion";s:5:"4.1";
    * }
    */
 
@@ -286,8 +286,9 @@ class JQueryColorbox {
   }
 
   /**
-   *
-   *
+   * currently unused.
+   * it was requested a few times that people want to add their own version of a Colorbox skin and the plugin
+   * should dynamically load theme directories.
    */
 //    function getThemeDirs() {
 //        $themesDirPath = JQUERYCOLORBOX_PLUGIN_DIR.'/themes/';

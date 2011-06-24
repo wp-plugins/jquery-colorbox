@@ -53,9 +53,8 @@ Localization
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
+Credits:
 Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.17.1 jQuery plugin from Jack Moore.
-jQuery Colorbox uses the jQuery library bundled with WordPress.
-
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
 
 == Installation ==
@@ -169,10 +168,11 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
-= 4.1 (2011-06-30) =
+= 4.1 (2011-06-24) =
 * NEW: Polish translation by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
 * NEW: Finnish translation by <a href="http://www.merisaari.com/">Lauri Merisaari</a>
 * NEW: Simplified Chinese (zh_CN) by <a href="http://tech.yiandya.com/">Lucas Ho</a>
+* NEW: Plugin is compatible to WordPress 3.2
 * BUGFIX: Plugin will only select links with class "colorbox-link", no other HTML tags.
 * BUGFIX: JavaScript will work with jQuery 1.6 now
 * BUGFIX: loading inline content does not trigger loading an iframe any more.
