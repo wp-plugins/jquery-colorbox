@@ -15,14 +15,14 @@ jQuery Colorbox features 11 themes from which you can choose. See <a href="http:
 Works out-of-the-box with WordPress Galleries and <a href="http://wordpress.org/extend/plugins/nextgen-gallery/">NextGEN Gallery</a>! (choose no effect in NextGEN settings)
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
-All images in posts and pages can be displayed in a layer when the thumbnail is clicked.
-Images are grouped as galleries when linked in the same post or page. Groups can be displayed in an automatic slideshow.
+All images in posts and pages can be displayed in a colorbox when the thumbnail is clicked.
+Images are grouped as galleries when linked in the same post or page. Groups can be displayed in a slideshow.
 
 Individual images can be excluded by adding a special CSS class.
 
 jQuery Colorbox can also open linked content (external as well as inline) in a Colorbox.
 
-See the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
+Go to the <a href="http://www.techotronic.de/plugins/jquery-colorbox/">plugin page</a> for demo pages.
 
 For more information visit the <a href="http://wordpress.org/extend/plugins/jquery-colorbox/faq/">FAQ</a>.
 If you have questions or problems, feel free to write an entry at <a href="http://wordpress.org/tags/jquery-colorbox?forum_id=10">the jQuery Colorbox WordPress.org forum</a>
@@ -168,14 +168,15 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
-= 4.1 (2011-06-24) =
+= 4.1 (2011-06-25) =
+* NEW: Plugin is compatible to WordPress 3.2
 * NEW: Polish translation by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
 * NEW: Finnish translation by <a href="http://www.merisaari.com/">Lauri Merisaari</a>
 * NEW: Simplified Chinese (zh_CN) by <a href="http://tech.yiandya.com/">Lucas Ho</a>
-* NEW: Plugin is compatible to WordPress 3.2
 * BUGFIX: Plugin will only select links with class "colorbox-link", no other HTML tags.
 * BUGFIX: JavaScript will work with jQuery 1.6 now
 * BUGFIX: loading inline content does not trigger loading an iframe any more.
+* BUGFIX: regex for IMG tag works correctly now.
 * CHANGE: Update of Colorbox library to version 1.3.17.1
 * CHANGE: JavaScript now ignores links that do not have the optional "href" attribute.
 * CHANGE: Links from images to non-images are now opened in a Colorbox.

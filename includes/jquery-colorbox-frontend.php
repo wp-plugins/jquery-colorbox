@@ -108,13 +108,14 @@ class JQueryColorboxFrontend {
   //public function addColorboxGroupIdToImages($content) {
   function addColorboxGroupIdToImages($content) {
     global $post;
-    // match all img tags with this pattern
+    // universal IMG-Tag pattern matches everything between "<img" and the closing "(/)>"
+    // will be used to match all IMG-Tags in Content.
     $imgPattern = "/<img([^\>]*?)>/i";
     if (preg_match_all($imgPattern, $content, $imgTags)) {
       foreach ($imgTags[0] as $imgTag) {
         // only work on imgTags that do not already contain the String "colorbox-"
         if (!preg_match('/colorbox-/i', $imgTag)) {
-          if (!preg_match('/class/i', $imgTag)) {
+          if (!preg_match('/class=/i', $imgTag)) {
             // imgTag does not contain class-attribute
             $pattern = $imgPattern;
             $replacement = '<img class="colorbox-' . $post->ID . '" $1>';
