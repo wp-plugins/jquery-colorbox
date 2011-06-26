@@ -9,8 +9,7 @@
  * Object that handles Ajax to Xml RPC calls
  */
 if (!defined('DONATIONLOADER_XMLRPC_URL')) {
-  //define('DONATIONLOADER_XMLRPC_URL', 'http://xmlrpc.techotronic.de/');
-  define('DONATIONLOADER_XMLRPC_URL', 'http://www.wpthemetest.de/wordpress/xmlrpc.php');
+  define('DONATIONLOADER_XMLRPC_URL', 'http://xmlrpc.techotronic.de/');
 }
 if (!defined('DONATIONLOADER_CACHETIME')) {
   //cachetime in seconds
