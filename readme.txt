@@ -33,6 +33,7 @@ Localization
 * Belorussian (be_BY) <a href="http://www.pc.de/">Marcis G.</a>
 * Bosnian (bs_BA) by <a href="http://www.vjucon.com/">Vedran Jurincic</a>
 * Simplified Chinese (zh_CN) by <a href="http://tech.yiandya.com/">Lucas Ho</a>
+* Danish (da_DK) by Michael Bering Petersen
 * Dutch (nl_NL) by <a href="http://nl.linkedin.com/pub/richard-laak/b/b21/672">Richard van Laak</a>
 * English (en_EN) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * Finnish (fi) by <a href="http://www.merisaari.com/">Lauri Merisaari</a>
@@ -168,6 +169,9 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
+= 4.2 (2011-07-20) =
+* NEW: Danish translation by Michael Bering Petersen
+
 = 4.1 (2011-06-25) =
 * NEW: Plugin is compatible to WordPress 3.2
 * NEW: Polish translation by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
