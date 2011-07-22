@@ -172,6 +172,7 @@ I'll include new FAQs in newer versions.
 = 4.2 (2011-07-20) =
 * NEW: Danish translation by Michael Bering Petersen
 * BUGFIX: "Automate Colorbox for all other images" now again works as intended. (functionality broke in 4.1)
+* BUGFIX: fixes "Undefined index: colorboxAddClassToLinks" error
 
 = 4.1 (2011-06-25) =
 * NEW: Plugin is compatible to WordPress 3.2

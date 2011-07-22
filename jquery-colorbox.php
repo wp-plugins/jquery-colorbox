@@ -239,6 +239,7 @@ class JQueryColorbox {
       'javascriptInFooter' => false,
       'debugMode' => false,
       'autoColorboxJavaScript' => false,
+      'colorboxAddClassToLinks' => false,
       'removeLinkFromMetaBox' => false
     );
   }
