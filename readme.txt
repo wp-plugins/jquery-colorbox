@@ -56,7 +56,7 @@ Localization
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
 Credits:
-Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.17.1 jQuery plugin from Jack Moore.
+Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.18 jQuery plugin from Jack Moore.
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
 
 == Installation ==
@@ -177,6 +177,7 @@ I'll include new FAQs in newer versions.
 * BUGFIX: "Automate Colorbox for all other images" now again works as intended. (functionality broke in 4.1)
 * BUGFIX: fixes "Undefined index: colorboxAddClassToLinks" error
 * BUGFIX: got rid of PHP's XML-RPC methods, also plugin checks now before calling XML-related methods.
+* CHANGE: Updated Colorbox version to 1.3.18
 
 = 4.1 (2011-06-25) =
 * NEW: Plugin is compatible to WordPress 3.2
