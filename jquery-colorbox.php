@@ -268,7 +268,7 @@ class JQueryColorbox {
       'debugMode' => false,
       'autoColorboxJavaScript' => false,
       'colorboxAddClassToLinks' => false,
-      'removeLinkFromMetaBox' => false
+      'removeLinkFromMetaBox' => true
     );
   }
 
