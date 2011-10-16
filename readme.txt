@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
 Requires at least: 2.8
 Tested up to: 3.2
-Stable tag: 4.1
+Stable tag: 4.2
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
 
@@ -170,7 +170,7 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
-= 4.2 (2011-10-15) =
+= 4.2 (2011-10-16) =
 * NEW: Danish translation by Michael Bering Petersen
 * NEW: Vietnamese translation by Techfacts Computer Magazin
 * NEW: added option to remove the link to the developers site from the WordPress meta-box.
