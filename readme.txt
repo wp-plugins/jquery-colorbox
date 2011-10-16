@@ -51,6 +51,7 @@ Localization
 * Swedish (sv_SE) by <a href="http://www.theindiaexperience.se/">Christian</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
 * Ukrainian (uk) by <a href="http://www.politcult.com/">Yuri Kryzhanivskyi</a>
+* Vietnamese (vn_VN) by <a href="http://www.techfacts.net">Techfacts Computer Magazin</a>
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
@@ -169,8 +170,9 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
-= 4.2 (2011-07-20) =
+= 4.2 (2011-10-15) =
 * NEW: Danish translation by Michael Bering Petersen
+* NEW: Vietnamese translation by Techfacts Computer Magazin
 * NEW: added option to remove the link to the developers site from the WordPress meta-box.
 * BUGFIX: "Automate Colorbox for all other images" now again works as intended. (functionality broke in 4.1)
 * BUGFIX: fixes "Undefined index: colorboxAddClassToLinks" error
