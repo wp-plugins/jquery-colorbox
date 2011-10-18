@@ -170,6 +170,9 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
+= 4.3 (2011-12-30) =
+* CHANGE: removing meta tag from header since it's not HTML5 compatible
+
 = 4.2 (2011-10-16) =
 * NEW: Danish translation by Michael Bering Petersen
 * NEW: Vietnamese translation by Techfacts Computer Magazin
