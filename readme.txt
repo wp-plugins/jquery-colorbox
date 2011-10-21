@@ -41,10 +41,11 @@ Localization
 * German (de_DE) by <a href="http://www.techotronic.de/">Arne Franken</a>
 * Hebrew (he_IL) by <a href="http://www.TommyGordon.co.il">Tommy Gordon</a>
 * Italian (it_IT) by <a href="http://erkinson.altervista.org/">Erkinson</a>
-* Latvian (lv) by <a href=\"http://lapuvieta.lv\">Uldis Jansons</a>
+* Latvian (lv) by <a href="http://lapuvieta.lv">Uldis Jansons</a>
 * Malay (ms_MY) by <a href="http://www.inisahaini.com">Saha-ini Ahmad Safian</a>
 * Polish (pl_PL) by <a href="http://positionmaker.pl">Kornel Łysikowski</a>
 * Portuguese (pt_BR) by <a href="http://twitter.com/gervasioantonio">Gervásio Antônio</a>
+* Romanian (ro_RO) by <a href="www.nobelcom.com">Nobelcom Phone Cards</a>
 * Russian (ru_RU) by <a href="http://drive2life.ru">Arkadiy Florinskiy</a>
 * Slovak (sk_SK) by <a href="http://itec.sk/">Stefan Stieranka</a>
 * Spanish (es_ES) by <a href="http://www.redywebs.com/">Inma P.-Zubizarreta</a>
@@ -171,11 +172,12 @@ I'll include new FAQs in newer versions.
 
 == Changelog ==
 = 4.3 (2011-12-30) =
+* NEW: Romanian translation by <a href="www.nobelcom.com">Nobelcom Phone Cards</a>
 * CHANGE: removing meta tag from header since it's not HTML5 compatible
 
 = 4.2 (2011-10-16) =
 * NEW: Danish translation by Michael Bering Petersen
-* NEW: Vietnamese translation by Techfacts Computer Magazin
+* NEW: Vietnamese translation by <a href="http://www.techfacts.net">Techfacts Computer Magazin</a>
 * NEW: added option to remove the link to the developers site from the WordPress meta-box.
 * BUGFIX: "Automate Colorbox for all other images" now again works as intended. (functionality broke in 4.1)
 * BUGFIX: fixes "Undefined index: colorboxAddClassToLinks" error
