@@ -174,6 +174,7 @@ I'll include new FAQs in newer versions.
 = 4.3 (2012-03-10) =
 * NEW: Romanian translation by Luke Tyler
 * CHANGE: update to Colorbox 1.3.19
+* CHANGE: increase z-index of Colorbox and overlay to 99999 since Twentyeleven has a Header z-index of 9999
 * CHANGE: removing meta tag from header since it's not HTML5 compatible
 * CHANGE: pulled all links to company sites of translators on request by WordPress staff
 
