@@ -201,7 +201,7 @@ class JQueryColorboxFrontend {
       'autoColorboxGalleries' => $this->colorboxSettings['autoColorboxGalleries'],
       'colorboxAddClassToLinks' => $this->colorboxSettings['colorboxAddClassToLinks']
     );
-    wp_localize_script('colorbox', 'Colorbox', $colorboxPropertyArray);
+    wp_localize_script('colorbox', 'jQueryColorboxSettingsArray', $colorboxPropertyArray);
   }
 
   // addColorboxProperties()

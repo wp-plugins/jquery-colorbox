@@ -21,13 +21,13 @@ var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
  * This block calls all functions on page load.
  */
 jQuery(document).ready(function() {
-  if (Colorbox.autoColorboxJavaScript == "true") {
+  if (jQueryColorboxSettingsArray.autoColorboxJavaScript == "true") {
     colorboxAddManualClass();
   }
-  if (Colorbox.colorboxAddClassToLinks == "true") {
+  if (jQueryColorboxSettingsArray.colorboxAddClassToLinks == "true") {
     colorboxAddClassToLinks();
   }
-  if (Colorbox.autoHideFlash == "true") {
+  if (jQueryColorboxSettingsArray.autoHideFlash == "true") {
     colorboxHideFlash();
     colorboxShowFlash();
   }
@@ -129,7 +129,7 @@ jQuery(document).ready(function() {
   colorboxSelector = function() {
     jQuery("a:has(img[class*=colorbox-]):not(.colorbox-off)").each(function(index, obj) {
       //create local copy of Colorbox array so that modifications can be made for every link
-      ColorboxLocal = jQuery.extend(true,{},Colorbox);
+      ColorboxLocal = jQuery.extend(true,{},jQueryColorboxSettingsArray);
       //set variables for images
       ColorboxLocal.colorboxMaxWidth = ColorboxLocal.colorboxImageMaxWidth;
       ColorboxLocal.colorboxMaxHeight = ColorboxLocal.colorboxImageMaxHeight;
@@ -146,7 +146,7 @@ jQuery(document).ready(function() {
 
     jQuery("a[class*=colorbox-link]").each(function(index, obj) {
       //create local copy of Colorbox array so that modifications can be made for every link
-      ColorboxLocal = jQuery.extend(true,{},Colorbox);
+      ColorboxLocal = jQuery.extend(true,{},jQueryColorboxSettingsArray);
       var $linkHref = jQuery(obj).attr("href");
       if ($linkHref !== undefined) {
         colorboxLink(index, obj,$linkHref)
