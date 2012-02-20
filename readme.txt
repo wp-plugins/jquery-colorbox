@@ -3,7 +3,7 @@ Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
 Requires at least: 2.8
-Tested up to: 3.2
+Tested up to: 3.3
 Stable tag: 4.2
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
@@ -179,6 +179,7 @@ I'll include new FAQs in newer versions.
 * CHANGE: increase z-index of Colorbox and overlay to 99999 since Twentyeleven has a Header z-index of 9999
 * CHANGE: removing meta tag from header since it's not HTML5 compatible
 * CHANGE: pulled all links to company sites of translators on request by WordPress staff
+* CHANGE: successfully tested with WordPress 3.3
 
 = 4.2 (2011-10-16) =
 * NEW: Danish translation by Michael Bering Petersen
