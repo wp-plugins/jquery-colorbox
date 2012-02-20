@@ -83,7 +83,7 @@ class JQueryColorbox {
     //check whether stored settings are compatible with current plugin version.
     //if not: overwrite stored settings
     $validSettings = $this->validateSettingsInDatabase($usersettings);
-    if (!$validSettings) {
+    if(!$validSettings) {
       $this->colorboxSettings = $defaultArray;
       update_option(JQUERYCOLORBOX_SETTINGSNAME, $defaultArray);
     } else {
