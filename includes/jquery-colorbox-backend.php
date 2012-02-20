@@ -42,7 +42,7 @@ class JQueryColorboxBackend {
     //add style selector dropdown to TinyMCE
     add_filter('mce_buttons_2', array(& $this, 'addStyleSelectorBox'), 100);
     //add Colorbox CSS class to TinyMCE dropdown box
-    add_filter('tiny_mce_before_init', array(& $this, 'addColorboxLinkClass'), 100);
+    add_filter('mce_css', array(& $this, 'addColorboxLinkClass'), 100);
 
     require_once 'donationloader.php';
     $donationLoader = new JQueryColorboxDonationLoader();
@@ -208,9 +208,7 @@ class JQueryColorboxBackend {
   function addColorboxLinkClass($initialArray) {
     $modifiedArray = $initialArray;
 
-    $modifiedArray['theme_advanced_styles'] .= ';colorbox-link=colorbox-link;';
-    //strip first and last character if it matches ";"
-    $modifiedArray['theme_advanced_styles'] = trim($modifiedArray['theme_advanced_styles'], ';');
+    $modifiedArray .= ','.JQUERYCOLORBOX_PLUGIN_URL.'/css/jquery-colorbox.css';
     return $modifiedArray;
   }
 
