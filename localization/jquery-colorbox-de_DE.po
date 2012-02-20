@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: jQuery-Colorbox\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-05-02 20:17+0100\n"
-"PO-Revision-Date: 2011-05-02 20:18+0100\n"
+"PO-Revision-Date: 2012-02-19 00:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: Techotronic <blog@techotronic.de>\n"
 "MIME-Version: 1.0\n"
@@ -165,20 +165,20 @@ msgstr "Plugin Einstellungen"
 #: includes/settings-page.php:135
 #, php-format
 msgid "Automate %1$s for all images in pages, posts and galleries"
-msgstr "%1$s f&uuml;r Bilder in WordPress Eintr&auml;gen, Seiten und Gallerien automatisieren"
+msgstr "%1$s f&uuml;r Bilder in WordPress Eintr&auml;gen, Seiten und Galerien automatisieren"
 
 #: includes/settings-page.php:139
 msgid "Automatically add colorbox-class to images in posts and pages. Also adds colorbox-class to galleries. Images in one page or post are grouped automatically."
-msgstr "Automatisch die Colorbox-CSS-Klasse f&uuml;r Bilder in Beitr&auml;gen und Seite einf&uuml;gen. F&uuml;gt die Klasse auch f&uuml;r Gallerien ein. Alle Bilder innerhalb eines Beitrags oder einer Seite werden automatisch gruppiert."
+msgstr "Automatisch die Colorbox-CSS-Klasse f&uuml;r Bilder in Beitr&auml;gen und Seite einf&uuml;gen. F&uuml;gt die Klasse auch f&uuml;r Galerien ein. Alle Bilder innerhalb eines Beitrags oder einer Seite werden automatisch gruppiert."
 
 #: includes/settings-page.php:144
 #, php-format
 msgid "Automate %1$s for images in WordPress galleries only"
-msgstr "%1$s f&uuml;r Bilder nur in WordPress Gallerien automatisieren"
+msgstr "%1$s f&uuml;r Bilder nur in WordPress Galerien automatisieren"
 
 #: includes/settings-page.php:148
 msgid "Automatically add colorbox-class to images in WordPress galleries, but nowhere else. Images in one page or post are grouped automatically."
-msgstr "Automatisch die Colorbox-CSS-Klasse f&uuml;r Bilder in Gallerien einf&uuml;gen, sonst nirgends. Alle Bilder innerhalb eines Beitrags oder einer Seite werden automatisch gruppiert."
+msgstr "Automatisch die Colorbox-CSS-Klasse f&uuml;r Bilder in Galerien einf&uuml;gen, sonst nirgends. Alle Bilder innerhalb eines Beitrags oder einer Seite werden automatisch gruppiert."
 
 #: includes/settings-page.php:153
 #, php-format
