@@ -57,7 +57,7 @@ Localization
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
 Credits:
-Includes <a href="http://colorpowered.com/colorbox/">ColorBox</a> 1.3.18 jQuery plugin from Jack Moore.
+Includes <a href="http://jacklmoore.com/colorbox/">ColorBox</a> 1.3.19 jQuery plugin from Jack Moore.
 The picture I used for the screenshots was designed by <a href="http://wallpapers.vintage.it/">Davide Vicariotto</a>
 
 == Installation ==
@@ -171,8 +171,9 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
-= 4.3 (2011-12-30) =
+= 4.3 (2012-03-10) =
 * NEW: Romanian translation by Luke Tyler
+* CHANGE: update to Colorbox 1.3.19
 * CHANGE: removing meta tag from header since it's not HTML5 compatible
 * CHANGE: pulled all links to company sites of translators on request by WordPress staff
 
