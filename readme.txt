@@ -181,6 +181,7 @@ I'll include new FAQs in newer versions.
 * CHANGE: removing meta tag from header since it's not HTML5 compatible
 * CHANGE: pulled all links to company sites of translators on request by WordPress staff
 * CHANGE: successfully tested with WordPress 3.3
+* CHANGE: Plugin name now translatable
 
 = 4.2 (2011-10-16) =
 * NEW: Danish translation by Michael Bering Petersen

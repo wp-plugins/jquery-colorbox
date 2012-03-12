@@ -31,7 +31,7 @@ if (!defined('JQUERYCOLORBOX_PLUGIN_NAME')) {
   define('JQUERYCOLORBOX_PLUGIN_NAME', trim(dirname(JQUERYCOLORBOX_PLUGIN_BASENAME), '/'));
 }
 if (!defined('JQUERYCOLORBOX_NAME')) {
-  define('JQUERYCOLORBOX_NAME', 'jQuery Colorbox');
+  define('JQUERYCOLORBOX_NAME', __('jQuery Colorbox',JQUERYCOLORBOX_TEXTDOMAIN));
 }
 if (!defined('JQUERYCOLORBOX_TEXTDOMAIN')) {
   define('JQUERYCOLORBOX_TEXTDOMAIN', 'jquery-colorbox');
