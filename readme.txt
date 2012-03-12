@@ -51,7 +51,7 @@ Localization
 * Spanish (es_ES) by Inma P.-Zubizarreta
 * Swedish (sv_SE) by <a href="http://www.theindiaexperience.se/">Christian</a>
 * Turkish (tr_TR) by <a href="http://www.serhatyolacan.com/">Serhat Yolaçan</a>
-* Ukrainian (uk) by Yuri Kryzhanivskyi
+* Ukrainian (uk) by Jurko Chervony
 * Vietnamese (vn_VN) by Techfacts
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
@@ -173,6 +173,7 @@ I'll include new FAQs in newer versions.
 == Changelog ==
 = 4.3 (2012-03-10) =
 * NEW: Romanian translation by Luke Tyler
+* CHANGE: Ukrainian translation updated by Jurko Chervony
 * CHANGE: update to Colorbox 1.3.19
 * CHANGE: gracefully add CSS style "colorbox-link" to TinyMCE style dropdown
 * CHANGE: use plugins_url to make links HTTPS aware
