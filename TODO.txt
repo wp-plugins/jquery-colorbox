@@ -30,6 +30,9 @@ Need to think about these features
 OPEN
 ============
 
+Feature 18
+- make size of colorbox configurable per link
+
 Feature 17
 - sort settings into tabs
 http://wp.smashingmagazine.com/2011/10/20/create-tabs-wordpress-settings-pages/
