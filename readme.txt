@@ -171,7 +171,7 @@ Feel free to open a thread at <a href="http://wordpress.org/tags/jquery-colorbox
 I'll include new FAQs in newer versions.
 
 == Changelog ==
-= 4.3 (2012-03-10) =
+= 4.3 (2012-03-12) =
 * NEW: Romanian translation by Luke Tyler
 * CHANGE: Ukrainian translation updated by Jurko Chervony
 * CHANGE: update to Colorbox 1.3.19
