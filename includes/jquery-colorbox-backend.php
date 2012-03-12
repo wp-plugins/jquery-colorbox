@@ -304,6 +304,34 @@ class JQueryColorboxBackend {
 
   // deleteSettings()
 
+  /**
+   * gets current URL to return to after donating
+   *
+   * @since 3.5
+   * @access private
+   * @author Arne Franken
+   */
+  //private function getReturnLocation(){
+  function getReturnLocation() {
+    $currentLocation = "http";
+    $currentLocation .= ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? "s" : "") . "://";
+    $currentLocation .= $_SERVER['SERVER_NAME'];
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+      if ($_SERVER['SERVER_PORT'] != '443') {
+        $currentLocation .= ":" . $_SERVER['SERVER_PORT'];
+      }
+    }
+    else {
+      if ($_SERVER['SERVER_PORT'] != '80') {
+        $currentLocation .= ":" . $_SERVER['SERVER_PORT'];
+      }
+    }
+    $currentLocation .= $_SERVER['REQUEST_URI'];
+    echo $currentLocation;
+  }
+
+  // getReturnLocation()
+
 }
 
 // class JQueryColorboxBackend()
