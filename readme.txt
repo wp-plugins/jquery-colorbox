@@ -182,6 +182,7 @@ I'll include new FAQs in newer versions.
 * CHANGE: pulled all links to company sites of translators on request by WordPress staff
 * CHANGE: successfully tested with WordPress 3.3
 * CHANGE: Plugin name now translatable
+* CHANGE: Defaults are now used if JavaScript options can't be set because of JavaScript minimizers
 
 = 4.2 (2011-10-16) =
 * NEW: Danish translation by Michael Bering Petersen

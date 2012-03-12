@@ -4,8 +4,8 @@
  *
  * @since 3.2
  * @author Arne Franken
- * @author Fabian Wolf (http://usability-idealist.de/)
- * @author Jason Stapels (jstapels@realmprojects.com)
+ * @author (Contributor) Fabian Wolf (http://usability-idealist.de/)
+ * @author (Contributor) Jason Stapels (jstapels@realmprojects.com)
  *
  * Colorbox Javascript
  */
@@ -21,6 +21,13 @@ var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
  * This block calls all functions on page load.
  */
 jQuery(document).ready(function() {
+
+  //check if config JavaScript was successfully inserted. Load defaults otherwise.
+  if(!(typeof jQueryColorboxSettingsArray == 'object')) {
+    jQueryColorboxSettingsArray = getColorboxConfigDefaults();
+  }
+
+
   if (jQueryColorboxSettingsArray.autoColorboxJavaScript == "true") {
     colorboxAddManualClass();
   }
@@ -301,3 +308,60 @@ jQuery(document).ready(function() {
 })(jQuery);
 
 // colorboxWrapper()
+
+/**
+ * colorboxConfigDefaults
+ *
+ * default values for colorbox configuration in case the configuration array was not added successfully to the HTML.
+ */
+(function(jQuery) {
+  getColorboxConfigDefaults = function() {
+    return {
+      colorboxInline: false,
+      colorboxIframe: false,
+      colorboxGroupId: '',
+      colorboxTitle: '',
+      colorboxWidth: false,
+      colorboxHeight: false,
+      colorboxMaxWidth: false,
+      colorboxMaxHeight: false,
+      colorboxSlideshow: false,
+      colorboxSlideshowAuto: false,
+      colorboxScalePhotos: false,
+      colorboxPreloading: false,
+      colorboxOverlayClose: false,
+      colorboxLoop: false,
+      colorboxEscKey: true,
+      colorboxArrowKey:true,
+      colorboxScrolling:false,
+      colorboxOpacity:'0.85',
+      colorboxTransition:'elastic',
+      colorboxSpeed:'350',
+      colorboxSlideshowSpeed:'2500',
+      colorboxClose: 'close',
+      colorboxNext:'next',
+      colorboxPrevious:'previous',
+      colorboxSlideshowStart:'start slideshow',
+      colorboxSlideshowStop:'stop slideshow',
+      colorboxCurrent:'{current} of {total} images',
+
+      colorboxImageMaxWidth: false,
+      colorboxImageMaxHeight: false,
+      colorboxImageHeight: false,
+      colorboxImageWidth:false,
+
+      colorboxLinkHeight: false,
+      colorboxLinkWidth: false,
+
+      colorboxInitialHeight: 100,
+      colorboxInitialWidth: 300,
+      autoColorboxJavaScript: false,
+      autoHideFlash: false,
+      autoColorbox: false,
+      autoColorboxGalleries: false,
+      colorboxAddClassToLinks: false
+    }
+  }
+})(jQuery);
+
+// getColorboxConfigDefaults()
