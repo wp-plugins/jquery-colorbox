@@ -1,10 +1,10 @@
 # Plugin Name #
-Contributors: techotronic
-Donate link: http://www.techotronic.de/donate/
-Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
-Requires at least: 2.8
-Tested up to: 3.3
-Stable tag: 4.3
+Contributors: techotronic  
+Donate link: http://www.techotronic.de/donate/  
+Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu  
+Requires at least: 2.8  
+Tested up to: 3.3  
+Stable tag: 4.3  
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
 
