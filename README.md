@@ -12,11 +12,11 @@ Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works f
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
 
-jQuery Colorbox features 11 themes from which you can choose. See [my website](http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/).
+jQuery Colorbox features 11 themes from which you can choose. See [my website](http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/).  
 Works out-of-the-box with WordPress Galleries and [NextGEN Gallery](http://wordpress.org/extend/plugins/nextgen-gallery/)! (choose no effect in NextGEN settings)
 
-When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
-All images in posts and pages can be displayed in a Lightbox/colorbox when the thumbnail is clicked.
+When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.  
+All images in posts and pages can be displayed in a Lightbox/colorbox when the thumbnail is clicked.  
 Images are grouped as galleries when linked in the same post or page. Groups can be displayed in a slideshow within the Lightbox/colorbox.
 
 Individual images can be excluded by adding a special CSS class.
@@ -25,7 +25,7 @@ jQuery Colorbox can also open linked content (external as well as inline) in a L
 
 Go to the [plugin page](http://www.techotronic.de/plugins/jquery-colorbox/) for demo pages.
 
-For more information visit the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/).
+For more information visit the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/).  
 If you have questions or problems, feel free to write an entry at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10)
 
 Localization
@@ -58,7 +58,7 @@ Localization
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
 Credits:
-Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.19 jQuery plugin from Jack Moore.
+Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.19 jQuery plugin from Jack Moore.  
 The picture I used for the screenshots was designed by [Davide Vicariotto](http://wallpapers.vintage.it/)
 
 ## Installation ##
@@ -69,11 +69,13 @@ To upgrade from a previous version of this plugin, use the built in update featu
 
 ###Installing The Plugin###
 
-Either use the built in plugin installation feature of WordPress, or extract all files from the ZIP file, making sure to keep the file structure intact, and then upload it to `/wp-content/plugins/`. Then just visit your admin area and activate the plugin. That's it!
+Either use the built in plugin installation feature of WordPress, or extract all files from the ZIP file, making sure to keep the file structure intact, and then upload it to `/wp-content/plugins/`.  
+Then just visit your admin area and activate the plugin.  
+That's it!
 
 ###Configuring The Plugin###
 
-Go to the settings page and choose one of the themes bundled with the plugin and other settings.
+Go to the settings page and choose one of the themes bundled with the plugin and other settings.  
 Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to work for all images.
 
 **See Also:** ["Installing Plugins" article on the WP Codex](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
@@ -87,18 +89,18 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 
 Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
 
-I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
+I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.  
 Chances are that the other jQuery library is loaded after the one that I load. If that happens, the colorbox features are overwritten.
 
 * How does jQuery Colorbox work?
 
-  When inserting a picture, the field "Link URL" needs to contain the link to the full-sized image. (press the button "Link to Image" below the field)
-  When rendering the blog, a special CSS class (`colorbox-postId`, e.g. `colorbox-123`) is added to linked images.
+  When inserting a picture, the field "Link URL" needs to contain the link to the full-sized image. (press the button "Link to Image" below the field)  
+  When rendering the blog, a special CSS class (`colorbox-postId`, e.g. `colorbox-123`) is added to linked images.  
   This CSS class is then passed to the colorbox JavaScript.
 
 * How do I exclude an image from Colorbox in a page or post?
 
-  Add the CSS class `colorbox-off` to the image or to the link to the big sized image you want to exclude.
+  Add the CSS class `colorbox-off` to the image or to the link to the big sized image you want to exclude.  
   jQuery Colorbox does not add the colorbox effect to images that have the CSS class `colorbox-off`.
 
 * How does jQuery Colorbox group images?
@@ -107,9 +109,9 @@ Chances are that the other jQuery library is loaded after the one that I load. I
 
 * I have Flash (e.g. Youtube videos) embedded on my website. Why do they show up over the layer when I click on an image?
 
-  This is a Flash issue, but relatively easy to solve. Just activate the automatic hiding of embedded flash objects on the settings page.
-  Adobe described on these sites what the problem is and how to fix it manually:
-  [Adobe Knowledgebase 1](http://kb2.adobe.com/cps/155/tn_15523.html)
+  This is a Flash issue, but relatively easy to solve. Just activate the automatic hiding of embedded flash objects on the settings page.  
+  Adobe described on these sites what the problem is and how to fix it manually:  
+  [Adobe Knowledgebase 1](http://kb2.adobe.com/cps/155/tn_15523.html)  
   [Adobe Knowledgebase 2](http://kb2.adobe.com/cps/142/tn_14201.html)
 
 * I have a problem with the Colorbox or want to style it my own way. Can you help?
@@ -118,12 +120,12 @@ Chances are that the other jQuery library is loaded after the one that I load. I
 
 * Why is jQuery Colorbox not available in my language?
 
-  I speak German and English fluently, but unfortunately no other language well enough to do a translation.
+  I speak German and English fluently, but unfortunately no other language well enough to do a translation.  
   Would you like to help? Translating the plugin is easy if you understand English and are fluent in another language.
 
 * How do I translate jQuery Colorbox?
 
-  Take a look at the WordPress site and identify [your langyage code](http://codex.wordpress.org/WordPress_in_Your_Language):
+  Take a look at the WordPress site and identify [your langyage code](http://codex.wordpress.org/WordPress_in_Your_Language):  
   e.g. the language code for German is `de_DE`.
 
 
@@ -140,7 +142,7 @@ Chances are that the other jQuery library is loaded after the one that I load. I
 
 * My question isn't answered here. What do I do now?
 
-  Feel free to open a thread at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10).
+  Feel free to open a thread at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10).  
   I'll include new FAQs in newer versions.
 
 ## Changelog ##
