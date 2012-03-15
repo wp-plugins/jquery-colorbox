@@ -28,7 +28,7 @@ Go to the [plugin page](http://www.techotronic.de/plugins/jquery-colorbox/) for 
 For more information visit the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/).  
 If you have questions or problems, feel free to write an entry at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10)
 
-*Localization*
+**Localization**
 
 * Arabic (`ar`) by [Modar Soos](http://www.photokeens.com)
 * Belorussian (`be_BY`) Marcis G.
@@ -55,9 +55,11 @@ If you have questions or problems, feel free to write an entry at [the jQuery Co
 * Ukrainian (`uk`) by Jurko Chervony
 * Vietnamese (`vn_VN`) by Techfacts
 
-Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
+Is your native language missing?  
+Translating the plugin is easy if you understand english and are fluent in another language.  
+I described in the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/) how the translation works.
 
-*Credits*
+**Credits**
 Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.19 jQuery plugin from Jack Moore.  
 The picture I used for the screenshots was designed by [Davide Vicariotto](http://wallpapers.vintage.it/)
 
