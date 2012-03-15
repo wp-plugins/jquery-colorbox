@@ -10,7 +10,7 @@ Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works f
 
 == Description ==
 
-Yet another Colorbox/Lightbox plugin for Wordpress.
+A Colorbox/Lightbox plugin for Wordpress.
 
 jQuery Colorbox features 11 themes from which you can choose. See [my website](http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/).  
 Works out-of-the-box with WordPress Galleries and [NextGEN Gallery](http://wordpress.org/extend/plugins/nextgen-gallery/)! (choose no effect in NextGEN settings)
@@ -28,36 +28,36 @@ Go to the [plugin page](http://www.techotronic.de/plugins/jquery-colorbox/) for 
 For more information visit the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/).  
 If you have questions or problems, feel free to write an entry at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10)
 
-Localization
+*Localization*
 
-* Arabic `ar` by [Modar Soos](http://www.photokeens.com)
-* Belorussian `be_BY` Marcis G.
-* Bosnian `bs_BA` by Vedran Jurincic
-* Simplified Chinese `zh_CN` by [Lucas Ho](http://tech.yiandya.com/)
-* Danish `da_DK` by Michael Bering Petersen
-* Dutch `nl_NL` by [Richard van Laak](http://nl.linkedin.com/pub/richard-laak/b/b21/672)
-* English `en_EN` by [Arne Franken](http://www.techotronic.de/)
-* Finnish `fi` by [Lauri Merisaari](http://www.merisaari.com/)
-* French `fr_FR` by [Pierre Sudarovich](http://www.monblogamoua.fr/)
-* German `de_DE` by [Arne Franken](http://www.techotronic.de/)
-* Hebrew `he_IL` by [Tommy Gordon](http://www.TommyGordon.co.il)
-* Italian `it_IT` by Erkinson
-* Latvian `lv` by Uldis Jansons
-* Malay `ms_MY` by [Saha-ini Ahmad Safian](http://www.inisahaini.com)
-* Polish `pl_PL` by Kornel Łysikowski
-* Portuguese `pt_BR` by [Gervásio Antônio](http://twitter.com/gervasioantonio)
-* Romanian `ro_RO` by Luke Tyler
-* Russian `ru_RU` by Arkadiy Florinskiy
-* Slovak `sk_SK` by Stefan Stieranka
-* Spanish `es_ES` by Inma P.-Zubizarreta
-* Swedish `sv_SE` by [Christian](http://www.theindiaexperience.se/)
-* Turkish `tr_TR` by [Serhat Yolaçan](http://www.serhatyolacan.com/)
-* Ukrainian `uk` by Jurko Chervony
-* Vietnamese `vn_VN` by Techfacts
+* Arabic (`ar`) by [Modar Soos](http://www.photokeens.com)
+* Belorussian (`be_BY`) Marcis G.
+* Bosnian (`bs_BA`) by Vedran Jurincic
+* Simplified Chinese (`zh_CN`) by [Lucas Ho](http://tech.yiandya.com/)
+* Danish (`da_DK`) by Michael Bering Petersen
+* Dutch (`nl_NL`) by [Richard van Laak](http://nl.linkedin.com/pub/richard-laak/b/b21/672)
+* English (`en_EN`) by [Arne Franken](http://www.techotronic.de/)
+* Finnish (`fi`) by [Lauri Merisaari](http://www.merisaari.com/)
+* French (`fr_FR`) by [Pierre Sudarovich](http://www.monblogamoua.fr/)
+* German (`de_DE`) by [Arne Franken](http://www.techotronic.de/)
+* Hebrew (`he_IL`) by [Tommy Gordon](http://www.TommyGordon.co.il)
+* Italian (`it_IT`) by Erkinson
+* Latvian (`lv`) by Uldis Jansons
+* Malay (`ms_MY`) by [Saha-ini Ahmad Safian](http://www.inisahaini.com)
+* Polish (`pl_PL`) by Kornel Łysikowski
+* Portuguese (`pt_BR`) by [Gervásio Antônio](http://twitter.com/gervasioantonio)
+* Romanian (`ro_RO`) by Luke Tyler
+* Russian (`ru_RU`) by Arkadiy Florinskiy
+* Slovak (`sk_SK`) by Stefan Stieranka
+* Spanish (`es_ES`) by Inma P.-Zubizarreta
+* Swedish (`sv_SE`) by [Christian](http://www.theindiaexperience.se/)
+* Turkish (`tr_TR`) by [Serhat Yolaçan](http://www.serhatyolacan.com/)
+* Ukrainian (`uk`) by Jurko Chervony
+* Vietnamese (`vn_VN`) by Techfacts
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
-Credits:  
+*Credits*  
 Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.19 jQuery plugin from Jack Moore.  
 The picture I used for the screenshots was designed by [Davide Vicariotto](http://wallpapers.vintage.it/)
 
