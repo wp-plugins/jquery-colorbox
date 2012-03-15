@@ -56,7 +56,7 @@ Localization
 
 Is your native language missing?  
 Translating the plugin is easy if you understand english and are fluent in another language.  
-I described in the [FAQ](http://wordpress.org/extend/plugins/all-in-one-favicon/faq/) how the translation works.
+I described in the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/) how the translation works.
 
 Credits:
 Includes <a href="http://jacklmoore.com/colorbox/">ColorBox</a> 1.3.19 jQuery plugin from Jack Moore.
