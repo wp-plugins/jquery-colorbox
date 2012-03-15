@@ -1,21 +1,22 @@
 === Plugin Name ===
-Contributors: techotronic
-Donate link: http://www.techotronic.de/donate/
-Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
-Requires at least: 2.8
-Tested up to: 3.3
-Stable tag: 4.3
+Contributors: techotronic  
+Donate link: http://www.techotronic.de/donate/  
+Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu  
+Requires at least: 2.8  
+Tested up to: 3.3  
+Stable tag: 4.3  
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
 
 == Description ==
 
 Yet another Colorbox/Lightbox plugin for Wordpress.
-jQuery Colorbox features 11 themes from which you can choose. See [my website](http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/).
+
+jQuery Colorbox features 11 themes from which you can choose. See [my website](http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/).  
 Works out-of-the-box with WordPress Galleries and [NextGEN Gallery](http://wordpress.org/extend/plugins/nextgen-gallery/)! (choose no effect in NextGEN settings)
 
-When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.
-All images in posts and pages can be displayed in a Lightbox/colorbox when the thumbnail is clicked.
+When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.  
+All images in posts and pages can be displayed in a Lightbox/colorbox when the thumbnail is clicked.  
 Images are grouped as galleries when linked in the same post or page. Groups can be displayed in a slideshow within the Lightbox/colorbox.
 
 Individual images can be excluded by adding a special CSS class.
@@ -24,40 +25,40 @@ jQuery Colorbox can also open linked content (external as well as inline) in a L
 
 Go to the [plugin page](http://www.techotronic.de/plugins/jquery-colorbox/) for demo pages.
 
-For more information visit the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/).
+For more information visit the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/).  
 If you have questions or problems, feel free to write an entry at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10)
 
 Localization
 
-* Arabic (ar) by [Modar Soos](http://www.photokeens.com)
-* Belorussian (be_BY) Marcis G.
-* Bosnian (bs_BA) by Vedran Jurincic
-* Simplified Chinese (zh_CN) by [Lucas Ho](http://tech.yiandya.com/)
-* Danish (da_DK) by Michael Bering Petersen
-* Dutch (nl_NL) by [Richard van Laak](http://nl.linkedin.com/pub/richard-laak/b/b21/672)
-* English (en_EN) by [Arne Franken](http://www.techotronic.de/)
-* Finnish (fi) by [Lauri Merisaari](http://www.merisaari.com/)
-* French (fr_FR) by [Pierre Sudarovich](http://www.monblogamoua.fr/)
-* German (de_DE) by [Arne Franken](http://www.techotronic.de/)
-* Hebrew (he_IL) by [Tommy Gordon](http://www.TommyGordon.co.il)
-* Italian (it_IT) by Erkinson
-* Latvian (lv) by Uldis Jansons
-* Malay (ms_MY) by [Saha-ini Ahmad Safian](http://www.inisahaini.com)
-* Polish (pl_PL) by Kornel Łysikowski
-* Portuguese (pt_BR) by [Gervásio Antônio](http://twitter.com/gervasioantonio)
-* Romanian (ro_RO) by Luke Tyler
-* Russian (ru_RU) by Arkadiy Florinskiy
-* Slovak (sk_SK) by Stefan Stieranka
-* Spanish (es_ES) by Inma P.-Zubizarreta
-* Swedish (sv_SE) by [Christian](http://www.theindiaexperience.se/)
-* Turkish (tr_TR) by [Serhat Yolaçan](http://www.serhatyolacan.com/)
-* Ukrainian (uk) by Jurko Chervony
-* Vietnamese (vn_VN) by Techfacts
+* Arabic `ar` by [Modar Soos](http://www.photokeens.com)
+* Belorussian `be_BY` Marcis G.
+* Bosnian `bs_BA` by Vedran Jurincic
+* Simplified Chinese `zh_CN` by [Lucas Ho](http://tech.yiandya.com/)
+* Danish `da_DK` by Michael Bering Petersen
+* Dutch `nl_NL` by [Richard van Laak](http://nl.linkedin.com/pub/richard-laak/b/b21/672)
+* English `en_EN` by [Arne Franken](http://www.techotronic.de/)
+* Finnish `fi` by [Lauri Merisaari](http://www.merisaari.com/)
+* French `fr_FR` by [Pierre Sudarovich](http://www.monblogamoua.fr/)
+* German `de_DE` by [Arne Franken](http://www.techotronic.de/)
+* Hebrew `he_IL` by [Tommy Gordon](http://www.TommyGordon.co.il)
+* Italian `it_IT` by Erkinson
+* Latvian `lv` by Uldis Jansons
+* Malay `ms_MY` by [Saha-ini Ahmad Safian](http://www.inisahaini.com)
+* Polish `pl_PL` by Kornel Łysikowski
+* Portuguese `pt_BR` by [Gervásio Antônio](http://twitter.com/gervasioantonio)
+* Romanian `ro_RO` by Luke Tyler
+* Russian `ru_RU` by Arkadiy Florinskiy
+* Slovak `sk_SK` by Stefan Stieranka
+* Spanish `es_ES` by Inma P.-Zubizarreta
+* Swedish `sv_SE` by [Christian](http://www.theindiaexperience.se/)
+* Turkish `tr_TR` by [Serhat Yolaçan](http://www.serhatyolacan.com/)
+* Ukrainian `uk` by Jurko Chervony
+* Vietnamese `vn_VN` by Techfacts
 
 Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
 
-Credits:
-Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.19 jQuery plugin from Jack Moore.
+Credits:  
+Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.19 jQuery plugin from Jack Moore.  
 The picture I used for the screenshots was designed by [Davide Vicariotto](http://wallpapers.vintage.it/)
 
 == Installation ==
@@ -68,11 +69,13 @@ To upgrade from a previous version of this plugin, use the built in update featu
 
 ###Installing The Plugin###
 
-Either use the built in plugin installation feature of WordPress, or extract all files from the ZIP file, making sure to keep the file structure intact, and then upload it to `/wp-content/plugins/`. Then just visit your admin area and activate the plugin. That's it!
+Either use the built in plugin installation feature of WordPress, or extract all files from the ZIP file, making sure to keep the file structure intact, and then upload it to `/wp-content/plugins/`.  
+Then just visit your admin area and activate the plugin.  
+That's it!
 
 ###Configuring The Plugin###
 
-Go to the settings page and choose one of the themes bundled with the plugin and other settings.
+Go to the settings page and choose one of the themes bundled with the plugin and other settings.  
 Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to work for all images.
 
 **See Also:** ["Installing Plugins" article on the WP Codex](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
@@ -82,92 +85,55 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 [Please visit my site for screenshots](http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/).
 
 == Frequently Asked Questions ==
-* I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?
+* I installed your plugin, but when I click on a thumbnail, the original picture is loaded directly instead of in the Colorbox. What could be the problem?  
+  Make sure that your theme uses the `wp_head();` function in the HTML head-tag.  
+  I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.  
+  Chances are that the other jQuery library is loaded after the one that I load. If that happens, the colorbox features are overwritten.
 
-Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
+* How does jQuery Colorbox work?  
+  When inserting a picture, the field "Link URL" needs to contain the link to the full-sized image. (press the button "Link to Image" below the field)  
+  When rendering the blog, a special CSS class (`colorbox-postId`, e.g. `colorbox-123`) is added to linked images.  
+  This CSS class is then passed to the colorbox JavaScript.
 
-I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
-Chances are that the other jQuery library is loaded after the one that I load. If that happens, the colorbox features are overwritten.
+* How do I exclude an image from Colorbox in a page or post?  
+  Add the CSS class `colorbox-off` to the image or to the link to the big sized image you want to exclude.  
+  jQuery Colorbox does not add the colorbox effect to images that have the CSS class `colorbox-off`.
 
-* How does jQuery Colorbox work?
+* How does jQuery Colorbox group images?  
+  For all images in a post or page, the same CSS class is added. All images with the same CSS class are grouped.
 
-When inserting a picture, the field "Link URL" needs to contain the link to the full-sized image. (press the button "Link to Image" below the field)
-When rendering the blog, a special CSS class (`colorbox-postId`, e.g. `colorbox-123`) is added to linked images.
-This CSS class is then passed to the colorbox JavaScript.
+* I have Flash (e.g. Youtube videos) embedded on my website. Why do they show up over the layer when I click on an image?  
+  This is a Flash issue, but relatively easy to solve. Just activate the automatic hiding of embedded flash objects on the settings page.  
+  Adobe described on these sites what the problem is and how to fix it manually:  
+  [Adobe Knowledgebase 1](http://kb2.adobe.com/cps/155/tn_15523.html)  
+  [Adobe Knowledgebase 2](http://kb2.adobe.com/cps/142/tn_14201.html)
 
-* How do I exclude an image from Colorbox in a page or post?
+* I have a problem with the Colorbox or want to style it my own way. Can you help?  
+  Of course I want to help everyone, but I have a full time job and I don't have the time. You can ask your questions at the [Colorbox Google group](http://groups.google.com/group/colorbox/topics").
 
-Add the CSS class `colorbox-off` to the image or to the link to the big sized image you want to exclude.
-jQuery Colorbox does not add the colorbox effect to images that have the CSS class `colorbox-off`.
+* Why is jQuery Colorbox not available in my language?  
+  I speak German and English fluently, but unfortunately no other language well enough to do a translation.  
+  Would you like to help? Translating the plugin is easy if you understand English and are fluent in another language.
 
-* How does jQuery Colorbox group images?
+* How do I translate jQuery Colorbox?  
+  Take a look at the WordPress site and identify [your langyage code](http://codex.wordpress.org/WordPress_in_Your_Language):  
+  e.g. the language code for German is `de_DE`.
 
-For all images in a post or page, the same CSS class is added. All images with the same CSS class are grouped.
-
-* I have Flash (e.g. Youtube videos) embedded on my website. Why do they show up over the layer when I click on an image?
-
-This is a Flash issue, but relatively easy to solve. Just activate the automatic hiding of embedded flash objects on the settings page.
-
-Adobe described on these sites what the problem is and how to fix it manually:
-
-
-[Adobe Knowledgebase 1](http://kb2.adobe.com/cps/155/tn_15523.html)
-
-
-[Adobe Knowledgebase 2](http://kb2.adobe.com/cps/142/tn_14201.html)
-
-* I have a problem with the Colorbox or want to style it my own way. Can you help?
-
-Of course I want to help everyone, but I have a full time job and I don't have the time. You can ask your questions at the <a href="http://groups.google.com/group/colorbox/topics">Colorbox Google group</a>.
-
-* Why is jQuery Colorbox not available in my language?
-
-I speak German and English fluently, but unfortunately no other language well enough to do a translation.
-
-Would you like to help? Translating the plugin is easy if you understand English and are fluent in another language.
-
-* How do I translate jQuery Colorbox?
-
-Take a look at the WordPress site and identify [your langyage code](http://codex.wordpress.org/WordPress_in_Your_Language):
+  1. download [POEdit](http://www.poedit.net/)
+  2. download jQuery Colorbox (from your FTP server or from [WordPress.org](http://wordpress.org/extend/plugins/jquery-colorbox/))
+  3. copy the file `localization/jquery-colorbox-en_EN.po` and rename it. (in this case `jquery-colorbox-de_DE.po`)
+  4. open the file with POEdit.
+  5. translate all strings. Things like `{total}` or `%1$s` mean that a value will be inserted later.
+  6. The string that says "English translation by Arne ...", this is where you put your name, website (or email) and your language in. ;-)
+  7. (optional) Go to POEdit -> Catalog -> Settings and enter your name, email, language code etc
+  8. Save the file. Now you will see two files, `jquery-colorbox-de_DE.po` and `jquery-colorbox-de_DE.mo`.
+  9. Upload your files to your FTP server into the jQuery Colorbox directory (usually `/wp-content/plugins/jquery-colorbox/`)
+  10. When you are sure that all translations are working correctly, send the po-file to me and I will put it into the next jQuery Colorbox version.
 
 
-e.g. the language code for German is "de_DE".
-
-
-Step 1) download [POEdit](http://www.poedit.net/)
-
-
-Step 2) download jQuery Colorbox (from your FTP server or from [WordPress.org](http://wordpress.org/extend/plugins/jquery-colorbox/))
-
-
-Step 3) copy the file `localization/jquery-colorbox-en_EN.po` and rename it. (in this case `jquery-colorbox-de_DE.po`)
-
-
-Step 4) open the file with POEdit.
-
-
-Step 5) translate all strings. Things like `{total}` or `%1$s` mean that a value will be inserted later.
-
-
-Step 5a) The string that says "English translation by Arne ...", this is where you put your name, website (or email) and your language in. ;-)
-
-
-Step 5b) (optional) Go to POEdit -> Catalog -> Settings and enter your name, email, language code etc
-
-
-Step 6) Save the file. Now you will see two files, `jquery-colorbox-de_DE.po` and `jquery-colorbox-de_DE.mo`.
-
-
-Step 7) Upload your files to your FTP server into the jQuery Colorbox directory (usually `/wp-content/plugins/jquery-colorbox/`)
-
-
-Step 8) When you are sure that all translations are working correctly, send the po-file to me and I will put it into the next jQuery Colorbox version.
-
-* My question isn't answered here. What do I do now?
-
-Feel free to open a thread at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10).
-
-I'll include new FAQs in newer versions.
+* My question isn't answered here. What do I do now?  
+  Feel free to open a thread at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10).  
+  I'll include new FAQs in newer versions.
 
 == Changelog ==
 ### 4.3 (2012-03-12) ###
@@ -175,7 +141,7 @@ I'll include new FAQs in newer versions.
 * CHANGE: Ukrainian translation updated by Jurko Chervony
 * CHANGE: update to Colorbox 1.3.19
 * CHANGE: gracefully add CSS style `colorbox-link` to TinyMCE style dropdown
-* CHANGE: use plugins_url to make links HTTPS aware
+* CHANGE: use `plugins_url` to make links HTTPS aware
 * CHANGE: increase z-index of Colorbox and overlay to 99999 since Twentyeleven has a Header z-index of 9999
 * CHANGE: removing meta tag from header since it's not HTML5 compatible
 * CHANGE: pulled all links to company sites of translators on request by WordPress staff
@@ -239,7 +205,7 @@ I'll include new FAQs in newer versions.
 
 ### 3.7 (2010-12-21) ###
 * NEW: Experimental feature: jQuery Colorbox can now open external websites/pictures if the link has the class "colorbox-link" and a width/height for the colorbox is set.
-* BUGFIX: Plugin now works if "WP_DEBUG" is set to "true". Thx to Roy Iversen for the bug report!
+* BUGFIX: Plugin now works if `WP_DEBUG` is set to "true". Thx to Roy Iversen for the bug report!
 * CHANGE: rewrote auto-add JavaScript. Thx to jrevillini for the help!
 * NEW: Slovak translation by Stefan Stieranka
 * NEW: Swedish translation by Christian
@@ -347,7 +313,7 @@ I'll include new FAQs in newer versions.
 
 ### 1.3.1 (2010-01-18) ###
 * CHANGE: changed include calls for Colorbox JavaScript and CSS to version 1.3.6
-* CHANGE: optimized modification of the_content
+* CHANGE: optimized modification of `the_content`
 
 ### 1.3 ###
 * NEW: jQuery-Colorbox won't add Colorbox functionality to images that have the CSS class `colorbox-off`
