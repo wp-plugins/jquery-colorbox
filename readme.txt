@@ -2,7 +2,7 @@
 Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu
-Requires at least: 2.8
+Requires at least: 3.1
 Tested up to: 3.3
 Stable tag: 4.3
 
@@ -54,7 +54,9 @@ Localization
 * Ukrainian (uk) by Jurko Chervony
 * Vietnamese (vn_VN) by Techfacts
 
-Is your native language missing? Translating the plugin is easy if you understand english and are fluent in another language. Just send me an email.
+Is your native language missing?  
+Translating the plugin is easy if you understand english and are fluent in another language.  
+I described in the [FAQ](http://wordpress.org/extend/plugins/all-in-one-favicon/faq/) how the translation works.
 
 Credits:
 Includes <a href="http://jacklmoore.com/colorbox/">ColorBox</a> 1.3.19 jQuery plugin from Jack Moore.
@@ -88,6 +90,11 @@ Make sure that your theme uses the `wp_head();` function in the HTML head-tag.
 
 I have seen problems where other plugins include their own versions of the jQuery library my plugin uses.
 Chances are that the other jQuery library is loaded after the one that I load. If that happens, the colorbox features are overwritten.
+
+* When the Colorbox opens, no picture is displayed and the frame of the Colorbox is broken
+
+With version 4.3, the included Colorbox library is no longer compatible to jQuery 1.4.2 and below.
+Please make sure that the jQuery version that is loaded on your site is at least 1.4.4 or higher. (WordPress 3.1 brings jQuery 1.4.4 along)
 
 * How does jQuery Colorbox work?
 
