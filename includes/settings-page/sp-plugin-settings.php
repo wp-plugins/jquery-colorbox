@@ -131,7 +131,7 @@
     </table>
     <p class="submit">
       <input type="hidden" name="action" value="jQueryColorboxUpdateSettings"/>
-      <input type="submit" name="jQueryColorboxUpdateSettings" class="button-primary" value="<?php _e('Save Changes') ?>"/>
+      <input type="submit" name="jQueryColorboxUpdateSettings" class="button-primary" value="<?php _e('Save Changes'); ?>"/>
     </p>
   </div>
 </div>
