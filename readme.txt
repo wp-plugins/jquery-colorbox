@@ -138,6 +138,11 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
   I'll include new FAQs in newer versions.
 
 == Changelog ==
+### 4.4 (2012-04-15) ###
+* NEW: A Zoom overlay can be added to images automatically
+* NEW: Added option to load all JavaScript in the footer
+* NEW: Added option to use jQuery library from Google instead of the one that comes with WordPress
+
 ### 4.3 (2012-03-12) ###
 * NEW: Romanian translation by Luke Tyler
 * CHANGE: Ukrainian translation updated by Jurko Chervony

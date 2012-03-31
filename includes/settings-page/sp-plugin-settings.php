@@ -64,15 +64,42 @@
           <br/><?php _e('Automatically hide embeded flash objects behind the Colorbox layer.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
         </td>
       </tr>
-      <!--tr>
-            <th scope="row">
-                <label for="jquery-colorbox-javascriptInFooter"><?php __('Add JavaScript to footer', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
-            </th>
-            <td>
-                <input type="checkbox" name="<?php //echo JQUERYCOLORBOX_SETTINGSNAME ?>[javascriptInFooter]" id="jquery-colorbox-javascriptInFooter" value="true" <?php //echo ($this->colorboxSettings['javascriptInFooter']) ? 'checked="checked"' : '';?>/>
-                <br/><?php __('Add JavaScript to footer instead of the header.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
-            </td>
-        </tr-->
+      <tr>
+        <th scope="row">
+          <label
+              for="jquery-colorbox-addZoomOverlay"><?php _e('Add Zoom overlay to pictures', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+        </th>
+        <td>
+          <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[addZoomOverlay]"
+                 id="jquery-colorbox-addZoomOverlay"
+                 value="true" <?php echo ($this->colorboxSettings['addZoomOverlay']) ? 'checked="checked"' : '';?>/>
+          <br/><?php _e('Add Zoom overlay to pictures that open in a Colorbox.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label
+              for="jquery-colorbox-useGoogleJQuery"><?php printf(__('Use jQuery library from Google', JQUERYCOLORBOX_TEXTDOMAIN),JQUERYLIBRARY_VERSION); ?>:</label>
+        </th>
+        <td>
+          <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[useGoogleJQuery]"
+                 id="jquery-colorbox-useGoogleJQuery"
+                 value="true" <?php echo ($this->colorboxSettings['useGoogleJQuery']) ? 'checked="checked"' : '';?>/>
+          <br/><?php printf(__('Use jQuery library version %1$s from Google instead of the one that comes with WordPress.', JQUERYCOLORBOX_TEXTDOMAIN),JQUERYLIBRARY_VERSION); ?>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <label
+              for="jquery-colorbox-javascriptInFooter"><?php _e('Add JavaScript to footer', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
+        </th>
+        <td>
+          <input type="checkbox" name="<?php echo JQUERYCOLORBOX_SETTINGSNAME ?>[javascriptInFooter]"
+                 id="jquery-colorbox-javascriptInFooter"
+                 value="true" <?php echo ($this->colorboxSettings['javascriptInFooter']) ? 'checked="checked"' : '';?>/>
+          <br/><?php _e('Add JavaScript to footer instead of the header.', JQUERYCOLORBOX_TEXTDOMAIN); ?>
+        </td>
+      </tr>
       <tr>
         <th scope="row">
           <label for="jquery-colorbox-removeLinkFromMetaBox"><?php _e('Remove link from Meta-box', JQUERYCOLORBOX_TEXTDOMAIN); ?>:</label>
