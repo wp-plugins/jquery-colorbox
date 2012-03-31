@@ -217,12 +217,12 @@ class JQueryColorboxFrontend {
    */
   //public function addColorboxWrapperJS() {
   function addColorboxWrapperJS() {
-//    if ($this->colorboxSettings['debugMode']) {
+    if ($this->colorboxSettings['debugMode']) {
       $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper.js";
-//    }
-//    else {
-//      $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper-min.js";
-//    }
+    }
+    else {
+      $jqueryColorboxWrapperJavaScriptPath = "js/jquery-colorbox-wrapper-min.js";
+    }
     wp_enqueue_script('colorbox-wrapper', JQUERYCOLORBOX_PLUGIN_URL . '/' . $jqueryColorboxWrapperJavaScriptPath, array('colorbox'), JQUERYCOLORBOX_VERSION, $this->colorboxSettings['javascriptInFooter']);
   }
 
