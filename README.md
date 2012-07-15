@@ -142,6 +142,7 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 * NEW: A Zoom overlay can be added to images automatically
 * NEW: Added option to load all JavaScript in the footer
 * NEW: Added option to use jQuery library from Google instead of the one that comes with WordPress
+* CHANGE: successfully tested with WordPress 3.4
 * CHANGE: links can now be grouped by adding CSS class "colorbox-link-NUMBER"
 * CHANGE: Marco Chiesi updated the italian translation
 * CHANGE: switch declaration of 'NAME' and 'TEXTDOMAIN'
