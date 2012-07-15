@@ -23,17 +23,17 @@ var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
 jQuery(document).ready(function() {
 
   //check if config JavaScript was successfully inserted. Load defaults otherwise.
-  if(!(typeof jQueryColorboxSettingsArray === 'object')) {
+  if(typeof jQueryColorboxSettingsArray !== 'object') {
     jQueryColorboxSettingsArray = getColorboxConfigDefaults();
   }
 
-  if (jQueryColorboxSettingsArray.autoColorboxJavaScript == "true") {
+  if (jQueryColorboxSettingsArray.autoColorboxJavaScript === "true") {
     colorboxAddManualClass();
   }
-  if (jQueryColorboxSettingsArray.colorboxAddClassToLinks == "true") {
+  if (jQueryColorboxSettingsArray.colorboxAddClassToLinks === "true") {
     colorboxAddClassToLinks();
   }
-  if (jQueryColorboxSettingsArray.autoHideFlash == "true") {
+  if (jQueryColorboxSettingsArray.autoHideFlash === "true") {
     colorboxHideFlash();
     colorboxShowFlash();
   }
@@ -57,7 +57,7 @@ jQuery(document).ready(function() {
         flashEmbeds[i].style.visibility = "visible";
       }
     });
-  }
+  };
 })(jQuery);
 
 // colorboxShowFlash()
@@ -79,7 +79,7 @@ jQuery(document).ready(function() {
         flashEmbeds[i].style.visibility = "hidden";
       }
     });
-  }
+  };
 })(jQuery);
 
 // colorboxHideFlash()
@@ -100,9 +100,8 @@ jQuery(document).ready(function() {
           $link.addClass('colorbox-link');
         }
       }
-
     });
-  }
+  };
 })(jQuery);
 
 // colorboxAddClassToLinks()
@@ -121,7 +120,7 @@ jQuery(document).ready(function() {
         $img.addClass('colorbox-manual');
       }
     });
-  }
+  };
 })(jQuery);
 
 // colorboxAddManualClass()
@@ -133,9 +132,11 @@ jQuery(document).ready(function() {
  */
 (function(jQuery) {
   colorboxSelector = function() {
+
     jQuery("a:has(img[class*=colorbox-]):not(.colorbox-off)").each(function(index, link) {
       //create local copy of Colorbox array so that modifications can be made for every link
       ColorboxLocal = jQuery.extend(true,{},jQueryColorboxSettingsArray);
+
       //set variables for images
       ColorboxLocal.colorboxMaxWidth = ColorboxLocal.colorboxImageMaxWidth;
       ColorboxLocal.colorboxMaxHeight = ColorboxLocal.colorboxImageMaxHeight;
@@ -143,23 +144,24 @@ jQuery(document).ready(function() {
       ColorboxLocal.colorboxWidth = ColorboxLocal.colorboxImageWidth;
       var $linkHref = jQuery(link).attr("href");
       if ($linkHref !== undefined && $linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
-        colorboxImage(index, link)
+        colorboxImage(index, link);
       }
-      else {
+      //else {
         //TODO: does not work, every link from an image will be opened in a colorbox...
         //colorboxLink(index, link,$linkHref)
-      }
+      //}
     });
 
     jQuery("a[class*=colorbox-link]").each(function(index, link) {
       //create local copy of Colorbox array so that modifications can be made for every link
       ColorboxLocal = jQuery.extend(true,{},jQueryColorboxSettingsArray);
+
       var $linkHref = jQuery(link).attr("href");
       if ($linkHref !== undefined) {
-        colorboxLink(index, link,$linkHref)
+        colorboxLink(index, link,$linkHref);
       }
     });
-  }
+  };
 })(jQuery);
 
 // colorboxSelector()
@@ -199,7 +201,7 @@ jQuery(document).ready(function() {
           ColorboxLocal.colorboxTitle = $imageTitle;
         }
 
-        if (jQueryColorboxSettingsArray.addZoomOverlay == "true") {
+        if (jQueryColorboxSettingsArray.addZoomOverlay === "true") {
           colorboxAddZoomOverlayToImages(jQuery(link), $image);
         }
 
@@ -217,11 +219,11 @@ jQuery(document).ready(function() {
  * sets necessary variables
  */
 (function(jQuery) {
-  colorboxLink = function(index, obj,$linkHref) {
+  colorboxLink = function(index, link, $linkHref) {
     //Colorbox links should not be grouped
     ColorboxLocal.colorboxGroupId = "nofollow";
 
-    var $link = jQuery(obj);
+    var $link = jQuery(link);
     //the title of the link is used as the title for the Colorbox
     var $linkTitle = $link.attr("title");
     if ($linkTitle !== undefined) {
@@ -256,8 +258,8 @@ jQuery(document).ready(function() {
       }
     }
 
-    colorboxWrapper(obj);
-  }
+    colorboxWrapper(link);
+  };
 })(jQuery);
 
 // colorboxLink()
@@ -344,7 +346,7 @@ jQuery(document).ready(function() {
       //onCleanup
       //onClosed
     });
-  }
+  };
 })(jQuery);
 
 // colorboxWrapper()
@@ -368,8 +370,8 @@ jQuery(document).ready(function() {
           //mouseOut
           $zoomHover.stop().animate({ opacity:0 }, 300);
           $image.stop().animate({ opacity:1 }, 300);
-        })
-  }
+        });
+  };
 })(jQuery);
 
 // colorboxAddZoomOverlayToImages()
@@ -428,8 +430,8 @@ jQuery(document).ready(function() {
       colorboxAddClassToLinks: false,
       useGoogleJQuery: false,
       addZoomOverlay: false
-    }
-  }
+    };
+  };
 })(jQuery);
 
 // getColorboxConfigDefaults()
