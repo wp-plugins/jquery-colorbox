@@ -15,7 +15,8 @@ var COLORBOX_MANUAL = "colorbox-manual";
 var COLORBOX_OFF_CLASS = ".colorbox-off";
 var COLORBOX_LINK_CLASS = ".colorbox-link";
 var COLORBOX_OFF = "colorbox-off";
-var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
+var COLORBOX_CLASS_PATTERN = "colorbox-[0-9]+";
+var COLORBOX_LINK_CLASS_PATTERN = "colorbox-link-[0-9]+";
 
 /**
  * This block calls all functions on page load.
@@ -177,14 +178,14 @@ jQuery(document).ready(function() {
     //check if the link has a colorbox class
     var $linkClasses = jQuery(link).attr("class");
     if ($linkClasses !== undefined) {
-      ColorboxLocal.colorboxGroupId = $linkClasses.match(COLORBOX_CLASS_MATCH) || $linkClasses.match(COLORBOX_MANUAL);
+      ColorboxLocal.colorboxGroupId = $linkClasses.match(COLORBOX_CLASS_PATTERN) || $linkClasses.match(COLORBOX_MANUAL);
     }
     if (!ColorboxLocal.colorboxGroupId) {
       // link does not have colorbox class. Check if image has colorbox class.
       var $imageClasses = $image.attr("class");
       if ($imageClasses !== undefined && !$imageClasses.match(COLORBOX_OFF)) {
         //groupId is either the automatically created colorbox-123 or the manually added colorbox-manual
-        ColorboxLocal.colorboxGroupId = $imageClasses.match(COLORBOX_CLASS_MATCH) || $imageClasses.match(COLORBOX_MANUAL);
+        ColorboxLocal.colorboxGroupId = $imageClasses.match(COLORBOX_CLASS_PATTERN) || $imageClasses.match(COLORBOX_MANUAL);
       }
       //only call Colorbox if there is a groupId for the image
       if (ColorboxLocal.colorboxGroupId) {
@@ -219,9 +220,19 @@ jQuery(document).ready(function() {
  * sets necessary variables
  */
 (function(jQuery) {
-  colorboxLink = function(index, link, $linkHref) {
-    //Colorbox links should not be grouped
-    ColorboxLocal.colorboxGroupId = "nofollow";
+  colorboxLink = function(index, link, linkHref) {
+
+    //class attribute must exist, otherwise this method wouldn't be called
+    ColorboxLocal.colorboxGroupId = jQuery(link).attr("class").match(COLORBOX_LINK_CLASS_PATTERN);
+
+    if(ColorboxLocal.colorboxGroupId !== undefined || ColorboxLocal.colorboxGroupId !== null) {
+      //convert groupId to string and lose "colorbox-link-" for easier use
+      ColorboxLocal.colorboxGroupId = ColorboxLocal.colorboxGroupId.toString().split('-')[2];
+    }
+    else {
+      //no matching class found for link, Colorbox links should not be grouped
+      ColorboxLocal.colorboxGroupId = "nofollow";
+    }
 
     var $link = jQuery(link);
     //the title of the link is used as the title for the Colorbox
@@ -234,7 +245,7 @@ jQuery(document).ready(function() {
     }
 
     // already checked for ($linkHref !== undefined) before calling this method
-    if ($linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
+    if (linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
       //link points to an image, set variables accordingly
       ColorboxLocal.colorboxMaxWidth = ColorboxLocal.colorboxImageMaxWidth;
       ColorboxLocal.colorboxMaxHeight = ColorboxLocal.colorboxImageMaxHeight;
@@ -248,7 +259,7 @@ jQuery(document).ready(function() {
       ColorboxLocal.colorboxHeight = ColorboxLocal.colorboxLinkHeight;
       ColorboxLocal.colorboxWidth = ColorboxLocal.colorboxLinkWidth;
 
-      if ($linkHref.match(COLORBOX_INTERNAL_LINK_PATTERN)) {
+      if (linkHref.match(COLORBOX_INTERNAL_LINK_PATTERN)) {
         //link points to inline content
         ColorboxLocal.colorboxInline = true;
       }
