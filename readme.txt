@@ -143,6 +143,7 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 * NEW: Added option to load all JavaScript in the footer
 * NEW: Added option to use jQuery library from Google instead of the one that comes with WordPress
 * CHANGE: Marco Chiesi updated the italian translation
+* CHANGE: switch declaration of 'NAME' and 'TEXTDOMAIN'
 
 ### 4.3 (2012-03-12) ###
 * NEW: Romanian translation by Luke Tyler

@@ -30,11 +30,11 @@ if (!defined('JQUERYCOLORBOX_PLUGIN_NAME')) {
   //jquery-colorbox
   define('JQUERYCOLORBOX_PLUGIN_NAME', trim(dirname(JQUERYCOLORBOX_PLUGIN_BASENAME), '/'));
 }
-if (!defined('JQUERYCOLORBOX_NAME')) {
-  define('JQUERYCOLORBOX_NAME', __('jQuery Colorbox',JQUERYCOLORBOX_TEXTDOMAIN));
-}
 if (!defined('JQUERYCOLORBOX_TEXTDOMAIN')) {
   define('JQUERYCOLORBOX_TEXTDOMAIN', 'jquery-colorbox');
+}
+if (!defined('JQUERYCOLORBOX_NAME')) {
+  define('JQUERYCOLORBOX_NAME', __('jQuery Colorbox',JQUERYCOLORBOX_TEXTDOMAIN));
 }
 if (!defined('JQUERYCOLORBOX_PLUGIN_DIR')) {
   // /path/to/wordpress/wp-content/plugins/jquery-colorbox
