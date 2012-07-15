@@ -41,7 +41,7 @@ If you have questions or problems, feel free to write an entry at [the jQuery Co
 * French (`fr_FR`) by [Pierre Sudarovich](http://www.monblogamoua.fr/)
 * German (`de_DE`) by [Arne Franken](http://www.techotronic.de/)
 * Hebrew (`he_IL`) by [Tommy Gordon](http://www.TommyGordon.co.il)
-* Italian (`it_IT`) by Erkinson
+* Italian (`it_IT`) by Marco Chiesi
 * Latvian (`lv`) by Uldis Jansons
 * Malay (`ms_MY`) by [Saha-ini Ahmad Safian](http://www.inisahaini.com)
 * Polish (`pl_PL`) by Kornel Łysikowski
@@ -142,6 +142,7 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 * NEW: A Zoom overlay can be added to images automatically
 * NEW: Added option to load all JavaScript in the footer
 * NEW: Added option to use jQuery library from Google instead of the one that comes with WordPress
+* CHANGE: Marco Chiesi updated the italian translation
 
 ### 4.3 (2012-03-12) ###
 * NEW: Romanian translation by Luke Tyler
