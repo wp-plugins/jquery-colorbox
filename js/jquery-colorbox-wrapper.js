@@ -23,7 +23,7 @@ var COLORBOX_CLASS_MATCH = "colorbox-[0-9]+";
 jQuery(document).ready(function() {
 
   //check if config JavaScript was successfully inserted. Load defaults otherwise.
-  if(!(typeof jQueryColorboxSettingsArray == 'object')) {
+  if(!(typeof jQueryColorboxSettingsArray === 'object')) {
     jQueryColorboxSettingsArray = getColorboxConfigDefaults();
   }
 
@@ -90,7 +90,7 @@ jQuery(document).ready(function() {
  * add colorbox-link to anchor tags
  */
 (function(jQuery) {
-  jQuery.fn.colorboxAddClassToLinks = function() {
+  colorboxAddClassToLinks = function() {
     jQuery("a:not(:contains(img))").each(function(index, link) {
       var $link = jQuery(link);
       var $linkClass = $link.attr("class");
@@ -117,7 +117,7 @@ jQuery(document).ready(function() {
     jQuery("img").each(function(index, image) {
       var $img = jQuery(image);
       var $imgClass = $img.attr("class");
-      if ($imgClass == undefined || !$imgClass.match('colorbox')) {
+      if ($imgClass === undefined || !$imgClass.match('colorbox')) {
         $img.addClass('colorbox-manual');
       }
     });
@@ -144,9 +144,10 @@ jQuery(document).ready(function() {
       var $linkHref = jQuery(link).attr("href");
       if ($linkHref !== undefined && $linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
         colorboxImage(index, link)
-      } else {
+      }
+      else {
         //TODO: does not work, every link from an image will be opened in a colorbox...
-        //colorboxLink(index, obj,$linkHref)
+        //colorboxLink(index, link,$linkHref)
       }
     });
 
@@ -225,19 +226,21 @@ jQuery(document).ready(function() {
     var $linkTitle = $link.attr("title");
     if ($linkTitle !== undefined) {
       ColorboxLocal.colorboxTitle = $linkTitle;
-    } else {
+    }
+    else {
       ColorboxLocal.colorboxTitle = '';
     }
 
     // already checked for ($linkHref !== undefined) before calling this method
     if ($linkHref.match(COLORBOX_SUFFIX_PATTERN)) {
-      //set variables for images
+      //link points to an image, set variables accordingly
       ColorboxLocal.colorboxMaxWidth = ColorboxLocal.colorboxImageMaxWidth;
       ColorboxLocal.colorboxMaxHeight = ColorboxLocal.colorboxImageMaxHeight;
       ColorboxLocal.colorboxHeight = ColorboxLocal.colorboxImageHeight;
       ColorboxLocal.colorboxWidth = ColorboxLocal.colorboxImageWidth;
-    } else {
-      //set variables for non-images
+    }
+    else {
+      //link points to something else, set variables accordingly
       ColorboxLocal.colorboxMaxWidth = false;
       ColorboxLocal.colorboxMaxHeight = false;
       ColorboxLocal.colorboxHeight = ColorboxLocal.colorboxLinkHeight;
@@ -246,7 +249,8 @@ jQuery(document).ready(function() {
       if ($linkHref.match(COLORBOX_INTERNAL_LINK_PATTERN)) {
         //link points to inline content
         ColorboxLocal.colorboxInline = true;
-      } else {
+      }
+      else {
         //link points to something else, load in iFrame
         ColorboxLocal.colorboxIframe = true;
       }
@@ -271,42 +275,74 @@ jQuery(document).ready(function() {
     jQuery.each(ColorboxLocal, function(key, value) {
       if (value === "false") {
         ColorboxLocal[key] = false;
-      } else if (value === "true") {
+      }
+      else if (value === "true") {
         ColorboxLocal[key] = true;
       }
     });
 
+    //for debugging purposes: print current array to title attribute
+//    var currentArray;
+//    currentArray = '<!--';
+//    currentArray = currentArray + printArray(ColorboxLocal);
+//    currentArray = currentArray + '-->';
+//    ColorboxLocal.colorboxTitle += ColorboxLocal.colorboxTitle + currentArray;
+
     //finally call Colorbox library
     jQuery(link).colorbox({
-      rel:ColorboxLocal.colorboxGroupId,
-      title:ColorboxLocal.colorboxTitle,
-      maxHeight:ColorboxLocal.colorboxMaxHeight,
-      maxWidth:ColorboxLocal.colorboxMaxWidth,
-      initialHeight:ColorboxLocal.colorboxInitialHeight,
-      initialWidth:ColorboxLocal.colorboxInitialWidth,
-      height:ColorboxLocal.colorboxHeight,
-      width:ColorboxLocal.colorboxWidth,
-      slideshow:ColorboxLocal.colorboxSlideshow,
-      slideshowAuto:ColorboxLocal.colorboxSlideshowAuto,
-      scalePhotos:ColorboxLocal.colorboxScalePhotos,
-      preloading:ColorboxLocal.colorboxPreloading,
-      overlayClose:ColorboxLocal.colorboxOverlayClose,
-      loop:ColorboxLocal.colorboxLoop,
-      escKey:ColorboxLocal.colorboxEscKey,
-      arrowKey:ColorboxLocal.colorboxArrowKey,
-      scrolling:ColorboxLocal.colorboxScrolling,
-      opacity:ColorboxLocal.colorboxOpacity,
+      // --- settings
       transition:ColorboxLocal.colorboxTransition,
       speed:parseInt(ColorboxLocal.colorboxSpeed),
-      slideshowSpeed:parseInt(ColorboxLocal.colorboxSlideshowSpeed),
-      close:ColorboxLocal.colorboxClose,
-      next:ColorboxLocal.colorboxNext,
-      previous:ColorboxLocal.colorboxPrevious,
-      slideshowStart:ColorboxLocal.colorboxSlideshowStart,
-      slideshowStop:ColorboxLocal.colorboxSlideshowStop,
+      //href=false
+      title:ColorboxLocal.colorboxTitle,
+      rel:ColorboxLocal.colorboxGroupId,
+      scalePhotos:ColorboxLocal.colorboxScalePhotos,
+      scrolling:ColorboxLocal.colorboxScrolling,
+      opacity:ColorboxLocal.colorboxOpacity,
+      //open=false
+      //returnFocus=true
+      //fastIframe=true
+      preloading:ColorboxLocal.colorboxPreloading,
+      overlayClose:ColorboxLocal.colorboxOverlayClose,
+      escKey:ColorboxLocal.colorboxEscKey,
+      arrowKey:ColorboxLocal.colorboxArrowKey,
+      loop:ColorboxLocal.colorboxLoop,
       current:ColorboxLocal.colorboxCurrent,
+      previous:ColorboxLocal.colorboxPrevious,
+      next:ColorboxLocal.colorboxNext,
+      close:ColorboxLocal.colorboxClose,
+      //data
+
+      // --- content type
+      iframe:ColorboxLocal.colorboxIframe,
       inline:ColorboxLocal.colorboxInline,
-      iframe:ColorboxLocal.colorboxIframe
+      //html
+      //photo
+      //ajax
+
+      // --- dimensions
+      width:ColorboxLocal.colorboxWidth,
+      height:ColorboxLocal.colorboxHeight,
+      //innerWidth=false
+      //innerHeight=false
+      initialWidth:ColorboxLocal.colorboxInitialWidth,
+      initialHeight:ColorboxLocal.colorboxInitialHeight,
+      maxWidth:ColorboxLocal.colorboxMaxWidth,
+      maxHeight:ColorboxLocal.colorboxMaxHeight,
+
+      // --- slideshow
+      slideshow:ColorboxLocal.colorboxSlideshow,
+      slideshowSpeed:parseInt(ColorboxLocal.colorboxSlideshowSpeed),
+      slideshowAuto:ColorboxLocal.colorboxSlideshowAuto,
+      slideshowStart:ColorboxLocal.colorboxSlideshowStart,
+      slideshowStop:ColorboxLocal.colorboxSlideshowStop
+
+      // --- callbacks
+      //onOpen
+      //onLoad
+      //onComplete
+      //onCleanup
+      //onClosed
     });
   }
 })(jQuery);
@@ -397,3 +433,43 @@ jQuery(document).ready(function() {
 })(jQuery);
 
 // getColorboxConfigDefaults()
+
+/**
+ * Print given array
+ */
+(function (jQuery) {
+  printArray = function(array, level) {
+        var output = "";
+        if (!level) {
+          level = 0;
+        }
+
+        //The padding given at the beginning of the line.
+        var padding = "";
+        for (var j = 0; j < level + 1; j++) {
+          padding += "    ";
+        }
+
+        if (typeof(array) === 'object') { //Array/Hashes/Objects
+          for (var item in array) {
+
+            var value = array[item];
+
+            if (typeof(value) === 'object') { //If it is an array,
+              output += padding + "'" + item + "' ...\n";
+              output += printArray(value, level + 1);
+            }
+            else {
+              output += padding + "'" + item + "' = \"" + value + "\"\n";
+            }
+          }
+        }
+        else { //Stings/Chars/Numbers etc.
+          output = "===>" + array + "<===(" + typeof(array) + ")";
+        }
+
+        return output;
+      }
+})(jQuery);
+
+// printArray()
