@@ -18,7 +18,7 @@ class JQueryColorboxFrontend {
    * @access static
    * @author Arne Franken
    *
-   * @param array $colorboxSettings user settings
+   * @param string[] $colorboxSettings user settings
    */
   //public static function JQueryColorboxFrontend($colorboxSettings) {
   function JQueryColorboxFrontend($colorboxSettings) {
@@ -82,8 +82,8 @@ class JQueryColorboxFrontend {
    * @access public
    * @author Arne Franken
    *
-   * @param  XML $content post or page content
-   * @return XML replaced content or excerpt
+   * @param  string $content post or page content
+   * @return string replaced content or excerpt
    */
   //public function addColorboxGroupIdToImages($content) {
   function addColorboxGroupIdToImages($content) {
@@ -93,7 +93,7 @@ class JQueryColorboxFrontend {
     $imgPattern = "/<img([^\>]*?)>/i";
     if (preg_match_all($imgPattern, $content, $imgTags)) {
       foreach ($imgTags[0] as $imgTag) {
-        // only work on imgTags that do not already contain the String "colorbox-"
+        // only work on imgTags that do not already contain the string "colorbox-"
         if (!preg_match('/colorbox-/i', $imgTag)) {
           if (!preg_match('/class=/i', $imgTag)) {
             // imgTag does not contain class-attribute
@@ -125,8 +125,8 @@ class JQueryColorboxFrontend {
    * @access public
    * @author Arne Franken
    *
-   * @param  $attribute class attribute of the attachment link
-   * @return replaced attributes
+   * @param  string[] $attribute class attribute of the attachment link
+   * @return string[] replaced attributes
    */
   //public function wpPostThumbnailClassFilter($attribute) {
   function wpPostThumbnailClassFilter($attribute) {
