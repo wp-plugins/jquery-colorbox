@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu  
 Requires at least: 2.8  
 Tested up to: 3.4
-Stable tag: 4.4
+Stable tag: 4.4.1
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
 
@@ -138,6 +138,9 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
   I'll include new FAQs in newer versions.
 
 == Changelog ==
+### 4.4.1 (2012-07-19) ###
+* BUGFIX: using colorbox-link works again
+
 ### 4.4 (2012-07-16) ###
 * NEW: A Zoom overlay can be added to images automatically
 * NEW: Added option to load all JavaScript in the footer
