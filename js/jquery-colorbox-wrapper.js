@@ -225,7 +225,7 @@ jQuery(document).ready(function() {
     //class attribute must exist, otherwise this method wouldn't be called
     ColorboxLocal.colorboxGroupId = jQuery(link).attr("class").match(COLORBOX_LINK_CLASS_PATTERN);
 
-    if(ColorboxLocal.colorboxGroupId !== undefined || ColorboxLocal.colorboxGroupId !== null) {
+    if(ColorboxLocal.colorboxGroupId !== undefined && ColorboxLocal.colorboxGroupId !== null) {
       //convert groupId to string and lose "colorbox-link-" for easier use
       ColorboxLocal.colorboxGroupId = ColorboxLocal.colorboxGroupId.toString().split('-')[2];
     }
