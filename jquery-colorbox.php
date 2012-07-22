@@ -153,7 +153,7 @@ class JQueryColorbox {
    * @since 2.0
    * @access public
    * @author Arne Franken
-   * @param $colorboxSettings current colorboxSettings.
+   * @param $colorboxSettings array current colorboxSettings.
    *
    * @return bool true if settings work with this plugin version
    */
