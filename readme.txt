@@ -61,7 +61,7 @@ Translating the plugin is easy if you understand english and are fluent in anoth
 I described in the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/) how the translation works.
 
 **Credits**  
-Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.19 jQuery plugin from Jack Moore.  
+Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.20.1 jQuery plugin from Jack Moore.
 The picture I used for the screenshots was designed by [Davide Vicariotto](http://wallpapers.vintage.it/)
 
 == Installation ==
@@ -142,6 +142,7 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 ### 4.5 (2012-09-15) ###
 * NEW: Bulgarian translation by Nikolay Zaynelov
 * BUGFIX: add CSS class to WP galleries if "add to all" is selected and the gallery is outside of the text area of a post and page
+* CHANGE: update Colorbox version to 1.3.20.1
 
 ### 4.4.1 (2012-07-19) ###
 * BUGFIX: using colorbox-link works again
