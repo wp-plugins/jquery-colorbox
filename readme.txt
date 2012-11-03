@@ -141,6 +141,7 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 == Changelog ==
 ### 4.5 (2012-09-15) ###
 * NEW: Bulgarian translation by Nikolay Zaynelov
+* BUGFIX: Zoom overlay does not break floating images any more
 * BUGFIX: add CSS class to WP galleries if "add to all" is selected and the gallery is outside of the text area of a post and page
 * CHANGE: update Colorbox version to 1.3.20.1
 
