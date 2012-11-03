@@ -4,7 +4,7 @@ Donate link: http://www.techotronic.de/donate/
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu  
 Requires at least: 2.8  
 Tested up to: 3.4
-Stable tag: 4.4.1
+Stable tag: 4.5
 
 Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
 
@@ -139,7 +139,7 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
   I'll include new FAQs in newer versions.
 
 == Changelog ==
-### 4.5 (2012-09-15) ###
+### 4.5 (2012-11-03) ###
 * NEW: Bulgarian translation by Nikolay Zaynelov
 * BUGFIX: Zoom overlay does not break floating images any more
 * BUGFIX: add CSS class to WP galleries if "add to all" is selected and the gallery is outside of the text area of a post and page
