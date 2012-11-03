@@ -3,30 +3,30 @@ Contributors: techotronic
 Donate link: http://www.techotronic.de/donate/  
 Tags: jquery, colorbox, lightbox, images, pictures, photos, gallery, javascript, overlay, nextgen gallery, nextgen-gallery, image, picture, photo, media, slideshow, ngg, mu  
 Requires at least: 2.8  
-Tested up to: 3.4 
-Stable tag: 4.4.1 
+Tested up to: 3.4  
+Stable tag: 4.4.1  
 
-Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.
+Adds Colorbox/Lightbox functionality to images, grouped by post or page. Works for WordPress and NextGEN galleries. Comes with different themes.  
 
 ## Description ##
 
-A Colorbox/Lightbox plugin for Wordpress.
+A Colorbox/Lightbox plugin for Wordpress.  
 
 jQuery Colorbox features 11 themes from which you can choose. See [my website](http://www.techotronic.de/plugins/jquery-colorbox/theme-screenshots/).  
-Works out-of-the-box with WordPress Galleries and [NextGEN Gallery](http://wordpress.org/extend/plugins/nextgen-gallery/)! (choose no effect in NextGEN settings)
+Works out-of-the-box with WordPress Galleries and [NextGEN Gallery](http://wordpress.org/extend/plugins/nextgen-gallery/)! (choose no effect in NextGEN settings)  
 
 When adding an image to a post or page, usually a thumbnail is inserted and linked to the image in original size.  
 All images in posts and pages can be displayed in a Lightbox/colorbox when the thumbnail is clicked.  
-Images are grouped as galleries when linked in the same post or page. Groups can be displayed in a slideshow within the Lightbox/colorbox.
+Images are grouped as galleries when linked in the same post or page. Groups can be displayed in a slideshow within the Lightbox/colorbox.  
 
-Individual images can be excluded by adding a special CSS class.
+Individual images can be excluded by adding a special CSS class.  
 
-jQuery Colorbox can also open linked content (external as well as inline) in a Lightbox/Colorbox.
+jQuery Colorbox can also open linked content (external as well as inline) in a Lightbox/Colorbox.  
 
-Go to the [plugin page](http://www.techotronic.de/plugins/jquery-colorbox/) for demo pages.
+Go to the [plugin page](http://www.techotronic.de/plugins/jquery-colorbox/) for demo pages.  
 
 For more information visit the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/).  
-If you have questions or problems, feel free to write an entry at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10)
+If you have questions or problems, feel free to write an entry at [the jQuery Colorbox WordPress.org forum](http://wordpress.org/tags/jquery-colorbox?forum_id=10)  
 
 **Localization**
 
@@ -61,8 +61,9 @@ Translating the plugin is easy if you understand english and are fluent in anoth
 I described in the [FAQ](http://wordpress.org/extend/plugins/jquery-colorbox/faq/) how the translation works.
 
 **Credits**
+
 Includes [ColorBox](http://jacklmoore.com/colorbox/) 1.3.20.1 jQuery plugin from Jack Moore.  
-The picture I used for the screenshots was designed by [Davide Vicariotto](http://wallpapers.vintage.it/)
+The picture I used for the screenshots was designed by [Davide Vicariotto](http://wallpapers.vintage.it/)  
 
 ## Installation ##
 
