@@ -141,6 +141,7 @@ Do not forget to activate auto Colorbox if you want the Lightbox/Colorbox to wor
 == Changelog ==
 ### 4.5 (2012-09-15) ###
 * NEW: Bulgarian translation by Nikolay Zaynelov
+* BUGFIX: add CSS class to WP galleries if "add to all" is selected and the gallery is outside of the text area of a post and page
 
 ### 4.4.1 (2012-07-19) ###
 * BUGFIX: using colorbox-link works again
