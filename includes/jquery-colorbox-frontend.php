@@ -178,6 +178,8 @@ class JQueryColorboxFrontend {
       'colorboxSlideshowStart' => __('start slideshow', JQUERYCOLORBOX_TEXTDOMAIN),
       'colorboxSlideshowStop' => __('stop slideshow', JQUERYCOLORBOX_TEXTDOMAIN),
       'colorboxCurrent' => __('{current} of {total} images', JQUERYCOLORBOX_TEXTDOMAIN),
+      'colorboxXhrError'=> __('This content failed to load.', JQUERYCOLORBOX_TEXTDOMAIN),
+      'colorboxImgError'=> __('This image failed to load.', JQUERYCOLORBOX_TEXTDOMAIN),
 
       'colorboxImageMaxWidth' => $this->colorboxSettings['maxWidth'] == "false" ? 'false'
               : $this->colorboxSettings['maxWidthValue'] . $this->colorboxSettings['maxWidthUnit'],

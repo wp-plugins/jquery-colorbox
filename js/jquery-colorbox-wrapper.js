@@ -320,11 +320,15 @@ jQuery(document).ready(function() {
       escKey:ColorboxLocal.colorboxEscKey,
       arrowKey:ColorboxLocal.colorboxArrowKey,
       loop:ColorboxLocal.colorboxLoop,
+      //data
+
+      //--- Internationalization
       current:ColorboxLocal.colorboxCurrent,
       previous:ColorboxLocal.colorboxPrevious,
       next:ColorboxLocal.colorboxNext,
       close:ColorboxLocal.colorboxClose,
-      //data
+      xhrError:ColorboxLocal.colorboxXhrError,
+      imgError:ColorboxLocal.colorboxImgError,
 
       // --- content type
       iframe:ColorboxLocal.colorboxIframe,
@@ -349,6 +353,14 @@ jQuery(document).ready(function() {
       slideshowAuto:ColorboxLocal.colorboxSlideshowAuto,
       slideshowStart:ColorboxLocal.colorboxSlideshowStart,
       slideshowStop:ColorboxLocal.colorboxSlideshowStop
+
+      // --- positioning
+      //fixed:false
+      //top:false
+      //bottom:false
+      //left: false
+      //right:false
+
 
       // --- callbacks
       //onOpen
@@ -423,6 +435,8 @@ jQuery(document).ready(function() {
       colorboxSlideshowStart:'start slideshow',
       colorboxSlideshowStop:'stop slideshow',
       colorboxCurrent:'{current} of {total} images',
+      colorboxXhrError:'This content failed to load.',
+      colorboxImgError:'This image failed to load.',
 
       colorboxImageMaxWidth: false,
       colorboxImageMaxHeight: false,
